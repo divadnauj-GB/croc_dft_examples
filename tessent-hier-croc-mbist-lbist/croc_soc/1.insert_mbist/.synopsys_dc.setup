@@ -1,0 +1,5 @@
+set search_path "$search_path DB scripts synlib ../../../library/standard_cells/synopsys ../../../../library/standard_cells/synopsys ../../../../../library/standard_cells/synopsys"
+
+set link_library { "*" adk.db  }
+set target_library { adk.db }
+set symbol_library { generic.sdb }
