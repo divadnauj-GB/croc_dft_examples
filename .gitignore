@@ -1,3 +1,20 @@
 Examples/
-/logfiles/
+logfiles/
+patterns/
+simulation_outdir/
+work/
+synthesis_outdir/
+tsdb_outdir/
+croc/
+
+*.vg
+*.log
+*.svf
+*.dbg
+
+*.rpt
+*.dofile
+*.fau
+
+*.list
 
