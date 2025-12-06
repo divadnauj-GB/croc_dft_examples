@@ -1,0 +1,31 @@
+//--------------------------------------------------------------------------
+//
+//  Unpublished work. Copyright 2021 Siemens
+//
+//  This material contains trade secrets or otherwise confidential 
+//  information owned by Siemens Industry Software Inc. or its affiliates 
+//  (collectively, SISW), or its licensors. Access to and use of this 
+//  information is strictly limited as set forth in the Customer's 
+//  applicable agreements with SISW.
+//
+//--------------------------------------------------------------------------
+//  File created by: Tessent Shell
+//          Version: 2022.3
+//       Created on: Sat Nov 15 20:33:21 EST 2025
+//--------------------------------------------------------------------------
+
+Core(memlibc_memory_bist_assembly_rtl_tessent_mbist_bap) {
+  BistAccessPort {
+    version: 57;
+    design_name: memlibc_memory_bist_assembly;
+    design_id: rtl;
+    Interface {
+    }
+    Controllers {
+      Controller(c1) {
+        module_name: memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller;
+        clock_domain_label: BIST_CLK;
+      } 
+    }
+  }
+}

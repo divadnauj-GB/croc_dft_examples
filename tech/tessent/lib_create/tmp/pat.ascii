@@ -1,0 +1,82 @@
+//
+//  Tessent FastScan  2022.3
+//
+//  Design  = all
+//  Created = Thu Nov 13 12:08:45 EST 2025
+//
+//  Statistics:
+//      Test Coverage   =  93.44%
+//      Total Faults    =  122
+//          DS (det_simulation)    =  114
+//          AU (atpg_untestable)   =  8
+//      Total            Patterns  =  9
+//
+//  Settings:
+//      Simulation Mode =  combinational, seq_depth = 5
+//      Fault Type      =  stuck
+//      Fault Mode      =  uncollapsed
+//      Pos_Det Credit  =  0%
+//      Z external      =  Z
+//      Z internal      =  X
+//      wired_net       =  WIRE
+//
+//  Warnings:
+//
+
+ASCII_PATTERN_FILE_VERSION = 3;
+
+
+SETUP = 
+
+    declare input bus "PI" = "/sg13g2_IOPadInOut16mA__c2p", "/sg13g2_IOPadInOut16mA__c2p_en", "/sg13g2_IOPadInOut30mA__c2p", "/sg13g2_IOPadInOut30mA__c2p_en", "/sg13g2_IOPadInOut4mA__c2p",
+         "/sg13g2_IOPadInOut4mA__c2p_en", "/sg13g2_IOPadOut16mA__c2p", "/sg13g2_IOPadOut30mA__c2p", "/sg13g2_IOPadOut4mA__c2p", "/sg13g2_IOPadTriOut16mA__c2p", "/sg13g2_IOPadTriOut16mA__c2p_en",
+         "/sg13g2_IOPadTriOut30mA__c2p", "/sg13g2_IOPadTriOut30mA__c2p_en", "/sg13g2_IOPadTriOut4mA__c2p", "/sg13g2_IOPadTriOut4mA__c2p_en", "/sg13g2_IOPadAnalog__pad", "/sg13g2_IOPadAnalog__padres",
+         "/sg13g2_IOPadIn__pad", "/sg13g2_IOPadInOut16mA__pad", "/sg13g2_IOPadInOut30mA__pad", "/sg13g2_IOPadInOut4mA__pad", "/sg13g2_IOPadOut16mA__pad", "/sg13g2_IOPadOut30mA__pad",
+         "/sg13g2_IOPadOut4mA__pad", "/sg13g2_IOPadTriOut16mA__pad", "/sg13g2_IOPadTriOut30mA__pad", "/sg13g2_IOPadTriOut4mA__pad";
+
+    declare output bus "PO" = "/sg13g2_IOPadIn__p2c", "/sg13g2_IOPadInOut16mA__p2c", "/sg13g2_IOPadInOut30mA__p2c", "/sg13g2_IOPadInOut4mA__p2c", "/sg13g2_IOPadAnalog__pad",
+         "/sg13g2_IOPadAnalog__padres", "/sg13g2_IOPadIn__pad", "/sg13g2_IOPadInOut16mA__pad", "/sg13g2_IOPadInOut30mA__pad", "/sg13g2_IOPadInOut4mA__pad", "/sg13g2_IOPadOut16mA__pad",
+         "/sg13g2_IOPadOut30mA__pad", "/sg13g2_IOPadOut4mA__pad", "/sg13g2_IOPadTriOut16mA__pad", "/sg13g2_IOPadTriOut30mA__pad", "/sg13g2_IOPadTriOut4mA__pad";
+
+end;
+
+SCAN_TEST =
+
+    pattern = 0;
+    force   "PI" "110001Z01110111ZZ0ZZZ1ZZZZZ" 0;
+    measure "PO" "01Z0XX01Z0101101" 1;
+
+    pattern = 1;
+    force   "PI" "111010Z00101010ZZ1ZZZ0ZZZZZ" 0;
+    measure "PO" "11ZZXX11ZZ000ZZZ" 1;
+
+    pattern = 2;
+    force   "PI" "111010100011111ZZ0ZZ1ZZZZZZ" 0;
+    measure "PO" "01Z1XX01Z1100011" 1;
+
+    pattern = 3;
+    force   "PI" "010010010111010ZZ0ZZZZZZZZ0" 0;
+    measure "PO" "00ZZXX00ZZ0101Z0" 1;
+
+    pattern = 4;
+    force   "PI" "001100111001101ZZ0ZZ0ZZZZZZ" 0;
+    measure "PO" "0Z10XX0Z10111Z10" 1;
+
+    pattern = 5;
+    force   "PI" "1011000Z0111011ZZ0ZZZZ1ZZZZ" 0;
+    measure "PO" "0Z1ZXX0Z1Z0101Z1" 1;
+
+    pattern = 6;
+    force   "PI" "1101111Z0001111ZZ1ZZZZ0ZZZZ" 0;
+    measure "PO" "1101XX1101100Z11" 1;
+
+    pattern = 7;
+    force   "PI" "11000000Z110010ZZ0ZZZZZ1ZZZ" 0;
+    measure "PO" "01ZZXX01ZZ0011ZZ" 1;
+
+    pattern = 8;
+    force   "PI" "11000111Z001100ZZ0ZZZZZ0ZZZ" 0;
+    measure "PO" "01Z0XX01Z0110Z1Z" 1;
+
+end;
+

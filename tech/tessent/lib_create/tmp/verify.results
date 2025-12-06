@@ -1,0 +1,446 @@
+
+
+Library Verification Run
+Verifying libcomp.atpglib
+Run at Thu Nov 13 12:08:50 2025
+
+    User invoked Libcomp with following + arguments for Verilog translation.
+    +define+TETRAMAX 
+
+---------------------------------------------------------
+Summary Statistics for Library libcomp.atpglib
+-----------------------------------------
+Fault Statistics for Library libcomp.atpglib
+-----------------------------------------
+Fault Classes                     #faults   
+                                  (total)   
+----------------------------  --------------
+  FU (full)                         122     
+  --------------------------  --------------
+  DS (det_simulation)           114 (93.44%)
+  AU (atpg_untestable)            8 ( 6.56%)
+--------------------------------------------
+Fault Sub-classes                           
+  --------------------------                
+  AU (atpg_untestable)                      
+    SEQ   (sequential_depth)      8 ( 6.56%)
+--------------------------------------------
+Coverage                                    
+  --------------------------                
+  test_coverage                      93.44% 
+  fault_coverage                     93.44% 
+  atpg_effectiveness                100.00% 
+--------------------------------------------
+Test Pattern Statistics for Library libcomp.atpglib
+-------------------------------------------
+#test_patterns                            9 
+#simulated_patterns                       9 
+---------------------------------------------------------
+
+---------------------------------------------------------
+Model : sg13g2_Corner
+---------------------
+Fault Statistics for instance sg13g2_Corner
+-----------------------------------------
+Fault Classes           #faults   	sg13g2_Corner
+                        (total)   	sg13g2_Corner
+-------------------  -------------	sg13g2_Corner
+  FU (full)                0      	sg13g2_Corner
+  -----------------  -------------	sg13g2_Corner
+----------------------------------	sg13g2_Corner
+Coverage                          	sg13g2_Corner
+  -----------------               	sg13g2_Corner
+----------------------------------	sg13g2_Corner
+
+---------------------------------------------------------
+Model : sg13g2_Filler1000
+---------------------
+Fault Statistics for instance sg13g2_Filler1000
+-----------------------------------------
+Fault Classes           #faults   	sg13g2_Filler1000
+                        (total)   	sg13g2_Filler1000
+-------------------  -------------	sg13g2_Filler1000
+  FU (full)                0      	sg13g2_Filler1000
+  -----------------  -------------	sg13g2_Filler1000
+----------------------------------	sg13g2_Filler1000
+Coverage                          	sg13g2_Filler1000
+  -----------------               	sg13g2_Filler1000
+----------------------------------	sg13g2_Filler1000
+
+---------------------------------------------------------
+Model : sg13g2_Filler10000
+---------------------
+Fault Statistics for instance sg13g2_Filler10000
+-----------------------------------------
+Fault Classes           #faults   	sg13g2_Filler10000
+                        (total)   	sg13g2_Filler10000
+-------------------  -------------	sg13g2_Filler10000
+  FU (full)                0      	sg13g2_Filler10000
+  -----------------  -------------	sg13g2_Filler10000
+----------------------------------	sg13g2_Filler10000
+Coverage                          	sg13g2_Filler10000
+  -----------------               	sg13g2_Filler10000
+----------------------------------	sg13g2_Filler10000
+
+---------------------------------------------------------
+Model : sg13g2_Filler200
+---------------------
+Fault Statistics for instance sg13g2_Filler200
+-----------------------------------------
+Fault Classes           #faults   	sg13g2_Filler200
+                        (total)   	sg13g2_Filler200
+-------------------  -------------	sg13g2_Filler200
+  FU (full)                0      	sg13g2_Filler200
+  -----------------  -------------	sg13g2_Filler200
+----------------------------------	sg13g2_Filler200
+Coverage                          	sg13g2_Filler200
+  -----------------               	sg13g2_Filler200
+----------------------------------	sg13g2_Filler200
+
+---------------------------------------------------------
+Model : sg13g2_Filler2000
+---------------------
+Fault Statistics for instance sg13g2_Filler2000
+-----------------------------------------
+Fault Classes           #faults   	sg13g2_Filler2000
+                        (total)   	sg13g2_Filler2000
+-------------------  -------------	sg13g2_Filler2000
+  FU (full)                0      	sg13g2_Filler2000
+  -----------------  -------------	sg13g2_Filler2000
+----------------------------------	sg13g2_Filler2000
+Coverage                          	sg13g2_Filler2000
+  -----------------               	sg13g2_Filler2000
+----------------------------------	sg13g2_Filler2000
+
+---------------------------------------------------------
+Model : sg13g2_Filler400
+---------------------
+Fault Statistics for instance sg13g2_Filler400
+-----------------------------------------
+Fault Classes           #faults   	sg13g2_Filler400
+                        (total)   	sg13g2_Filler400
+-------------------  -------------	sg13g2_Filler400
+  FU (full)                0      	sg13g2_Filler400
+  -----------------  -------------	sg13g2_Filler400
+----------------------------------	sg13g2_Filler400
+Coverage                          	sg13g2_Filler400
+  -----------------               	sg13g2_Filler400
+----------------------------------	sg13g2_Filler400
+
+---------------------------------------------------------
+Model : sg13g2_Filler4000
+---------------------
+Fault Statistics for instance sg13g2_Filler4000
+-----------------------------------------
+Fault Classes           #faults   	sg13g2_Filler4000
+                        (total)   	sg13g2_Filler4000
+-------------------  -------------	sg13g2_Filler4000
+  FU (full)                0      	sg13g2_Filler4000
+  -----------------  -------------	sg13g2_Filler4000
+----------------------------------	sg13g2_Filler4000
+Coverage                          	sg13g2_Filler4000
+  -----------------               	sg13g2_Filler4000
+----------------------------------	sg13g2_Filler4000
+
+---------------------------------------------------------
+Model : sg13g2_IOPadAnalog
+---------------------
+Fault Statistics for instance sg13g2_IOPadAnalog
+-----------------------------------------
+Fault Classes                     #faults    	sg13g2_IOPadAnalog
+                                  (total)    	sg13g2_IOPadAnalog
+----------------------------  ---------------	sg13g2_IOPadAnalog
+  FU (full)                          4       	sg13g2_IOPadAnalog
+  --------------------------  ---------------	sg13g2_IOPadAnalog
+  AU (atpg_untestable)            4 (100.00%)	sg13g2_IOPadAnalog
+---------------------------------------------	sg13g2_IOPadAnalog
+Fault Sub-classes                            	sg13g2_IOPadAnalog
+  --------------------------                 	sg13g2_IOPadAnalog
+  AU (atpg_untestable)                       	sg13g2_IOPadAnalog
+    SEQ   (sequential_depth)      4 (100.00%)	sg13g2_IOPadAnalog
+---------------------------------------------	sg13g2_IOPadAnalog
+Coverage                                     	sg13g2_IOPadAnalog
+  --------------------------                 	sg13g2_IOPadAnalog
+  test_coverage                        0.00% 	sg13g2_IOPadAnalog
+  fault_coverage                       0.00% 	sg13g2_IOPadAnalog
+  atpg_effectiveness                 100.00% 	sg13g2_IOPadAnalog
+---------------------------------------------	sg13g2_IOPadAnalog
+
+---------------------------------------------------------
+Model : sg13g2_IOPadIOVdd
+---------------------
+Fault Statistics for instance sg13g2_IOPadIOVdd
+-----------------------------------------
+Fault Classes           #faults   	sg13g2_IOPadIOVdd
+                        (total)   	sg13g2_IOPadIOVdd
+-------------------  -------------	sg13g2_IOPadIOVdd
+  FU (full)                0      	sg13g2_IOPadIOVdd
+  -----------------  -------------	sg13g2_IOPadIOVdd
+----------------------------------	sg13g2_IOPadIOVdd
+Coverage                          	sg13g2_IOPadIOVdd
+  -----------------               	sg13g2_IOPadIOVdd
+----------------------------------	sg13g2_IOPadIOVdd
+
+---------------------------------------------------------
+Model : sg13g2_IOPadIOVss
+---------------------
+Fault Statistics for instance sg13g2_IOPadIOVss
+-----------------------------------------
+Fault Classes           #faults   	sg13g2_IOPadIOVss
+                        (total)   	sg13g2_IOPadIOVss
+-------------------  -------------	sg13g2_IOPadIOVss
+  FU (full)                0      	sg13g2_IOPadIOVss
+  -----------------  -------------	sg13g2_IOPadIOVss
+----------------------------------	sg13g2_IOPadIOVss
+Coverage                          	sg13g2_IOPadIOVss
+  -----------------               	sg13g2_IOPadIOVss
+----------------------------------	sg13g2_IOPadIOVss
+
+---------------------------------------------------------
+Model : sg13g2_IOPadIn
+---------------------
+Fault Statistics for instance sg13g2_IOPadIn
+-----------------------------------------
+Fault Classes              #faults    	sg13g2_IOPadIn
+                           (total)    	sg13g2_IOPadIn
+---------------------  ---------------	sg13g2_IOPadIn
+  FU (full)                   4       	sg13g2_IOPadIn
+  -------------------  ---------------	sg13g2_IOPadIn
+  DS (det_simulation)      4 (100.00%)	sg13g2_IOPadIn
+--------------------------------------	sg13g2_IOPadIn
+Coverage                              	sg13g2_IOPadIn
+  -------------------                 	sg13g2_IOPadIn
+  test_coverage               100.00% 	sg13g2_IOPadIn
+  fault_coverage              100.00% 	sg13g2_IOPadIn
+  atpg_effectiveness          100.00% 	sg13g2_IOPadIn
+--------------------------------------	sg13g2_IOPadIn
+
+---------------------------------------------------------
+Model : sg13g2_IOPadInOut16mA
+---------------------
+Fault Statistics for instance sg13g2_IOPadInOut16mA
+-----------------------------------------
+Fault Classes              #faults    	sg13g2_IOPadInOut16mA
+                           (total)    	sg13g2_IOPadInOut16mA
+---------------------  ---------------	sg13g2_IOPadInOut16mA
+  FU (full)                   8       	sg13g2_IOPadInOut16mA
+  -------------------  ---------------	sg13g2_IOPadInOut16mA
+  DS (det_simulation)      8 (100.00%)	sg13g2_IOPadInOut16mA
+--------------------------------------	sg13g2_IOPadInOut16mA
+Coverage                              	sg13g2_IOPadInOut16mA
+  -------------------                 	sg13g2_IOPadInOut16mA
+  test_coverage               100.00% 	sg13g2_IOPadInOut16mA
+  fault_coverage              100.00% 	sg13g2_IOPadInOut16mA
+  atpg_effectiveness          100.00% 	sg13g2_IOPadInOut16mA
+--------------------------------------	sg13g2_IOPadInOut16mA
+
+---------------------------------------------------------
+Model : sg13g2_IOPadInOut30mA
+---------------------
+Fault Statistics for instance sg13g2_IOPadInOut30mA
+-----------------------------------------
+Fault Classes              #faults    	sg13g2_IOPadInOut30mA
+                           (total)    	sg13g2_IOPadInOut30mA
+---------------------  ---------------	sg13g2_IOPadInOut30mA
+  FU (full)                   8       	sg13g2_IOPadInOut30mA
+  -------------------  ---------------	sg13g2_IOPadInOut30mA
+  DS (det_simulation)      8 (100.00%)	sg13g2_IOPadInOut30mA
+--------------------------------------	sg13g2_IOPadInOut30mA
+Coverage                              	sg13g2_IOPadInOut30mA
+  -------------------                 	sg13g2_IOPadInOut30mA
+  test_coverage               100.00% 	sg13g2_IOPadInOut30mA
+  fault_coverage              100.00% 	sg13g2_IOPadInOut30mA
+  atpg_effectiveness          100.00% 	sg13g2_IOPadInOut30mA
+--------------------------------------	sg13g2_IOPadInOut30mA
+
+---------------------------------------------------------
+Model : sg13g2_IOPadInOut4mA
+---------------------
+Fault Statistics for instance sg13g2_IOPadInOut4mA
+-----------------------------------------
+Fault Classes              #faults    	sg13g2_IOPadInOut4mA
+                           (total)    	sg13g2_IOPadInOut4mA
+---------------------  ---------------	sg13g2_IOPadInOut4mA
+  FU (full)                   8       	sg13g2_IOPadInOut4mA
+  -------------------  ---------------	sg13g2_IOPadInOut4mA
+  DS (det_simulation)      8 (100.00%)	sg13g2_IOPadInOut4mA
+--------------------------------------	sg13g2_IOPadInOut4mA
+Coverage                              	sg13g2_IOPadInOut4mA
+  -------------------                 	sg13g2_IOPadInOut4mA
+  test_coverage               100.00% 	sg13g2_IOPadInOut4mA
+  fault_coverage              100.00% 	sg13g2_IOPadInOut4mA
+  atpg_effectiveness          100.00% 	sg13g2_IOPadInOut4mA
+--------------------------------------	sg13g2_IOPadInOut4mA
+
+---------------------------------------------------------
+Model : sg13g2_IOPadOut16mA
+---------------------
+Fault Statistics for instance sg13g2_IOPadOut16mA
+-----------------------------------------
+Fault Classes              #faults    	sg13g2_IOPadOut16mA
+                           (total)    	sg13g2_IOPadOut16mA
+---------------------  ---------------	sg13g2_IOPadOut16mA
+  FU (full)                   4       	sg13g2_IOPadOut16mA
+  -------------------  ---------------	sg13g2_IOPadOut16mA
+  DS (det_simulation)      4 (100.00%)	sg13g2_IOPadOut16mA
+--------------------------------------	sg13g2_IOPadOut16mA
+Coverage                              	sg13g2_IOPadOut16mA
+  -------------------                 	sg13g2_IOPadOut16mA
+  test_coverage               100.00% 	sg13g2_IOPadOut16mA
+  fault_coverage              100.00% 	sg13g2_IOPadOut16mA
+  atpg_effectiveness          100.00% 	sg13g2_IOPadOut16mA
+--------------------------------------	sg13g2_IOPadOut16mA
+
+---------------------------------------------------------
+Model : sg13g2_IOPadOut30mA
+---------------------
+Fault Statistics for instance sg13g2_IOPadOut30mA
+-----------------------------------------
+Fault Classes              #faults    	sg13g2_IOPadOut30mA
+                           (total)    	sg13g2_IOPadOut30mA
+---------------------  ---------------	sg13g2_IOPadOut30mA
+  FU (full)                   4       	sg13g2_IOPadOut30mA
+  -------------------  ---------------	sg13g2_IOPadOut30mA
+  DS (det_simulation)      4 (100.00%)	sg13g2_IOPadOut30mA
+--------------------------------------	sg13g2_IOPadOut30mA
+Coverage                              	sg13g2_IOPadOut30mA
+  -------------------                 	sg13g2_IOPadOut30mA
+  test_coverage               100.00% 	sg13g2_IOPadOut30mA
+  fault_coverage              100.00% 	sg13g2_IOPadOut30mA
+  atpg_effectiveness          100.00% 	sg13g2_IOPadOut30mA
+--------------------------------------	sg13g2_IOPadOut30mA
+
+---------------------------------------------------------
+Model : sg13g2_IOPadOut4mA
+---------------------
+Fault Statistics for instance sg13g2_IOPadOut4mA
+-----------------------------------------
+Fault Classes              #faults    	sg13g2_IOPadOut4mA
+                           (total)    	sg13g2_IOPadOut4mA
+---------------------  ---------------	sg13g2_IOPadOut4mA
+  FU (full)                   4       	sg13g2_IOPadOut4mA
+  -------------------  ---------------	sg13g2_IOPadOut4mA
+  DS (det_simulation)      4 (100.00%)	sg13g2_IOPadOut4mA
+--------------------------------------	sg13g2_IOPadOut4mA
+Coverage                              	sg13g2_IOPadOut4mA
+  -------------------                 	sg13g2_IOPadOut4mA
+  test_coverage               100.00% 	sg13g2_IOPadOut4mA
+  fault_coverage              100.00% 	sg13g2_IOPadOut4mA
+  atpg_effectiveness          100.00% 	sg13g2_IOPadOut4mA
+--------------------------------------	sg13g2_IOPadOut4mA
+
+---------------------------------------------------------
+Model : sg13g2_IOPadTriOut16mA
+---------------------
+Fault Statistics for instance sg13g2_IOPadTriOut16mA
+-----------------------------------------
+Fault Classes              #faults    	sg13g2_IOPadTriOut16mA
+                           (total)    	sg13g2_IOPadTriOut16mA
+---------------------  ---------------	sg13g2_IOPadTriOut16mA
+  FU (full)                   6       	sg13g2_IOPadTriOut16mA
+  -------------------  ---------------	sg13g2_IOPadTriOut16mA
+  DS (det_simulation)      6 (100.00%)	sg13g2_IOPadTriOut16mA
+--------------------------------------	sg13g2_IOPadTriOut16mA
+Coverage                              	sg13g2_IOPadTriOut16mA
+  -------------------                 	sg13g2_IOPadTriOut16mA
+  test_coverage               100.00% 	sg13g2_IOPadTriOut16mA
+  fault_coverage              100.00% 	sg13g2_IOPadTriOut16mA
+  atpg_effectiveness          100.00% 	sg13g2_IOPadTriOut16mA
+--------------------------------------	sg13g2_IOPadTriOut16mA
+
+---------------------------------------------------------
+Model : sg13g2_IOPadTriOut30mA
+---------------------
+Fault Statistics for instance sg13g2_IOPadTriOut30mA
+-----------------------------------------
+Fault Classes              #faults    	sg13g2_IOPadTriOut30mA
+                           (total)    	sg13g2_IOPadTriOut30mA
+---------------------  ---------------	sg13g2_IOPadTriOut30mA
+  FU (full)                   6       	sg13g2_IOPadTriOut30mA
+  -------------------  ---------------	sg13g2_IOPadTriOut30mA
+  DS (det_simulation)      6 (100.00%)	sg13g2_IOPadTriOut30mA
+--------------------------------------	sg13g2_IOPadTriOut30mA
+Coverage                              	sg13g2_IOPadTriOut30mA
+  -------------------                 	sg13g2_IOPadTriOut30mA
+  test_coverage               100.00% 	sg13g2_IOPadTriOut30mA
+  fault_coverage              100.00% 	sg13g2_IOPadTriOut30mA
+  atpg_effectiveness          100.00% 	sg13g2_IOPadTriOut30mA
+--------------------------------------	sg13g2_IOPadTriOut30mA
+
+---------------------------------------------------------
+Model : sg13g2_IOPadTriOut4mA
+---------------------
+Fault Statistics for instance sg13g2_IOPadTriOut4mA
+-----------------------------------------
+Fault Classes              #faults    	sg13g2_IOPadTriOut4mA
+                           (total)    	sg13g2_IOPadTriOut4mA
+---------------------  ---------------	sg13g2_IOPadTriOut4mA
+  FU (full)                   6       	sg13g2_IOPadTriOut4mA
+  -------------------  ---------------	sg13g2_IOPadTriOut4mA
+  DS (det_simulation)      6 (100.00%)	sg13g2_IOPadTriOut4mA
+--------------------------------------	sg13g2_IOPadTriOut4mA
+Coverage                              	sg13g2_IOPadTriOut4mA
+  -------------------                 	sg13g2_IOPadTriOut4mA
+  test_coverage               100.00% 	sg13g2_IOPadTriOut4mA
+  fault_coverage              100.00% 	sg13g2_IOPadTriOut4mA
+  atpg_effectiveness          100.00% 	sg13g2_IOPadTriOut4mA
+--------------------------------------	sg13g2_IOPadTriOut4mA
+
+---------------------------------------------------------
+Model : sg13g2_IOPadVdd
+---------------------
+Fault Statistics for instance sg13g2_IOPadVdd
+-----------------------------------------
+Fault Classes           #faults   	sg13g2_IOPadVdd
+                        (total)   	sg13g2_IOPadVdd
+-------------------  -------------	sg13g2_IOPadVdd
+  FU (full)                0      	sg13g2_IOPadVdd
+  -----------------  -------------	sg13g2_IOPadVdd
+----------------------------------	sg13g2_IOPadVdd
+Coverage                          	sg13g2_IOPadVdd
+  -----------------               	sg13g2_IOPadVdd
+----------------------------------	sg13g2_IOPadVdd
+
+---------------------------------------------------------
+Model : sg13g2_IOPadVss
+---------------------
+Fault Statistics for instance sg13g2_IOPadVss
+-----------------------------------------
+Fault Classes           #faults   	sg13g2_IOPadVss
+                        (total)   	sg13g2_IOPadVss
+-------------------  -------------	sg13g2_IOPadVss
+  FU (full)                0      	sg13g2_IOPadVss
+  -----------------  -------------	sg13g2_IOPadVss
+----------------------------------	sg13g2_IOPadVss
+Coverage                          	sg13g2_IOPadVss
+  -----------------               	sg13g2_IOPadVss
+----------------------------------	sg13g2_IOPadVss
+
+***** Fault (pessimistic) Coverage Summary by Decile ***** 
+ See file fault_coverage_0_to_10_percent_models for a list
+ of models in 0 to 10% decile, etc. for each nonNULL decile.
+ No faults  --- 11 models.
+ 0% to 10%  ---  1 models.
+   100%      --  10 models.
+---------------------------------------------------------
+---------------------------------------------------------
+Verification Summary:
+    22 Total Models
+ALL PASSED for all patterns.
+  All known model output values predicted by ATPG agreed with Verilog sim.
+  In some cases, this only means ATPG could not exercise the model.  See below.
+
+Always check transcript for model translation messages.
+Always check the output ATPG library file with remodels for the strings:
+   "BlackBox", "EDIT & place _cram",  and "PARTIALLY TRANSLATED MODULE".
+Always check sim.log for untestable Ram & DRC messages.
+Always check low coverage models to see if low coverage is expected (IO pads
+    may have 40% coverage and be good, whereas 85% may be bad for a mux scan model).
+See the Fault Coverage Summary above these messages and associated files for
+    for the model names with low coverage.  For model specific coverages, check
+    the verify.results file or the sim.log file. Model specific (-instance)
+    reports follow overall statistics in sim.log.
+
+User invoked Libcomp with following + arguments for Verilog translation.
++define+TETRAMAX 
+

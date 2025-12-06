@@ -1,0 +1,122 @@
+//
+// =======================================================================
+//
+// COPYRIGHT
+//    Unpublished work. Copyright 2010 Siemens
+//
+// CAVEAT : DO NOT EDIT !!
+//
+// DESCRIPTION
+//    Tessent DFT ATPG library source for scan logic created because
+//    -model .. -scan_rams was issued.  Each scan chain is a mux
+//    scanned n-bit shift register (currently 3 bits).  Each bit's Q output
+//    connects to the next bit's system and scan inputs.  Externally,
+//    a scan_in, 3-cycle delayed scan_out, scan_enable, and scan_clock
+//    pins exist to operate the 3-bit chain segments defined herein.
+// =======================================================================
+//
+
+
+// Declare the array delimiters at the beginning of each ATPG library file.
+//   To be Verilog compatible, use square brackets for array subscripts.
+
+array_delimiter = "[]";
+
+
+
+// ******************* GATING MODELS  ***************************
+// ******************* GATING MODELS  ***************************
+
+// CAVEAT : DO NOT EDIT !!
+// Clock/control gater to gate off 1st input when 2nd input is HI (1).
+//    output = 0 when mlc_scan_enable = 1 else output = clock/control input.
+model mlc_gate_to_zero
+  (mlc_gated_in, mlc_scan_enable, mlc_gated_out)
+(
+  input (mlc_gated_in) (no_fault = sa0 sa1;)  // Clock/control input.
+  input (mlc_scan_enable) (no_fault = sa0 sa1;)      // Scan enable (gating) input.
+  output (mlc_gated_out) (no_fault = sa0 sa1; // Gated output (gated to 0).
+    primitive = _inv mlc_scan_enable_not_gate
+      (mlc_scan_enable:nf, mlc_scan_enable_not_net:nf);
+    primitive = _and mlc_ctrl_gate
+      (mlc_gated_in:nf, mlc_scan_enable_not_net:nf, mlc_gated_out:nf);
+  )
+)
+
+// CAVEAT : DO NOT EDIT !!
+// Clock/control gater to gate off 1st input when 2nd input is HI (1).
+//    output = 1 when mlc_scan_enable = 1 else output = clock/control input.
+model mlc_gate_to_one
+  (mlc_gated_in, mlc_scan_enable, mlc_gated_out)
+(
+  input (mlc_gated_in) (no_fault = sa0 sa1;)  // Clock/control input.
+  input (mlc_scan_enable) (no_fault = sa0 sa1;)      // Scan enable (gating) input.
+  output (mlc_gated_out) (no_fault = sa0 sa1; // Gated output (gated to 1).
+    primitive = _or mlc_ctrl_gate
+      (mlc_gated_in:nf, mlc_scan_enable:nf, mlc_gated_out:nf);
+  )
+)
+
+
+
+// ******************* SCAN MODELS  *****************************
+// ******************* SCAN MODELS  *****************************
+
+// ******************* SCAN MODELS  *****************************
+// ******************* SCAN MODELS  *****************************
+
+// CAVEAT : DO NOT EDIT !!
+// Basic posedge mux scan cell with sys/scan data inputs.
+//    No set or reset inputs.  No QB output.
+model mlc_posedge_mux_scan_cell
+  (mlc_clock, mlc_scan_enable, mlc_sys_in, mlc_scan_in, mlc_scan_out)
+(
+  input (mlc_clock) (no_fault = sa0 sa1;)
+  input (mlc_scan_enable) (no_fault = sa0 sa1;)
+  input (mlc_sys_in) (no_fault = sa0 sa1;)
+  input (mlc_scan_in) (no_fault = sa0 sa1;)
+  output (mlc_scan_out) (no_fault = sa0 sa1;
+    primitive = _mux mlc_mux_gate 
+      (mlc_sys_in:nf, mlc_scan_in:nf, mlc_scan_enable:nf, mlc_mux_out_net:nf);
+    primitive = _dff mlc_dff_gate 
+      ( , , mlc_clock:nf, mlc_mux_out_net:nf, mlc_scan_out:nf, );
+  )
+)
+
+
+// CAVEAT : DO NOT EDIT !!
+// 3 bit posedge scanned shift register.
+model mlc_posedge_mux_scan_chain
+  (mlc_clock, mlc_scan_enable, mlc_sys_in, mlc_scan_in, mlc_scan_out)
+(
+  input (mlc_clock) (no_fault = sa0 sa1;)
+  input (mlc_scan_enable) (no_fault = sa0 sa1;)
+  input (mlc_sys_in) (no_fault = sa0 sa1;)
+  input (mlc_scan_in) (no_fault = sa0 sa1;)
+  output (mlc_scan_out) (no_fault = sa0 sa1;
+    instance = mlc_posedge_mux_scan_cell mlc_cell_1 
+      (mlc_clock:nf, mlc_scan_enable:nf, mlc_sys_in:nf, mlc_scan_in:nf, mlc_scan_net_1:nf);
+    instance = mlc_posedge_mux_scan_cell mlc_cell_2 
+      (mlc_clock:nf, mlc_scan_enable:nf, mlc_scan_net_1:nf, mlc_scan_net_1:nf, mlc_scan_net_2:nf);
+    instance = mlc_posedge_mux_scan_cell mlc_cell_3 
+      (mlc_clock:nf, mlc_scan_enable:nf, mlc_scan_net_2:nf, mlc_scan_net_2:nf, mlc_scan_out:nf);
+  )
+)
+
+// CAVEAT : DO NOT EDIT !!
+// 3 bit negedge scanned shift register.
+model mlc_negedge_mux_scan_chain
+  (mlc_clock, mlc_scan_enable, mlc_sys_in, mlc_scan_in, mlc_scan_out)
+(
+  input (mlc_clock) (no_fault = sa0 sa1;)
+  input (mlc_scan_enable) (no_fault = sa0 sa1;)
+  input (mlc_sys_in) (no_fault = sa0 sa1;)
+  input (mlc_scan_in) (no_fault = sa0 sa1;)
+  output (mlc_scan_out) (no_fault = sa0 sa1;
+    // Implement as posedge chain with inverted clock input.
+    primitive = _inv mlc_inv_gate (mlc_clock:nf, mlc_clock_not_net:nf);
+    instance = mlc_posedge_mux_scan_chain mlc_neg_chain_inst 
+      (mlc_clock_not_net:nf, mlc_scan_enable:nf, mlc_sys_in:nf, mlc_scan_in:nf, mlc_scan_out:nf);
+  )
+)
+

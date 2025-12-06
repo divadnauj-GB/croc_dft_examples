@@ -1,0 +1,89 @@
+#!/bin/sh
+unset noclobber
+xitval=0
+
+if [ -f ./questa.setup_script ] ; then
+  . ./questa.setup_script
+fi
+
+echo "Number of expected miscompares = 0"
+set -v
+
+
+vlib dut_work
+vmap dut_work dut_work
+
+
+# Entry 1
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      -f ../../../VerilogOptions \
+      "../../../tsdb_outdir/dft_inserted_designs/memlibc_memory_bist_assembly_rtl.dft_inserted_design/modified_rtl_files/memlibc_memory_bist_assembly.v" \
+      -f questa.arguments_1
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 1"; fi
+
+# Entry 2
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      -f ../../../VerilogOptions \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_mux2.v" \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_clk_mux2.v" \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_clk_gate_and.v" \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_posedge_synchronizer_reset.v" \
+      -f questa.arguments_1
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 2"; fi
+
+# Entry 3
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      -f ../../../VerilogOptions \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_and2.v" \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_or2.v" \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_buf.v" \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_clk_buf.v" \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_inv.v" \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_clk_inv.v" \
+      -f questa.arguments_1
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 3"; fi
+
+# Entry 4
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      -f ../../../VerilogOptions \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_ijtag.instrument/memlibc_memory_bist_assembly_rtl_tessent_sib_1.v" \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_ijtag.instrument/memlibc_memory_bist_assembly_rtl_tessent_sib_2.v" \
+      -f questa.arguments_1
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 4"; fi
+
+# Entry 5
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      -f ../../../VerilogOptions \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/memlibc_memory_bist_assembly_rtl_tessent_mbist_bap.v" \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller.v" \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_interface_m1.v" \
+      -f questa.arguments_1
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 5"; fi
+
+# Entry 6
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      -f ../../../VerilogOptions \
+      "./patterns_directory/MemoryBist_ParallelRetentionTest_P1.v" \
+      -f questa.arguments_1
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 6"; fi
+
+# Entry 7
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      -f ../../../VerilogOptions \
+      "./patterns.configuration"
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 7"; fi
+
+if [ $xitval -ne 0 ]; then
+  echo "Compilation failed"
+  exit $xitval
+fi
+
+vsim -c -lib "dut_work" -L dut_work -do 'run -all; exit' +nowarnTFMPC +NEWPATH=./patterns_directory \
+      MemoryBist_ParallelRetentionTest_P1_configuration
+if [ $? != 0 ] ; then xitval=-1; fi
+
+if [ $xitval -ne 0 ]; then
+  echo "Simulation failed"
+fi
+
+exit $xitval

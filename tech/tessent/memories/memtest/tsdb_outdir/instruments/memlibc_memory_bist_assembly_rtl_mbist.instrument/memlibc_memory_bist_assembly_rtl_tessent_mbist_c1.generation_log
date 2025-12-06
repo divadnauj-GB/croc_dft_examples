@@ -1,0 +1,404 @@
+membistipg c1 -configfile /tmp/.tessent.tmp.bello.darknet.local.jd.guerrero.832247/scratch/membistipg_workdir/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller/c1.membist  -library /tmp/.tessent.tmp.bello.darknet.local.jd.guerrero.832247/scratch/membistipg_workdir/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller/MemLibs/RM_IHPSG13_1P_8192x32_c4.lib -clockPeriod 10 -failureLimit 4096 -compStat sharedwithgo -usemulticyclepaths on -parallelStaticRetentionTest on -controllertype programmable -extension v -structuralExtension vg -bak off -flow tessent_shell -designName memlibc_memory_bist_assembly -pass_id rtl -scratch_dir "/tmp/.tessent.tmp.bello.darknet.local.jd.guerrero.832247/scratch/membistipg_workdir" -outDir "/home/jd.guerrero/Documents/Tessent/tech/tessent/memories/memtest/tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument" -log membistipg.log_c1 -multithreading -xortreecapacity 3 
+
+***************************************************************************************************
+*                                                                                                 *
+* This material contains trade secrets or otherwise confidential                                  *
+* information owned by Siemens Industry Software Inc. or its affiliates                           *
+* (collectively, "SISW"), or its licensors. Access to and use of this                             *
+* information is strictly limited as set forth in the Customer's                                  *
+* applicable agreements with SISW.                                                                *
+*                                                                                                 *
+* Unpublished work. Copyright 2021 Siemens                                                        *
+*                                                                                                 *
+* RESTRICTED RIGHTS USE (SHORT FORM)                                                              *
+*                                                                                                 *
+***************************************************************************************************
+
+
+***************************************************************************************************
+*                                                                                                 *
+*                                        membistipGenerate                                        *
+*                                         Version 2022.3                                          *
+*                               (optimized for 64-bit architecture)                               *
+*                                                                                                 *
+***************************************************************************************************
+
+ Parsing command line options...
+ Reading the configuration file /tmp/.tessent.tmp.bello.darknet.local.jd.guerrero.832247/scratch/membistipg_workdir/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller/c1.membist.
+ Reading the library file /tmp/.tessent.tmp.bello.darknet.local.jd.guerrero.832247/scratch/membistipg_workdir/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller/MemLibs/RM_IHPSG13_1P_8192x32_c4.lib.
+
+
+
+Checked out mttsmemorybistf from mttsmemorybist_c.
+Checked out mttsmemstdprog from mttsmemorybist_c.
+Warning [PPHW01] : You have not specified the property NumberOfDataRegisterBits. The controller is HardProgrammable 
+                   and only specifies algorithms from the SMarch/SMarchCHKB family. Setting the size 
+                   of the expect and write data registers to the minimum value of 2 bits.
+
+User Options:                           
+  Working Directory:                    /home/jd.guerrero/Documents/Tessent/tech/tessent/memories/memtest/
+  Source Directory:                     /eda/Siemens/2022-23/RHELx86/TESSENT_2022.3
+  Configuration File:                   memlibc_memory_bist_assembly.membistpg
+  Memory Library File:                  /tmp/.tessent.tmp.bello.darknet.local.jd.guerrero.832247/scratch/membistipg_workdir/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller/MemLibs/RM_IHPSG13_1P_8192x32_c4.lib
+  Output Directory:                     /home/jd.guerrero/Documents/Tessent/tech/tessent/memories/memtest/tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument
+  Log File:                             /home/jd.guerrero/Documents/Tessent/tech/tessent/memories/memtest/tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/membistipg.log_c1
+  Language:                             VERILOG
+  Extension:                            v
+  Structural Extension:                 vg
+  Collar Generation:                    ON
+  Controller Generation:                ON
+  CompStat:                             SHAREDWITHGO
+  Scan Model Generation:                ON
+  Scan Chains:                          PREP
+  Clock Period:                         10 ns
+  Xor Tree Capacity:                    3
+  Use MultiCycle Paths:                 ON
+  Include Test Pattern Library:         ON
+  Algorithm Summary:                    OFF
+
+Including Algorithms from the Test Pattern Library...
+  Including the Library Test Pattern SMARCHCHKBCIL.
+
+Controller Options:                     
+  Controller Type:                      Programmable
+  Soft-Algorithm Instructions:          0
+  SoftAlgorithmAddressMinMax:           No
+  EnableAEqualsBCommand:                No
+  X0 Address Segment Bits:              0
+  Y0 Address Segment Bits:              0
+  InvertDataWithAddressBitRange:        0
+  Data Register Bits:                   2
+  Delay Counter Bits:                   0
+  CounterA Bits:                        0
+  Stop-On-Nth-Error Counter Bits:       12
+
+Validating all user specified algorithms and any included algorithms from the library of test patterns...
+
+  Calculating the run length for algorithm SMARCHCHKBCIL...
+    Run Length Summary for Algorithm SMARCHCHKBCIL and OperationSet SYNC used in Step 0 with BitSlice 1
+      Instruction(INST0_IDLE_PH_1)
+        Total Instruction Executions:        1.0
+        Total Clocks:                        4.0
+      Instruction(INS1_PH_2)
+        Total Instruction Executions:        1.0
+        Total Clocks:                        2.0
+      Instruction(INS2_PH_2)
+        Total Instruction Executions:        1.0
+        Total Clocks:                        2.0
+      Instruction(INS3_PH_3)
+        Total Instruction Executions:        1.0
+        Total Clocks:                        2.0
+      Instruction(INS4_PH_3)
+        Total Instruction Executions:        1.0
+        Total Clocks:                        2.0
+      Instruction(INS5_IDLE_PH_4)
+        Total Instruction Executions:        1.0
+        Total Clocks:                        4.0
+      Instruction(INS6_PH_5)
+        Total Instruction Executions:        8192.0
+        Total Clocks:                        16384.0
+      Instruction(INS7_PH_5.5)
+        Total Instruction Executions:        8192.0
+        Total Clocks:                        16384.0
+      Instruction(INS8_PH_6)
+        Total Instruction Executions:        8192.0
+        Total Clocks:                        16384.0
+      Instruction(INS9_PH_6.5)
+        Total Instruction Executions:        8192.0
+        Total Clocks:                        16384.0
+      Instruction(INS10_PH_7)
+        Total Instruction Executions:        8192.0
+        Total Clocks:                        16384.0
+      Instruction(INST11_IDLE_PH_8)
+        Total Instruction Executions:        1.0
+        Total Clocks:                        4.0
+      Instruction(INS12_PH_9)
+        Total Instruction Executions:        1.0
+        Total Clocks:                        2.0
+      Instruction(INS13_PH_9)
+        Total Instruction Executions:        1.0
+        Total Clocks:                        2.0
+      Instruction(INS14_PH_10)
+        Total Instruction Executions:        8191.0
+        Total Clocks:                        16382.0
+      Instruction(INS15_PH_11)
+        Total Instruction Executions:        16384.0
+        Total Clocks:                        32768.0
+      Instruction(INS16_PH_11)
+        Total Instruction Executions:        16384.0
+        Total Clocks:                        32768.0
+      Instruction(INS17_PH_13)
+        Total Instruction Executions:        16384.0
+        Total Clocks:                        32768.0
+      Instruction(INS18_PH_13)
+        Total Instruction Executions:        16384.0
+        Total Clocks:                        32768.0
+      Instruction(INS19_PH_15.1_STARTROW)
+        Total Instruction Executions:        1.0
+        Total Clocks:                        2.0
+      Instruction(INS20_PH_15.2_STARTROW)
+        Total Instruction Executions:        16.0
+        Total Clocks:                        32.0
+      Instruction(INS21_PH_15.3_STARTROW)
+        Total Instruction Executions:        16.0
+        Total Clocks:                        32.0
+      Instruction(INS22_PH_15.1)
+        Total Instruction Executions:        8176.0
+        Total Clocks:                        16352.0
+      Instruction(INS23_PH_15.2)
+        Total Instruction Executions:        8176.0
+        Total Clocks:                        16352.0
+      Instruction(INS24_PH_15.3)
+        Total Instruction Executions:        8176.0
+        Total Clocks:                        16352.0
+      Instruction(INS25_PH_15.1_NEXTROW)
+        Total Instruction Executions:        16.0
+        Total Clocks:                        32.0
+      Instruction(INS26_PH_15.2_LASTROW_FIRSTLOC)
+        Total Instruction Executions:        1.0
+        Total Clocks:                        2.0
+      Instruction(INS27_PH_15.3_LASTROW_FIRSTLOC)
+        Total Instruction Executions:        1.0
+        Total Clocks:                        2.0
+      Instruction(INS28_PH_15.1_LASTROW)
+        Total Instruction Executions:        511.0
+        Total Clocks:                        1022.0
+      Instruction(INS29_PH_15.2_LASTROW)
+        Total Instruction Executions:        511.0
+        Total Clocks:                        1022.0
+      Instruction(INS30_PH_15.3_LASTROW)
+        Total Instruction Executions:        511.0
+        Total Clocks:                        1022.0
+      Instruction(INS31_PH_16)
+        Total Instruction Executions:        1.0
+        Total Clocks:                        2.0
+      Instruction(INS32_PH_16)
+        Total Instruction Executions:        1.0
+        Total Clocks:                        2.0
+      Instruction(INS33_PH_17)
+        Total Instruction Executions:        7167.0
+        Total Clocks:                        14334.0
+      Instruction(INS34_PH_18.1_STARTROW)
+        Total Instruction Executions:        1.0
+        Total Clocks:                        2.0
+      Instruction(INS35_PH_18.2_STARTROW)
+        Total Instruction Executions:        16.0
+        Total Clocks:                        32.0
+      Instruction(INS36_PH_18.3_STARTROW)
+        Total Instruction Executions:        16.0
+        Total Clocks:                        32.0
+      Instruction(INS37_PH_18.1)
+        Total Instruction Executions:        8176.0
+        Total Clocks:                        16352.0
+      Instruction(INS38_PH_18.2)
+        Total Instruction Executions:        8176.0
+        Total Clocks:                        16352.0
+      Instruction(INS39_PH_18.3)
+        Total Instruction Executions:        8176.0
+        Total Clocks:                        16352.0
+      Instruction(INS40_PH_18.1_NEXTROW)
+        Total Instruction Executions:        16.0
+        Total Clocks:                        32.0
+      Instruction(INS41_PH_18.2_LASTROW_FIRSTLOC)
+        Total Instruction Executions:        1.0
+        Total Clocks:                        2.0
+      Instruction(INS42_PH_18.3_LASTROW_FIRSTLOC)
+        Total Instruction Executions:        1.0
+        Total Clocks:                        2.0
+      Instruction(INS43_PH_18.1_LASTROW)
+        Total Instruction Executions:        511.0
+        Total Clocks:                        1022.0
+      Instruction(INS44_PH_18.2_LASTROW)
+        Total Instruction Executions:        511.0
+        Total Clocks:                        1022.0
+      Instruction(INS45_PH_18.3_LASTROW)
+        Total Instruction Executions:        511.0
+        Total Clocks:                        1022.0
+      Instruction(INS46_PH_19)
+        Total Instruction Executions:        1.0
+        Total Clocks:                        2.0
+      Instruction(INS47_PH_19)
+        Total Instruction Executions:        1.0
+        Total Clocks:                        2.0
+      Instruction(INS48_PH_20)
+        Total Instruction Executions:        7167.0
+        Total Clocks:                        14334.0
+      Total Clocks:                          362522.0
+      Total Time(@10ns period):              3.62522 ms
+      Max Number of Strobes:                 158729.0
+
+Memory Configurations:                  
+
+Memory:                                 m1
+
+  Status Information
+  ------------------
+
+  Address Counter
+  ---------------
+  RowAddress[8:0] Countrange:           Maximum[9'b111111111]
+                                        Minimum[9'b000000000]
+  ColumnAddress[3:0] Countrange:        Maximum[4'b1111]
+                                        Minimum[4'b0000]
+
+  Function Data Bus  Data Register Bit  Port
+  ----------------   -----------------  ----
+  d[31] (INPUT)      WRITE[1]           A_DIN[31]
+  d[30] (INPUT)      WRITE[0]           A_DIN[30]
+  d[29] (INPUT)      WRITE[1]           A_DIN[29]
+  d[28] (INPUT)      WRITE[0]           A_DIN[28]
+  d[27] (INPUT)      WRITE[1]           A_DIN[27]
+  d[26] (INPUT)      WRITE[0]           A_DIN[26]
+  d[25] (INPUT)      WRITE[1]           A_DIN[25]
+  d[24] (INPUT)      WRITE[0]           A_DIN[24]
+  d[23] (INPUT)      WRITE[1]           A_DIN[23]
+  d[22] (INPUT)      WRITE[0]           A_DIN[22]
+  d[21] (INPUT)      WRITE[1]           A_DIN[21]
+  d[20] (INPUT)      WRITE[0]           A_DIN[20]
+  d[19] (INPUT)      WRITE[1]           A_DIN[19]
+  d[18] (INPUT)      WRITE[0]           A_DIN[18]
+  d[17] (INPUT)      WRITE[1]           A_DIN[17]
+  d[16] (INPUT)      WRITE[0]           A_DIN[16]
+  d[15] (INPUT)      WRITE[1]           A_DIN[15]
+  d[14] (INPUT)      WRITE[0]           A_DIN[14]
+  d[13] (INPUT)      WRITE[1]           A_DIN[13]
+  d[12] (INPUT)      WRITE[0]           A_DIN[12]
+  d[11] (INPUT)      WRITE[1]           A_DIN[11]
+  d[10] (INPUT)      WRITE[0]           A_DIN[10]
+  d[9] (INPUT)       WRITE[1]           A_DIN[9]
+  d[8] (INPUT)       WRITE[0]           A_DIN[8]
+  d[7] (INPUT)       WRITE[1]           A_DIN[7]
+  d[6] (INPUT)       WRITE[0]           A_DIN[6]
+  d[5] (INPUT)       WRITE[1]           A_DIN[5]
+  d[4] (INPUT)       WRITE[0]           A_DIN[4]
+  d[3] (INPUT)       WRITE[1]           A_DIN[3]
+  d[2] (INPUT)       WRITE[0]           A_DIN[2]
+  d[1] (INPUT)       WRITE[1]           A_DIN[1]
+  d[0] (INPUT)       WRITE[0]           A_DIN[0]
+  d[31] (OUTPUT)     EXPECT[1]          A_DOUT[31]
+  d[30] (OUTPUT)     EXPECT[0]          A_DOUT[30]
+  d[29] (OUTPUT)     EXPECT[1]          A_DOUT[29]
+  d[28] (OUTPUT)     EXPECT[0]          A_DOUT[28]
+  d[27] (OUTPUT)     EXPECT[1]          A_DOUT[27]
+  d[26] (OUTPUT)     EXPECT[0]          A_DOUT[26]
+  d[25] (OUTPUT)     EXPECT[1]          A_DOUT[25]
+  d[24] (OUTPUT)     EXPECT[0]          A_DOUT[24]
+  d[23] (OUTPUT)     EXPECT[1]          A_DOUT[23]
+  d[22] (OUTPUT)     EXPECT[0]          A_DOUT[22]
+  d[21] (OUTPUT)     EXPECT[1]          A_DOUT[21]
+  d[20] (OUTPUT)     EXPECT[0]          A_DOUT[20]
+  d[19] (OUTPUT)     EXPECT[1]          A_DOUT[19]
+  d[18] (OUTPUT)     EXPECT[0]          A_DOUT[18]
+  d[17] (OUTPUT)     EXPECT[1]          A_DOUT[17]
+  d[16] (OUTPUT)     EXPECT[0]          A_DOUT[16]
+  d[15] (OUTPUT)     EXPECT[1]          A_DOUT[15]
+  d[14] (OUTPUT)     EXPECT[0]          A_DOUT[14]
+  d[13] (OUTPUT)     EXPECT[1]          A_DOUT[13]
+  d[12] (OUTPUT)     EXPECT[0]          A_DOUT[12]
+  d[11] (OUTPUT)     EXPECT[1]          A_DOUT[11]
+  d[10] (OUTPUT)     EXPECT[0]          A_DOUT[10]
+  d[9] (OUTPUT)      EXPECT[1]          A_DOUT[9]
+  d[8] (OUTPUT)      EXPECT[0]          A_DOUT[8]
+  d[7] (OUTPUT)      EXPECT[1]          A_DOUT[7]
+  d[6] (OUTPUT)      EXPECT[0]          A_DOUT[6]
+  d[5] (OUTPUT)      EXPECT[1]          A_DOUT[5]
+  d[4] (OUTPUT)      EXPECT[0]          A_DOUT[4]
+  d[3] (OUTPUT)      EXPECT[1]          A_DOUT[3]
+  d[2] (OUTPUT)      EXPECT[0]          A_DOUT[2]
+  d[1] (OUTPUT)      EXPECT[1]          A_DOUT[1]
+  d[0] (OUTPUT)      EXPECT[0]          A_DOUT[0]
+
+  Function Address Bus             Logical Bit         Port
+  --------------------             -----------         ----
+  Address[12]                      RowAddress[8]       A_ADDR[12]
+  Address[11]                      RowAddress[7]       A_ADDR[11]
+  Address[10]                      RowAddress[6]       A_ADDR[10]
+  Address[9]                       RowAddress[5]       A_ADDR[9]
+  Address[8]                       RowAddress[4]       A_ADDR[8]
+  Address[7]                       RowAddress[3]       A_ADDR[7]
+  Address[6]                       RowAddress[2]       A_ADDR[6]
+  Address[5]                       RowAddress[1]       A_ADDR[5]
+  Address[4]                       RowAddress[0]       A_ADDR[4]
+  Address[3]                       ColumnAddress[3]    A_ADDR[3]
+  Address[2]                       ColumnAddress[2]    A_ADDR[2]
+  Address[1]                       ColumnAddress[1]    A_ADDR[1]
+  Address[0]                       ColumnAddress[0]    A_ADDR[0]
+
+  Test Port                        Logical Read/Write Ports
+  ---------                        ------------------------
+  0                                (All ports)
+
+
+Summary of Operations                   
+---------------------
+
+  OperationSetFamily:                   DEFAULT
+
+    OperationSet:                       SYNC
+
+      Operation:                        NOOPERATION
+        Tick:                           1234
+        SELECT:                         1111
+        WRITEENABLE:                    0000
+        READENABLE:                     0000
+        STROBEDATAOUT:                  0000
+
+      Operation:                        WRITE
+        Tick:                           12
+        SELECT:                         11
+        WRITEENABLE:                    11
+        READENABLE:                     00
+        STROBEDATAOUT:                  00
+
+      Operation:                        READ
+        Tick:                           12
+        SELECT:                         11
+        WRITEENABLE:                    00
+        READENABLE:                     11
+        STROBEDATAOUT:                  01
+
+      Operation:                        READMODIFYWRITE
+        Tick:                           12
+        SELECT:                         11
+        WRITEENABLE:                    01
+        READENABLE:                     10
+        STROBEDATAOUT:                  01
+
+      Operation:                        WRITEREAD
+        Tick:                           12
+        SELECT:                         11
+        WRITEENABLE:                    10
+        READENABLE:                     01
+        STROBEDATAOUT:                  00
+
+
+ Generating design files...
+   Registering memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller.v for generation.
+   Registering memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_interface_m1.v for generation.
+   Registering memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_interface_m1.icl for generation.
+   Registering RM_IHPSG13_1P_8192x32_c4.scan for generation.
+   Registering RM_IHPSG13_1P_8192x32_c4.syn for generation.
+   Registering memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller.gtool_info for generation.
+   Registering memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller.icl for generation.
+   Registering memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller.pdl for generation.
+   Registering memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller.tcd for generation.
+   Registering memlibc_memory_bist_assembly_rtl_tessent_mbist_c1.designa for generation.
+   Generating controller module:                     /home/jd.guerrero/Documents/Tessent/tech/tessent/memories/memtest/tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller.v
+   Generating interface module:                      /home/jd.guerrero/Documents/Tessent/tech/tessent/memories/memtest/tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_interface_m1.v
+   Generating interface ICL:                         /home/jd.guerrero/Documents/Tessent/tech/tessent/memories/memtest/tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_interface_m1.icl
+   Generating memory scan model:                     /home/jd.guerrero/Documents/Tessent/tech/tessent/memories/memtest/tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/RM_IHPSG13_1P_8192x32_c4.scan
+   Generating memory synthesis model:                /home/jd.guerrero/Documents/Tessent/tech/tessent/memories/memtest/tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/RM_IHPSG13_1P_8192x32_c4.syn
+   Generating gtool_info file:                       /home/jd.guerrero/Documents/Tessent/tech/tessent/memories/memtest/tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller.gtool_info
+   Generating ICL file:                              /home/jd.guerrero/Documents/Tessent/tech/tessent/memories/memtest/tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller.icl
+   Generating PDL file:                              /home/jd.guerrero/Documents/Tessent/tech/tessent/memories/memtest/tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller.pdl
+   Generating Tessent Instrument Description file:   /home/jd.guerrero/Documents/Tessent/tech/tessent/memories/memtest/tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller.tcd
+   Generating designa file:                          /home/jd.guerrero/Documents/Tessent/tech/tessent/memories/memtest/tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1.designa
+
+ Error Summary:
+
+	Total Warnings	: 1
+
+ Log file is /home/jd.guerrero/Documents/Tessent/tech/tessent/memories/memtest/tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/membistipg.log_c1.
+
+ Done.
+

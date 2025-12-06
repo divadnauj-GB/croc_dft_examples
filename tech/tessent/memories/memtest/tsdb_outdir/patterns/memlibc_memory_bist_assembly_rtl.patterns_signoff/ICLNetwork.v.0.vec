@@ -1,0 +1,540 @@
+//
+// Verilog format test patterns produced by Tessent Shell 2022.3
+// Filename       : ./tsdb_outdir/patterns/memlibc_memory_bist_assembly_rtl.patterns_signoff/ICLNetwork.v.0.vec
+// Idstamp        : 2022.3:ec94:6099:0:0000
+// Date           : Sat Nov 15 20:33:46 2025
+//
+// Format of broadside vector:
+//   PI_bits PO_bits MASK_bits Increment_bit Timeplate_bits(1) PatType_bits(3)
+//   VecType_bits(4)
+//   Increment_bit  - indicates when to increment pattern count
+//   Timeplate_bits - encodes timeplate number to use
+//   PatType_bits   - encodes pattern type
+//   VecType_bits   - encodes vector type
+
+// Scan test block
+
+// Pattern 0 Cycle 0 Timestamp 0 ns 
+000000000000000000000000000001000110000
+ // Start Pattern (0) MSG
+// Pattern_set memlibc_memory_bist_assembly 
+000000000000000000000000000101000110000
+// + System reset 
+// Simulation Cycle 0  Timestamp 0 ns
+1000000X0Z10101011
+1100000X0Z10101011
+//  Activate selection for scan mux memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.scan_in_mux, selection 1: sib, ltest_en = 2'bxx -> scan_in_mux = ijtag_si 
+000000000000000000000000000101010110000
+// + Scan path activation 
+//  
+// + Write integrity pattern to scan registers 
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 0:0    R 0:0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 1 
+// Unloading: 0 
+// + Associated TAP transition: IDLE -> DRSELECT 
+1100010X0Z10101011
+//  Scan in verification pattern to the following scan register: 
+000000000000000000000000000101100110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, load value = 1 
+000000000000000000000000000101110110000
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0Z10101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0Z10101011
+// + Shift Cycle 
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+110001101Z10101011
+000000000000000000000000000110000110000
+// + Associated TAP transition: DREXIT1 -> DRPAUSE 
+1100010X0Z10101011
+//  Scan out verification pattern from the following scan register: 
+000000000000000000000000000110010110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, expected value = 1 
+000000000000000000000000000110100110000
+// + Read integrity pattern from scan registers 
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 0:0    R 0:0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 1 
+// Unloading: 1 
+// + Associated TAP transition: DRPAUSE -> DREXIT2 
+1100010X0Z10101011
+// + Associated TAP transition: DREXIT2 -> DRSHIFT 
+1101010X0Z10101011
+// + Shift Cycle 
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+110001111Z10101011
+000000000000000000000000000110000110000
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+// Simulation Cycle 10  Timestamp 1000 ns
+1100110X0Z10101011
+//  Activate selection of the following scan muxes: 
+000000000000000000000000000110110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.scan_in_mux, selection 0: sib, ltest_en = 2'b10 -> scan_in_mux = ijtag_from_so 
+000000000000000000000000000111000110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si 
+000000000000000000000000000111010110000
+// + Scan path activation 
+//  
+// + Write integrity pattern to scan registers 
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 1:1    R 1:1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W 0:0    R 0:0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 0_1 
+// Unloading: 0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+1100010X0Z10101011
+//  Scan in verification pattern to the following scan registers: 
+000000000000000000000000000111100110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, load value = 0 
+000000000000000000000000000111110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, load value = 1 
+000000000000000000000000000101110110000
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0Z10101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0Z10101011
+// + Shift Cycles 
+110101101Z10101011
+000000000000000000000000000110000110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+110001001Z10101011
+000000000000000000000000001000000110000
+// + Associated TAP transition: DREXIT1 -> DRPAUSE 
+1100010X0Z10101011
+//  Scan out verification pattern from the following scan registers: 
+000000000000000000000000001000010110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, expected value = 0 
+000000000000000000000000001000100110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, expected value = 1 
+000000000000000000000000000110100110000
+// + Read integrity pattern from scan registers 
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 1:1    R 1:1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W 0:0    R 0:0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 1_1 
+// Unloading: 0_1 
+// + Associated TAP transition: DRPAUSE -> DREXIT2 
+1100010X0Z10101011
+// + Associated TAP transition: DREXIT2 -> DRSHIFT 
+1101010X0Z10101011
+// + Shift Cycles 
+110101111Z10101011
+000000000000000000000000000110000110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+// Simulation Cycle 20  Timestamp 2000 ns
+110001101Z10101011
+000000000000000000000000001000000110000
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0Z10101011
+//  Activate selection of the following scan muxes: 
+000000000000000000000000000110110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.scan_in_mux, selection 0: sib, ltest_en = 2'b10 -> scan_in_mux = ijtag_from_so 
+000000000000000000000000000111000110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so 
+000000000000000000000000001000110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_sib_mux_inst, selection 0: ctl_group_sib = 1'b0 -> ctl_sib_mux_inst = tdr_bypass_sib_inst 
+000000000000000000000000001001000110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_mux_inst, selection 0: tdr_bypass_sib_inst = 1'b0 -> tdr_bypass_sib_mux_inst = si 
+000000000000000000000000001001010110000
+// + Scan path activation 
+//  
+// + Write integrity pattern to scan registers 
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 3:3    R 3:3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W 2:2    R 2:2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W 1:1    R 1:1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W 0:0    R 0:0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 1_1_0_1 
+// Unloading: 0_0_0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+1100010X0Z10101011
+//  Scan in verification pattern to the following scan registers: 
+000000000000000000000000000111100110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst, load value = 1 
+000000000000000000000000001001100110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib, load value = 1 
+000000000000000000000000001001110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, load value = 0 
+000000000000000000000000000111110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, load value = 1 
+000000000000000000000000000101110110000
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0Z10101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0Z10101011
+// + Shift Cycles 
+110101101Z10101011
+000000000000000000000000000110000110000
+110101001Z10101011
+000000000000000000000000001000000110000
+110101101Z10101011
+000000000000000000000000001010000110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+110001101Z10101011
+000000000000000000000000001010010110000
+// + Associated TAP transition: DREXIT1 -> DRPAUSE 
+1100010X0Z10101011
+//  Scan out verification pattern from the following scan registers: 
+000000000000000000000000001000010110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst, expected value = 1 
+000000000000000000000000001010100110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib, expected value = 1 
+000000000000000000000000001010110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, expected value = 0 
+000000000000000000000000001000100110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, expected value = 1 
+000000000000000000000000000110100110000
+// + Read integrity pattern from scan registers 
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 3:3    R 3:3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W 2:2    R 2:2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W 1:1    R 1:1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W 0:0    R 0:0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 0_1_1_1 
+// Unloading: 1_1_0_1 
+// + Associated TAP transition: DRPAUSE -> DREXIT2 
+// Simulation Cycle 30  Timestamp 3000 ns
+1100010X0Z10101011
+// + Associated TAP transition: DREXIT2 -> DRSHIFT 
+1101010X0Z10101011
+// + Shift Cycles 
+110101111Z10101011
+000000000000000000000000000110000110000
+110101101Z10101011
+000000000000000000000000001000000110000
+110101111Z10101011
+000000000000000000000000001010000110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+110001011Z10101011
+000000000000000000000000001010010110000
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0Z10101011
+//  Activate selection of the following scan muxes: 
+000000000000000000000000000110110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.scan_in_mux, selection 0: sib, ltest_en = 2'b10 -> scan_in_mux = ijtag_from_so 
+000000000000000000000000000111000110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so 
+000000000000000000000000001000110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_sib_mux_inst, selection 1: ctl_group_sib = 1'b1 -> ctl_sib_mux_inst = mbist_go_0 
+000000000000000000000000001011000110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.fromBistMux_0, selection 1: bistEn_int[0], BIST_SETUP_tdr[1], ChainBypassMode = 3'bxxx -> fromBistMux_0 = tdr_bypass_sib_inst 
+000000000000000000000000001011010110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_mux_inst, selection 0: tdr_bypass_sib_inst = 1'b0 -> tdr_bypass_sib_mux_inst = si 
+000000000000000000000000001001010110000
+// + Scan path activation 
+//  
+// + Write integrity pattern to scan registers 
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 5:5    R 5:5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W 4:4    R 4:4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 
+//        W 3:3    R 3:3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 
+//        W 2:2    R 2:2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W 1:1    R 1:1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W 0:0    R 0:0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 0_0_1_1_0_1 
+// Unloading: 0_X_X_0_0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+1100010X0Z10101011
+//  Scan in verification pattern to the following scan registers: 
+000000000000000000000000000111100110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst, load value = 0 
+000000000000000000000000001011100110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0, load value = 0 
+000000000000000000000000001011110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0, load value = 1 
+000000000000000000000000001100000110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib, load value = 1 
+000000000000000000000000001001110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, load value = 0 
+000000000000000000000000000111110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, load value = 1 
+000000000000000000000000000101110110000
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0Z10101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0Z10101011
+// + Shift Cycles 
+// Simulation Cycle 40  Timestamp 4000 ns
+110101101Z10101011
+000000000000000000000000000110000110000
+110101001Z10101011
+000000000000000000000000001000000110000
+110101101Z10101011
+000000000000000000000000001010000110000
+1101011X0Z10101011
+1101010X0Z10101011
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+110001001Z10101011
+000000000000000000000000001010010110000
+// + Associated TAP transition: DREXIT1 -> DRPAUSE 
+1100010X0Z10101011
+//  Scan out verification pattern from the following scan registers: 
+000000000000000000000000001000010110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst, expected value = 0 
+000000000000000000000000001100010110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0, expected value = 0 
+000000000000000000000000001100100110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0, expected value = 1 
+000000000000000000000000001100110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib, expected value = 1 
+000000000000000000000000001010110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, expected value = 0 
+000000000000000000000000001000100110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, expected value = 1 
+000000000000000000000000000110100110000
+// + Read integrity pattern from scan registers 
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 5:5    R 5:5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W 4:4    R 4:4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 
+//        W 3:3    R 3:3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 
+//        W 2:2    R 2:2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W 1:1    R 1:1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W 0:0    R 0:0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 1_0_0_0_1_1 
+// Unloading: 0_0_1_1_0_1 
+// + Associated TAP transition: DRPAUSE -> DREXIT2 
+1100010X0Z10101011
+// + Associated TAP transition: DREXIT2 -> DRSHIFT 
+1101010X0Z10101011
+// + Shift Cycles 
+110101111Z10101011
+000000000000000000000000000110000110000
+// Simulation Cycle 50  Timestamp 5000 ns
+110101101Z10101011
+000000000000000000000000001000000110000
+110101011Z10101011
+000000000000000000000000001010000110000
+110101011Z10101011
+000000000000000000000000001101000110000
+110101001Z10101011
+000000000000000000000000001101010110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+110001101Z10101011
+000000000000000000000000001010010110000
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0Z10101011
+//  Activate selection of the following scan muxes: 
+000000000000000000000000000110110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.scan_in_mux, selection 0: sib, ltest_en = 2'b10 -> scan_in_mux = ijtag_from_so 
+000000000000000000000000000111000110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so 
+000000000000000000000000001000110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_sib_mux_inst, selection 0: ctl_group_sib = 1'b0 -> ctl_sib_mux_inst = tdr_bypass_sib_inst 
+000000000000000000000000001001000110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_mux_inst, selection 1: tdr_bypass_sib_inst = 1'b1 -> tdr_bypass_sib_mux_inst = ENABLE_MEM_RESET_tdr 
+000000000000000000000000001101100110000
+// + Scan path activation 
+//  
+// + Write integrity pattern to scan registers 
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 18:16    R 18:16   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 
+//        W 15:15    R 15:15   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 
+//        W 14:14    R 14:14   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 
+//        W 13:13    R 13:13   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 
+//        W 12:12    R 12:12   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 
+//        W 11:11    R 11:11   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 
+//        W 10:10    R 10:10   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 
+//        W  9: 9    R  9: 9   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 
+//        W  8: 8    R  8: 8   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 
+//        W  7: 7    R  7: 7   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 
+//        W  6: 6    R  6: 6   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 
+//        W  5: 5    R  5: 5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 
+//        W  4: 4    R  4: 4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 
+//        W  3: 3    R  3: 3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W  2: 2    R  2: 2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W  1: 1    R  1: 1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W  0: 0    R  0: 0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 111_1_1_0_0_0_0_1_1_1_1_0_0_1_1_0_1 
+// Unloading: XXX_X_X_X_X_X_X_X_X_X_X_X_X_0_0_0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+1100010X0Z10101011
+//  Scan in verification pattern to the following scan registers: 
+000000000000000000000000000111100110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0], load value = 111 
+000000000000000000000000001101110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr, load value = 1 
+000000000000000000000000001110000110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr, load value = 1 
+000000000000000000000000001110010110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr, load value = 0 
+000000000000000000000000001110100110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr, load value = 0 
+000000000000000000000000001110110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr, load value = 0 
+000000000000000000000000001111000110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr, load value = 0 
+000000000000000000000000001111010110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr, load value = 1 
+000000000000000000000000001111100110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr, load value = 1 
+000000000000000000000000001111110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr, load value = 1 
+000000000000000000000000010000000110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr, load value = 1 
+000000000000000000000000010000010110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr, load value = 0 
+000000000000000000000000010000100110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr, load value = 0 
+000000000000000000000000010000110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst, load value = 1 
+000000000000000000000000001001100110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib, load value = 1 
+000000000000000000000000001001110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, load value = 0 
+000000000000000000000000000111110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, load value = 1 
+000000000000000000000000000101110110000
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0Z10101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0Z10101011
+// + Shift Cycles 
+110101101Z10101011
+000000000000000000000000000110000110000
+// Simulation Cycle 60  Timestamp 6000 ns
+110101001Z10101011
+000000000000000000000000001000000110000
+110101101Z10101011
+000000000000000000000000001010000110000
+110101101Z10101011
+000000000000000000000000001010010110000
+1101010X0Z10101011
+1101010X0Z10101011
+1101011X0Z10101011
+1101011X0Z10101011
+1101011X0Z10101011
+1101011X0Z10101011
+1101010X0Z10101011
+// Simulation Cycle 70  Timestamp 7000 ns
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101011X0Z10101011
+1101011X0Z10101011
+1101011X0Z10101011
+1101011X0Z10101011
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+1100011X0Z10101011
+// + Associated TAP transition: DREXIT1 -> DRPAUSE 
+1100010X0Z10101011
+//  Scan out verification pattern from the following scan registers: 
+000000000000000000000000001000010110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0], expected value = 111 
+000000000000000000000000010001000110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr, expected value = 1 
+000000000000000000000000010001010110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr, expected value = 1 
+000000000000000000000000010001100110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr, expected value = 0 
+000000000000000000000000010001110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr, expected value = 0 
+000000000000000000000000010010000110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr, expected value = 0 
+000000000000000000000000010010010110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr, expected value = 0 
+000000000000000000000000010010100110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr, expected value = 1 
+000000000000000000000000010010110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr, expected value = 1 
+000000000000000000000000010011000110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr, expected value = 1 
+000000000000000000000000010011010110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr, expected value = 1 
+000000000000000000000000010011100110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr, expected value = 0 
+000000000000000000000000010011110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr, expected value = 0 
+000000000000000000000000010100000110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst, expected value = 1 
+000000000000000000000000001010100110000
+//   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib, expected value = 1 
+000000000000000000000000001010110110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, expected value = 0 
+000000000000000000000000001000100110000
+//   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, expected value = 1 
+000000000000000000000000000110100110000
+// + Read integrity pattern from scan registers 
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 18:16    R 18:16   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 
+//        W 15:15    R 15:15   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 
+//        W 14:14    R 14:14   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 
+//        W 13:13    R 13:13   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 
+//        W 12:12    R 12:12   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 
+//        W 11:11    R 11:11   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 
+//        W 10:10    R 10:10   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 
+//        W  9: 9    R  9: 9   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 
+//        W  8: 8    R  8: 8   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 
+//        W  7: 7    R  7: 7   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 
+//        W  6: 6    R  6: 6   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 
+//        W  5: 5    R  5: 5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 
+//        W  4: 4    R  4: 4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 
+//        W  3: 3    R  3: 3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W  2: 2    R  2: 2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W  1: 1    R  1: 1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W  0: 0    R  0: 0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 000_0_1_0_0_0_0_0_0_0_0_0_0_0_0_0_0 
+// Unloading: 111_1_1_0_0_0_0_1_1_1_1_0_0_1_1_0_1 
+// + Associated TAP transition: DRPAUSE -> DREXIT2 
+1100010X0Z10101011
+// + Associated TAP transition: DREXIT2 -> DRSHIFT 
+// Simulation Cycle 80  Timestamp 8000 ns
+1101010X0Z10101011
+// + Shift Cycles 
+110101011Z10101011
+000000000000000000000000000110000110000
+110101001Z10101011
+000000000000000000000000001000000110000
+110101011Z10101011
+000000000000000000000000001010000110000
+110101011Z10101011
+000000000000000000000000001010010110000
+110101001Z10101011
+000000000000000000000000010100010110000
+110101001Z10101011
+000000000000000000000000010100100110000
+110101011Z10101011
+000000000000000000000000010100110110000
+110101011Z10101011
+000000000000000000000000010101000110000
+110101011Z10101011
+000000000000000000000000010101010110000
+// Simulation Cycle 90  Timestamp 9000 ns
+110101011Z10101011
+000000000000000000000000010101100110000
+110101001Z10101011
+000000000000000000000000010101110110000
+110101001Z10101011
+000000000000000000000000010110000110000
+110101001Z10101011
+000000000000000000000000010110010110000
+110101001Z10101011
+000000000000000000000000010110100110000
+110101111Z10101011
+000000000000000000000000010110110110000
+110101011Z10101011
+000000000000000000000000010111000110000
+110101011Z10101011
+000000000000000000000000010111010110000
+110101011Z10101011
+000000000000000000000000010111100110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+110001011Z10101011
+000000000000000000000000010111110110000
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+// Simulation Cycle 100  Timestamp 10000 ns
+1100110X0Z10101011
+// + Associated TAP transition: DRUPDATE -> IDLE 
+1100010X0Z10101011
+// end of Vec file MSG
+000000000000000000000000000000110110000

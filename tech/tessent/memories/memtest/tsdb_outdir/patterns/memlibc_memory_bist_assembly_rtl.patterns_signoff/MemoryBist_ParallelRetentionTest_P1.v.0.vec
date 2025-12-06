@@ -1,0 +1,2560 @@
+//
+// Verilog format test patterns produced by Tessent Shell 2022.3
+// Filename       : ./tsdb_outdir/patterns/memlibc_memory_bist_assembly_rtl.patterns_signoff/MemoryBist_ParallelRetentionTest_P1.v.0.vec
+// Idstamp        : 2022.3:ec94:6099:0:0000
+// Date           : Sat Nov 15 20:33:47 2025
+//
+// Format of broadside vector:
+//   PI_bits PO_bits MASK_bits Increment_bit Timeplate_bits(1) PatType_bits(3)
+//   VecType_bits(4)
+//   Increment_bit  - indicates when to increment pattern count
+//   Timeplate_bits - encodes timeplate number to use
+//   PatType_bits   - encodes pattern type
+//   VecType_bits   - encodes vector type
+
+// Scan test block
+
+// Pattern 0 Cycle 0 Timestamp 0 ns 
+000000000000000000000000000001000110000
+ // Start Pattern (0) MSG
+// Pattern_set ParallelRetentionTest__1_StartToPause 
+000000000000000000000000000101000110000
+// + System reset 
+// Simulation Cycle 0  Timestamp 0 ns
+1000000X0Z10101011
+1100000X0Z10101011
+000000000000000000000000000101010110000
+//  Setting up MemoryBist controller mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst 
+000000000000000000000000000101100110000
+//  Releasing asynchronous reset 
+000000000000000000000000000101110110000
+// + Targets: 
+//   Apply 0 
+//     reads: 
+//        memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib        =  x               
+//        memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr[14:0]            =  xxxxxxxxxxxxxxx 
+//        memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst  =  x               
+//     writes: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.BIST_SETUP[1]         =  0 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_ASYNC_RESETN  =  1 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_EN            =  0 
+//  
+//  
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 0:0    R 0:0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 1 
+// Unloading: 0 
+// + Associated TAP transition: IDLE -> DRSELECT 
+1100010X0Z10101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0Z10101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0Z10101011
+// + Shift Cycle 
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+110001101Z10101011
+000000000000000000000000000110000110000
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0Z10101011
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 1:1    R 1:1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W 0:0    R 0:0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 1_1 
+// Unloading: 0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+1100010X0Z10101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0Z10101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0Z10101011
+// + Shift Cycles 
+// Simulation Cycle 10  Timestamp 1000 ns
+110101101Z10101011
+000000000000000000000000000110000110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+110001101Z10101011
+000000000000000000000000000110010110000
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0Z10101011
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 3:3    R 3:3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W 2:2    R 2:2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W 1:1    R 1:1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W 0:0    R 0:0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 1_1_1_1 
+// Unloading: X_X_0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+1100010X0Z10101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0Z10101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0Z10101011
+// + Shift Cycles 
+110101101Z10101011
+000000000000000000000000000110000110000
+110101101Z10101011
+000000000000000000000000000110010110000
+1101011X0Z10101011
+000000000000000000000000000110100110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+1100011X0Z10101011
+000000000000000000000000000110110110000
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+// Simulation Cycle 20  Timestamp 2000 ns
+1100110X0Z10101011
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 20:18    R 20:18   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 
+//        W 17:17    R 17:17   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 
+//        W 16:16    R 16:16   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 
+//        W 15:15    R 15:15   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 
+//        W 14:14    R 14:14   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 
+//        W 13:13    R 13:13   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 
+//        W 12:12    R 12:12   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 
+//        W 11:11    R 11:11   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 
+//        W 10:10    R 10:10   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 
+//        W  9: 9    R  9: 9   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 
+//        W  8: 8    R  8: 8   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 
+//        W  7: 7    R  7: 7   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 
+//        W  6: 6    R  6: 6   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 
+//        W  5: 5    R  5: 5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W  4: 4    R  4: 4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 
+//        W  3: 3    R  3: 3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 
+//        W  2: 2    R  2: 2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W  1: 1    R  1: 1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W  0: 0    R  0: 0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 000_0_1_0_0_0_1_0_0_0_0_0_0_1_0_0_0_1_1 
+// Unloading: XXX_X_X_X_X_X_X_X_X_X_X_X_X_0_X_X_0_0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+1100010X0Z10101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0Z10101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0Z10101011
+// + Shift Cycles 
+110101101Z10101011
+000000000000000000000000000110000110000
+110101101Z10101011
+000000000000000000000000000110010110000
+110101001Z10101011
+000000000000000000000000000110100110000
+1101010X0Z10101011
+1101010X0Z10101011
+110101101Z10101011
+000000000000000000000000000110110110000
+// Simulation Cycle 30  Timestamp 3000 ns
+1101010X0Z10101011
+000000000000000000000000000111000110000
+1101010X0Z10101011
+000000000000000000000000000111010110000
+1101010X0Z10101011
+000000000000000000000000000111100110000
+1101010X0Z10101011
+000000000000000000000000000111110110000
+1101010X0Z10101011
+000000000000000000000000001000000110000
+1101010X0Z10101011
+000000000000000000000000001000010110000
+1101011X0Z10101011
+000000000000000000000000001000100110000
+1101010X0Z10101011
+000000000000000000000000001000110110000
+1101010X0Z10101011
+000000000000000000000000001001000110000
+1101010X0Z10101011
+000000000000000000000000001001010110000
+// Simulation Cycle 40  Timestamp 4000 ns
+1101011X0Z10101011
+000000000000000000000000001001100110000
+1101010X0Z10101011
+000000000000000000000000001001110110000
+1101010X0Z10101011
+000000000000000000000000001010000110000
+1101010X0Z10101011
+000000000000000000000000001010010110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+1100010X0Z10101011
+000000000000000000000000001010100110000
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0Z10101011
+//  Maintaining BIST inputs to the memory 
+000000000000000000000000001010110110000
+//  Enabling parallel retention test : Start to Pause 
+000000000000000000000000001011000110000
+// + Targets: 
+//   Apply 0 
+//     writes: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.BIST_SETUP[0]                =  0  
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.LV_TM                        =  0  
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_ALGO_MODE[1:0]       =  01 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_DIAG_EN              =  0  
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_MEM_RST              =  0  
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_REDUCED_ADDR_CNT_EN  =  0  
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_TESTDATA_SELECT      =  1  
+//  
+//  
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 18:16    R 18:16   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 
+//        W 15:15    R 15:15   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 
+//        W 14:14    R 14:14   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 
+//        W 13:13    R 13:13   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 
+//        W 12:12    R 12:12   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 
+//        W 11:11    R 11:11   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 
+//        W 10:10    R 10:10   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 
+//        W  9: 9    R  9: 9   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 
+//        W  8: 8    R  8: 8   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 
+//        W  7: 7    R  7: 7   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 
+//        W  6: 6    R  6: 6   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 
+//        W  5: 5    R  5: 5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 
+//        W  4: 4    R  4: 4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 
+//        W  3: 3    R  3: 3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W  2: 2    R  2: 2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W  1: 1    R  1: 1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W  0: 0    R  0: 0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 000_0_1_0_0_0_1_0_0_1_1_0_0_1_0_1_1 
+// Unloading: X00_0_X_X_0_0_1_0_0_0_0_0_0_0_0_0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+1100010X0Z10101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0Z10101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0Z10101011
+// + Shift Cycles 
+110101101Z10101011
+000000000000000000000000000110000110000
+// Simulation Cycle 50  Timestamp 5000 ns
+110101101Z10101011
+000000000000000000000000000110010110000
+110101001Z10101011
+000000000000000000000000000110100110000
+110101101Z10101011
+000000000000000000000000000110110110000
+110101001Z10101011
+000000000000000000000000001011010110000
+110101001Z10101011
+000000000000000000000000001011100110000
+110101101Z10101011
+000000000000000000000000001011110110000
+110101101Z10101011
+000000000000000000000000001100000110000
+110101001Z10101011
+000000000000000000000000001100010110000
+110101001Z10101011
+000000000000000000000000001100100110000
+110101111Z10101011
+000000000000000000000000001100110110000
+// Simulation Cycle 60  Timestamp 6000 ns
+110101001Z10101011
+000000000000000000000000001101000110000
+110101001Z10101011
+000000000000000000000000001101010110000
+1101010X0Z10101011
+1101011X0Z10101011
+110101001Z10101011
+000000000000000000000000001101100110000
+110101001Z10101011
+000000000000000000000000001101110110000
+110101001Z10101011
+000000000000000000000000001110000110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+1100010X0Z10101011
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0Z10101011
+// + Targets: 
+//   Apply 0 
+//     writes: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.RUN_MODE[2:0]  =  010 
+//  
+//  
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 18:16    R 18:16   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 
+//        W 15:15    R 15:15   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 
+//        W 14:14    R 14:14   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 
+//        W 13:13    R 13:13   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 
+//        W 12:12    R 12:12   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 
+//        W 11:11    R 11:11   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 
+//        W 10:10    R 10:10   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 
+//        W  9: 9    R  9: 9   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 
+//        W  8: 8    R  8: 8   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 
+//        W  7: 7    R  7: 7   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 
+//        W  6: 6    R  6: 6   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 
+//        W  5: 5    R  5: 5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 
+//        W  4: 4    R  4: 4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 
+//        W  3: 3    R  3: 3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W  2: 2    R  2: 2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W  1: 1    R  1: 1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W  0: 0    R  0: 0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 010_0_1_0_0_0_1_0_0_1_1_0_0_1_1_1_1 
+// Unloading: XX0_0_X_X_0_0_1_0_0_1_1_0_0_0_0_0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+1100010X0Z10101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+// Simulation Cycle 70  Timestamp 7000 ns
+1110010X0Z10101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0Z10101011
+// + Shift Cycles 
+110101101Z10101011
+000000000000000000000000000110000110000
+110101101Z10101011
+000000000000000000000000000110010110000
+110101101Z10101011
+000000000000000000000000000110100110000
+110101101Z10101011
+000000000000000000000000000110110110000
+110101001Z10101011
+000000000000000000000000001011010110000
+110101001Z10101011
+000000000000000000000000001011100110000
+110101111Z10101011
+000000000000000000000000001011110110000
+110101111Z10101011
+000000000000000000000000001100000110000
+// Simulation Cycle 80  Timestamp 8000 ns
+110101001Z10101011
+000000000000000000000000001100010110000
+110101001Z10101011
+000000000000000000000000001100100110000
+110101111Z10101011
+000000000000000000000000001100110110000
+110101001Z10101011
+000000000000000000000000001101000110000
+110101001Z10101011
+000000000000000000000000001101010110000
+1101010X0Z10101011
+1101011X0Z10101011
+110101001Z10101011
+000000000000000000000000001101100110000
+110101001Z10101011
+000000000000000000000000001101110110000
+1101011X0Z10101011
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+// Simulation Cycle 90  Timestamp 9000 ns
+1100010X0Z10101011
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0Z10101011
+// + Associated TAP transition: DRUPDATE -> IDLE 
+1100010X0Z10101011
+1100000X0Z10101011
+//  Checking GO is FAIL before execution 
+000000000000000000000000001110010110000
+//  Checking DONE is FAIL before execution 
+000000000000000000000000001110100110000
+//  Starting MemoryBist controller execution : mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst 
+000000000000000000000000001110110110000
+// + Targets: 
+//   Apply 0 
+//     reads: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_DONE  =  0 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_GO    =  0 
+//     writes: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_EN  =  1 
+//        memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN                          =  1 
+//  
+//  
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 20:18    R 20:18   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 
+//        W 17:17    R 17:17   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 
+//        W 16:16    R 16:16   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 
+//        W 15:15    R 15:15   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 
+//        W 14:14    R 14:14   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 
+//        W 13:13    R 13:13   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 
+//        W 12:12    R 12:12   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 
+//        W 11:11    R 11:11   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 
+//        W 10:10    R 10:10   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 
+//        W  9: 9    R  9: 9   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 
+//        W  8: 8    R  8: 8   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 
+//        W  7: 7    R  7: 7   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 
+//        W  6: 6    R  6: 6   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 
+//        W  5: 5    R  5: 5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W  4: 4    R  4: 4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 
+//        W  3: 3    R  3: 3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 
+//        W  2: 2    R  2: 2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W  1: 1    R  1: 1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W  0: 0    R  0: 0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 010_0_1_0_0_0_1_0_0_1_1_0_0_0_0_1_1_1_1 
+// Unloading: 010_0_X_X_0_0_1_0_0_1_1_0_0_0_0_0_0_0_0 
+// + Associated TAP transition: IDLE -> DRSELECT 
+1100010X0Z10101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0Z10101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0Z10101011
+// + Shift Cycles 
+110101101Z10101011
+000000000000000000000000000110000110000
+110101101Z10101011
+000000000000000000000000000110010110000
+110101101Z10101011
+000000000000000000000000000110100110000
+// Simulation Cycle 100  Timestamp 10000 ns
+110101101Z10101011
+000000000000000000000000001111000110000
+110101001Z10101011
+000000000000000000000000001111010110000
+110101001Z10101011
+000000000000000000000000000110110110000
+110101001Z10101011
+000000000000000000000000001011010110000
+110101001Z10101011
+000000000000000000000000001011100110000
+110101111Z10101011
+000000000000000000000000001011110110000
+110101111Z10101011
+000000000000000000000000001100000110000
+110101001Z10101011
+000000000000000000000000001100010110000
+110101001Z10101011
+000000000000000000000000001100100110000
+110101111Z10101011
+000000000000000000000000001100110110000
+// Simulation Cycle 110  Timestamp 11000 ns
+110101001Z10101011
+000000000000000000000000001101000110000
+110101001Z10101011
+000000000000000000000000001101010110000
+1101010X0Z10101011
+1101011X0Z10101011
+110101001Z10101011
+000000000000000000000000001101100110000
+110101001Z10101011
+000000000000000000000000001101110110000
+110101111Z10101011
+000000000000000000000000001110000110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+110001001Z10101011
+000000000000000000000000001111100110000
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0Z10101011
+// + Associated TAP transition: DRUPDATE -> IDLE 
+1100010X0Z10101011
+// Simulation Cycle 120  Timestamp 12000 ns
+1100000X0Z10101011
+000000000000000000000110011011001000000
+0100000X0Z10101011
+001010000
+//  Checking GO is PASS after execution completion 
+000000000000000000000000001111110110000
+//  Checking DONE is PASS after execution completion 
+000000000000000000000000010000000110000
+// + Targets: 
+//   Apply 0 
+//     reads: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_DONE  =  1 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_GO    =  1 
+//     writes: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_EN  =  0 
+//  
+//  
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 5:5    R 5:5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W 4:4    R 4:4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 
+//        W 3:3    R 3:3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 
+//        W 2:2    R 2:2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W 1:1    R 1:1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W 0:0    R 0:0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 1_0_0_1_1_1 
+// Unloading: 0_1_1_0_0_0 
+// + Associated TAP transition: IDLE -> DRSELECT 
+1100010X0Z10101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0Z10101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0Z10101011
+// + Shift Cycles 
+110101101Z10101011
+000000000000000000000000000110000110000
+110101101Z10101011
+000000000000000000000000000110010110000
+// Simulation Cycle 1770  Timestamp 177000 ns
+110101101Z10101011
+000000000000000000000000000110100110000
+110101011Z10101011
+000000000000000000000000001111000110000
+110101011Z10101011
+000000000000000000000000001111010110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+110001101Z10101011
+000000000000000000000000000110110110000
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0Z10101011
+// + Targets: 
+//   Apply 0 
+//     reads: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_DONE  =  x 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_GO    =  x 
+//     writes: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.RUN_MODE[1]  =  0 
+//  
+//  
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 20:18    R 20:18   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 
+//        W 17:17    R 17:17   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 
+//        W 16:16    R 16:16   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 
+//        W 15:15    R 15:15   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 
+//        W 14:14    R 14:14   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 
+//        W 13:13    R 13:13   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 
+//        W 12:12    R 12:12   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 
+//        W 11:11    R 11:11   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 
+//        W 10:10    R 10:10   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 
+//        W  9: 9    R  9: 9   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 
+//        W  8: 8    R  8: 8   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 
+//        W  7: 7    R  7: 7   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 
+//        W  6: 6    R  6: 6   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 
+//        W  5: 5    R  5: 5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W  4: 4    R  4: 4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 
+//        W  3: 3    R  3: 3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 
+//        W  2: 2    R  2: 2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W  1: 1    R  1: 1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W  0: 0    R  0: 0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 000_0_1_0_0_0_1_0_0_1_1_0_0_0_0_0_1_1_1 
+// Unloading: X10_0_1_X_0_0_1_0_0_1_1_0_0_0_X_X_0_0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+1100010X0Z10101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0Z10101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0Z10101011
+// + Shift Cycles 
+110101101Z10101011
+000000000000000000000000000110000110000
+110101101Z10101011
+000000000000000000000000000110010110000
+// Simulation Cycle 1780  Timestamp 178000 ns
+110101101Z10101011
+000000000000000000000000000110100110000
+1101010X0Z10101011
+000000000000000000000000001111000110000
+1101010X0Z10101011
+000000000000000000000000001111010110000
+110101001Z10101011
+000000000000000000000000000110110110000
+110101001Z10101011
+000000000000000000000000001011010110000
+110101001Z10101011
+000000000000000000000000001011100110000
+110101111Z10101011
+000000000000000000000000001011110110000
+110101111Z10101011
+000000000000000000000000001100000110000
+110101001Z10101011
+000000000000000000000000001100010110000
+110101001Z10101011
+000000000000000000000000001100100110000
+// Simulation Cycle 1790  Timestamp 179000 ns
+110101111Z10101011
+000000000000000000000000001100110110000
+110101001Z10101011
+000000000000000000000000001101000110000
+110101001Z10101011
+000000000000000000000000001101010110000
+1101010X0Z10101011
+110101111Z10101011
+000000000000000000000000010000010110000
+110101001Z10101011
+000000000000000000000000001101100110000
+110101001Z10101011
+000000000000000000000000001101110110000
+110101011Z10101011
+000000000000000000000000001110000110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+1100010X0Z10101011
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0Z10101011
+// + Targets: 
+//   Apply 0 
+//     writes: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_EN  =  1 
+//  
+//  
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 5:5    R 5:5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W 4:4    R 4:4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 
+//        W 3:3    R 3:3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 
+//        W 2:2    R 2:2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W 1:1    R 1:1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W 0:0    R 0:0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 1_0_1_0_1_1 
+// Unloading: 0_X_X_0_0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+// Simulation Cycle 1800  Timestamp 180000 ns
+1100010X0Z10101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0Z10101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0Z10101011
+// + Shift Cycles 
+110101101Z10101011
+000000000000000000000000000110000110000
+110101101Z10101011
+000000000000000000000000000110010110000
+110101001Z10101011
+000000000000000000000000000110100110000
+1101011X0Z10101011
+1101010X0Z10101011
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+110001101Z10101011
+000000000000000000000000000110110110000
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0Z10101011
+//  Checking GO_ID bits are PASS 
+000000000000000000000000010000100110000
+// + Targets: 
+//   Apply 0 
+//     reads: 
+//        mem_container_inst_m1_mem_inst_interface_inst.GO_ID_REG[31:0]  =  00000000000000000000000000000000 
+//     writes: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_EN  =  0 
+//  
+//  
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 18:16    R 18:16   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 
+//        W 15:15    R 15:15   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 
+//        W 14:14    R 14:14   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 
+//        W 13:13    R 13:13   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 
+//        W 12:12    R 12:12   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 
+//        W 11:11    R 11:11   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 
+//        W 10:10    R 10:10   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 
+//        W  9: 9    R  9: 9   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 
+//        W  8: 8    R  8: 8   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 
+//        W  7: 7    R  7: 7   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 
+//        W  6: 6    R  6: 6   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 
+//        W  5: 5    R  5: 5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 
+//        W  4: 4    R  4: 4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 
+//        W  3: 3    R  3: 3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W  2: 2    R  2: 2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W  1: 1    R  1: 1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W  0: 0    R  0: 0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 000_0_0_1_0_0_1_0_0_1_1_0_0_0_1_1_1 
+// Unloading: X00_0_1_X_0_0_1_0_0_1_1_0_0_0_0_0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+// Simulation Cycle 1810  Timestamp 181000 ns
+1100010X0Z10101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0Z10101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0Z10101011
+// + Shift Cycles 
+110101101Z10101011
+000000000000000000000000000110000110000
+110101101Z10101011
+000000000000000000000000000110010110000
+110101101Z10101011
+000000000000000000000000000110100110000
+110101001Z10101011
+000000000000000000000000000110110110000
+110101001Z10101011
+000000000000000000000000001011010110000
+110101001Z10101011
+000000000000000000000000001011100110000
+110101111Z10101011
+000000000000000000000000001011110110000
+// Simulation Cycle 1820  Timestamp 182000 ns
+110101111Z10101011
+000000000000000000000000001100000110000
+110101001Z10101011
+000000000000000000000000001100010110000
+110101001Z10101011
+000000000000000000000000001100100110000
+110101111Z10101011
+000000000000000000000000001100110110000
+110101001Z10101011
+000000000000000000000000001101000110000
+110101001Z10101011
+000000000000000000000000001101010110000
+1101011X0Z10101011
+110101011Z10101011
+000000000000000000000000010000010110000
+110101001Z10101011
+000000000000000000000000001101100110000
+110101001Z10101011
+000000000000000000000000001101110110000
+// Simulation Cycle 1830  Timestamp 183000 ns
+110101001Z10101011
+000000000000000000000000001110000110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+1100010X0Z10101011
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0Z10101011
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 109:109    R 109:109   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W 108:108    R 108:108   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.BIST_SI_Pipeline 
+//        W 107:107    R 107:107   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.DIAG_EN_REG[0:0] 
+//        W 106:106    R 106:106   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.CMP_EN_MASK_EN[0:0] 
+//        W 105:105    R 105:105   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.CMP_EN_PARITY[0:0] 
+//        W 104:104    R 104:104   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MEM_SELECT_REG0[0:0] 
+//        W 103:103    R 103:103   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.REDUCED_ADDR_CNT_EN_REG[0:0] 
+//        W 102:102    R 102:102   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.ALGO_SEL_CNT_REG[0:0] 
+//        W 101:101    R 101:101   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.SELECT_COMMON_OPSET_REG[0:0] 
+//        W 100:100    R 100:100   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.SELECT_COMMON_DATA_PAT_REG[0:0] 
+//        W  99: 99    R  99: 99   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MICROCODE_EN_REG[0:0] 
+//        W  98: 93    R  98: 93   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.INST_POINTER_REG_HW[0:5] 
+//        W  92: 89    R  92: 89   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.A_ADD_REG_Y_HW[0:3] 
+//        W  88: 80    R  88: 80   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.A_ADD_REG_X_HW[0:8] 
+//        W  79: 76    R  79: 76   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.B_ADD_REG_Y_HW[0:3] 
+//        W  75: 67    R  75: 67   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.B_ADD_REG_X_HW[0:8] 
+//        W  66: 64    R  66: 64   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.JCNT_HW[0:2] 
+//        W  63: 63    R  63: 63   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.OPSET_SELECT_REG[0:0] 
+//        W  62: 61    R  62: 61   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.WDATA_REG_HW[0:1] 
+//        W  60: 59    R  60: 59   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.EDATA_REG_HW[0:1] 
+//        W  58: 58    R  58: 58   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.X_ADDR_BIT_SEL_REG[0:0] 
+//        W  57: 57    R  57: 57   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.Y_ADDR_BIT_SEL_REG[0:0] 
+//        W  56: 55    R  56: 55   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.REPEATLOOP_A_CNTR_REG_HW[0:1] 
+//        W  54: 53    R  54: 53   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.REPEATLOOP_B_CNTR_REG_HW[0:1] 
+//        W  52: 21    R  52: 21   mem_container_inst_m1_mem_inst_interface_inst.GO_ID_REG[31:0] 
+//        W  20: 20    R  20: 20   mem_container_inst_m1_mem_inst_interface_inst.FREEZE_STOP_ERROR_REG[0:0] 
+//        W  19: 19    R  19: 19   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.STOP_ON_ERROR_REG[0:0] 
+//        W  18: 18    R  18: 18   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.FREEZE_STOP_ERROR_REG[0:0] 
+//        W  17:  6    R  17:  6   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.STOP_ERROR_CNT_REG_HW[0:11] 
+//        W   5:  5    R   5:  5   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.BIST_SO_Pipeline 
+//        W   4:  4    R   4:  4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 
+//        W   3:  3    R   3:  3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 
+//        W   2:  2    R   2:  2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W   1:  1    R   1:  1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W   0:  0    R   0:  0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 0_0_0_0_0_1_0_0_0_0_0_000000_0000_000000000_0000_000000000_000_0_00_00_0_0_00_00_00000000000000000000000000000000_0_0_0_000000000000_0_0_0_1_1_1 
+// Unloading: 0_X_X_X_X_X_X_X_X_X_X_XXXXXX_XXXX_XXXXXXXXX_XXXX_XXXXXXXXX_XXX_X_XX_XX_X_X_XX_XX_00000000000000000000000000000000_X_X_X_XXXXXXXXXXXX_X_X_X_0_0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+1100010X0Z10101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0Z10101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0Z10101011
+// + Shift Cycles 
+110101101Z10101011
+000000000000000000000000000110000110000
+110101101Z10101011
+000000000000000000000000000110010110000
+110101101Z10101011
+000000000000000000000000000110100110000
+1101010X0Z10101011
+// Simulation Cycle 1840  Timestamp 184000 ns
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+// Simulation Cycle 1850  Timestamp 185000 ns
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+110101001Z10101011
+000000000000000000000000010000110110000
+110101001Z10101011
+000000000000000000000000010001000110000
+110101001Z10101011
+000000000000000000000000010001010110000
+// Simulation Cycle 1860  Timestamp 186000 ns
+110101001Z10101011
+000000000000000000000000010001100110000
+110101001Z10101011
+000000000000000000000000010001110110000
+110101001Z10101011
+000000000000000000000000010010000110000
+110101001Z10101011
+000000000000000000000000010010010110000
+110101001Z10101011
+000000000000000000000000010010100110000
+110101001Z10101011
+000000000000000000000000010010110110000
+110101001Z10101011
+000000000000000000000000010011000110000
+110101001Z10101011
+000000000000000000000000010011010110000
+110101001Z10101011
+000000000000000000000000010011100110000
+110101001Z10101011
+000000000000000000000000010011110110000
+// Simulation Cycle 1870  Timestamp 187000 ns
+110101001Z10101011
+000000000000000000000000010100000110000
+110101001Z10101011
+000000000000000000000000010100010110000
+110101001Z10101011
+000000000000000000000000010100100110000
+110101001Z10101011
+000000000000000000000000010100110110000
+110101001Z10101011
+000000000000000000000000010101000110000
+110101001Z10101011
+000000000000000000000000010101010110000
+110101001Z10101011
+000000000000000000000000010101100110000
+110101001Z10101011
+000000000000000000000000010101110110000
+110101001Z10101011
+000000000000000000000000010110000110000
+110101001Z10101011
+000000000000000000000000010110010110000
+// Simulation Cycle 1880  Timestamp 188000 ns
+110101001Z10101011
+000000000000000000000000010110100110000
+110101001Z10101011
+000000000000000000000000010110110110000
+110101001Z10101011
+000000000000000000000000010111000110000
+110101001Z10101011
+000000000000000000000000010111010110000
+110101001Z10101011
+000000000000000000000000010111100110000
+110101001Z10101011
+000000000000000000000000010111110110000
+110101001Z10101011
+000000000000000000000000011000000110000
+110101001Z10101011
+000000000000000000000000011000010110000
+110101001Z10101011
+000000000000000000000000011000100110000
+1101010X0Z10101011
+// Simulation Cycle 1890  Timestamp 189000 ns
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+// Simulation Cycle 1900  Timestamp 190000 ns
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+// Simulation Cycle 1910  Timestamp 191000 ns
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+// Simulation Cycle 1920  Timestamp 192000 ns
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+// Simulation Cycle 1930  Timestamp 193000 ns
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+// Simulation Cycle 1940  Timestamp 194000 ns
+1101011X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+1101010X0Z10101011
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+110001001Z10101011
+000000000000000000000000000110110110000
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0Z10101011
+// + Associated TAP transition: DRUPDATE -> IDLE 
+1100010X0Z10101011
+1100000X0Z10101011
+// Pattern 1 Cycle 1949 Timestamp 194900 ns 
+000000000000000000000000000001000110000
+ // Start Pattern (1) MSG
+// Pattern_set ParallelRetentionTest__1_PauseToPause 
+000000000000000000000000011000110110000
+000000000000000000000000011001000110000
+//  Setting up MemoryBist controller mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst 
+000000000000000000000000000101100110000
+//  Releasing asynchronous reset 
+000000000000000000000000000101110110000
+// + Targets: 
+//   Apply 0 
+//     reads: 
+//        memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib        =  x               
+//        memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr[14:0]            =  xxxxxxxxxxxxxxx 
+//        memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst  =  x               
+//     writes: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.BIST_SETUP[1]         =  0 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_ASYNC_RESETN  =  1 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_EN            =  0 
+//  
+//  
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 5:5    R 5:5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W 4:4    R 4:4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 
+//        W 3:3    R 3:3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 
+//        W 2:2    R 2:2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W 1:1    R 1:1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W 0:0    R 0:0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 1_0_0_0_1_1 
+// Unloading: X_X_X_X_0_0 
+// + Associated TAP transition: IDLE -> DRSELECT 
+1100010X0110101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+// Simulation Cycle 1950  Timestamp 195000 ns
+1110010X0010101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0010101011
+// + Shift Cycles 
+110101101010101011
+000000000000000000000000000110000110000
+110101101010101011
+000000000000000000000000000110010110000
+1101010X0010101011
+000000000000000000000000000110100110000
+1101010X0010101011
+1101010X0010101011
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+1100011X0010101011
+000000000000000000000000000110110110000
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0010101011
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 18:16    R 18:16   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 
+//        W 15:15    R 15:15   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 
+//        W 14:14    R 14:14   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 
+//        W 13:13    R 13:13   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 
+//        W 12:12    R 12:12   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 
+//        W 11:11    R 11:11   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 
+//        W 10:10    R 10:10   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 
+//        W  9: 9    R  9: 9   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 
+//        W  8: 8    R  8: 8   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 
+//        W  7: 7    R  7: 7   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 
+//        W  6: 6    R  6: 6   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 
+//        W  5: 5    R  5: 5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 
+//        W  4: 4    R  4: 4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 
+//        W  3: 3    R  3: 3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W  2: 2    R  2: 2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W  1: 1    R  1: 1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W  0: 0    R  0: 0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 000_0_0_1_0_0_1_0_0_1_1_0_0_1_0_1_1 
+// Unloading: XXX_X_X_X_X_X_X_X_X_X_X_X_X_0_0_0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+1100010X0010101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+// Simulation Cycle 1960  Timestamp 196000 ns
+1110010X0010101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0010101011
+// + Shift Cycles 
+110101101010101011
+000000000000000000000000000110000110000
+110101101010101011
+000000000000000000000000000110010110000
+110101001010101011
+000000000000000000000000000110100110000
+110101101010101011
+000000000000000000000000000110110110000
+1101010X0010101011
+000000000000000000000000000111000110000
+1101010X0010101011
+000000000000000000000000000111010110000
+1101011X0010101011
+000000000000000000000000000111100110000
+1101011X0010101011
+000000000000000000000000000111110110000
+// Simulation Cycle 1970  Timestamp 197000 ns
+1101010X0010101011
+000000000000000000000000001000000110000
+1101010X0010101011
+000000000000000000000000001000010110000
+1101011X0010101011
+000000000000000000000000001000100110000
+1101010X0010101011
+000000000000000000000000001000110110000
+1101010X0010101011
+000000000000000000000000001001000110000
+1101011X0010101011
+000000000000000000000000001001010110000
+1101010X0010101011
+000000000000000000000000001001100110000
+1101010X0010101011
+000000000000000000000000001001110110000
+1101010X0010101011
+000000000000000000000000001010000110000
+1101010X0010101011
+000000000000000000000000001010010110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+// Simulation Cycle 1980  Timestamp 198000 ns
+1100010X0010101011
+000000000000000000000000001010100110000
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0010101011
+//  Maintaining BIST inputs to the memory 
+000000000000000000000000001010110110000
+//  Enabling parallel retention test : Pause to Pause 
+000000000000000000000000011001010110000
+// + Targets: 
+//   Apply 0 
+//     writes: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.BIST_SETUP[0]                =  0  
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.LV_TM                        =  0  
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_ALGO_MODE[1:0]       =  10 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_DIAG_EN              =  0  
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_MEM_RST              =  0  
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_REDUCED_ADDR_CNT_EN  =  0  
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_TESTDATA_SELECT      =  1  
+//  
+//  
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 18:16    R 18:16   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 
+//        W 15:15    R 15:15   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 
+//        W 14:14    R 14:14   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 
+//        W 13:13    R 13:13   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 
+//        W 12:12    R 12:12   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 
+//        W 11:11    R 11:11   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 
+//        W 10:10    R 10:10   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 
+//        W  9: 9    R  9: 9   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 
+//        W  8: 8    R  8: 8   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 
+//        W  7: 7    R  7: 7   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 
+//        W  6: 6    R  6: 6   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 
+//        W  5: 5    R  5: 5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 
+//        W  4: 4    R  4: 4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 
+//        W  3: 3    R  3: 3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W  2: 2    R  2: 2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W  1: 1    R  1: 1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W  0: 0    R  0: 0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 000_0_0_1_0_0_1_0_1_0_1_0_0_1_0_1_1 
+// Unloading: X00_0_X_X_0_0_1_0_0_1_1_0_0_0_0_0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+1100010X0010101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0010101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0010101011
+// + Shift Cycles 
+110101101010101011
+000000000000000000000000000110000110000
+110101101010101011
+000000000000000000000000000110010110000
+110101001010101011
+000000000000000000000000000110100110000
+110101101010101011
+000000000000000000000000000110110110000
+110101001010101011
+000000000000000000000000001011010110000
+// Simulation Cycle 1990  Timestamp 199000 ns
+110101001010101011
+000000000000000000000000001011100110000
+110101111010101011
+000000000000000000000000001011110110000
+110101011010101011
+000000000000000000000000001100000110000
+110101101010101011
+000000000000000000000000001100010110000
+110101001010101011
+000000000000000000000000001100100110000
+110101111010101011
+000000000000000000000000001100110110000
+110101001010101011
+000000000000000000000000001101000110000
+110101001010101011
+000000000000000000000000001101010110000
+1101011X0010101011
+1101010X0010101011
+// Simulation Cycle 2000  Timestamp 200000 ns
+110101001010101011
+000000000000000000000000001101100110000
+110101001010101011
+000000000000000000000000001101110110000
+110101001010101011
+000000000000000000000000001110000110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+1100010X0010101011
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0010101011
+// + Targets: 
+//   Apply 0 
+//     writes: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.RUN_MODE[2:0]  =  010 
+//  
+//  
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 18:16    R 18:16   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 
+//        W 15:15    R 15:15   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 
+//        W 14:14    R 14:14   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 
+//        W 13:13    R 13:13   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 
+//        W 12:12    R 12:12   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 
+//        W 11:11    R 11:11   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 
+//        W 10:10    R 10:10   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 
+//        W  9: 9    R  9: 9   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 
+//        W  8: 8    R  8: 8   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 
+//        W  7: 7    R  7: 7   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 
+//        W  6: 6    R  6: 6   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 
+//        W  5: 5    R  5: 5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 
+//        W  4: 4    R  4: 4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 
+//        W  3: 3    R  3: 3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W  2: 2    R  2: 2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W  1: 1    R  1: 1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W  0: 0    R  0: 0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 010_0_0_1_0_0_1_0_1_0_1_0_0_1_1_1_1 
+// Unloading: XX0_0_X_X_0_0_1_0_1_0_1_0_0_0_0_0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+1100010X0010101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0010101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0010101011
+// + Shift Cycles 
+110101101010101011
+000000000000000000000000000110000110000
+110101101010101011
+000000000000000000000000000110010110000
+// Simulation Cycle 2010  Timestamp 201000 ns
+110101101010101011
+000000000000000000000000000110100110000
+110101101010101011
+000000000000000000000000000110110110000
+110101001010101011
+000000000000000000000000001011010110000
+110101001010101011
+000000000000000000000000001011100110000
+110101111010101011
+000000000000000000000000001011110110000
+110101001010101011
+000000000000000000000000001100000110000
+110101111010101011
+000000000000000000000000001100010110000
+110101001010101011
+000000000000000000000000001100100110000
+110101111010101011
+000000000000000000000000001100110110000
+110101001010101011
+000000000000000000000000001101000110000
+// Simulation Cycle 2020  Timestamp 202000 ns
+110101001010101011
+000000000000000000000000001101010110000
+1101011X0010101011
+1101010X0010101011
+110101001010101011
+000000000000000000000000001101100110000
+110101001010101011
+000000000000000000000000001101110110000
+1101011X0010101011
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+1100010X0010101011
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0010101011
+// + Associated TAP transition: DRUPDATE -> IDLE 
+1100010X0010101011
+1100000X0010101011
+//  Starting MemoryBist controller execution : mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst 
+000000000000000000000000001110110110000
+// + Targets: 
+//   Apply 0 
+//     writes: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_EN  =  1 
+//        memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN                          =  1 
+//  
+//  
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 20:18    R 20:18   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 
+//        W 17:17    R 17:17   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 
+//        W 16:16    R 16:16   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 
+//        W 15:15    R 15:15   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 
+//        W 14:14    R 14:14   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 
+//        W 13:13    R 13:13   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 
+//        W 12:12    R 12:12   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 
+//        W 11:11    R 11:11   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 
+//        W 10:10    R 10:10   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 
+//        W  9: 9    R  9: 9   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 
+//        W  8: 8    R  8: 8   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 
+//        W  7: 7    R  7: 7   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 
+//        W  6: 6    R  6: 6   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 
+//        W  5: 5    R  5: 5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W  4: 4    R  4: 4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 
+//        W  3: 3    R  3: 3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 
+//        W  2: 2    R  2: 2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W  1: 1    R  1: 1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W  0: 0    R  0: 0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 010_0_1_1_0_0_1_0_1_0_1_0_0_0_0_1_1_1_1 
+// Unloading: 010_0_X_X_0_0_1_0_1_0_1_0_0_0_X_X_0_0_0 
+// + Associated TAP transition: IDLE -> DRSELECT 
+// Simulation Cycle 2030  Timestamp 203000 ns
+1100010X0010101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0010101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0010101011
+// + Shift Cycles 
+110101101010101011
+000000000000000000000000000110000110000
+110101101010101011
+000000000000000000000000000110010110000
+110101101010101011
+000000000000000000000000000110100110000
+1101011X0010101011
+1101010X0010101011
+110101001010101011
+000000000000000000000000000110110110000
+110101001010101011
+000000000000000000000000001011010110000
+// Simulation Cycle 2040  Timestamp 204000 ns
+110101001010101011
+000000000000000000000000001011100110000
+110101111010101011
+000000000000000000000000001011110110000
+110101001010101011
+000000000000000000000000001100000110000
+110101111010101011
+000000000000000000000000001100010110000
+110101001010101011
+000000000000000000000000001100100110000
+110101111010101011
+000000000000000000000000001100110110000
+110101001010101011
+000000000000000000000000001101000110000
+110101001010101011
+000000000000000000000000001101010110000
+1101011X0010101011
+1101011X0010101011
+// Simulation Cycle 2050  Timestamp 205000 ns
+110101001010101011
+000000000000000000000000001101100110000
+110101001010101011
+000000000000000000000000001101110110000
+110101111010101011
+000000000000000000000000001110000110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+110001001010101011
+000000000000000000000000001111100110000
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0010101011
+// + Associated TAP transition: DRUPDATE -> IDLE 
+1100010X0010101011
+1100000X0010101011
+000000000000000000000110011010101000000
+0100000X0010101011
+001010000
+//  Checking GO is PASS after execution completion 
+000000000000000000000000001111110110000
+//  Checking DONE is PASS after execution completion 
+000000000000000000000000010000000110000
+// + Targets: 
+//   Apply 0 
+//     reads: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_DONE  =  1 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_GO    =  1 
+//     writes: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_EN  =  0 
+//  
+//  
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 5:5    R 5:5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W 4:4    R 4:4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 
+//        W 3:3    R 3:3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 
+//        W 2:2    R 2:2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W 1:1    R 1:1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W 0:0    R 0:0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 1_0_0_1_1_1 
+// Unloading: 0_1_1_0_0_0 
+// + Associated TAP transition: IDLE -> DRSELECT 
+1100010X0010101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+// Simulation Cycle 3700  Timestamp 370000 ns
+1110010X0010101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0010101011
+// + Shift Cycles 
+110101101010101011
+000000000000000000000000000110000110000
+110101101010101011
+000000000000000000000000000110010110000
+110101101010101011
+000000000000000000000000000110100110000
+110101011010101011
+000000000000000000000000001111000110000
+110101011010101011
+000000000000000000000000001111010110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+110001101010101011
+000000000000000000000000000110110110000
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0010101011
+// + Targets: 
+//   Apply 0 
+//     reads: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_DONE  =  x 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_GO    =  x 
+//     writes: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.RUN_MODE[1]  =  0 
+//  
+//  
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 20:18    R 20:18   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 
+//        W 17:17    R 17:17   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 
+//        W 16:16    R 16:16   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 
+//        W 15:15    R 15:15   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 
+//        W 14:14    R 14:14   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 
+//        W 13:13    R 13:13   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 
+//        W 12:12    R 12:12   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 
+//        W 11:11    R 11:11   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 
+//        W 10:10    R 10:10   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 
+//        W  9: 9    R  9: 9   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 
+//        W  8: 8    R  8: 8   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 
+//        W  7: 7    R  7: 7   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 
+//        W  6: 6    R  6: 6   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 
+//        W  5: 5    R  5: 5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W  4: 4    R  4: 4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 
+//        W  3: 3    R  3: 3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 
+//        W  2: 2    R  2: 2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W  1: 1    R  1: 1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W  0: 0    R  0: 0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 000_0_1_1_0_0_1_0_1_0_1_0_0_0_0_0_1_1_1 
+// Unloading: X10_0_1_X_0_0_1_0_1_0_1_0_0_0_X_X_0_0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+1100010X0010101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+// Simulation Cycle 3710  Timestamp 371000 ns
+1110010X0010101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0010101011
+// + Shift Cycles 
+110101101010101011
+000000000000000000000000000110000110000
+110101101010101011
+000000000000000000000000000110010110000
+110101101010101011
+000000000000000000000000000110100110000
+1101010X0010101011
+000000000000000000000000001111000110000
+1101010X0010101011
+000000000000000000000000001111010110000
+110101001010101011
+000000000000000000000000000110110110000
+110101001010101011
+000000000000000000000000001011010110000
+110101001010101011
+000000000000000000000000001011100110000
+// Simulation Cycle 3720  Timestamp 372000 ns
+110101111010101011
+000000000000000000000000001011110110000
+110101001010101011
+000000000000000000000000001100000110000
+110101111010101011
+000000000000000000000000001100010110000
+110101001010101011
+000000000000000000000000001100100110000
+110101111010101011
+000000000000000000000000001100110110000
+110101001010101011
+000000000000000000000000001101000110000
+110101001010101011
+000000000000000000000000001101010110000
+1101011X0010101011
+110101111010101011
+000000000000000000000000010000010110000
+110101001010101011
+000000000000000000000000001101100110000
+// Simulation Cycle 3730  Timestamp 373000 ns
+110101001010101011
+000000000000000000000000001101110110000
+110101011010101011
+000000000000000000000000001110000110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+1100010X0010101011
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0010101011
+// + Targets: 
+//   Apply 0 
+//     writes: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_EN  =  1 
+//  
+//  
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 5:5    R 5:5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W 4:4    R 4:4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 
+//        W 3:3    R 3:3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 
+//        W 2:2    R 2:2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W 1:1    R 1:1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W 0:0    R 0:0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 1_0_1_0_1_1 
+// Unloading: 0_X_X_0_0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+1100010X0010101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0010101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0010101011
+// + Shift Cycles 
+110101101010101011
+000000000000000000000000000110000110000
+110101101010101011
+000000000000000000000000000110010110000
+110101001010101011
+000000000000000000000000000110100110000
+// Simulation Cycle 3740  Timestamp 374000 ns
+1101011X0010101011
+1101010X0010101011
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+110001101010101011
+000000000000000000000000000110110110000
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0010101011
+//  Checking GO_ID bits are PASS 
+000000000000000000000000010000100110000
+// + Targets: 
+//   Apply 0 
+//     reads: 
+//        mem_container_inst_m1_mem_inst_interface_inst.GO_ID_REG[31:0]  =  00000000000000000000000000000000 
+//     writes: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_EN  =  0 
+//  
+//  
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 18:16    R 18:16   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 
+//        W 15:15    R 15:15   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 
+//        W 14:14    R 14:14   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 
+//        W 13:13    R 13:13   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 
+//        W 12:12    R 12:12   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 
+//        W 11:11    R 11:11   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 
+//        W 10:10    R 10:10   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 
+//        W  9: 9    R  9: 9   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 
+//        W  8: 8    R  8: 8   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 
+//        W  7: 7    R  7: 7   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 
+//        W  6: 6    R  6: 6   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 
+//        W  5: 5    R  5: 5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 
+//        W  4: 4    R  4: 4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 
+//        W  3: 3    R  3: 3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W  2: 2    R  2: 2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W  1: 1    R  1: 1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W  0: 0    R  0: 0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 000_0_0_1_0_0_1_0_1_0_1_0_0_0_1_1_1 
+// Unloading: X00_0_1_X_0_0_1_0_1_0_1_0_0_0_0_0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+1100010X0010101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0010101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0010101011
+// + Shift Cycles 
+110101101010101011
+000000000000000000000000000110000110000
+110101101010101011
+000000000000000000000000000110010110000
+110101101010101011
+000000000000000000000000000110100110000
+// Simulation Cycle 3750  Timestamp 375000 ns
+110101001010101011
+000000000000000000000000000110110110000
+110101001010101011
+000000000000000000000000001011010110000
+110101001010101011
+000000000000000000000000001011100110000
+110101111010101011
+000000000000000000000000001011110110000
+110101001010101011
+000000000000000000000000001100000110000
+110101111010101011
+000000000000000000000000001100010110000
+110101001010101011
+000000000000000000000000001100100110000
+110101111010101011
+000000000000000000000000001100110110000
+110101001010101011
+000000000000000000000000001101000110000
+110101001010101011
+000000000000000000000000001101010110000
+// Simulation Cycle 3760  Timestamp 376000 ns
+1101011X0010101011
+110101011010101011
+000000000000000000000000010000010110000
+110101001010101011
+000000000000000000000000001101100110000
+110101001010101011
+000000000000000000000000001101110110000
+110101001010101011
+000000000000000000000000001110000110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+1100010X0010101011
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0010101011
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 109:109    R 109:109   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W 108:108    R 108:108   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.BIST_SI_Pipeline 
+//        W 107:107    R 107:107   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.DIAG_EN_REG[0:0] 
+//        W 106:106    R 106:106   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.CMP_EN_MASK_EN[0:0] 
+//        W 105:105    R 105:105   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.CMP_EN_PARITY[0:0] 
+//        W 104:104    R 104:104   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MEM_SELECT_REG0[0:0] 
+//        W 103:103    R 103:103   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.REDUCED_ADDR_CNT_EN_REG[0:0] 
+//        W 102:102    R 102:102   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.ALGO_SEL_CNT_REG[0:0] 
+//        W 101:101    R 101:101   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.SELECT_COMMON_OPSET_REG[0:0] 
+//        W 100:100    R 100:100   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.SELECT_COMMON_DATA_PAT_REG[0:0] 
+//        W  99: 99    R  99: 99   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MICROCODE_EN_REG[0:0] 
+//        W  98: 93    R  98: 93   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.INST_POINTER_REG_HW[0:5] 
+//        W  92: 89    R  92: 89   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.A_ADD_REG_Y_HW[0:3] 
+//        W  88: 80    R  88: 80   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.A_ADD_REG_X_HW[0:8] 
+//        W  79: 76    R  79: 76   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.B_ADD_REG_Y_HW[0:3] 
+//        W  75: 67    R  75: 67   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.B_ADD_REG_X_HW[0:8] 
+//        W  66: 64    R  66: 64   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.JCNT_HW[0:2] 
+//        W  63: 63    R  63: 63   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.OPSET_SELECT_REG[0:0] 
+//        W  62: 61    R  62: 61   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.WDATA_REG_HW[0:1] 
+//        W  60: 59    R  60: 59   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.EDATA_REG_HW[0:1] 
+//        W  58: 58    R  58: 58   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.X_ADDR_BIT_SEL_REG[0:0] 
+//        W  57: 57    R  57: 57   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.Y_ADDR_BIT_SEL_REG[0:0] 
+//        W  56: 55    R  56: 55   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.REPEATLOOP_A_CNTR_REG_HW[0:1] 
+//        W  54: 53    R  54: 53   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.REPEATLOOP_B_CNTR_REG_HW[0:1] 
+//        W  52: 21    R  52: 21   mem_container_inst_m1_mem_inst_interface_inst.GO_ID_REG[31:0] 
+//        W  20: 20    R  20: 20   mem_container_inst_m1_mem_inst_interface_inst.FREEZE_STOP_ERROR_REG[0:0] 
+//        W  19: 19    R  19: 19   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.STOP_ON_ERROR_REG[0:0] 
+//        W  18: 18    R  18: 18   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.FREEZE_STOP_ERROR_REG[0:0] 
+//        W  17:  6    R  17:  6   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.STOP_ERROR_CNT_REG_HW[0:11] 
+//        W   5:  5    R   5:  5   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.BIST_SO_Pipeline 
+//        W   4:  4    R   4:  4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 
+//        W   3:  3    R   3:  3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 
+//        W   2:  2    R   2:  2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W   1:  1    R   1:  1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W   0:  0    R   0:  0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 0_0_0_0_0_1_0_0_0_0_0_000000_0000_000000000_0000_000000000_000_0_00_00_0_0_00_00_00000000000000000000000000000000_0_0_0_000000000000_0_0_0_1_1_1 
+// Unloading: 0_X_X_X_X_X_X_X_X_X_X_XXXXXX_XXXX_XXXXXXXXX_XXXX_XXXXXXXXX_XXX_X_XX_XX_X_X_XX_XX_00000000000000000000000000000000_X_X_X_XXXXXXXXXXXX_X_X_X_0_0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+1100010X0010101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0010101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0010101011
+// + Shift Cycles 
+// Simulation Cycle 3770  Timestamp 377000 ns
+110101101010101011
+000000000000000000000000000110000110000
+110101101010101011
+000000000000000000000000000110010110000
+110101101010101011
+000000000000000000000000000110100110000
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+// Simulation Cycle 3780  Timestamp 378000 ns
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+// Simulation Cycle 3790  Timestamp 379000 ns
+1101010X0010101011
+110101001010101011
+000000000000000000000000010000110110000
+110101001010101011
+000000000000000000000000010001000110000
+110101001010101011
+000000000000000000000000010001010110000
+110101001010101011
+000000000000000000000000010001100110000
+110101001010101011
+000000000000000000000000010001110110000
+110101001010101011
+000000000000000000000000010010000110000
+110101001010101011
+000000000000000000000000010010010110000
+110101001010101011
+000000000000000000000000010010100110000
+110101001010101011
+000000000000000000000000010010110110000
+// Simulation Cycle 3800  Timestamp 380000 ns
+110101001010101011
+000000000000000000000000010011000110000
+110101001010101011
+000000000000000000000000010011010110000
+110101001010101011
+000000000000000000000000010011100110000
+110101001010101011
+000000000000000000000000010011110110000
+110101001010101011
+000000000000000000000000010100000110000
+110101001010101011
+000000000000000000000000010100010110000
+110101001010101011
+000000000000000000000000010100100110000
+110101001010101011
+000000000000000000000000010100110110000
+110101001010101011
+000000000000000000000000010101000110000
+110101001010101011
+000000000000000000000000010101010110000
+// Simulation Cycle 3810  Timestamp 381000 ns
+110101001010101011
+000000000000000000000000010101100110000
+110101001010101011
+000000000000000000000000010101110110000
+110101001010101011
+000000000000000000000000010110000110000
+110101001010101011
+000000000000000000000000010110010110000
+110101001010101011
+000000000000000000000000010110100110000
+110101001010101011
+000000000000000000000000010110110110000
+110101001010101011
+000000000000000000000000010111000110000
+110101001010101011
+000000000000000000000000010111010110000
+110101001010101011
+000000000000000000000000010111100110000
+110101001010101011
+000000000000000000000000010111110110000
+// Simulation Cycle 3820  Timestamp 382000 ns
+110101001010101011
+000000000000000000000000011000000110000
+110101001010101011
+000000000000000000000000011000010110000
+110101001010101011
+000000000000000000000000011000100110000
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+// Simulation Cycle 3830  Timestamp 383000 ns
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+// Simulation Cycle 3840  Timestamp 384000 ns
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+// Simulation Cycle 3850  Timestamp 385000 ns
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+// Simulation Cycle 3860  Timestamp 386000 ns
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+// Simulation Cycle 3870  Timestamp 387000 ns
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101011X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+110001001010101011
+000000000000000000000000000110110110000
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+// Simulation Cycle 3880  Timestamp 388000 ns
+1100110X0010101011
+// + Associated TAP transition: DRUPDATE -> IDLE 
+1100010X0010101011
+1100000X0010101011
+// Pattern 2 Cycle 3883 Timestamp 388300 ns 
+000000000000000000000000000001000110000
+ // Start Pattern (2) MSG
+// Pattern_set ParallelRetentionTest__1_PauseToEnd 
+000000000000000000000000011001100110000
+000000000000000000000000011001110110000
+//  Setting up MemoryBist controller mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst 
+000000000000000000000000000101100110000
+//  Releasing asynchronous reset 
+000000000000000000000000000101110110000
+// + Targets: 
+//   Apply 0 
+//     reads: 
+//        memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib        =  x               
+//        memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr[14:0]            =  xxxxxxxxxxxxxxx 
+//        memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst  =  x               
+//     writes: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.BIST_SETUP[1]         =  0 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_ASYNC_RESETN  =  1 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_EN            =  0 
+//  
+//  
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 5:5    R 5:5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W 4:4    R 4:4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 
+//        W 3:3    R 3:3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 
+//        W 2:2    R 2:2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W 1:1    R 1:1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W 0:0    R 0:0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 1_0_0_0_1_1 
+// Unloading: X_X_X_X_0_0 
+// + Associated TAP transition: IDLE -> DRSELECT 
+1100010X0110101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0010101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0010101011
+// + Shift Cycles 
+110101101010101011
+000000000000000000000000000110000110000
+110101101010101011
+000000000000000000000000000110010110000
+1101010X0010101011
+000000000000000000000000000110100110000
+1101010X0010101011
+// Simulation Cycle 3890  Timestamp 389000 ns
+1101010X0010101011
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+1100011X0010101011
+000000000000000000000000000110110110000
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0010101011
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 18:16    R 18:16   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 
+//        W 15:15    R 15:15   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 
+//        W 14:14    R 14:14   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 
+//        W 13:13    R 13:13   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 
+//        W 12:12    R 12:12   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 
+//        W 11:11    R 11:11   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 
+//        W 10:10    R 10:10   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 
+//        W  9: 9    R  9: 9   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 
+//        W  8: 8    R  8: 8   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 
+//        W  7: 7    R  7: 7   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 
+//        W  6: 6    R  6: 6   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 
+//        W  5: 5    R  5: 5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 
+//        W  4: 4    R  4: 4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 
+//        W  3: 3    R  3: 3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W  2: 2    R  2: 2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W  1: 1    R  1: 1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W  0: 0    R  0: 0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 000_0_0_1_0_0_1_0_1_0_1_0_0_1_0_1_1 
+// Unloading: XXX_X_X_X_X_X_X_X_X_X_X_X_X_0_0_0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+1100010X0010101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0010101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0010101011
+// + Shift Cycles 
+110101101010101011
+000000000000000000000000000110000110000
+110101101010101011
+000000000000000000000000000110010110000
+110101001010101011
+000000000000000000000000000110100110000
+110101101010101011
+000000000000000000000000000110110110000
+// Simulation Cycle 3900  Timestamp 390000 ns
+1101010X0010101011
+000000000000000000000000000111000110000
+1101010X0010101011
+000000000000000000000000000111010110000
+1101011X0010101011
+000000000000000000000000000111100110000
+1101010X0010101011
+000000000000000000000000000111110110000
+1101011X0010101011
+000000000000000000000000001000000110000
+1101010X0010101011
+000000000000000000000000001000010110000
+1101011X0010101011
+000000000000000000000000001000100110000
+1101010X0010101011
+000000000000000000000000001000110110000
+1101010X0010101011
+000000000000000000000000001001000110000
+1101011X0010101011
+000000000000000000000000001001010110000
+// Simulation Cycle 3910  Timestamp 391000 ns
+1101010X0010101011
+000000000000000000000000001001100110000
+1101010X0010101011
+000000000000000000000000001001110110000
+1101010X0010101011
+000000000000000000000000001010000110000
+1101010X0010101011
+000000000000000000000000001010010110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+1100010X0010101011
+000000000000000000000000001010100110000
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0010101011
+//  Maintaining BIST inputs to the memory 
+000000000000000000000000001010110110000
+//  Enabling parallel retention test : Pause to End 
+000000000000000000000000011010000110000
+// + Targets: 
+//   Apply 0 
+//     writes: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.BIST_SETUP[0]                =  0  
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.LV_TM                        =  0  
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_ALGO_MODE[1:0]       =  11 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_DIAG_EN              =  0  
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_MEM_RST              =  0  
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_REDUCED_ADDR_CNT_EN  =  0  
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_TESTDATA_SELECT      =  1  
+//  
+//  
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 18:16    R 18:16   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 
+//        W 15:15    R 15:15   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 
+//        W 14:14    R 14:14   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 
+//        W 13:13    R 13:13   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 
+//        W 12:12    R 12:12   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 
+//        W 11:11    R 11:11   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 
+//        W 10:10    R 10:10   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 
+//        W  9: 9    R  9: 9   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 
+//        W  8: 8    R  8: 8   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 
+//        W  7: 7    R  7: 7   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 
+//        W  6: 6    R  6: 6   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 
+//        W  5: 5    R  5: 5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 
+//        W  4: 4    R  4: 4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 
+//        W  3: 3    R  3: 3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W  2: 2    R  2: 2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W  1: 1    R  1: 1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W  0: 0    R  0: 0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 000_0_0_1_0_0_1_0_1_1_1_0_0_1_0_1_1 
+// Unloading: X00_0_X_X_0_0_1_0_1_0_1_0_0_0_0_0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+1100010X0010101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0010101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0010101011
+// + Shift Cycles 
+110101101010101011
+000000000000000000000000000110000110000
+// Simulation Cycle 3920  Timestamp 392000 ns
+110101101010101011
+000000000000000000000000000110010110000
+110101001010101011
+000000000000000000000000000110100110000
+110101101010101011
+000000000000000000000000000110110110000
+110101001010101011
+000000000000000000000000001011010110000
+110101001010101011
+000000000000000000000000001011100110000
+110101111010101011
+000000000000000000000000001011110110000
+110101101010101011
+000000000000000000000000001100000110000
+110101111010101011
+000000000000000000000000001100010110000
+110101001010101011
+000000000000000000000000001100100110000
+110101111010101011
+000000000000000000000000001100110110000
+// Simulation Cycle 3930  Timestamp 393000 ns
+110101001010101011
+000000000000000000000000001101000110000
+110101001010101011
+000000000000000000000000001101010110000
+1101011X0010101011
+1101010X0010101011
+110101001010101011
+000000000000000000000000001101100110000
+110101001010101011
+000000000000000000000000001101110110000
+110101001010101011
+000000000000000000000000001110000110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+1100010X0010101011
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0010101011
+// + Targets: 
+//   Apply 0 
+//     writes: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.RUN_MODE[2:0]  =  010 
+//  
+//  
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 18:16    R 18:16   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 
+//        W 15:15    R 15:15   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 
+//        W 14:14    R 14:14   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 
+//        W 13:13    R 13:13   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 
+//        W 12:12    R 12:12   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 
+//        W 11:11    R 11:11   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 
+//        W 10:10    R 10:10   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 
+//        W  9: 9    R  9: 9   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 
+//        W  8: 8    R  8: 8   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 
+//        W  7: 7    R  7: 7   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 
+//        W  6: 6    R  6: 6   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 
+//        W  5: 5    R  5: 5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 
+//        W  4: 4    R  4: 4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 
+//        W  3: 3    R  3: 3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W  2: 2    R  2: 2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W  1: 1    R  1: 1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W  0: 0    R  0: 0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 010_0_0_1_0_0_1_0_1_1_1_0_0_1_1_1_1 
+// Unloading: XX0_0_X_X_0_0_1_0_1_1_1_0_0_0_0_0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+1100010X0010101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+// Simulation Cycle 3940  Timestamp 394000 ns
+1110010X0010101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0010101011
+// + Shift Cycles 
+110101101010101011
+000000000000000000000000000110000110000
+110101101010101011
+000000000000000000000000000110010110000
+110101101010101011
+000000000000000000000000000110100110000
+110101101010101011
+000000000000000000000000000110110110000
+110101001010101011
+000000000000000000000000001011010110000
+110101001010101011
+000000000000000000000000001011100110000
+110101111010101011
+000000000000000000000000001011110110000
+110101111010101011
+000000000000000000000000001100000110000
+// Simulation Cycle 3950  Timestamp 395000 ns
+110101111010101011
+000000000000000000000000001100010110000
+110101001010101011
+000000000000000000000000001100100110000
+110101111010101011
+000000000000000000000000001100110110000
+110101001010101011
+000000000000000000000000001101000110000
+110101001010101011
+000000000000000000000000001101010110000
+1101011X0010101011
+1101010X0010101011
+110101001010101011
+000000000000000000000000001101100110000
+110101001010101011
+000000000000000000000000001101110110000
+1101011X0010101011
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+// Simulation Cycle 3960  Timestamp 396000 ns
+1100010X0010101011
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0010101011
+// + Associated TAP transition: DRUPDATE -> IDLE 
+1100010X0010101011
+1100000X0010101011
+//  Starting MemoryBist controller execution : mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst 
+000000000000000000000000001110110110000
+// + Targets: 
+//   Apply 0 
+//     writes: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_EN  =  1 
+//        memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN                          =  1 
+//  
+//  
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 20:18    R 20:18   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 
+//        W 17:17    R 17:17   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 
+//        W 16:16    R 16:16   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 
+//        W 15:15    R 15:15   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 
+//        W 14:14    R 14:14   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 
+//        W 13:13    R 13:13   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 
+//        W 12:12    R 12:12   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 
+//        W 11:11    R 11:11   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 
+//        W 10:10    R 10:10   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 
+//        W  9: 9    R  9: 9   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 
+//        W  8: 8    R  8: 8   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 
+//        W  7: 7    R  7: 7   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 
+//        W  6: 6    R  6: 6   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 
+//        W  5: 5    R  5: 5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W  4: 4    R  4: 4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 
+//        W  3: 3    R  3: 3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 
+//        W  2: 2    R  2: 2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W  1: 1    R  1: 1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W  0: 0    R  0: 0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 010_0_1_1_0_0_1_0_1_1_1_0_0_0_0_1_1_1_1 
+// Unloading: 010_0_X_X_0_0_1_0_1_1_1_0_0_0_X_X_0_0_0 
+// + Associated TAP transition: IDLE -> DRSELECT 
+1100010X0010101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0010101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0010101011
+// + Shift Cycles 
+110101101010101011
+000000000000000000000000000110000110000
+110101101010101011
+000000000000000000000000000110010110000
+110101101010101011
+000000000000000000000000000110100110000
+// Simulation Cycle 3970  Timestamp 397000 ns
+1101011X0010101011
+1101010X0010101011
+110101001010101011
+000000000000000000000000000110110110000
+110101001010101011
+000000000000000000000000001011010110000
+110101001010101011
+000000000000000000000000001011100110000
+110101111010101011
+000000000000000000000000001011110110000
+110101111010101011
+000000000000000000000000001100000110000
+110101111010101011
+000000000000000000000000001100010110000
+110101001010101011
+000000000000000000000000001100100110000
+110101111010101011
+000000000000000000000000001100110110000
+// Simulation Cycle 3980  Timestamp 398000 ns
+110101001010101011
+000000000000000000000000001101000110000
+110101001010101011
+000000000000000000000000001101010110000
+1101011X0010101011
+1101011X0010101011
+110101001010101011
+000000000000000000000000001101100110000
+110101001010101011
+000000000000000000000000001101110110000
+110101111010101011
+000000000000000000000000001110000110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+110001001010101011
+000000000000000000000000001111100110000
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0010101011
+// + Associated TAP transition: DRUPDATE -> IDLE 
+1100010X0010101011
+// Simulation Cycle 3990  Timestamp 399000 ns
+1100000X0010101011
+000000000000000000000110011010101000000
+0100000X0010101011
+001010000
+//  Checking GO is PASS after execution completion 
+000000000000000000000000001111110110000
+//  Checking DONE is PASS after execution completion 
+000000000000000000000000010000000110000
+// + Targets: 
+//   Apply 0 
+//     reads: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_DONE  =  1 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_GO    =  1 
+//     writes: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_EN  =  0 
+//  
+//  
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 5:5    R 5:5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W 4:4    R 4:4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 
+//        W 3:3    R 3:3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 
+//        W 2:2    R 2:2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W 1:1    R 1:1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W 0:0    R 0:0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 1_0_0_1_1_1 
+// Unloading: 0_1_1_0_0_0 
+// + Associated TAP transition: IDLE -> DRSELECT 
+1100010X0010101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0010101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0010101011
+// + Shift Cycles 
+110101101010101011
+000000000000000000000000000110000110000
+110101101010101011
+000000000000000000000000000110010110000
+110101101010101011
+000000000000000000000000000110100110000
+110101011010101011
+000000000000000000000000001111000110000
+// Simulation Cycle 5640  Timestamp 564000 ns
+110101011010101011
+000000000000000000000000001111010110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+110001101010101011
+000000000000000000000000000110110110000
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0010101011
+// + Targets: 
+//   Apply 0 
+//     reads: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_DONE  =  x 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_GO    =  x 
+//     writes: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.RUN_MODE[1]  =  0 
+//  
+//  
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 20:18    R 20:18   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 
+//        W 17:17    R 17:17   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 
+//        W 16:16    R 16:16   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 
+//        W 15:15    R 15:15   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 
+//        W 14:14    R 14:14   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 
+//        W 13:13    R 13:13   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 
+//        W 12:12    R 12:12   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 
+//        W 11:11    R 11:11   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 
+//        W 10:10    R 10:10   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 
+//        W  9: 9    R  9: 9   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 
+//        W  8: 8    R  8: 8   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 
+//        W  7: 7    R  7: 7   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 
+//        W  6: 6    R  6: 6   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 
+//        W  5: 5    R  5: 5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W  4: 4    R  4: 4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 
+//        W  3: 3    R  3: 3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 
+//        W  2: 2    R  2: 2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W  1: 1    R  1: 1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W  0: 0    R  0: 0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 000_0_1_1_0_0_1_0_1_1_1_0_0_0_0_0_1_1_1 
+// Unloading: X10_0_1_X_0_0_1_0_1_1_1_0_0_0_X_X_0_0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+1100010X0010101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0010101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0010101011
+// + Shift Cycles 
+110101101010101011
+000000000000000000000000000110000110000
+110101101010101011
+000000000000000000000000000110010110000
+110101101010101011
+000000000000000000000000000110100110000
+1101010X0010101011
+000000000000000000000000001111000110000
+// Simulation Cycle 5650  Timestamp 565000 ns
+1101010X0010101011
+000000000000000000000000001111010110000
+110101001010101011
+000000000000000000000000000110110110000
+110101001010101011
+000000000000000000000000001011010110000
+110101001010101011
+000000000000000000000000001011100110000
+110101111010101011
+000000000000000000000000001011110110000
+110101111010101011
+000000000000000000000000001100000110000
+110101111010101011
+000000000000000000000000001100010110000
+110101001010101011
+000000000000000000000000001100100110000
+110101111010101011
+000000000000000000000000001100110110000
+110101001010101011
+000000000000000000000000001101000110000
+// Simulation Cycle 5660  Timestamp 566000 ns
+110101001010101011
+000000000000000000000000001101010110000
+1101011X0010101011
+110101111010101011
+000000000000000000000000010000010110000
+110101001010101011
+000000000000000000000000001101100110000
+110101001010101011
+000000000000000000000000001101110110000
+110101011010101011
+000000000000000000000000001110000110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+1100010X0010101011
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0010101011
+// + Targets: 
+//   Apply 0 
+//     writes: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_EN  =  1 
+//  
+//  
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 5:5    R 5:5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W 4:4    R 4:4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 
+//        W 3:3    R 3:3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 
+//        W 2:2    R 2:2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W 1:1    R 1:1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W 0:0    R 0:0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 1_0_1_0_1_1 
+// Unloading: 0_X_X_0_0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+1100010X0010101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0010101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+// Simulation Cycle 5670  Timestamp 567000 ns
+1101010X0010101011
+// + Shift Cycles 
+110101101010101011
+000000000000000000000000000110000110000
+110101101010101011
+000000000000000000000000000110010110000
+110101001010101011
+000000000000000000000000000110100110000
+1101011X0010101011
+1101010X0010101011
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+110001101010101011
+000000000000000000000000000110110110000
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0010101011
+//  Checking GO_ID bits are PASS 
+000000000000000000000000010000100110000
+// + Targets: 
+//   Apply 0 
+//     reads: 
+//        mem_container_inst_m1_mem_inst_interface_inst.GO_ID_REG[31:0]  =  00000000000000000000000000000000 
+//     writes: 
+//        mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MBISTPG_EN  =  0 
+//  
+//  
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 18:16    R 18:16   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 
+//        W 15:15    R 15:15   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 
+//        W 14:14    R 14:14   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 
+//        W 13:13    R 13:13   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 
+//        W 12:12    R 12:12   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 
+//        W 11:11    R 11:11   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 
+//        W 10:10    R 10:10   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 
+//        W  9: 9    R  9: 9   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 
+//        W  8: 8    R  8: 8   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 
+//        W  7: 7    R  7: 7   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 
+//        W  6: 6    R  6: 6   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 
+//        W  5: 5    R  5: 5   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 
+//        W  4: 4    R  4: 4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 
+//        W  3: 3    R  3: 3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W  2: 2    R  2: 2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W  1: 1    R  1: 1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W  0: 0    R  0: 0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 000_0_0_1_0_0_1_0_1_1_1_0_0_0_1_1_1 
+// Unloading: X00_0_1_X_0_0_1_0_1_1_1_0_0_0_0_0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+1100010X0010101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0010101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+// Simulation Cycle 5680  Timestamp 568000 ns
+1101010X0010101011
+// + Shift Cycles 
+110101101010101011
+000000000000000000000000000110000110000
+110101101010101011
+000000000000000000000000000110010110000
+110101101010101011
+000000000000000000000000000110100110000
+110101001010101011
+000000000000000000000000000110110110000
+110101001010101011
+000000000000000000000000001011010110000
+110101001010101011
+000000000000000000000000001011100110000
+110101111010101011
+000000000000000000000000001011110110000
+110101111010101011
+000000000000000000000000001100000110000
+110101111010101011
+000000000000000000000000001100010110000
+// Simulation Cycle 5690  Timestamp 569000 ns
+110101001010101011
+000000000000000000000000001100100110000
+110101111010101011
+000000000000000000000000001100110110000
+110101001010101011
+000000000000000000000000001101000110000
+110101001010101011
+000000000000000000000000001101010110000
+1101011X0010101011
+110101011010101011
+000000000000000000000000010000010110000
+110101001010101011
+000000000000000000000000001101100110000
+110101001010101011
+000000000000000000000000001101110110000
+110101001010101011
+000000000000000000000000001110000110000
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+1100010X0010101011
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+// Simulation Cycle 5700  Timestamp 570000 ns
+1100110X0010101011
+// + scan vector ijtag_si..ijtag_so ( 
+//        W 109:109    R 109:109   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 
+//        W 108:108    R 108:108   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.BIST_SI_Pipeline 
+//        W 107:107    R 107:107   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.DIAG_EN_REG[0:0] 
+//        W 106:106    R 106:106   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.CMP_EN_MASK_EN[0:0] 
+//        W 105:105    R 105:105   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.CMP_EN_PARITY[0:0] 
+//        W 104:104    R 104:104   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MEM_SELECT_REG0[0:0] 
+//        W 103:103    R 103:103   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.REDUCED_ADDR_CNT_EN_REG[0:0] 
+//        W 102:102    R 102:102   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.ALGO_SEL_CNT_REG[0:0] 
+//        W 101:101    R 101:101   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.SELECT_COMMON_OPSET_REG[0:0] 
+//        W 100:100    R 100:100   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.SELECT_COMMON_DATA_PAT_REG[0:0] 
+//        W  99: 99    R  99: 99   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MICROCODE_EN_REG[0:0] 
+//        W  98: 93    R  98: 93   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.INST_POINTER_REG_HW[0:5] 
+//        W  92: 89    R  92: 89   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.A_ADD_REG_Y_HW[0:3] 
+//        W  88: 80    R  88: 80   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.A_ADD_REG_X_HW[0:8] 
+//        W  79: 76    R  79: 76   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.B_ADD_REG_Y_HW[0:3] 
+//        W  75: 67    R  75: 67   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.B_ADD_REG_X_HW[0:8] 
+//        W  66: 64    R  66: 64   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.JCNT_HW[0:2] 
+//        W  63: 63    R  63: 63   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.OPSET_SELECT_REG[0:0] 
+//        W  62: 61    R  62: 61   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.WDATA_REG_HW[0:1] 
+//        W  60: 59    R  60: 59   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.EDATA_REG_HW[0:1] 
+//        W  58: 58    R  58: 58   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.X_ADDR_BIT_SEL_REG[0:0] 
+//        W  57: 57    R  57: 57   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.Y_ADDR_BIT_SEL_REG[0:0] 
+//        W  56: 55    R  56: 55   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.REPEATLOOP_A_CNTR_REG_HW[0:1] 
+//        W  54: 53    R  54: 53   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.REPEATLOOP_B_CNTR_REG_HW[0:1] 
+//        W  52: 21    R  52: 21   mem_container_inst_m1_mem_inst_interface_inst.GO_ID_REG[31:0] 
+//        W  20: 20    R  20: 20   mem_container_inst_m1_mem_inst_interface_inst.FREEZE_STOP_ERROR_REG[0:0] 
+//        W  19: 19    R  19: 19   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.STOP_ON_ERROR_REG[0:0] 
+//        W  18: 18    R  18: 18   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.FREEZE_STOP_ERROR_REG[0:0] 
+//        W  17:  6    R  17:  6   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.STOP_ERROR_CNT_REG_HW[0:11] 
+//        W   5:  5    R   5:  5   mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.BIST_SO_Pipeline 
+//        W   4:  4    R   4:  4   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 
+//        W   3:  3    R   3:  3   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 
+//        W   2:  2    R   2:  2   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 
+//        W   1:  1    R   1:  1   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 
+//        W   0:  0    R   0:  0   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 
+// ) 
+// +  Loading: 0_0_0_0_0_1_0_0_0_0_0_000000_0000_000000000_0000_000000000_000_0_00_00_0_0_00_00_00000000000000000000000000000000_0_0_0_000000000000_0_0_0_1_1_1 
+// Unloading: 0_X_X_X_X_X_X_X_X_X_X_XXXXXX_XXXX_XXXXXXXXX_XXXX_XXXXXXXXX_XXX_X_XX_XX_X_X_XX_XX_00000000000000000000000000000000_X_X_X_XXXXXXXXXXXX_X_X_X_0_0_0 
+// + Associated TAP transition: DRUPDATE -> DRSELECT 
+1100010X0010101011
+// + Associated TAP transition: DRSELECT -> DRCAPTURE 
+1110010X0010101011
+// + Associated TAP transition: DRCAPTURE -> DRSHIFT 
+1101010X0010101011
+// + Shift Cycles 
+110101101010101011
+000000000000000000000000000110000110000
+110101101010101011
+000000000000000000000000000110010110000
+110101101010101011
+000000000000000000000000000110100110000
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+// Simulation Cycle 5710  Timestamp 571000 ns
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+// Simulation Cycle 5720  Timestamp 572000 ns
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+110101001010101011
+000000000000000000000000010000110110000
+110101001010101011
+000000000000000000000000010001000110000
+110101001010101011
+000000000000000000000000010001010110000
+110101001010101011
+000000000000000000000000010001100110000
+110101001010101011
+000000000000000000000000010001110110000
+// Simulation Cycle 5730  Timestamp 573000 ns
+110101001010101011
+000000000000000000000000010010000110000
+110101001010101011
+000000000000000000000000010010010110000
+110101001010101011
+000000000000000000000000010010100110000
+110101001010101011
+000000000000000000000000010010110110000
+110101001010101011
+000000000000000000000000010011000110000
+110101001010101011
+000000000000000000000000010011010110000
+110101001010101011
+000000000000000000000000010011100110000
+110101001010101011
+000000000000000000000000010011110110000
+110101001010101011
+000000000000000000000000010100000110000
+110101001010101011
+000000000000000000000000010100010110000
+// Simulation Cycle 5740  Timestamp 574000 ns
+110101001010101011
+000000000000000000000000010100100110000
+110101001010101011
+000000000000000000000000010100110110000
+110101001010101011
+000000000000000000000000010101000110000
+110101001010101011
+000000000000000000000000010101010110000
+110101001010101011
+000000000000000000000000010101100110000
+110101001010101011
+000000000000000000000000010101110110000
+110101001010101011
+000000000000000000000000010110000110000
+110101001010101011
+000000000000000000000000010110010110000
+110101001010101011
+000000000000000000000000010110100110000
+110101001010101011
+000000000000000000000000010110110110000
+// Simulation Cycle 5750  Timestamp 575000 ns
+110101001010101011
+000000000000000000000000010111000110000
+110101001010101011
+000000000000000000000000010111010110000
+110101001010101011
+000000000000000000000000010111100110000
+110101001010101011
+000000000000000000000000010111110110000
+110101001010101011
+000000000000000000000000011000000110000
+110101001010101011
+000000000000000000000000011000010110000
+110101001010101011
+000000000000000000000000011000100110000
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+// Simulation Cycle 5760  Timestamp 576000 ns
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+// Simulation Cycle 5770  Timestamp 577000 ns
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+// Simulation Cycle 5780  Timestamp 578000 ns
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+// Simulation Cycle 5790  Timestamp 579000 ns
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+// Simulation Cycle 5800  Timestamp 580000 ns
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+1101011X0010101011
+1101010X0010101011
+// Simulation Cycle 5810  Timestamp 581000 ns
+1101010X0010101011
+1101010X0010101011
+1101010X0010101011
+// + Associated TAP transition: DRSHIFT -> DREXIT1 
+110001001010101011
+000000000000000000000000000110110110000
+// + Associated TAP transition: DREXIT1 -> DRUPDATE 
+1100110X0010101011
+// + Associated TAP transition: DRUPDATE -> IDLE 
+1100010X0010101011
+1100000X0010101011
+// end of Vec file MSG
+000000000000000000000000000000110110000

@@ -1,0 +1,529 @@
+//
+//  Tessent FastScan  2022.3
+//
+//  Design  = all
+//  Created = Thu Nov 13 13:42:48 EST 2025
+//
+//  Statistics:
+//      Test Coverage   =  100.00%
+//      Total Faults    =  1078
+//          DS (det_simulation)    =  1074
+//          UU (unused)            =  4
+//      Total            Patterns  =  13
+//
+//  Settings:
+//      Simulation Mode =  combinational, seq_depth = 5
+//      Fault Type      =  stuck
+//      Fault Mode      =  uncollapsed
+//      Pos_Det Credit  =  0%
+//      Z external      =  Z
+//      Z internal      =  X
+//      wired_net       =  WIRE
+//
+//  Warnings:
+//      Fault list has been modified
+//      Pins held :  /sg13g2_antennanp__A = TIE0
+//      2 rule C8 fails (PO connected to a clock line)
+//      2 rule C9 fails (PO connected to a clock line gated by scan cell that uses same clock)
+//      18 rule D5 fails (non-scan memory element)
+//      9 rule D6 fails (non-transparent non-scan latches)
+//
+//  Clock Information:
+//      /sg13g2_dfrbp_1__CLK  off-state = 0  type = system-MASTER  poflag = 0
+//      /sg13g2_dfrbp_1__RESET_B  off-state = 1  type = system-MASTER  poflag = 0
+//      /sg13g2_dfrbp_2__CLK  off-state = 0  type = system-MASTER  poflag = 0
+//      /sg13g2_dfrbp_2__RESET_B  off-state = 1  type = system-MASTER  poflag = 0
+//      /sg13g2_dfrbpq_1__CLK  off-state = 0  type = system-MASTER  poflag = 0
+//      /sg13g2_dfrbpq_1__RESET_B  off-state = 1  type = system-MASTER  poflag = 0
+//      /sg13g2_dfrbpq_2__CLK  off-state = 0  type = system-MASTER  poflag = 0
+//      /sg13g2_dfrbpq_2__RESET_B  off-state = 1  type = system-MASTER  poflag = 0
+//      /sg13g2_dlhq_1__GATE  off-state = 0  type = system-MASTER  poflag = 0
+//      /sg13g2_dlhr_1__GATE  off-state = 0  type = system-MASTER  poflag = 0
+//      /sg13g2_dlhr_1__RESET_B  off-state = 1  type = system-MASTER  poflag = 0
+//      /sg13g2_dlhrq_1__GATE  off-state = 0  type = system-MASTER  poflag = 0
+//      /sg13g2_dlhrq_1__RESET_B  off-state = 1  type = system-MASTER  poflag = 0
+//      /sg13g2_dllr_1__GATE_N  off-state = 1  type = system-MASTER  poflag = 0
+//      /sg13g2_dllr_1__RESET_B  off-state = 1  type = system-MASTER  poflag = 0
+//      /sg13g2_dllrq_1__GATE_N  off-state = 1  type = system-MASTER  poflag = 0
+//      /sg13g2_dllrq_1__RESET_B  off-state = 1  type = system-MASTER  poflag = 0
+//      /sg13g2_lgcp_1_$_int_GATE__CLK  off-state = 1  type = system-MASTER  poflag = 0
+//      /sg13g2_lgcp_1__CLK  off-state = 1  type = system-MASTER  poflag = 0
+//      /sg13g2_sdfbbp_1__CLK  off-state = 0  type = system-MASTER  poflag = 0
+//      /sg13g2_sdfbbp_1__RESET_B  off-state = 1  type = system-MASTER  poflag = 0
+//      /sg13g2_sdfbbp_1__SET_B  off-state = 1  type = system-MASTER  poflag = 0
+//      /sg13g2_sdfrbp_1__CLK  off-state = 0  type = system-MASTER  poflag = 0
+//      /sg13g2_sdfrbp_1__RESET_B  off-state = 1  type = system-MASTER  poflag = 0
+//      /sg13g2_sdfrbp_2__CLK  off-state = 0  type = system-MASTER  poflag = 0
+//      /sg13g2_sdfrbp_2__RESET_B  off-state = 1  type = system-MASTER  poflag = 0
+//      /sg13g2_sdfrbpq_1__CLK  off-state = 0  type = system-MASTER  poflag = 0
+//      /sg13g2_sdfrbpq_1__RESET_B  off-state = 1  type = system-MASTER  poflag = 0
+//      /sg13g2_sdfrbpq_2__CLK  off-state = 0  type = system-MASTER  poflag = 0
+//      /sg13g2_sdfrbpq_2__RESET_B  off-state = 1  type = system-MASTER  poflag = 0
+//      /sg13g2_slgcp_1_$_int_GATE__CLK  off-state = 1  type = system-MASTER  poflag = 0
+//      /sg13g2_slgcp_1__CLK  off-state = 1  type = system-MASTER  poflag = 0
+//
+
+ASCII_PATTERN_FILE_VERSION = 3;
+
+
+SETUP = 
+
+    declare input bus "PI" = "/sg13g2_a21o_1__A1", "/sg13g2_a21o_1__A2", "/sg13g2_a21o_1__B1", "/sg13g2_a21o_2__A1", "/sg13g2_a21o_2__A2",
+         "/sg13g2_a21o_2__B1", "/sg13g2_a21oi_1__A1", "/sg13g2_a21oi_1__A2", "/sg13g2_a21oi_1__B1", "/sg13g2_a21oi_2__A1", "/sg13g2_a21oi_2__A2",
+         "/sg13g2_a21oi_2__B1", "/sg13g2_a221oi_1__A1", "/sg13g2_a221oi_1__A2", "/sg13g2_a221oi_1__B1", "/sg13g2_a221oi_1__B2", "/sg13g2_a221oi_1__C1",
+         "/sg13g2_a22oi_1__A1", "/sg13g2_a22oi_1__A2", "/sg13g2_a22oi_1__B1", "/sg13g2_a22oi_1__B2", "/sg13g2_and2_1__A", "/sg13g2_and2_1__B",
+         "/sg13g2_and2_2__A", "/sg13g2_and2_2__B", "/sg13g2_and3_1__A", "/sg13g2_and3_1__B", "/sg13g2_and3_1__C", "/sg13g2_and3_2__A",
+         "/sg13g2_and3_2__B", "/sg13g2_and3_2__C", "/sg13g2_and4_1__A", "/sg13g2_and4_1__B", "/sg13g2_and4_1__C", "/sg13g2_and4_1__D",
+         "/sg13g2_and4_2__A", "/sg13g2_and4_2__B", "/sg13g2_and4_2__C", "/sg13g2_and4_2__D", "/sg13g2_antennanp__A", "/sg13g2_buf_1__A",
+         "/sg13g2_buf_16__A", "/sg13g2_buf_2__A", "/sg13g2_buf_4__A", "/sg13g2_buf_8__A", "/sg13g2_dfrbp_1__CLK", "/sg13g2_dfrbp_1__D",
+         "/sg13g2_dfrbp_1__RESET_B", "/sg13g2_dfrbp_2__CLK", "/sg13g2_dfrbp_2__D", "/sg13g2_dfrbp_2__RESET_B", "/sg13g2_dfrbpq_1__CLK", "/sg13g2_dfrbpq_1__D",
+         "/sg13g2_dfrbpq_1__RESET_B", "/sg13g2_dfrbpq_2__CLK", "/sg13g2_dfrbpq_2__D", "/sg13g2_dfrbpq_2__RESET_B", "/sg13g2_dlhq_1__D", "/sg13g2_dlhq_1__GATE",
+         "/sg13g2_dlhr_1__D", "/sg13g2_dlhr_1__GATE", "/sg13g2_dlhr_1__RESET_B", "/sg13g2_dlhrq_1__D", "/sg13g2_dlhrq_1__GATE", "/sg13g2_dlhrq_1__RESET_B",
+         "/sg13g2_dllr_1__D", "/sg13g2_dllr_1__GATE_N", "/sg13g2_dllr_1__RESET_B", "/sg13g2_dllrq_1__D", "/sg13g2_dllrq_1__GATE_N", "/sg13g2_dllrq_1__RESET_B",
+         "/sg13g2_dlygate4sd1_1__A", "/sg13g2_dlygate4sd2_1__A", "/sg13g2_dlygate4sd3_1__A", "/sg13g2_ebufn_2__A", "/sg13g2_ebufn_2__TE_B", "/sg13g2_ebufn_4__A",
+         "/sg13g2_ebufn_4__TE_B", "/sg13g2_ebufn_8__A", "/sg13g2_ebufn_8__TE_B", "/sg13g2_einvn_2__A", "/sg13g2_einvn_2__TE_B", "/sg13g2_einvn_4__A",
+         "/sg13g2_einvn_4__TE_B", "/sg13g2_einvn_8__A", "/sg13g2_einvn_8__TE_B", "/sg13g2_inv_1__A", "/sg13g2_inv_16__A", "/sg13g2_inv_2__A",
+         "/sg13g2_inv_4__A", "/sg13g2_inv_8__A", "/sg13g2_lgcp_1_$_int_GATE__CLK", "/sg13g2_lgcp_1_$_int_GATE__GATE", "/sg13g2_lgcp_1__CLK", "/sg13g2_lgcp_1__GATE",
+         "/sg13g2_mux2_1__A0", "/sg13g2_mux2_1__A1", "/sg13g2_mux2_1__S", "/sg13g2_mux2_2__A0", "/sg13g2_mux2_2__A1", "/sg13g2_mux2_2__S",
+         "/sg13g2_mux4_1__A0", "/sg13g2_mux4_1__A1", "/sg13g2_mux4_1__A2", "/sg13g2_mux4_1__A3", "/sg13g2_mux4_1__S0", "/sg13g2_mux4_1__S1",
+         "/sg13g2_nand2_1__A", "/sg13g2_nand2_1__B", "/sg13g2_nand2_2__A", "/sg13g2_nand2_2__B", "/sg13g2_nand2b_1__A_N", "/sg13g2_nand2b_1__B",
+         "/sg13g2_nand2b_2__A_N", "/sg13g2_nand2b_2__B", "/sg13g2_nand3_1__A", "/sg13g2_nand3_1__B", "/sg13g2_nand3_1__C", "/sg13g2_nand3b_1__A_N",
+         "/sg13g2_nand3b_1__B", "/sg13g2_nand3b_1__C", "/sg13g2_nand4_1__A", "/sg13g2_nand4_1__B", "/sg13g2_nand4_1__C", "/sg13g2_nand4_1__D",
+         "/sg13g2_nor2_1__A", "/sg13g2_nor2_1__B", "/sg13g2_nor2_2__A", "/sg13g2_nor2_2__B", "/sg13g2_nor2b_1__A", "/sg13g2_nor2b_1__B_N",
+         "/sg13g2_nor2b_2__A", "/sg13g2_nor2b_2__B_N", "/sg13g2_nor3_1__A", "/sg13g2_nor3_1__B", "/sg13g2_nor3_1__C", "/sg13g2_nor3_2__A",
+         "/sg13g2_nor3_2__B", "/sg13g2_nor3_2__C", "/sg13g2_nor4_1__A", "/sg13g2_nor4_1__B", "/sg13g2_nor4_1__C", "/sg13g2_nor4_1__D",
+         "/sg13g2_nor4_2__A", "/sg13g2_nor4_2__B", "/sg13g2_nor4_2__C", "/sg13g2_nor4_2__D", "/sg13g2_o21ai_1__A1", "/sg13g2_o21ai_1__A2",
+         "/sg13g2_o21ai_1__B1", "/sg13g2_or2_1__A", "/sg13g2_or2_1__B", "/sg13g2_or2_2__A", "/sg13g2_or2_2__B", "/sg13g2_or3_1__A",
+         "/sg13g2_or3_1__B", "/sg13g2_or3_1__C", "/sg13g2_or3_2__A", "/sg13g2_or3_2__B", "/sg13g2_or3_2__C", "/sg13g2_or4_1__A",
+         "/sg13g2_or4_1__B", "/sg13g2_or4_1__C", "/sg13g2_or4_1__D", "/sg13g2_or4_2__A", "/sg13g2_or4_2__B", "/sg13g2_or4_2__C",
+         "/sg13g2_or4_2__D", "/sg13g2_sdfbbp_1__CLK", "/sg13g2_sdfbbp_1__D", "/sg13g2_sdfbbp_1__RESET_B", "/sg13g2_sdfbbp_1__SCD", "/sg13g2_sdfbbp_1__SCE",
+         "/sg13g2_sdfbbp_1__SET_B", "/sg13g2_sdfrbp_1__CLK", "/sg13g2_sdfrbp_1__D", "/sg13g2_sdfrbp_1__RESET_B", "/sg13g2_sdfrbp_1__SCD", "/sg13g2_sdfrbp_1__SCE",
+         "/sg13g2_sdfrbp_2__CLK", "/sg13g2_sdfrbp_2__D", "/sg13g2_sdfrbp_2__RESET_B", "/sg13g2_sdfrbp_2__SCD", "/sg13g2_sdfrbp_2__SCE", "/sg13g2_sdfrbpq_1__CLK",
+         "/sg13g2_sdfrbpq_1__D", "/sg13g2_sdfrbpq_1__RESET_B", "/sg13g2_sdfrbpq_1__SCD", "/sg13g2_sdfrbpq_1__SCE", "/sg13g2_sdfrbpq_2__CLK", "/sg13g2_sdfrbpq_2__D",
+         "/sg13g2_sdfrbpq_2__RESET_B", "/sg13g2_sdfrbpq_2__SCD", "/sg13g2_sdfrbpq_2__SCE", "/sg13g2_slgcp_1_$_int_GATE__CLK", "/sg13g2_slgcp_1_$_int_GATE__GATE", "/sg13g2_slgcp_1_$_int_GATE__SCE",
+         "/sg13g2_slgcp_1__CLK", "/sg13g2_slgcp_1__GATE", "/sg13g2_slgcp_1__SCE", "/sg13g2_xnor2_1__A", "/sg13g2_xnor2_1__B", "/sg13g2_xor2_1__A",
+         "/sg13g2_xor2_1__B", "/sg13g2_sighold__SH";
+
+    declare output bus "PO" = "/sg13g2_a21o_1__X", "/sg13g2_a21o_2__X", "/sg13g2_a21oi_1__Y", "/sg13g2_a21oi_2__Y", "/sg13g2_a221oi_1__Y",
+         "/sg13g2_a22oi_1__Y", "/sg13g2_and2_1__X", "/sg13g2_and2_2__X", "/sg13g2_and3_1__X", "/sg13g2_and3_2__X", "/sg13g2_and4_1__X",
+         "/sg13g2_and4_2__X", "/sg13g2_buf_1__X", "/sg13g2_buf_16__X", "/sg13g2_buf_2__X", "/sg13g2_buf_4__X", "/sg13g2_buf_8__X",
+         "/sg13g2_dfrbp_1__Q", "/sg13g2_dfrbp_1__Q_N", "/sg13g2_dfrbp_2__Q", "/sg13g2_dfrbp_2__Q_N", "/sg13g2_dfrbpq_1__Q", "/sg13g2_dfrbpq_2__Q",
+         "/sg13g2_dlhq_1__Q", "/sg13g2_dlhr_1__Q", "/sg13g2_dlhr_1__Q_N", "/sg13g2_dlhrq_1__Q", "/sg13g2_dllr_1__Q", "/sg13g2_dllr_1__Q_N",
+         "/sg13g2_dllrq_1__Q", "/sg13g2_dlygate4sd1_1__X", "/sg13g2_dlygate4sd2_1__X", "/sg13g2_dlygate4sd3_1__X", "/sg13g2_ebufn_2__Z", "/sg13g2_ebufn_4__Z",
+         "/sg13g2_ebufn_8__Z", "/sg13g2_einvn_2__Z", "/sg13g2_einvn_4__Z", "/sg13g2_einvn_8__Z", "/sg13g2_inv_1__Y", "/sg13g2_inv_16__Y",
+         "/sg13g2_inv_2__Y", "/sg13g2_inv_4__Y", "/sg13g2_inv_8__Y", "/sg13g2_lgcp_1_$_int_GATE__int_GATE", "/sg13g2_lgcp_1__GCLK", "/sg13g2_mux2_1__X",
+         "/sg13g2_mux2_2__X", "/sg13g2_mux4_1__X", "/sg13g2_nand2_1__Y", "/sg13g2_nand2_2__Y", "/sg13g2_nand2b_1__Y", "/sg13g2_nand2b_2__Y",
+         "/sg13g2_nand3_1__Y", "/sg13g2_nand3b_1__Y", "/sg13g2_nand4_1__Y", "/sg13g2_nor2_1__Y", "/sg13g2_nor2_2__Y", "/sg13g2_nor2b_1__Y",
+         "/sg13g2_nor2b_2__Y", "/sg13g2_nor3_1__Y", "/sg13g2_nor3_2__Y", "/sg13g2_nor4_1__Y", "/sg13g2_nor4_2__Y", "/sg13g2_o21ai_1__Y",
+         "/sg13g2_or2_1__X", "/sg13g2_or2_2__X", "/sg13g2_or3_1__X", "/sg13g2_or3_2__X", "/sg13g2_or4_1__X", "/sg13g2_or4_2__X",
+         "/sg13g2_sdfbbp_1__Q", "/sg13g2_sdfbbp_1__Q_N", "/sg13g2_sdfrbp_1__Q", "/sg13g2_sdfrbp_1__Q_N", "/sg13g2_sdfrbp_2__Q", "/sg13g2_sdfrbp_2__Q_N",
+         "/sg13g2_sdfrbpq_1__Q", "/sg13g2_sdfrbpq_2__Q", "/sg13g2_slgcp_1_$_int_GATE__int_GATE", "/sg13g2_slgcp_1__GCLK", "/sg13g2_tiehi__L_HI", "/sg13g2_tielo__L_LO",
+         "/sg13g2_xnor2_1__Y", "/sg13g2_xor2_1__X", "/sg13g2_sighold__SH";
+
+    clock "/sg13g2_dfrbp_1__CLK" =
+        off_state   = 0;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_dfrbp_1__RESET_B" =
+        off_state   = 1;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_dfrbp_2__CLK" =
+        off_state   = 0;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_dfrbp_2__RESET_B" =
+        off_state   = 1;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_dfrbpq_1__CLK" =
+        off_state   = 0;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_dfrbpq_1__RESET_B" =
+        off_state   = 1;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_dfrbpq_2__CLK" =
+        off_state   = 0;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_dfrbpq_2__RESET_B" =
+        off_state   = 1;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_dlhq_1__GATE" =
+        off_state   = 0;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_dlhr_1__GATE" =
+        off_state   = 0;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_dlhr_1__RESET_B" =
+        off_state   = 1;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_dlhrq_1__GATE" =
+        off_state   = 0;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_dlhrq_1__RESET_B" =
+        off_state   = 1;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_dllr_1__GATE_N" =
+        off_state   = 1;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_dllr_1__RESET_B" =
+        off_state   = 1;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_dllrq_1__GATE_N" =
+        off_state   = 1;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_dllrq_1__RESET_B" =
+        off_state   = 1;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_lgcp_1_$_int_GATE__CLK" =
+        off_state   = 1;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_lgcp_1__CLK" =
+        off_state   = 1;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_sdfbbp_1__CLK" =
+        off_state   = 0;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_sdfbbp_1__RESET_B" =
+        off_state   = 1;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_sdfbbp_1__SET_B" =
+        off_state   = 1;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_sdfrbp_1__CLK" =
+        off_state   = 0;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_sdfrbp_1__RESET_B" =
+        off_state   = 1;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_sdfrbp_2__CLK" =
+        off_state   = 0;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_sdfrbp_2__RESET_B" =
+        off_state   = 1;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_sdfrbpq_1__CLK" =
+        off_state   = 0;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_sdfrbpq_1__RESET_B" =
+        off_state   = 1;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_sdfrbpq_2__CLK" =
+        off_state   = 0;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_sdfrbpq_2__RESET_B" =
+        off_state   = 1;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_slgcp_1_$_int_GATE__CLK" =
+        off_state   = 1;
+        pulse_width = 1;
+    end;
+
+    clock "/sg13g2_slgcp_1__CLK" =
+        off_state   = 1;
+        pulse_width = 1;
+    end;
+
+    procedure test_setup "test_setup" =
+        force "/sg13g2_antennanp__A" 0 0;
+    end;
+end;
+
+SCAN_TEST =
+
+    apply "test_setup" 1 0;
+    pattern = 0;
+    force   "PI" "00101101100010010000000000111111010010000000001100\
+                  10010110010100111111110110010000101011001101111000\
+                  00111100101001000011110101110011100000111110100101\
+                  11110000011001011001100101100011100010101101110100\
+                  00010" 0;
+    measure "PO" "11011100010000000XXXXXXXXXXXXX1011Z010000110XX1011\
+                  111111001010000110111XXXXXXXXXX10110" 1;
+
+    pattern = 1;
+    force   "PI" "01001110111010110010000100011111111110001111001101\
+                  10110010010100111111110100001000110001000101111011\
+                  01110010010001101011000000010000001100110001101000\
+                  10111101010001100000100101100001100010000100110100\
+                  01011" 0;
+    measure "PO" "01000100011011110XXXXXXXXXXXXX1010011Z110111XX1111\
+                  111111100000001111111XXXXXXXXXX10011" 1;
+
+    pattern = 2;
+    force   "PI" "11010000000100011110111111111111110110101001000101\
+                  10110110000110101111110111110000110010110101100101\
+                  01001100001010000100101001000100011111011101000011\
+                  00101111001010100100110101100001100111001101111110\
+                  11101" 0;
+    measure "PO" "10100011110010010XXXXXXXXXXXXX101ZZ01Z101001XX0001\
+                  101111010000000011111XXXXXXXXXX10111" 1;
+
+    pattern = 3;
+    force   "PI" "01001010010010000101011011111111111111100101100100\
+                  10010111000100111101101110101000000011111101111101\
+                  11001001111010111101111110000010100001000000000101\
+                  00000000000010000000100100101001000010100100101100\
+                  10101" 0;
+    measure "PO" "00111110111101011XXXXXXXXXXXXX01111111100000XX1110\
+                  000000111110110000010XXXXXXXXXX10011" 1;
+
+    pattern = 4;
+    force   "PI" "11111111111011100111100011100110100110100010000100\
+                  10110011000110111101110010000010100000001111000000\
+                  00011111001001001100101111010011010000001100010100\
+                  01110100101000100000100100111001000011100100111101\
+                  11000" 0;
+    measure "PO" "11000000000000100XXXXXXXXXXXXX10010000111110XX0011\
+                  111111001001001111111XXXXXXXXXX10100" 1;
+
+    pattern = 5;
+    force   "PI" "11011001000110110001110110111101110111000111100101\
+                  10010011010110111111110100000011101011100101110010\
+                  00000111001001101111101110101100010001000010010001\
+                  00110011000000000100100101111001000111100101111111\
+                  01000" 0;
+    measure "PO" "11100001000001111XXXXXXXXXXXXX101000Z0000011XX1101\
+                  111111000000001011101XXXXXXXXXX10000" 1;
+
+    pattern = 6;
+    force   "PI" "00100111010000001111011010110111011011101000101100\
+                  10010010010110101101110001100010101100111111101101\
+                  11101111000000001101011101011000110001001001000101\
+                  10011001001000001000101101111001010111100111110111\
+                  10000" 0;
+    measure "PO" "11010010000010001XXXXXXXXXXXXX100Z1000Z11000XX1111\
+                  111111000100000111111XXXXXXXXXX10000" 1;
+
+    pattern = 7;
+    force   "PI" "01010010101001100011001101011011101101100000001100\
+                  10110010000100111101100000010100111000000101001100\
+                  10111000110110010100111011010111100100100100001011\
+                  11100010010001010001110100100011000011100110111100\
+                  01110" 0;
+    measure "PO" "00011100000000000XXXXXXXXXXXXX0000ZZ1Z011111XX1001\
+                  111111000000000111111XXXXXXXXXX10000" 1;
+
+    pattern = 8  clock_sequential ;
+    force   "PI" "01010101010101010110100011000000001110000000001101\
+                  10110111010110111111101001110010000010000111100010\
+                  00111010001010001100011001110111001001000001001001\
+                  01101101111100111001101101110011010111001110100100\
+                  11110" 0;
+    pulse "/sg13g2_dfrbp_1__CLK" 1;
+    pulse "/sg13g2_dfrbp_2__CLK" 1;
+    pulse "/sg13g2_dfrbpq_1__CLK" 1;
+    pulse "/sg13g2_dfrbpq_2__CLK" 1;
+    pulse "/sg13g2_dlhq_1__GATE" 1;
+    pulse "/sg13g2_dlhr_1__GATE" 1;
+    pulse "/sg13g2_dlhrq_1__GATE" 1;
+    pulse "/sg13g2_dllr_1__GATE_N" 1;
+    pulse "/sg13g2_dllrq_1__GATE_N" 1;
+    pulse "/sg13g2_lgcp_1_$_int_GATE__CLK" 1;
+    pulse "/sg13g2_lgcp_1__CLK" 1;
+    pulse "/sg13g2_sdfbbp_1__CLK" 1;
+    pulse "/sg13g2_sdfrbp_1__CLK" 1;
+    pulse "/sg13g2_sdfrbp_2__CLK" 1;
+    pulse "/sg13g2_sdfrbpq_1__CLK" 1;
+    pulse "/sg13g2_sdfrbpq_2__CLK" 1;
+    pulse "/sg13g2_slgcp_1_$_int_GATE__CLK" 1;
+    pulse "/sg13g2_slgcp_1__CLK" 1;
+    force   "PI" "01001001011101010100100010110111011011100001101100\
+                  10110011000110101111111110100010100001110111101000\
+                  01001011001001101110110111000110110001001001000101\
+                  01110011000010100000101100100011100110100111111101\
+                  10001" 2;
+    measure "PO" "00101100000000011101011110110111111000110001110001\
+                  111111010100000111111011001110010001" 3;
+
+    pattern = 9  clock_sequential ;
+    force   "PI" "11111111111111111000011011110001111111100001100100\
+                  10110010000110101101111100001111111111110101011111\
+                  10011001010010101001111000101100100101011010100101\
+                  10111101011000111001100101111001100111101111101101\
+                  01111" 0;
+    pulse "/sg13g2_dfrbp_1__CLK" 1;
+    pulse "/sg13g2_dfrbp_2__CLK" 1;
+    pulse "/sg13g2_dfrbpq_1__CLK" 1;
+    pulse "/sg13g2_dfrbpq_2__CLK" 1;
+    pulse "/sg13g2_dlhq_1__GATE" 1;
+    pulse "/sg13g2_dlhr_1__GATE" 1;
+    pulse "/sg13g2_dlhrq_1__GATE" 1;
+    pulse "/sg13g2_dllr_1__GATE_N" 1;
+    pulse "/sg13g2_dllrq_1__GATE_N" 1;
+    pulse "/sg13g2_lgcp_1_$_int_GATE__CLK" 1;
+    pulse "/sg13g2_lgcp_1__CLK" 1;
+    pulse "/sg13g2_sdfbbp_1__CLK" 1;
+    pulse "/sg13g2_sdfrbp_1__CLK" 1;
+    pulse "/sg13g2_sdfrbp_2__CLK" 1;
+    pulse "/sg13g2_sdfrbpq_1__CLK" 1;
+    pulse "/sg13g2_sdfrbpq_2__CLK" 1;
+    pulse "/sg13g2_slgcp_1_$_int_GATE__CLK" 1;
+    pulse "/sg13g2_slgcp_1__CLK" 1;
+    force   "PI" "10001001001001010010100010110110111011100100000100\
+                  10010011000100101111111110101000000010100101001000\
+                  00111001001001111001001111101000010001010000010101\
+                  10011000100100100000101100101011010010000100111110\
+                  10001" 2;
+    measure "PO" "00111100000001000010110001101011111111101011000001\
+                  111111000000000111111101001111110001" 3;
+
+    pattern = 10  clock_sequential ;
+    force   "PI" "10101010101010100101101010010010011100100010100101\
+                  10010111010100101111110111110100000100011101100100\
+                  11011111100011100010111010011011111101101101111100\
+                  00011100010000111100110101101011100110101101110110\
+                  01100" 0;
+    pulse "/sg13g2_dfrbp_1__CLK" 1;
+    pulse "/sg13g2_dfrbp_2__CLK" 1;
+    pulse "/sg13g2_dfrbpq_1__CLK" 1;
+    pulse "/sg13g2_dlhr_1__GATE" 1;
+    pulse "/sg13g2_dlhrq_1__GATE" 1;
+    pulse "/sg13g2_dllr_1__GATE_N" 1;
+    pulse "/sg13g2_lgcp_1_$_int_GATE__CLK" 1;
+    pulse "/sg13g2_lgcp_1__CLK" 1;
+    pulse "/sg13g2_sdfbbp_1__CLK" 1;
+    pulse "/sg13g2_sdfrbp_1__CLK" 1;
+    pulse "/sg13g2_sdfrbp_2__CLK" 1;
+    pulse "/sg13g2_sdfrbpq_1__CLK" 1;
+    pulse "/sg13g2_sdfrbpq_2__CLK" 1;
+    pulse "/sg13g2_slgcp_1_$_int_GATE__CLK" 1;
+    pulse "/sg13g2_slgcp_1__CLK" 1;
+    force   "PI" "01001010000010010100101010110111011011101111100101\
+                  10010011010100101111111110001001000000001111010100\
+                  01101011101001001110101110110101001010001000100101\
+                  01001100100010100000101100111001100011001110110100\
+                  10000" 2;
+    measure "PO" "0011110000001111101100XX10001X111101Z1111110010000\
+                  111111000000000101111010110001110000" 3;
+
+    pattern = 11  clock_sequential ;
+    force   "PI" "00000000000000011110001001010101011010100100101100\
+                  10010010000110101111100000000011110011000101010010\
+                  01010010000001110100111111110101001100000011001111\
+                  01011110000000110101111100110011110011000110100100\
+                  01010" 0;
+    pulse "/sg13g2_dfrbp_1__CLK" 1;
+    pulse "/sg13g2_dfrbp_2__CLK" 1;
+    pulse "/sg13g2_dfrbpq_1__CLK" 1;
+    pulse "/sg13g2_dlhr_1__GATE" 1;
+    pulse "/sg13g2_dlhrq_1__GATE" 1;
+    pulse "/sg13g2_lgcp_1__CLK" 1;
+    pulse "/sg13g2_sdfbbp_1__CLK" 1;
+    pulse "/sg13g2_sdfrbp_1__CLK" 1;
+    pulse "/sg13g2_sdfrbp_2__CLK" 1;
+    pulse "/sg13g2_sdfrbpq_1__CLK" 1;
+    pulse "/sg13g2_sdfrbpq_2__CLK" 1;
+    pulse "/sg13g2_slgcp_1_$_int_GATE__CLK" 1;
+    force   "PI" "01001010010110010010110010110110111011101000101101\
+                  10010010010100101111111110000011000001010111010101\
+                  01000000101000011001101110001111101001001001000101\
+                  11100101000010100000101101110011000111100110101100\
+                  10001" 2;
+    measure "PO" "0010110000001000110010XX011XXX111100Z1110101X00011\
+                  111101100000000111111100110000X10001" 3;
+
+    pattern = 12  clock_sequential ;
+    force   "PI" "01010101010101101001001111011011010110101000001101\
+                  10110111010110111111101111101100011101111111011111\
+                  01001001000101011000110100101000101111011110101001\
+                  11011010100000100101111101100011100110001100101100\
+                  00110" 0;
+    pulse "/sg13g2_dfrbp_1__CLK" 1;
+    pulse "/sg13g2_dfrbp_2__CLK" 1;
+    pulse "/sg13g2_dfrbpq_1__CLK" 1;
+    pulse "/sg13g2_dfrbpq_2__CLK" 1;
+    pulse "/sg13g2_dlhr_1__GATE" 1;
+    pulse "/sg13g2_dlhrq_1__GATE" 1;
+    pulse "/sg13g2_dllr_1__GATE_N" 1;
+    pulse "/sg13g2_dllrq_1__GATE_N" 1;
+    pulse "/sg13g2_sdfbbp_1__CLK" 1;
+    pulse "/sg13g2_sdfrbp_1__CLK" 1;
+    pulse "/sg13g2_sdfrbp_2__CLK" 1;
+    pulse "/sg13g2_sdfrbpq_1__CLK" 1;
+    pulse "/sg13g2_sdfrbpq_2__CLK" 1;
+    force   "PI" "10101100011000111110000100011000010010000110001101\
+                  10010110010100101111111101100111011111100111000100\
+                  10010010110000001011111011111010111000101000110110\
+                  10110110001000011000100101101001010110000111111101\
+                  10101" 2;
+    pulse "/sg13g2_dfrbp_1__RESET_B" 3;
+    pulse "/sg13g2_dfrbp_2__RESET_B" 3;
+    pulse "/sg13g2_dfrbpq_1__RESET_B" 3;
+    pulse "/sg13g2_dfrbpq_2__RESET_B" 3;
+    pulse "/sg13g2_dlhr_1__RESET_B" 3;
+    pulse "/sg13g2_dlhrq_1__RESET_B" 3;
+    pulse "/sg13g2_dllr_1__RESET_B" 3;
+    pulse "/sg13g2_dllrq_1__RESET_B" 3;
+    pulse "/sg13g2_lgcp_1__CLK" 3;
+    pulse "/sg13g2_sdfbbp_1__RESET_B" 3;
+    pulse "/sg13g2_sdfrbp_1__RESET_B" 3;
+    pulse "/sg13g2_sdfrbp_2__RESET_B" 3;
+    pulse "/sg13g2_sdfrbpq_1__RESET_B" 3;
+    pulse "/sg13g2_sdfrbpq_2__RESET_B" 3;
+    force   "PI" "01001010010001010100110010110110111011100001000100\
+                  10010111010110111111110110001000000001011111001001\
+                  00101011001001011010010111111100001010001000010101\
+                  00010101001000100000110101110011100110001110101101\
+                  10000" 4;
+    measure "PO" "00111100000000010010100X01001010110111110100X00001\
+                  11111100000000001111101010100XX10000" 5;
+
+end;
+

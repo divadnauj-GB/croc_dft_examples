@@ -1,0 +1,178 @@
+/eda/Siemens/2022-23/RHELx86/TESSENT_2022.3/bin/tessent -shell -dofile patterns_spec.do -log tshell.log_patterns_spec -replace
+//  Tessent Shell  2022.3    Thu Aug 11 22:57:52 GMT 2022
+//                Unpublished work. Copyright 2022 Siemens
+//
+//      This material contains trade secrets or otherwise confidential 
+//  information owned by Siemens Industry Software Inc. or its affiliates 
+//   (collectively, "SISW"), or its licensors. Access to and use of this 
+//     information is strictly limited as set forth in the Customer's 
+//                   applicable agreements with SISW. 
+//
+//  Siemens software executing under x86-64 Linux on Sat Nov 15 20:33:36 EST 2025.
+//  64 bit version
+//  Host: bello.darknet.local (257018 MB RAM, 49151 MB Swap)
+//
+//  command: #-----------------------------------------------------------
+//  command: # This file created by : memlibCertify
+//  command: #     Software version : 2022.3
+//  command: #           Created on : 11/15/25 20:33:00
+//  command: #-----------------------------------------------------------
+//  command: # --
+//  command: # -- Patterns 
+//  command: # --
+//  command: set_context patterns -ijtag
+//  command: set design_name memlibc_memory_bist_assembly
+//  command: set patterns_spec_file_path  [get_tsdb_output_directory]/patterns/${design_name}_rtl.patterns_spec_signoff
+//  command: if { ! [get_resource icl_is_elaborated] } {
+//             read_design ${design_name} -design_id rtl -no_hdl
+//             set_current_design ${design_name}
+//           }
+//  sub-command: read_design memlibc_memory_bist_assembly -design_id rtl -no_hdl 
+//  sub-command: set_current_design memlibc_memory_bist_assembly 
+//  Note: Reading the interface of the current design './tsdb_outdir/dft_inserted_designs/memlibc_memory_bist_assembly_rtl.dft_inserted_design/memlibc_memory_bist_assembly.v_interface'
+//  ---------------------------------------------------------------------------
+//  Begin ICL elaboration and checking.
+//  -----------------------------------
+//  ICL elaboration completed, CPU time=0.05 sec.
+//  ---------------------------------------------------------------------------
+//  command: if { [file exists ${patterns_spec_file_path}] } {
+//             puts "## Reading PatternsSpecification from '${patterns_spec_file_path}'"
+//             read_config_data ${patterns_spec_file_path}
+//             set patterns_spec [get_config_elements PatternsSpecification]
+//           } else {
+//             set patterns_spec [create_patterns_specification -replace]
+//             set_config_value [get_config_elements -in $patterns_spec Patterns/TestStep/MemoryBist/reduced_address_count] off
+//             # Add TestStep for custom algorithms {{{
+//             set target_ts [get_config_elements {Patterns(MemoryBist_P[0-9]+)} -in $patterns_spec -regexp]
+//             foreach_in_collection tcd_controller [get_config_elements Core/MemoryBistController -partition tcd] {
+//               set algo_list [list]
+//               set opset_list [list]
+//               set controller_name [get_config_value -id core_name [get_config_value $tcd_controller -parent_object]]
+//               foreach_in_collection algo_obj [get_config_elements Algorithm -in $tcd_controller] {
+//                 lappend algo_list [get_config_value -id algorithm_name $algo_obj]
+//               }
+//               foreach_in_collection opset_obj [get_config_elements OperationSet -in $tcd_controller] {
+//                 lappend opset_list [get_config_value -id name $opset_obj]
+//               }
+//               set default_opset [get_config_value StepCounter(0)/DefaultOperationSet -in $tcd_controller]
+//               foreach_in_collection ctl_inst [get_icl_instances -of_module [get_icl_module $controller_name]] {
+//                 set ts [add_config_element TestStep(algo[incr algo_cnt]) -in $target_ts]
+//                 set mbist_w [add_config_element MemoryBist -in $ts]
+//                 set ctl_w [add_config_element Controller([get_single_name $ctl_inst]) -in $mbist_w]
+//                 set_config_value run_mode -in $mbist_w run_time_prog;
+//                 set_config_comment [get_config_value AdvancedOptions/apply_algorithm -in $ctl_w -object] "Available algorithms : [join $algo_list ,]"
+//                 set_config_value AdvancedOptions/apply_algorithm -in $ctl_w [lindex $algo_list 0]
+//                 set_config_comment [get_config_value AdvancedOptions/apply_operation_set -in $ctl_w -object] "Available operation sets: [join $opset_list ,]"
+//                 set_config_value AdvancedOptions/apply_operation_set -in $ctl_w $default_opset
+//                 set_config_value AdvancedOptions/freeze_step -in $ctl_w off
+//               }
+//             }
+//             # }}}
+//           }
+//  sub-command: create_patterns_specification -replace 
+//  Creating '/PatternsSpecification(memlibc_memory_bist_assembly,rtl,signoff)'
+//    Getting patterns specifications for the 'ijtag' instrument type
+//    Getting patterns specifications for the 'memory_bist' instrument type
+//  sub-command: set_config_value {/PatternsSpecification(memlibc_memory_bist_assembly,rtl,signoff)/Patterns(MemoryBist_P1)/TestStep(go_nogo)/MemoryBist/reduced_address_count ...} off 
+//  sub-command: add_config_element TestStep(algo1) -in {/PatternsSpecification(memlibc_memory_bist_assembly,rtl,signoff)/Patterns(MemoryBist_P1)} 
+//  sub-command: add_config_element MemoryBist -in {/PatternsSpecification(memlibc_memory_bist_assembly,rtl,signoff)/Patterns(MemoryBist_P1)/TestStep(algo1)} 
+//  sub-command: add_config_element Controller(mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst) -in {/PatternsSpecification(memlibc_memory_bist_assembly,rtl,signoff)/Patterns(MemoryBist_P1)/TestStep(algo1)/MemoryBist} 
+//  sub-command: set_config_value run_mode -in {/PatternsSpecification(memlibc_memory_bist_assembly,rtl,signoff)/Patterns(MemoryBist_P1)/TestStep(algo1)/MemoryBist} run_time_prog 
+//  sub-command: set_config_comment {/PatternsSpecification(memlibc_memory_bist_assembly,rtl,signoff)/Patterns(MemoryBist_P1)/TestStep(algo1)/MemoryBist/Controller(mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst)/AdvancedOptions/apply_algorithm} "Available algorithms : SMARCHCHKBCIL" 
+//  sub-command: set_config_value AdvancedOptions/apply_algorithm -in {/PatternsSpecification(memlibc_memory_bist_assembly,rtl,signoff)/Patterns(MemoryBist_P1)/TestStep(algo1)/MemoryBist/Controller(mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst)} SMARCHCHKBCIL 
+//  sub-command: set_config_comment {/PatternsSpecification(memlibc_memory_bist_assembly,rtl,signoff)/Patterns(MemoryBist_P1)/TestStep(algo1)/MemoryBist/Controller(mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst)/AdvancedOptions/apply_operation_set} "Available operation sets: SYNC" 
+//  sub-command: set_config_value AdvancedOptions/apply_operation_set -in {/PatternsSpecification(memlibc_memory_bist_assembly,rtl,signoff)/Patterns(MemoryBist_P1)/TestStep(algo1)/MemoryBist/Controller(mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst)} SYNC 
+//  sub-command: set_config_value AdvancedOptions/freeze_step -in {/PatternsSpecification(memlibc_memory_bist_assembly,rtl,signoff)/Patterns(MemoryBist_P1)/TestStep(algo1)/MemoryBist/Controller(mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst)} off 
+//  command: report_config_data $patterns_spec
+
+PatternsSpecification(memlibc_memory_bist_assembly,rtl,signoff) {
+  Patterns(ICLNetwork) {
+    ICLNetworkVerify(memlibc_memory_bist_assembly) {
+    }
+  }
+  Patterns(MemoryBist_P1) {
+    ClockPeriods {
+      BIST_CLK : 10.0ns;
+    }
+    TestStep(go_nogo) {
+      MemoryBist {
+        run_mode : run_time_prog;
+        reduced_address_count : off;
+        Controller(mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst) {
+          DiagnosisOptions {
+            compare_go : on;
+            compare_go_id : on;
+          }
+        }
+      }
+    }
+    TestStep(algo1) {
+      MemoryBist {
+        run_mode : run_time_prog;
+        Controller(mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst) {
+          AdvancedOptions {
+            // Available algorithms : SMARCHCHKBCIL
+            apply_algorithm : SMARCHCHKBCIL;
+            // Available operation sets: SYNC
+            apply_operation_set : SYNC;
+            freeze_step : off;
+          }
+        }
+      }
+    }
+  }
+  Patterns(MemoryBist_ParallelRetentionTest_P1) {
+    ClockPeriods {
+      BIST_CLK : 10.0ns;
+    }
+    TestStep(ParallelRetentionTest) {
+      MemoryBist {
+        run_mode : hw_default;
+        parallel_retention_time : 0;
+        reduced_address_count : off;
+        Controller(mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst) {
+          parallel_retention_group : 1;
+          DiagnosisOptions {
+            compare_go_id : on;
+          }
+        }
+      }
+    }
+  }
+}
+//  command: process_patterns_specification 
+//  
+//  Begin processing of /PatternsSpecification(memlibc_memory_bist_assembly,rtl,signoff)
+//  
+//    Processing of /PatternsSpecification(memlibc_memory_bist_assembly,rtl,signoff)/Patterns(ICLNetwork)
+//  
+//      Creation of pattern 'ICLNetwork'
+//        Solving ICLNetworkVerify(memlibc_memory_bist_assembly)
+//  
+//      Writing pattern file './tsdb_outdir/patterns/memlibc_memory_bist_assembly_rtl.patterns_signoff/ICLNetwork.v'
+//  
+//    Processing of /PatternsSpecification(memlibc_memory_bist_assembly,rtl,signoff)/Patterns(MemoryBist_P1)
+//      Processing of TestStep(go_nogo) instrument 'memory_bist'
+//      Processing of TestStep(algo1) instrument 'memory_bist'
+//  Note: Validating algorithm SMARCHCHKBCIL....
+//  Note: Validating algorithm SMARCHCHKBCIL....done
+//  
+//      Creation of pattern 'MemoryBist_P1'
+//        Solving TestStep(go_nogo)
+//        Solving TestStep(algo1)
+//  
+//      Writing pattern file './tsdb_outdir/patterns/memlibc_memory_bist_assembly_rtl.patterns_signoff/MemoryBist_P1.v'
+//  
+//    Processing of /PatternsSpecification(memlibc_memory_bist_assembly,rtl,signoff)/Patterns(MemoryBist_ParallelRetentionTest_P1)
+//      Processing of TestStep(ParallelRetentionTest) instrument 'memory_bist'
+//  
+//      Creation of pattern 'MemoryBist_ParallelRetentionTest_P1'
+//        Solving TestStep(ParallelRetentionTest)
+//  
+//      Writing pattern file './tsdb_outdir/patterns/memlibc_memory_bist_assembly_rtl.patterns_signoff/MemoryBist_ParallelRetentionTest_P1.v'
+//      Writing simulation data dictionary file './tsdb_outdir/patterns/memlibc_memory_bist_assembly_rtl.patterns_signoff/simulation.data_dictionary'
+//  
+//  Done  processing of /PatternsSpecification(memlibc_memory_bist_assembly,rtl,signoff)
+//  
+//  Writing configuration data file './tsdb_outdir/patterns/memlibc_memory_bist_assembly_rtl.patterns_spec_signoff'.
+//  command: exit 

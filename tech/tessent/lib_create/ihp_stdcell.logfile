@@ -1,0 +1,27 @@
+/eda/Siemens/2022-23/RHELx86/TESSENT_2022.3/bin/fastscan -lib /home/jd.guerrero/Documents/Tessent/tech/tessent/lib_create/../libcomp_stdcell.atpglib -lib ihp_stdcell.regexp -dofile fs_stdcell.do -logfile ihp_stdcell.logfile -replace
+//  Tessent FastScan  2022.3    Thu Aug 11 22:57:52 GMT 2022
+//                Unpublished work. Copyright 2022 Siemens
+//
+//      This material contains trade secrets or otherwise confidential 
+//  information owned by Siemens Industry Software Inc. or its affiliates 
+//   (collectively, "SISW"), or its licensors. Access to and use of this 
+//     information is strictly limited as set forth in the Customer's 
+//                   applicable agreements with SISW. 
+//
+//  Siemens software executing under x86-64 Linux on Sun Nov 16 16:17:20 EST 2025.
+//  64 bit version
+//  Host: bello.darknet.local (257018 MB RAM, 49151 MB Swap)
+//
+
+//  mtfastscan_c license will expire in 14 days...
+//  Compiling library  ...
+//  Reading DFT Library file /home/jd.guerrero/Documents/Tessent/tech/tessent/lib_create/../libcomp_stdcell.atpglib
+//  Finished reading file /home/jd.guerrero/Documents/Tessent/tech/tessent/lib_create/../libcomp_stdcell.atpglib
+//  Reading DFT Library file ihp_stdcell.regexp
+//      scan_type = scan_cell;
+//                           ^
+//  Error: Syntax error
+//         at or before line 14 file 'ihp_stdcell.regexp'
+//         Information from ALL library files is being discarded (from -lib invocation and/or read_cell_library).
+//         Fix the syntax or omit this file, and then re-read all valid files using read_cell_library within
+//         the tool, or exit the tool and reinvoke with -lib to read the files.

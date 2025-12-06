@@ -1,0 +1,58 @@
+#-------------------------------------------------
+#  File created by: Tessent Shell
+#          Version: 2022.3
+#       Created on: Sat Nov 15 20:33:34 EST 2025
+#-------------------------------------------------
+
+ 
+set tessent_dft_info_dict {
+  version 1
+  dft_signals {}
+  modules_with_chains {
+    memlibc_memory_bist_assembly_rtl_tessent_sib_1 {
+      pre_scan_drc_on_boundary_only 0
+      module_type occ
+      is_hard_module 1
+      internal_scan_only 0
+      allow_scan_out_retiming 0
+      instance_list memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst
+      scan_en_ports {
+        ltest_scan_en {
+          active_polarity 1
+        }
+      }
+      clock_ports {
+        ltest_clk {
+          off_state 0
+        }
+      }
+      clock_out_ports_or_pins {
+        tessent_persistent_cell_ltest_clock_mux/y {}
+      }
+      ltest_en_ports {
+        ltest_en {
+          active_polarity 1
+        }
+      }
+      scan_chains {
+        scan_chain0 {
+          length 7
+          mux_si_functional_source 0
+          no_si_pipelining 0
+          is_non_scan_stitchable 0
+          scan_in_port ltest_si
+          scan_in_clock_name ltest_clk
+          scan_in_clock_inversion 0
+          scan_in_clock_unbalanced 0
+          scan_out_port ltest_so
+          scan_out_clock_name ltest_clk
+          scan_out_clock_inversion 1
+          scan_out_clock_unbalanced 0
+        }
+      }
+    }
+  }
+  modules_with_chains_not_active_by_default {}
+  non_scannable_instance_list mem_container_inst/m1_mem_inst
+  edt_instances {}
+}

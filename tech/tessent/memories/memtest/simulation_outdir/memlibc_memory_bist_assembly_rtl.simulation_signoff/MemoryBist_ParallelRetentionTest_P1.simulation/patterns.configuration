@@ -1,0 +1,7 @@
+config MemoryBist_ParallelRetentionTest_P1_configuration;
+  design TB;
+  default liblist dut_work;
+
+  instance TB.DUT_inst use     dut_work.memlibc_memory_bist_assembly;
+  instance TB.DUT_inst liblist dut_work;
+endconfig

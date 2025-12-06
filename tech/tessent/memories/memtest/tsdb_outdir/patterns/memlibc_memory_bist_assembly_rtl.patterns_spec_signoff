@@ -1,0 +1,62 @@
+//-------------------------------------------------
+//  File created by: Tessent Shell
+//          Version: 2022.3
+//       Created on: Sat Nov 15 20:33:47 EST 2025
+//-------------------------------------------------
+
+
+PatternsSpecification(memlibc_memory_bist_assembly,rtl,signoff) {
+  Patterns(ICLNetwork) {
+    ICLNetworkVerify(memlibc_memory_bist_assembly) {
+    }
+  }
+  Patterns(MemoryBist_P1) {
+    ClockPeriods {
+      BIST_CLK : 10.0ns;
+    }
+    TestStep(go_nogo) {
+      MemoryBist {
+        run_mode : run_time_prog;
+        reduced_address_count : off;
+        Controller(mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst) {
+          DiagnosisOptions {
+            compare_go : on;
+            compare_go_id : on;
+          }
+        }
+      }
+    }
+    TestStep(algo1) {
+      MemoryBist {
+        run_mode : run_time_prog;
+        Controller(mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst) {
+          AdvancedOptions {
+            // Available algorithms : SMARCHCHKBCIL
+            apply_algorithm : SMARCHCHKBCIL;
+            // Available operation sets: SYNC
+            apply_operation_set : SYNC;
+            freeze_step : off;
+          }
+        }
+      }
+    }
+  }
+  Patterns(MemoryBist_ParallelRetentionTest_P1) {
+    ClockPeriods {
+      BIST_CLK : 10.0ns;
+    }
+    TestStep(ParallelRetentionTest) {
+      MemoryBist {
+        run_mode : hw_default;
+        parallel_retention_time : 0;
+        reduced_address_count : off;
+        Controller(mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst) {
+          parallel_retention_group : 1;
+          DiagnosisOptions {
+            compare_go_id : on;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+ETLibCertify (adk) {
+                SimModelFile: ../../ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v;
+                MTCellLib: ../ihp-sg13g2_stdcell.tcelllib;
+} // End of ETLibCertify wrapper

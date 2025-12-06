@@ -1,0 +1,11 @@
+FaultInformation {
+ version : 1;
+ FaultType (Stuck) {
+  FaultList {
+   FaultCollapsing : FALSE;
+   Format : Identifier, Class, Location;
+   Instance ("") {
+   }
+  }
+ }
+}

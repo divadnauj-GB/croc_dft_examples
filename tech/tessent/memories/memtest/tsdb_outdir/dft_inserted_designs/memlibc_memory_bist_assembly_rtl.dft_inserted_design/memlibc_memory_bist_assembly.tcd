@@ -1,0 +1,31 @@
+//-------------------------------------------------
+//  File created by: Tessent Shell
+//          Version: 2022.3
+//       Created on: Sat Nov 15 20:33:33 EST 2025
+//-------------------------------------------------
+
+
+Core(memlibc_memory_bist_assembly) {
+  DesignInfo {
+    design_id : rtl;
+    design_level : sub_block;
+    ChildBlockModules {
+    }
+    RtlClockGaters {
+      RtlClockGater(memlibc_memory_bist_assembly_rtl_tessent_clk_gate_and) {
+        functional_enable : fe;
+        functional_enable_polarity : 1;
+        test_enable : te;
+        test_enable_polarity : 1;
+      }
+    }
+    Clocks {
+      Clock(BIST_CLK) {
+        domain_label : BIST_CLK;
+        type : async_source;
+        base_period : 10.00ns;
+        period : 10.0;
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+config ICLNetwork_configuration;
+  design TB;
+  default liblist dut_work tsdb_ijtag_graybox;
+
+  instance TB.DUT_inst use     tsdb_ijtag_graybox.memlibc_memory_bist_assembly;
+  instance TB.DUT_inst liblist tsdb_ijtag_graybox dut_work;
+endconfig

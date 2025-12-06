@@ -1,0 +1,2764 @@
+/home/jd.guerrero/Documents/Tessent/tech/tessent/lib_create
+//  LibComp  2022.3    Thu Aug 11 22:57:52 GMT 2022
+//       Unpublished work. Copyright 2022 Siemens
+//
+//      This material contains trade secrets or otherwise confidential
+//  information owned by Siemens Industry Software Inc. or its affiliates
+//   (collectively, "SISW"), or its licensors. Access to and use of this
+//     information is strictly limited as set forth in the Customer's
+//                   applicable agreements with SISW.
+//
+//
+//  Siemens software executing under undetermined architecture.
+//
+//
+// Note: Dofile <filename> omitted.  Using /eda/Siemens/2022-23/RHELx86/TESSENT_2022.3/lib/tools/libcomp/libcomp.do.default.
+//
+//  Reading Verilog Netlist ...
+//  command: add models -all
+//  command: set system mode translation
+//  Will translate verilog module ihp_dff
+//  Will translate verilog module ihp_dff_err
+//  Will translate verilog module ihp_dff_r
+//  Will translate verilog module ihp_dff_r_err
+//  Will translate verilog module ihp_dff_s
+//  Will translate verilog module ihp_dff_s_err
+//  Will translate verilog module ihp_dff_sr_0
+//  Will translate verilog module ihp_dff_sr_1
+//  Will translate verilog module ihp_dff_sr_err
+//  Will translate verilog module ihp_latch
+//  Will translate verilog module ihp_latch_r
+//  Will translate verilog module ihp_latch_s
+//  Will translate verilog module ihp_latch_sr_0
+//  Will translate verilog module ihp_latch_sr_1
+//  Will translate verilog module ihp_mux2
+//  Will translate verilog module ihp_mux4
+//  Will translate verilog module ihp_mux8
+//  Will translate verilog module sg13g2_a21o_1
+//  Will translate verilog module sg13g2_a21o_2
+//  Will translate verilog module sg13g2_a21oi_1
+//  Will translate verilog module sg13g2_a21oi_2
+//  Will translate verilog module sg13g2_a221oi_1
+//  Will translate verilog module sg13g2_a22oi_1
+//  Will translate verilog module sg13g2_and2_1
+//  Will translate verilog module sg13g2_and2_2
+//  Will translate verilog module sg13g2_and3_1
+//  Will translate verilog module sg13g2_and3_2
+//  Will translate verilog module sg13g2_and4_1
+//  Will translate verilog module sg13g2_and4_2
+//  Will translate verilog module sg13g2_antennanp
+//  Will translate verilog module sg13g2_buf_1
+//  Will translate verilog module sg13g2_buf_16
+//  Will translate verilog module sg13g2_buf_2
+//  Will translate verilog module sg13g2_buf_4
+//  Will translate verilog module sg13g2_buf_8
+//  Will translate verilog module sg13g2_decap_4
+//  Will translate verilog module sg13g2_decap_8
+//  Will translate verilog module sg13g2_dfrbp_1
+//  Will translate verilog module sg13g2_dfrbp_2
+//  Will translate verilog module sg13g2_dfrbpq_1
+//  Will translate verilog module sg13g2_dfrbpq_2
+//  Will translate verilog module sg13g2_dlhq_1
+//  Will translate verilog module sg13g2_dlhr_1
+//  Will translate verilog module sg13g2_dlhrq_1
+//  Will translate verilog module sg13g2_dllr_1
+//  Will translate verilog module sg13g2_dllrq_1
+//  Will translate verilog module sg13g2_dlygate4sd1_1
+//  Will translate verilog module sg13g2_dlygate4sd2_1
+//  Will translate verilog module sg13g2_dlygate4sd3_1
+//  Will translate verilog module sg13g2_ebufn_2
+//  Will translate verilog module sg13g2_ebufn_4
+//  Will translate verilog module sg13g2_ebufn_8
+//  Will translate verilog module sg13g2_einvn_2
+//  Will translate verilog module sg13g2_einvn_4
+//  Will translate verilog module sg13g2_einvn_8
+//  Will translate verilog module sg13g2_fill_1
+//  Will translate verilog module sg13g2_fill_2
+//  Will translate verilog module sg13g2_fill_4
+//  Will translate verilog module sg13g2_fill_8
+//  Will translate verilog module sg13g2_inv_1
+//  Will translate verilog module sg13g2_inv_16
+//  Will translate verilog module sg13g2_inv_2
+//  Will translate verilog module sg13g2_inv_4
+//  Will translate verilog module sg13g2_inv_8
+//  Will translate verilog module sg13g2_lgcp_1
+//  Will translate verilog module sg13g2_mux2_1
+//  Will translate verilog module sg13g2_mux2_2
+//  Will translate verilog module sg13g2_mux4_1
+//  Will translate verilog module sg13g2_nand2_1
+//  Will translate verilog module sg13g2_nand2_2
+//  Will translate verilog module sg13g2_nand2b_1
+//  Will translate verilog module sg13g2_nand2b_2
+//  Will translate verilog module sg13g2_nand3_1
+//  Will translate verilog module sg13g2_nand3b_1
+//  Will translate verilog module sg13g2_nand4_1
+//  Will translate verilog module sg13g2_nor2_1
+//  Will translate verilog module sg13g2_nor2_2
+//  Will translate verilog module sg13g2_nor2b_1
+//  Will translate verilog module sg13g2_nor2b_2
+//  Will translate verilog module sg13g2_nor3_1
+//  Will translate verilog module sg13g2_nor3_2
+//  Will translate verilog module sg13g2_nor4_1
+//  Will translate verilog module sg13g2_nor4_2
+//  Will translate verilog module sg13g2_o21ai_1
+//  Will translate verilog module sg13g2_or2_1
+//  Will translate verilog module sg13g2_or2_2
+//  Will translate verilog module sg13g2_or3_1
+//  Will translate verilog module sg13g2_or3_2
+//  Will translate verilog module sg13g2_or4_1
+//  Will translate verilog module sg13g2_or4_2
+//  Will translate verilog module sg13g2_sdfbbp_1
+//  Will translate verilog module sg13g2_sdfrbp_1
+//  Will translate verilog module sg13g2_sdfrbp_2
+//  Will translate verilog module sg13g2_sdfrbpq_1
+//  Will translate verilog module sg13g2_sdfrbpq_2
+//  Will translate verilog module sg13g2_sighold
+//  Will translate verilog module sg13g2_slgcp_1
+//  Will translate verilog module sg13g2_tiehi
+//  Will translate verilog module sg13g2_tielo
+//  Will translate verilog module sg13g2_xnor2_1
+//  Will translate verilog module sg13g2_xor2_1
+//  command: run
+//  Note: UDP ihp_dff has 1 data input that is redundant to other data inputs.
+//    The following appears as an input in the UDP, but is not used in ATPG model.
+//      xcr
+// Translated verilog module 'ihp_dff'.
+// Warning: Less than 2 inputs in sequential UDP ihp_dff_err
+//   after unused inputs, power, ground, and notifiers removed.
+//   Things we recognize have more inputs (latch, DFF, ..).
+// Failed to Translate verilog module ihp_dff_err.
+
+// UDP ihp_dff_err Has been BlackBoxed.
+//  Note: UDP ihp_dff_r has 1 data input that is redundant to other data inputs.
+//    The following appears as an input in the UDP, but is not used in ATPG model.
+//      xcr
+// Translated verilog module 'ihp_dff_r'.
+// FAILED to recognize function of 3 Inputs for UDP 'ihp_dff_r_err'.
+//     input 'clk'.
+//     input 'd'.
+//     input 'r'.
+//   If this is DFF or latch, this may be due to other clocks and controls.
+//     Libcomp expects all to be off (not DontCare) except the one asserted.
+// Failed to Translate verilog module ihp_dff_r_err.
+
+// UDP ihp_dff_r_err Has been BlackBoxed.
+//  Note: UDP ihp_dff_s has 1 data input that is redundant to other data inputs.
+//    The following appears as an input in the UDP, but is not used in ATPG model.
+//      xcr
+// Translated verilog module 'ihp_dff_s'.
+// FAILED to recognize function of 3 Inputs for UDP 'ihp_dff_s_err'.
+//     input 'clk'.
+//     input 'd'.
+//     input 's'.
+//   If this is DFF or latch, this may be due to other clocks and controls.
+//     Libcomp expects all to be off (not DontCare) except the one asserted.
+// Failed to Translate verilog module ihp_dff_s_err.
+
+// UDP ihp_dff_s_err Has been BlackBoxed.
+//  Note: UDP ihp_dff_sr_0 has 1 data input that is redundant to other data inputs.
+//    The following appears as an input in the UDP, but is not used in ATPG model.
+//      xcr
+// Translated verilog module 'ihp_dff_sr_0'.
+//  Note: UDP ihp_dff_sr_1 has 1 data input that is redundant to other data inputs.
+//    The following appears as an input in the UDP, but is not used in ATPG model.
+//      xcr
+// Translated verilog module 'ihp_dff_sr_1'.
+// FAILED to recognize function of 4 Inputs for UDP 'ihp_dff_sr_err'.
+//     input 'clk'.
+//     input 'd'.
+//     input 's'.
+//     input 'r'.
+//   If this is DFF or latch, this may be due to other clocks and controls.
+//     Libcomp expects all to be off (not DontCare) except the one asserted.
+// Failed to Translate verilog module ihp_dff_sr_err.
+
+// UDP ihp_dff_sr_err Has been BlackBoxed.
+// Translated verilog module 'ihp_latch'.
+// Translated verilog module 'ihp_latch_r'.
+// Translated verilog module 'ihp_latch_s'.
+// Translated verilog module 'ihp_latch_sr_0'.
+// Translated verilog module 'ihp_latch_sr_1'.
+// Translated verilog module 'ihp_mux2'.
+// Translated verilog module 'ihp_mux4'.
+// Translated verilog module 'ihp_mux8'.
+// Translated verilog module 'sg13g2_a21o_1'.
+// Translated verilog module 'sg13g2_a21o_2'.
+// Translated verilog module 'sg13g2_a21oi_1'.
+// Translated verilog module 'sg13g2_a21oi_2'.
+// Translated verilog module 'sg13g2_a221oi_1'.
+// Translated verilog module 'sg13g2_a22oi_1'.
+// Translated verilog module 'sg13g2_and2_1'.
+// Translated verilog module 'sg13g2_and2_2'.
+// Translated verilog module 'sg13g2_and3_1'.
+// Translated verilog module 'sg13g2_and3_2'.
+// Translated verilog module 'sg13g2_and4_1'.
+// Translated verilog module 'sg13g2_and4_2'.
+// Translated verilog module 'sg13g2_antennanp'.
+// Translated verilog module 'sg13g2_buf_1'.
+// Translated verilog module 'sg13g2_buf_16'.
+// Translated verilog module 'sg13g2_buf_2'.
+// Translated verilog module 'sg13g2_buf_4'.
+// Translated verilog module 'sg13g2_buf_8'.
+// Translated verilog module 'sg13g2_decap_4'.
+// Translated verilog module 'sg13g2_decap_8'.
+// Translated verilog module 'sg13g2_dfrbp_1'.
+// Translated verilog module 'sg13g2_dfrbp_2'.
+// Translated verilog module 'sg13g2_dfrbpq_1'.
+// Translated verilog module 'sg13g2_dfrbpq_2'.
+// Translated verilog module 'sg13g2_dlhq_1'.
+// Translated verilog module 'sg13g2_dlhr_1'.
+// Translated verilog module 'sg13g2_dlhrq_1'.
+// Translated verilog module 'sg13g2_dllr_1'.
+// Translated verilog module 'sg13g2_dllrq_1'.
+// Translated verilog module 'sg13g2_dlygate4sd1_1'.
+// Translated verilog module 'sg13g2_dlygate4sd2_1'.
+// Translated verilog module 'sg13g2_dlygate4sd3_1'.
+// Translated verilog module 'sg13g2_ebufn_2'.
+// Translated verilog module 'sg13g2_ebufn_4'.
+// Translated verilog module 'sg13g2_ebufn_8'.
+// Translated verilog module 'sg13g2_einvn_2'.
+// Translated verilog module 'sg13g2_einvn_4'.
+// Translated verilog module 'sg13g2_einvn_8'.
+// Translated verilog module 'sg13g2_fill_1'.
+// Translated verilog module 'sg13g2_fill_2'.
+// Translated verilog module 'sg13g2_fill_4'.
+// Translated verilog module 'sg13g2_fill_8'.
+// Translated verilog module 'sg13g2_inv_1'.
+// Translated verilog module 'sg13g2_inv_16'.
+// Translated verilog module 'sg13g2_inv_2'.
+// Translated verilog module 'sg13g2_inv_4'.
+// Translated verilog module 'sg13g2_inv_8'.
+// Translated verilog module 'sg13g2_lgcp_1'.
+// Translated verilog module 'sg13g2_mux2_1'.
+// Translated verilog module 'sg13g2_mux2_2'.
+// Translated verilog module 'sg13g2_mux4_1'.
+// Translated verilog module 'sg13g2_nand2_1'.
+// Translated verilog module 'sg13g2_nand2_2'.
+// Translated verilog module 'sg13g2_nand2b_1'.
+// Translated verilog module 'sg13g2_nand2b_2'.
+// Translated verilog module 'sg13g2_nand3_1'.
+// Translated verilog module 'sg13g2_nand3b_1'.
+// Translated verilog module 'sg13g2_nand4_1'.
+// Translated verilog module 'sg13g2_nor2_1'.
+// Translated verilog module 'sg13g2_nor2_2'.
+// Translated verilog module 'sg13g2_nor2b_1'.
+// Translated verilog module 'sg13g2_nor2b_2'.
+// Translated verilog module 'sg13g2_nor3_1'.
+// Translated verilog module 'sg13g2_nor3_2'.
+// Translated verilog module 'sg13g2_nor4_1'.
+// Translated verilog module 'sg13g2_nor4_2'.
+// Translated verilog module 'sg13g2_o21ai_1'.
+// Translated verilog module 'sg13g2_or2_1'.
+// Translated verilog module 'sg13g2_or2_2'.
+// Translated verilog module 'sg13g2_or3_1'.
+// Translated verilog module 'sg13g2_or3_2'.
+// Translated verilog module 'sg13g2_or4_1'.
+// Translated verilog module 'sg13g2_or4_2'.
+// Translated verilog module 'sg13g2_sdfbbp_1'.
+// Translated verilog module 'sg13g2_sdfrbp_1'.
+// Translated verilog module 'sg13g2_sdfrbp_2'.
+// Translated verilog module 'sg13g2_sdfrbpq_1'.
+// Translated verilog module 'sg13g2_sdfrbpq_2'.
+// Translated verilog module 'sg13g2_sighold'.
+// Translated verilog module 'sg13g2_slgcp_1'.
+// Translated verilog module 'sg13g2_tiehi'.
+// Translated verilog module 'sg13g2_tielo'.
+// Translated verilog module 'sg13g2_xnor2_1'.
+// Translated verilog module 'sg13g2_xor2_1'.
+
+// Total translation cpu run time =    0.15 seconds.
+//  command: write library libcomp.atpglib -rep
+// Writing ATPG Models...
+// 
+// Verifying ATPG Library using Invocation :
+//    lcVerify -no_scan_rams -no_atpg_prims libcomp.atpglib  <verilog_source>
+// 
+// 
+// 
+// Library Verification Run
+// Verifying libcomp.atpglib
+// Run at Thu Nov 13 11:37:30 2025
+// 
+//     The following 4 Models were Completely BlackBoxed:
+//     ihp_dff_err
+//     ihp_dff_r_err
+//     ihp_dff_s_err
+//     ihp_dff_sr_err
+//     
+//     User invoked Libcomp with following + arguments for Verilog translation.
+//     +define+TETRAMAX 
+// 
+// ---------------------------------------------------------
+// Summary Statistics for Library libcomp.atpglib
+// -----------------------------------------
+// Fault Statistics for Library libcomp.atpglib
+// -----------------------------------------
+// Fault Classes                     #faults   
+//                                   (total)   
+// ----------------------------  --------------
+//   FU (full)                        1306     
+//   --------------------------  --------------
+//   DS (det_simulation)          1242 (95.10%)
+//   UU (unused)                    64 ( 4.90%)
+// --------------------------------------------
+// Coverage                                    
+//   --------------------------                
+//   test_coverage                     100.00% 
+//   fault_coverage                     95.10% 
+//   atpg_effectiveness                100.00% 
+// --------------------------------------------
+// Test Pattern Statistics for Library libcomp.atpglib
+// -------------------------------------------
+// #test_patterns                           20 
+//   #basic_patterns                        15 
+//   #clock_sequential_patterns              5 
+// #simulated_patterns                      20 
+// ---------------------------------------------------------
+// 
+// ---------------------------------------------------------
+// Model : ihp_dff
+// ---------------------
+// Fault Statistics for instance ihp_dff
+// -----------------------------------------
+// Fault Classes                     #faults    	ihp_dff
+//                                   (total)    	ihp_dff
+// ----------------------------  ---------------	ihp_dff
+//   FU (full)                          4       	ihp_dff
+//   --------------------------  ---------------	ihp_dff
+//   DS (det_simulation)             4 (100.00%)	ihp_dff
+// ---------------------------------------------	ihp_dff
+// Coverage                                     	ihp_dff
+//   --------------------------                 	ihp_dff
+//   test_coverage                      100.00% 	ihp_dff
+//   fault_coverage                     100.00% 	ihp_dff
+//   atpg_effectiveness                 100.00% 	ihp_dff
+// ---------------------------------------------	ihp_dff
+// 
+// ---------------------------------------------------------
+// Model : ihp_dff_err
+// ---------------------
+// Fault Statistics for instance ihp_dff_err
+// -----------------------------------------
+// Fault Classes                     #faults    	ihp_dff_err
+//                                   (total)    	ihp_dff_err
+// ----------------------------  ---------------	ihp_dff_err
+//   FU (full)                          6       	ihp_dff_err
+//   --------------------------  ---------------	ihp_dff_err
+//   UU (unused)                     6 (100.00%)	ihp_dff_err
+// ---------------------------------------------	ihp_dff_err
+// Coverage                                     	ihp_dff_err
+//   --------------------------                 	ihp_dff_err
+//   test_coverage                        0.00% 	ihp_dff_err
+//   fault_coverage                       0.00% 	ihp_dff_err
+//   atpg_effectiveness                 100.00% 	ihp_dff_err
+// ---------------------------------------------	ihp_dff_err
+// 
+// ---------------------------------------------------------
+// Model : ihp_dff_r
+// ---------------------
+// Fault Statistics for instance ihp_dff_r
+// -----------------------------------------
+// Fault Classes                     #faults    	ihp_dff_r
+//                                   (total)    	ihp_dff_r
+// ----------------------------  ---------------	ihp_dff_r
+//   FU (full)                          6       	ihp_dff_r
+//   --------------------------  ---------------	ihp_dff_r
+//   DS (det_simulation)             6 (100.00%)	ihp_dff_r
+// ---------------------------------------------	ihp_dff_r
+// Coverage                                     	ihp_dff_r
+//   --------------------------                 	ihp_dff_r
+//   test_coverage                      100.00% 	ihp_dff_r
+//   fault_coverage                     100.00% 	ihp_dff_r
+//   atpg_effectiveness                 100.00% 	ihp_dff_r
+// ---------------------------------------------	ihp_dff_r
+// 
+// ---------------------------------------------------------
+// Model : ihp_dff_r_err
+// ---------------------
+// Fault Statistics for instance ihp_dff_r_err
+// -----------------------------------------
+// Fault Classes                     #faults    	ihp_dff_r_err
+//                                   (total)    	ihp_dff_r_err
+// ----------------------------  ---------------	ihp_dff_r_err
+//   FU (full)                          8       	ihp_dff_r_err
+//   --------------------------  ---------------	ihp_dff_r_err
+//   UU (unused)                     8 (100.00%)	ihp_dff_r_err
+// ---------------------------------------------	ihp_dff_r_err
+// Coverage                                     	ihp_dff_r_err
+//   --------------------------                 	ihp_dff_r_err
+//   test_coverage                        0.00% 	ihp_dff_r_err
+//   fault_coverage                       0.00% 	ihp_dff_r_err
+//   atpg_effectiveness                 100.00% 	ihp_dff_r_err
+// ---------------------------------------------	ihp_dff_r_err
+// 
+// ---------------------------------------------------------
+// Model : ihp_dff_s
+// ---------------------
+// Fault Statistics for instance ihp_dff_s
+// -----------------------------------------
+// Fault Classes                     #faults    	ihp_dff_s
+//                                   (total)    	ihp_dff_s
+// ----------------------------  ---------------	ihp_dff_s
+//   FU (full)                          4       	ihp_dff_s
+//   --------------------------  ---------------	ihp_dff_s
+//   DS (det_simulation)             4 (100.00%)	ihp_dff_s
+// ---------------------------------------------	ihp_dff_s
+// Coverage                                     	ihp_dff_s
+//   --------------------------                 	ihp_dff_s
+//   test_coverage                      100.00% 	ihp_dff_s
+//   fault_coverage                     100.00% 	ihp_dff_s
+//   atpg_effectiveness                 100.00% 	ihp_dff_s
+// ---------------------------------------------	ihp_dff_s
+// 
+// ---------------------------------------------------------
+// Model : ihp_dff_s_err
+// ---------------------
+// Fault Statistics for instance ihp_dff_s_err
+// -----------------------------------------
+// Fault Classes                     #faults    	ihp_dff_s_err
+//                                   (total)    	ihp_dff_s_err
+// ----------------------------  ---------------	ihp_dff_s_err
+//   FU (full)                          8       	ihp_dff_s_err
+//   --------------------------  ---------------	ihp_dff_s_err
+//   UU (unused)                     8 (100.00%)	ihp_dff_s_err
+// ---------------------------------------------	ihp_dff_s_err
+// Coverage                                     	ihp_dff_s_err
+//   --------------------------                 	ihp_dff_s_err
+//   test_coverage                        0.00% 	ihp_dff_s_err
+//   fault_coverage                       0.00% 	ihp_dff_s_err
+//   atpg_effectiveness                 100.00% 	ihp_dff_s_err
+// ---------------------------------------------	ihp_dff_s_err
+// 
+// ---------------------------------------------------------
+// Model : ihp_dff_sr_0
+// ---------------------
+// Fault Statistics for instance ihp_dff_sr_0
+// -----------------------------------------
+// Fault Classes                     #faults    	ihp_dff_sr_0
+//                                   (total)    	ihp_dff_sr_0
+// ----------------------------  ---------------	ihp_dff_sr_0
+//   FU (full)                          4       	ihp_dff_sr_0
+//   --------------------------  ---------------	ihp_dff_sr_0
+//   DS (det_simulation)             4 (100.00%)	ihp_dff_sr_0
+// ---------------------------------------------	ihp_dff_sr_0
+// Coverage                                     	ihp_dff_sr_0
+//   --------------------------                 	ihp_dff_sr_0
+//   test_coverage                      100.00% 	ihp_dff_sr_0
+//   fault_coverage                     100.00% 	ihp_dff_sr_0
+//   atpg_effectiveness                 100.00% 	ihp_dff_sr_0
+// ---------------------------------------------	ihp_dff_sr_0
+// 
+// ---------------------------------------------------------
+// Model : ihp_dff_sr_1
+// ---------------------
+// Fault Statistics for instance ihp_dff_sr_1
+// -----------------------------------------
+// Fault Classes                     #faults    	ihp_dff_sr_1
+//                                   (total)    	ihp_dff_sr_1
+// ----------------------------  ---------------	ihp_dff_sr_1
+//   FU (full)                          6       	ihp_dff_sr_1
+//   --------------------------  ---------------	ihp_dff_sr_1
+//   DS (det_simulation)             6 (100.00%)	ihp_dff_sr_1
+// ---------------------------------------------	ihp_dff_sr_1
+// Coverage                                     	ihp_dff_sr_1
+//   --------------------------                 	ihp_dff_sr_1
+//   test_coverage                      100.00% 	ihp_dff_sr_1
+//   fault_coverage                     100.00% 	ihp_dff_sr_1
+//   atpg_effectiveness                 100.00% 	ihp_dff_sr_1
+// ---------------------------------------------	ihp_dff_sr_1
+// 
+// ---------------------------------------------------------
+// Model : ihp_dff_sr_err
+// ---------------------
+// Fault Statistics for instance ihp_dff_sr_err
+// -----------------------------------------
+// Fault Classes                     #faults    	ihp_dff_sr_err
+//                                   (total)    	ihp_dff_sr_err
+// ----------------------------  ---------------	ihp_dff_sr_err
+//   FU (full)                          10      	ihp_dff_sr_err
+//   --------------------------  ---------------	ihp_dff_sr_err
+//   UU (unused)                    10 (100.00%)	ihp_dff_sr_err
+// ---------------------------------------------	ihp_dff_sr_err
+// Coverage                                     	ihp_dff_sr_err
+//   --------------------------                 	ihp_dff_sr_err
+//   test_coverage                        0.00% 	ihp_dff_sr_err
+//   fault_coverage                       0.00% 	ihp_dff_sr_err
+//   atpg_effectiveness                 100.00% 	ihp_dff_sr_err
+// ---------------------------------------------	ihp_dff_sr_err
+// 
+// ---------------------------------------------------------
+// Model : ihp_latch
+// ---------------------
+// Fault Statistics for instance ihp_latch
+// -----------------------------------------
+// Fault Classes                     #faults    	ihp_latch
+//                                   (total)    	ihp_latch
+// ----------------------------  ---------------	ihp_latch
+//   FU (full)                          4       	ihp_latch
+//   --------------------------  ---------------	ihp_latch
+//   DS (det_simulation)             4 (100.00%)	ihp_latch
+// ---------------------------------------------	ihp_latch
+// Coverage                                     	ihp_latch
+//   --------------------------                 	ihp_latch
+//   test_coverage                      100.00% 	ihp_latch
+//   fault_coverage                     100.00% 	ihp_latch
+//   atpg_effectiveness                 100.00% 	ihp_latch
+// ---------------------------------------------	ihp_latch
+// 
+// ---------------------------------------------------------
+// Model : ihp_latch_r
+// ---------------------
+// Fault Statistics for instance ihp_latch_r
+// -----------------------------------------
+// Fault Classes                     #faults    	ihp_latch_r
+//                                   (total)    	ihp_latch_r
+// ----------------------------  ---------------	ihp_latch_r
+//   FU (full)                          6       	ihp_latch_r
+//   --------------------------  ---------------	ihp_latch_r
+//   DS (det_simulation)             6 (100.00%)	ihp_latch_r
+// ---------------------------------------------	ihp_latch_r
+// Coverage                                     	ihp_latch_r
+//   --------------------------                 	ihp_latch_r
+//   test_coverage                      100.00% 	ihp_latch_r
+//   fault_coverage                     100.00% 	ihp_latch_r
+//   atpg_effectiveness                 100.00% 	ihp_latch_r
+// ---------------------------------------------	ihp_latch_r
+// 
+// ---------------------------------------------------------
+// Model : ihp_latch_s
+// ---------------------
+// Fault Statistics for instance ihp_latch_s
+// -----------------------------------------
+// Fault Classes                     #faults    	ihp_latch_s
+//                                   (total)    	ihp_latch_s
+// ----------------------------  ---------------	ihp_latch_s
+//   FU (full)                          4       	ihp_latch_s
+//   --------------------------  ---------------	ihp_latch_s
+//   DS (det_simulation)             4 (100.00%)	ihp_latch_s
+// ---------------------------------------------	ihp_latch_s
+// Coverage                                     	ihp_latch_s
+//   --------------------------                 	ihp_latch_s
+//   test_coverage                      100.00% 	ihp_latch_s
+//   fault_coverage                     100.00% 	ihp_latch_s
+//   atpg_effectiveness                 100.00% 	ihp_latch_s
+// ---------------------------------------------	ihp_latch_s
+// 
+// ---------------------------------------------------------
+// Model : ihp_latch_sr_0
+// ---------------------
+// Fault Statistics for instance ihp_latch_sr_0
+// -----------------------------------------
+// Fault Classes                     #faults    	ihp_latch_sr_0
+//                                   (total)    	ihp_latch_sr_0
+// ----------------------------  ---------------	ihp_latch_sr_0
+//   FU (full)                          4       	ihp_latch_sr_0
+//   --------------------------  ---------------	ihp_latch_sr_0
+//   DS (det_simulation)             4 (100.00%)	ihp_latch_sr_0
+// ---------------------------------------------	ihp_latch_sr_0
+// Coverage                                     	ihp_latch_sr_0
+//   --------------------------                 	ihp_latch_sr_0
+//   test_coverage                      100.00% 	ihp_latch_sr_0
+//   fault_coverage                     100.00% 	ihp_latch_sr_0
+//   atpg_effectiveness                 100.00% 	ihp_latch_sr_0
+// ---------------------------------------------	ihp_latch_sr_0
+// 
+// ---------------------------------------------------------
+// Model : ihp_latch_sr_1
+// ---------------------
+// Fault Statistics for instance ihp_latch_sr_1
+// -----------------------------------------
+// Fault Classes                     #faults    	ihp_latch_sr_1
+//                                   (total)    	ihp_latch_sr_1
+// ----------------------------  ---------------	ihp_latch_sr_1
+//   FU (full)                          6       	ihp_latch_sr_1
+//   --------------------------  ---------------	ihp_latch_sr_1
+//   DS (det_simulation)             6 (100.00%)	ihp_latch_sr_1
+// ---------------------------------------------	ihp_latch_sr_1
+// Coverage                                     	ihp_latch_sr_1
+//   --------------------------                 	ihp_latch_sr_1
+//   test_coverage                      100.00% 	ihp_latch_sr_1
+//   fault_coverage                     100.00% 	ihp_latch_sr_1
+//   atpg_effectiveness                 100.00% 	ihp_latch_sr_1
+// ---------------------------------------------	ihp_latch_sr_1
+// 
+// ---------------------------------------------------------
+// Model : ihp_mux2
+// ---------------------
+// Fault Statistics for instance ihp_mux2
+// -----------------------------------------
+// Fault Classes                     #faults    	ihp_mux2
+//                                   (total)    	ihp_mux2
+// ----------------------------  ---------------	ihp_mux2
+//   FU (full)                          8       	ihp_mux2
+//   --------------------------  ---------------	ihp_mux2
+//   DS (det_simulation)             8 (100.00%)	ihp_mux2
+// ---------------------------------------------	ihp_mux2
+// Coverage                                     	ihp_mux2
+//   --------------------------                 	ihp_mux2
+//   test_coverage                      100.00% 	ihp_mux2
+//   fault_coverage                     100.00% 	ihp_mux2
+//   atpg_effectiveness                 100.00% 	ihp_mux2
+// ---------------------------------------------	ihp_mux2
+// 
+// ---------------------------------------------------------
+// Model : ihp_mux4
+// ---------------------
+// Fault Statistics for instance ihp_mux4
+// -----------------------------------------
+// Fault Classes                     #faults    	ihp_mux4
+//                                   (total)    	ihp_mux4
+// ----------------------------  ---------------	ihp_mux4
+//   FU (full)                          14      	ihp_mux4
+//   --------------------------  ---------------	ihp_mux4
+//   DS (det_simulation)            14 (100.00%)	ihp_mux4
+// ---------------------------------------------	ihp_mux4
+// Coverage                                     	ihp_mux4
+//   --------------------------                 	ihp_mux4
+//   test_coverage                      100.00% 	ihp_mux4
+//   fault_coverage                     100.00% 	ihp_mux4
+//   atpg_effectiveness                 100.00% 	ihp_mux4
+// ---------------------------------------------	ihp_mux4
+// 
+// ---------------------------------------------------------
+// Model : ihp_mux8
+// ---------------------
+// Fault Statistics for instance ihp_mux8
+// -----------------------------------------
+// Fault Classes                     #faults    	ihp_mux8
+//                                   (total)    	ihp_mux8
+// ----------------------------  ---------------	ihp_mux8
+//   FU (full)                          24      	ihp_mux8
+//   --------------------------  ---------------	ihp_mux8
+//   DS (det_simulation)            24 (100.00%)	ihp_mux8
+// ---------------------------------------------	ihp_mux8
+// Coverage                                     	ihp_mux8
+//   --------------------------                 	ihp_mux8
+//   test_coverage                      100.00% 	ihp_mux8
+//   fault_coverage                     100.00% 	ihp_mux8
+//   atpg_effectiveness                 100.00% 	ihp_mux8
+// ---------------------------------------------	ihp_mux8
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_a21o_1
+// ---------------------
+// Fault Statistics for instance sg13g2_a21o_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_a21o_1
+//                                   (total)    	sg13g2_a21o_1
+// ----------------------------  ---------------	sg13g2_a21o_1
+//   FU (full)                          8       	sg13g2_a21o_1
+//   --------------------------  ---------------	sg13g2_a21o_1
+//   DS (det_simulation)             8 (100.00%)	sg13g2_a21o_1
+// ---------------------------------------------	sg13g2_a21o_1
+// Coverage                                     	sg13g2_a21o_1
+//   --------------------------                 	sg13g2_a21o_1
+//   test_coverage                      100.00% 	sg13g2_a21o_1
+//   fault_coverage                     100.00% 	sg13g2_a21o_1
+//   atpg_effectiveness                 100.00% 	sg13g2_a21o_1
+// ---------------------------------------------	sg13g2_a21o_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_a21o_2
+// ---------------------
+// Fault Statistics for instance sg13g2_a21o_2
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_a21o_2
+//                                   (total)    	sg13g2_a21o_2
+// ----------------------------  ---------------	sg13g2_a21o_2
+//   FU (full)                          8       	sg13g2_a21o_2
+//   --------------------------  ---------------	sg13g2_a21o_2
+//   DS (det_simulation)             8 (100.00%)	sg13g2_a21o_2
+// ---------------------------------------------	sg13g2_a21o_2
+// Coverage                                     	sg13g2_a21o_2
+//   --------------------------                 	sg13g2_a21o_2
+//   test_coverage                      100.00% 	sg13g2_a21o_2
+//   fault_coverage                     100.00% 	sg13g2_a21o_2
+//   atpg_effectiveness                 100.00% 	sg13g2_a21o_2
+// ---------------------------------------------	sg13g2_a21o_2
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_a21oi_1
+// ---------------------
+// Fault Statistics for instance sg13g2_a21oi_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_a21oi_1
+//                                   (total)    	sg13g2_a21oi_1
+// ----------------------------  ---------------	sg13g2_a21oi_1
+//   FU (full)                          8       	sg13g2_a21oi_1
+//   --------------------------  ---------------	sg13g2_a21oi_1
+//   DS (det_simulation)             8 (100.00%)	sg13g2_a21oi_1
+// ---------------------------------------------	sg13g2_a21oi_1
+// Coverage                                     	sg13g2_a21oi_1
+//   --------------------------                 	sg13g2_a21oi_1
+//   test_coverage                      100.00% 	sg13g2_a21oi_1
+//   fault_coverage                     100.00% 	sg13g2_a21oi_1
+//   atpg_effectiveness                 100.00% 	sg13g2_a21oi_1
+// ---------------------------------------------	sg13g2_a21oi_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_a21oi_2
+// ---------------------
+// Fault Statistics for instance sg13g2_a21oi_2
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_a21oi_2
+//                                   (total)    	sg13g2_a21oi_2
+// ----------------------------  ---------------	sg13g2_a21oi_2
+//   FU (full)                          8       	sg13g2_a21oi_2
+//   --------------------------  ---------------	sg13g2_a21oi_2
+//   DS (det_simulation)             8 (100.00%)	sg13g2_a21oi_2
+// ---------------------------------------------	sg13g2_a21oi_2
+// Coverage                                     	sg13g2_a21oi_2
+//   --------------------------                 	sg13g2_a21oi_2
+//   test_coverage                      100.00% 	sg13g2_a21oi_2
+//   fault_coverage                     100.00% 	sg13g2_a21oi_2
+//   atpg_effectiveness                 100.00% 	sg13g2_a21oi_2
+// ---------------------------------------------	sg13g2_a21oi_2
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_a221oi_1
+// ---------------------
+// Fault Statistics for instance sg13g2_a221oi_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_a221oi_1
+//                                   (total)    	sg13g2_a221oi_1
+// ----------------------------  ---------------	sg13g2_a221oi_1
+//   FU (full)                          12      	sg13g2_a221oi_1
+//   --------------------------  ---------------	sg13g2_a221oi_1
+//   DS (det_simulation)            12 (100.00%)	sg13g2_a221oi_1
+// ---------------------------------------------	sg13g2_a221oi_1
+// Coverage                                     	sg13g2_a221oi_1
+//   --------------------------                 	sg13g2_a221oi_1
+//   test_coverage                      100.00% 	sg13g2_a221oi_1
+//   fault_coverage                     100.00% 	sg13g2_a221oi_1
+//   atpg_effectiveness                 100.00% 	sg13g2_a221oi_1
+// ---------------------------------------------	sg13g2_a221oi_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_a22oi_1
+// ---------------------
+// Fault Statistics for instance sg13g2_a22oi_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_a22oi_1
+//                                   (total)    	sg13g2_a22oi_1
+// ----------------------------  ---------------	sg13g2_a22oi_1
+//   FU (full)                          10      	sg13g2_a22oi_1
+//   --------------------------  ---------------	sg13g2_a22oi_1
+//   DS (det_simulation)            10 (100.00%)	sg13g2_a22oi_1
+// ---------------------------------------------	sg13g2_a22oi_1
+// Coverage                                     	sg13g2_a22oi_1
+//   --------------------------                 	sg13g2_a22oi_1
+//   test_coverage                      100.00% 	sg13g2_a22oi_1
+//   fault_coverage                     100.00% 	sg13g2_a22oi_1
+//   atpg_effectiveness                 100.00% 	sg13g2_a22oi_1
+// ---------------------------------------------	sg13g2_a22oi_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_and2_1
+// ---------------------
+// Fault Statistics for instance sg13g2_and2_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_and2_1
+//                                   (total)    	sg13g2_and2_1
+// ----------------------------  ---------------	sg13g2_and2_1
+//   FU (full)                          6       	sg13g2_and2_1
+//   --------------------------  ---------------	sg13g2_and2_1
+//   DS (det_simulation)             6 (100.00%)	sg13g2_and2_1
+// ---------------------------------------------	sg13g2_and2_1
+// Coverage                                     	sg13g2_and2_1
+//   --------------------------                 	sg13g2_and2_1
+//   test_coverage                      100.00% 	sg13g2_and2_1
+//   fault_coverage                     100.00% 	sg13g2_and2_1
+//   atpg_effectiveness                 100.00% 	sg13g2_and2_1
+// ---------------------------------------------	sg13g2_and2_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_and2_2
+// ---------------------
+// Fault Statistics for instance sg13g2_and2_2
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_and2_2
+//                                   (total)    	sg13g2_and2_2
+// ----------------------------  ---------------	sg13g2_and2_2
+//   FU (full)                          6       	sg13g2_and2_2
+//   --------------------------  ---------------	sg13g2_and2_2
+//   DS (det_simulation)             6 (100.00%)	sg13g2_and2_2
+// ---------------------------------------------	sg13g2_and2_2
+// Coverage                                     	sg13g2_and2_2
+//   --------------------------                 	sg13g2_and2_2
+//   test_coverage                      100.00% 	sg13g2_and2_2
+//   fault_coverage                     100.00% 	sg13g2_and2_2
+//   atpg_effectiveness                 100.00% 	sg13g2_and2_2
+// ---------------------------------------------	sg13g2_and2_2
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_and3_1
+// ---------------------
+// Fault Statistics for instance sg13g2_and3_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_and3_1
+//                                   (total)    	sg13g2_and3_1
+// ----------------------------  ---------------	sg13g2_and3_1
+//   FU (full)                          8       	sg13g2_and3_1
+//   --------------------------  ---------------	sg13g2_and3_1
+//   DS (det_simulation)             8 (100.00%)	sg13g2_and3_1
+// ---------------------------------------------	sg13g2_and3_1
+// Coverage                                     	sg13g2_and3_1
+//   --------------------------                 	sg13g2_and3_1
+//   test_coverage                      100.00% 	sg13g2_and3_1
+//   fault_coverage                     100.00% 	sg13g2_and3_1
+//   atpg_effectiveness                 100.00% 	sg13g2_and3_1
+// ---------------------------------------------	sg13g2_and3_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_and3_2
+// ---------------------
+// Fault Statistics for instance sg13g2_and3_2
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_and3_2
+//                                   (total)    	sg13g2_and3_2
+// ----------------------------  ---------------	sg13g2_and3_2
+//   FU (full)                          8       	sg13g2_and3_2
+//   --------------------------  ---------------	sg13g2_and3_2
+//   DS (det_simulation)             8 (100.00%)	sg13g2_and3_2
+// ---------------------------------------------	sg13g2_and3_2
+// Coverage                                     	sg13g2_and3_2
+//   --------------------------                 	sg13g2_and3_2
+//   test_coverage                      100.00% 	sg13g2_and3_2
+//   fault_coverage                     100.00% 	sg13g2_and3_2
+//   atpg_effectiveness                 100.00% 	sg13g2_and3_2
+// ---------------------------------------------	sg13g2_and3_2
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_and4_1
+// ---------------------
+// Fault Statistics for instance sg13g2_and4_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_and4_1
+//                                   (total)    	sg13g2_and4_1
+// ----------------------------  ---------------	sg13g2_and4_1
+//   FU (full)                          10      	sg13g2_and4_1
+//   --------------------------  ---------------	sg13g2_and4_1
+//   DS (det_simulation)            10 (100.00%)	sg13g2_and4_1
+// ---------------------------------------------	sg13g2_and4_1
+// Coverage                                     	sg13g2_and4_1
+//   --------------------------                 	sg13g2_and4_1
+//   test_coverage                      100.00% 	sg13g2_and4_1
+//   fault_coverage                     100.00% 	sg13g2_and4_1
+//   atpg_effectiveness                 100.00% 	sg13g2_and4_1
+// ---------------------------------------------	sg13g2_and4_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_and4_2
+// ---------------------
+// Fault Statistics for instance sg13g2_and4_2
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_and4_2
+//                                   (total)    	sg13g2_and4_2
+// ----------------------------  ---------------	sg13g2_and4_2
+//   FU (full)                          10      	sg13g2_and4_2
+//   --------------------------  ---------------	sg13g2_and4_2
+//   DS (det_simulation)            10 (100.00%)	sg13g2_and4_2
+// ---------------------------------------------	sg13g2_and4_2
+// Coverage                                     	sg13g2_and4_2
+//   --------------------------                 	sg13g2_and4_2
+//   test_coverage                      100.00% 	sg13g2_and4_2
+//   fault_coverage                     100.00% 	sg13g2_and4_2
+//   atpg_effectiveness                 100.00% 	sg13g2_and4_2
+// ---------------------------------------------	sg13g2_and4_2
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_antennanp
+// ---------------------
+// Fault Statistics for instance sg13g2_antennanp
+// -----------------------------------------
+// Fault Classes                    #faults   	sg13g2_antennanp
+//                                  (total)   	sg13g2_antennanp
+// ----------------------------  -------------	sg13g2_antennanp
+//   FU (full)                         0      	sg13g2_antennanp
+//   --------------------------  -------------	sg13g2_antennanp
+// -------------------------------------------	sg13g2_antennanp
+// Coverage                                   	sg13g2_antennanp
+//   --------------------------               	sg13g2_antennanp
+// -------------------------------------------	sg13g2_antennanp
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_buf_1
+// ---------------------
+// Fault Statistics for instance sg13g2_buf_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_buf_1
+//                                   (total)    	sg13g2_buf_1
+// ----------------------------  ---------------	sg13g2_buf_1
+//   FU (full)                          4       	sg13g2_buf_1
+//   --------------------------  ---------------	sg13g2_buf_1
+//   DS (det_simulation)             4 (100.00%)	sg13g2_buf_1
+// ---------------------------------------------	sg13g2_buf_1
+// Coverage                                     	sg13g2_buf_1
+//   --------------------------                 	sg13g2_buf_1
+//   test_coverage                      100.00% 	sg13g2_buf_1
+//   fault_coverage                     100.00% 	sg13g2_buf_1
+//   atpg_effectiveness                 100.00% 	sg13g2_buf_1
+// ---------------------------------------------	sg13g2_buf_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_buf_16
+// ---------------------
+// Fault Statistics for instance sg13g2_buf_16
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_buf_16
+//                                   (total)    	sg13g2_buf_16
+// ----------------------------  ---------------	sg13g2_buf_16
+//   FU (full)                          4       	sg13g2_buf_16
+//   --------------------------  ---------------	sg13g2_buf_16
+//   DS (det_simulation)             4 (100.00%)	sg13g2_buf_16
+// ---------------------------------------------	sg13g2_buf_16
+// Coverage                                     	sg13g2_buf_16
+//   --------------------------                 	sg13g2_buf_16
+//   test_coverage                      100.00% 	sg13g2_buf_16
+//   fault_coverage                     100.00% 	sg13g2_buf_16
+//   atpg_effectiveness                 100.00% 	sg13g2_buf_16
+// ---------------------------------------------	sg13g2_buf_16
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_buf_2
+// ---------------------
+// Fault Statistics for instance sg13g2_buf_2
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_buf_2
+//                                   (total)    	sg13g2_buf_2
+// ----------------------------  ---------------	sg13g2_buf_2
+//   FU (full)                          4       	sg13g2_buf_2
+//   --------------------------  ---------------	sg13g2_buf_2
+//   DS (det_simulation)             4 (100.00%)	sg13g2_buf_2
+// ---------------------------------------------	sg13g2_buf_2
+// Coverage                                     	sg13g2_buf_2
+//   --------------------------                 	sg13g2_buf_2
+//   test_coverage                      100.00% 	sg13g2_buf_2
+//   fault_coverage                     100.00% 	sg13g2_buf_2
+//   atpg_effectiveness                 100.00% 	sg13g2_buf_2
+// ---------------------------------------------	sg13g2_buf_2
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_buf_4
+// ---------------------
+// Fault Statistics for instance sg13g2_buf_4
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_buf_4
+//                                   (total)    	sg13g2_buf_4
+// ----------------------------  ---------------	sg13g2_buf_4
+//   FU (full)                          4       	sg13g2_buf_4
+//   --------------------------  ---------------	sg13g2_buf_4
+//   DS (det_simulation)             4 (100.00%)	sg13g2_buf_4
+// ---------------------------------------------	sg13g2_buf_4
+// Coverage                                     	sg13g2_buf_4
+//   --------------------------                 	sg13g2_buf_4
+//   test_coverage                      100.00% 	sg13g2_buf_4
+//   fault_coverage                     100.00% 	sg13g2_buf_4
+//   atpg_effectiveness                 100.00% 	sg13g2_buf_4
+// ---------------------------------------------	sg13g2_buf_4
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_buf_8
+// ---------------------
+// Fault Statistics for instance sg13g2_buf_8
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_buf_8
+//                                   (total)    	sg13g2_buf_8
+// ----------------------------  ---------------	sg13g2_buf_8
+//   FU (full)                          4       	sg13g2_buf_8
+//   --------------------------  ---------------	sg13g2_buf_8
+//   DS (det_simulation)             4 (100.00%)	sg13g2_buf_8
+// ---------------------------------------------	sg13g2_buf_8
+// Coverage                                     	sg13g2_buf_8
+//   --------------------------                 	sg13g2_buf_8
+//   test_coverage                      100.00% 	sg13g2_buf_8
+//   fault_coverage                     100.00% 	sg13g2_buf_8
+//   atpg_effectiveness                 100.00% 	sg13g2_buf_8
+// ---------------------------------------------	sg13g2_buf_8
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_decap_4
+// ---------------------
+// Fault Statistics for instance sg13g2_decap_4
+// -----------------------------------------
+// Fault Classes                    #faults   	sg13g2_decap_4
+//                                  (total)   	sg13g2_decap_4
+// ----------------------------  -------------	sg13g2_decap_4
+//   FU (full)                         0      	sg13g2_decap_4
+//   --------------------------  -------------	sg13g2_decap_4
+// -------------------------------------------	sg13g2_decap_4
+// Coverage                                   	sg13g2_decap_4
+//   --------------------------               	sg13g2_decap_4
+// -------------------------------------------	sg13g2_decap_4
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_decap_8
+// ---------------------
+// Fault Statistics for instance sg13g2_decap_8
+// -----------------------------------------
+// Fault Classes                    #faults   	sg13g2_decap_8
+//                                  (total)   	sg13g2_decap_8
+// ----------------------------  -------------	sg13g2_decap_8
+//   FU (full)                         0      	sg13g2_decap_8
+//   --------------------------  -------------	sg13g2_decap_8
+// -------------------------------------------	sg13g2_decap_8
+// Coverage                                   	sg13g2_decap_8
+//   --------------------------               	sg13g2_decap_8
+// -------------------------------------------	sg13g2_decap_8
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_dfrbp_1
+// ---------------------
+// Fault Statistics for instance sg13g2_dfrbp_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_dfrbp_1
+//                                   (total)    	sg13g2_dfrbp_1
+// ----------------------------  ---------------	sg13g2_dfrbp_1
+//   FU (full)                          8       	sg13g2_dfrbp_1
+//   --------------------------  ---------------	sg13g2_dfrbp_1
+//   DS (det_simulation)             8 (100.00%)	sg13g2_dfrbp_1
+// ---------------------------------------------	sg13g2_dfrbp_1
+// Coverage                                     	sg13g2_dfrbp_1
+//   --------------------------                 	sg13g2_dfrbp_1
+//   test_coverage                      100.00% 	sg13g2_dfrbp_1
+//   fault_coverage                     100.00% 	sg13g2_dfrbp_1
+//   atpg_effectiveness                 100.00% 	sg13g2_dfrbp_1
+// ---------------------------------------------	sg13g2_dfrbp_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_dfrbp_2
+// ---------------------
+// Fault Statistics for instance sg13g2_dfrbp_2
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_dfrbp_2
+//                                   (total)    	sg13g2_dfrbp_2
+// ----------------------------  ---------------	sg13g2_dfrbp_2
+//   FU (full)                          8       	sg13g2_dfrbp_2
+//   --------------------------  ---------------	sg13g2_dfrbp_2
+//   DS (det_simulation)             8 (100.00%)	sg13g2_dfrbp_2
+// ---------------------------------------------	sg13g2_dfrbp_2
+// Coverage                                     	sg13g2_dfrbp_2
+//   --------------------------                 	sg13g2_dfrbp_2
+//   test_coverage                      100.00% 	sg13g2_dfrbp_2
+//   fault_coverage                     100.00% 	sg13g2_dfrbp_2
+//   atpg_effectiveness                 100.00% 	sg13g2_dfrbp_2
+// ---------------------------------------------	sg13g2_dfrbp_2
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_dfrbpq_1
+// ---------------------
+// Fault Statistics for instance sg13g2_dfrbpq_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_dfrbpq_1
+//                                   (total)    	sg13g2_dfrbpq_1
+// ----------------------------  ---------------	sg13g2_dfrbpq_1
+//   FU (full)                          6       	sg13g2_dfrbpq_1
+//   --------------------------  ---------------	sg13g2_dfrbpq_1
+//   DS (det_simulation)             6 (100.00%)	sg13g2_dfrbpq_1
+// ---------------------------------------------	sg13g2_dfrbpq_1
+// Coverage                                     	sg13g2_dfrbpq_1
+//   --------------------------                 	sg13g2_dfrbpq_1
+//   test_coverage                      100.00% 	sg13g2_dfrbpq_1
+//   fault_coverage                     100.00% 	sg13g2_dfrbpq_1
+//   atpg_effectiveness                 100.00% 	sg13g2_dfrbpq_1
+// ---------------------------------------------	sg13g2_dfrbpq_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_dfrbpq_2
+// ---------------------
+// Fault Statistics for instance sg13g2_dfrbpq_2
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_dfrbpq_2
+//                                   (total)    	sg13g2_dfrbpq_2
+// ----------------------------  ---------------	sg13g2_dfrbpq_2
+//   FU (full)                          6       	sg13g2_dfrbpq_2
+//   --------------------------  ---------------	sg13g2_dfrbpq_2
+//   DS (det_simulation)             6 (100.00%)	sg13g2_dfrbpq_2
+// ---------------------------------------------	sg13g2_dfrbpq_2
+// Coverage                                     	sg13g2_dfrbpq_2
+//   --------------------------                 	sg13g2_dfrbpq_2
+//   test_coverage                      100.00% 	sg13g2_dfrbpq_2
+//   fault_coverage                     100.00% 	sg13g2_dfrbpq_2
+//   atpg_effectiveness                 100.00% 	sg13g2_dfrbpq_2
+// ---------------------------------------------	sg13g2_dfrbpq_2
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_dlhq_1
+// ---------------------
+// Fault Statistics for instance sg13g2_dlhq_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_dlhq_1
+//                                   (total)    	sg13g2_dlhq_1
+// ----------------------------  ---------------	sg13g2_dlhq_1
+//   FU (full)                          4       	sg13g2_dlhq_1
+//   --------------------------  ---------------	sg13g2_dlhq_1
+//   DS (det_simulation)             4 (100.00%)	sg13g2_dlhq_1
+// ---------------------------------------------	sg13g2_dlhq_1
+// Coverage                                     	sg13g2_dlhq_1
+//   --------------------------                 	sg13g2_dlhq_1
+//   test_coverage                      100.00% 	sg13g2_dlhq_1
+//   fault_coverage                     100.00% 	sg13g2_dlhq_1
+//   atpg_effectiveness                 100.00% 	sg13g2_dlhq_1
+// ---------------------------------------------	sg13g2_dlhq_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_dlhr_1
+// ---------------------
+// Fault Statistics for instance sg13g2_dlhr_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_dlhr_1
+//                                   (total)    	sg13g2_dlhr_1
+// ----------------------------  ---------------	sg13g2_dlhr_1
+//   FU (full)                          8       	sg13g2_dlhr_1
+//   --------------------------  ---------------	sg13g2_dlhr_1
+//   DS (det_simulation)             8 (100.00%)	sg13g2_dlhr_1
+// ---------------------------------------------	sg13g2_dlhr_1
+// Coverage                                     	sg13g2_dlhr_1
+//   --------------------------                 	sg13g2_dlhr_1
+//   test_coverage                      100.00% 	sg13g2_dlhr_1
+//   fault_coverage                     100.00% 	sg13g2_dlhr_1
+//   atpg_effectiveness                 100.00% 	sg13g2_dlhr_1
+// ---------------------------------------------	sg13g2_dlhr_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_dlhrq_1
+// ---------------------
+// Fault Statistics for instance sg13g2_dlhrq_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_dlhrq_1
+//                                   (total)    	sg13g2_dlhrq_1
+// ----------------------------  ---------------	sg13g2_dlhrq_1
+//   FU (full)                          6       	sg13g2_dlhrq_1
+//   --------------------------  ---------------	sg13g2_dlhrq_1
+//   DS (det_simulation)             6 (100.00%)	sg13g2_dlhrq_1
+// ---------------------------------------------	sg13g2_dlhrq_1
+// Coverage                                     	sg13g2_dlhrq_1
+//   --------------------------                 	sg13g2_dlhrq_1
+//   test_coverage                      100.00% 	sg13g2_dlhrq_1
+//   fault_coverage                     100.00% 	sg13g2_dlhrq_1
+//   atpg_effectiveness                 100.00% 	sg13g2_dlhrq_1
+// ---------------------------------------------	sg13g2_dlhrq_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_dllr_1
+// ---------------------
+// Fault Statistics for instance sg13g2_dllr_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_dllr_1
+//                                   (total)    	sg13g2_dllr_1
+// ----------------------------  ---------------	sg13g2_dllr_1
+//   FU (full)                          8       	sg13g2_dllr_1
+//   --------------------------  ---------------	sg13g2_dllr_1
+//   DS (det_simulation)             8 (100.00%)	sg13g2_dllr_1
+// ---------------------------------------------	sg13g2_dllr_1
+// Coverage                                     	sg13g2_dllr_1
+//   --------------------------                 	sg13g2_dllr_1
+//   test_coverage                      100.00% 	sg13g2_dllr_1
+//   fault_coverage                     100.00% 	sg13g2_dllr_1
+//   atpg_effectiveness                 100.00% 	sg13g2_dllr_1
+// ---------------------------------------------	sg13g2_dllr_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_dllrq_1
+// ---------------------
+// Fault Statistics for instance sg13g2_dllrq_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_dllrq_1
+//                                   (total)    	sg13g2_dllrq_1
+// ----------------------------  ---------------	sg13g2_dllrq_1
+//   FU (full)                          6       	sg13g2_dllrq_1
+//   --------------------------  ---------------	sg13g2_dllrq_1
+//   DS (det_simulation)             6 (100.00%)	sg13g2_dllrq_1
+// ---------------------------------------------	sg13g2_dllrq_1
+// Coverage                                     	sg13g2_dllrq_1
+//   --------------------------                 	sg13g2_dllrq_1
+//   test_coverage                      100.00% 	sg13g2_dllrq_1
+//   fault_coverage                     100.00% 	sg13g2_dllrq_1
+//   atpg_effectiveness                 100.00% 	sg13g2_dllrq_1
+// ---------------------------------------------	sg13g2_dllrq_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_dlygate4sd1_1
+// ---------------------
+// Fault Statistics for instance sg13g2_dlygate4sd1_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_dlygate4sd1_1
+//                                   (total)    	sg13g2_dlygate4sd1_1
+// ----------------------------  ---------------	sg13g2_dlygate4sd1_1
+//   FU (full)                          4       	sg13g2_dlygate4sd1_1
+//   --------------------------  ---------------	sg13g2_dlygate4sd1_1
+//   DS (det_simulation)             4 (100.00%)	sg13g2_dlygate4sd1_1
+// ---------------------------------------------	sg13g2_dlygate4sd1_1
+// Coverage                                     	sg13g2_dlygate4sd1_1
+//   --------------------------                 	sg13g2_dlygate4sd1_1
+//   test_coverage                      100.00% 	sg13g2_dlygate4sd1_1
+//   fault_coverage                     100.00% 	sg13g2_dlygate4sd1_1
+//   atpg_effectiveness                 100.00% 	sg13g2_dlygate4sd1_1
+// ---------------------------------------------	sg13g2_dlygate4sd1_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_dlygate4sd2_1
+// ---------------------
+// Fault Statistics for instance sg13g2_dlygate4sd2_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_dlygate4sd2_1
+//                                   (total)    	sg13g2_dlygate4sd2_1
+// ----------------------------  ---------------	sg13g2_dlygate4sd2_1
+//   FU (full)                          4       	sg13g2_dlygate4sd2_1
+//   --------------------------  ---------------	sg13g2_dlygate4sd2_1
+//   DS (det_simulation)             4 (100.00%)	sg13g2_dlygate4sd2_1
+// ---------------------------------------------	sg13g2_dlygate4sd2_1
+// Coverage                                     	sg13g2_dlygate4sd2_1
+//   --------------------------                 	sg13g2_dlygate4sd2_1
+//   test_coverage                      100.00% 	sg13g2_dlygate4sd2_1
+//   fault_coverage                     100.00% 	sg13g2_dlygate4sd2_1
+//   atpg_effectiveness                 100.00% 	sg13g2_dlygate4sd2_1
+// ---------------------------------------------	sg13g2_dlygate4sd2_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_dlygate4sd3_1
+// ---------------------
+// Fault Statistics for instance sg13g2_dlygate4sd3_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_dlygate4sd3_1
+//                                   (total)    	sg13g2_dlygate4sd3_1
+// ----------------------------  ---------------	sg13g2_dlygate4sd3_1
+//   FU (full)                          4       	sg13g2_dlygate4sd3_1
+//   --------------------------  ---------------	sg13g2_dlygate4sd3_1
+//   DS (det_simulation)             4 (100.00%)	sg13g2_dlygate4sd3_1
+// ---------------------------------------------	sg13g2_dlygate4sd3_1
+// Coverage                                     	sg13g2_dlygate4sd3_1
+//   --------------------------                 	sg13g2_dlygate4sd3_1
+//   test_coverage                      100.00% 	sg13g2_dlygate4sd3_1
+//   fault_coverage                     100.00% 	sg13g2_dlygate4sd3_1
+//   atpg_effectiveness                 100.00% 	sg13g2_dlygate4sd3_1
+// ---------------------------------------------	sg13g2_dlygate4sd3_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_ebufn_2
+// ---------------------
+// Fault Statistics for instance sg13g2_ebufn_2
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_ebufn_2
+//                                   (total)    	sg13g2_ebufn_2
+// ----------------------------  ---------------	sg13g2_ebufn_2
+//   FU (full)                          6       	sg13g2_ebufn_2
+//   --------------------------  ---------------	sg13g2_ebufn_2
+//   DS (det_simulation)             6 (100.00%)	sg13g2_ebufn_2
+// ---------------------------------------------	sg13g2_ebufn_2
+// Coverage                                     	sg13g2_ebufn_2
+//   --------------------------                 	sg13g2_ebufn_2
+//   test_coverage                      100.00% 	sg13g2_ebufn_2
+//   fault_coverage                     100.00% 	sg13g2_ebufn_2
+//   atpg_effectiveness                 100.00% 	sg13g2_ebufn_2
+// ---------------------------------------------	sg13g2_ebufn_2
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_ebufn_4
+// ---------------------
+// Fault Statistics for instance sg13g2_ebufn_4
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_ebufn_4
+//                                   (total)    	sg13g2_ebufn_4
+// ----------------------------  ---------------	sg13g2_ebufn_4
+//   FU (full)                          6       	sg13g2_ebufn_4
+//   --------------------------  ---------------	sg13g2_ebufn_4
+//   DS (det_simulation)             6 (100.00%)	sg13g2_ebufn_4
+// ---------------------------------------------	sg13g2_ebufn_4
+// Coverage                                     	sg13g2_ebufn_4
+//   --------------------------                 	sg13g2_ebufn_4
+//   test_coverage                      100.00% 	sg13g2_ebufn_4
+//   fault_coverage                     100.00% 	sg13g2_ebufn_4
+//   atpg_effectiveness                 100.00% 	sg13g2_ebufn_4
+// ---------------------------------------------	sg13g2_ebufn_4
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_ebufn_8
+// ---------------------
+// Fault Statistics for instance sg13g2_ebufn_8
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_ebufn_8
+//                                   (total)    	sg13g2_ebufn_8
+// ----------------------------  ---------------	sg13g2_ebufn_8
+//   FU (full)                          6       	sg13g2_ebufn_8
+//   --------------------------  ---------------	sg13g2_ebufn_8
+//   DS (det_simulation)             6 (100.00%)	sg13g2_ebufn_8
+// ---------------------------------------------	sg13g2_ebufn_8
+// Coverage                                     	sg13g2_ebufn_8
+//   --------------------------                 	sg13g2_ebufn_8
+//   test_coverage                      100.00% 	sg13g2_ebufn_8
+//   fault_coverage                     100.00% 	sg13g2_ebufn_8
+//   atpg_effectiveness                 100.00% 	sg13g2_ebufn_8
+// ---------------------------------------------	sg13g2_ebufn_8
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_einvn_2
+// ---------------------
+// Fault Statistics for instance sg13g2_einvn_2
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_einvn_2
+//                                   (total)    	sg13g2_einvn_2
+// ----------------------------  ---------------	sg13g2_einvn_2
+//   FU (full)                          6       	sg13g2_einvn_2
+//   --------------------------  ---------------	sg13g2_einvn_2
+//   DS (det_simulation)             6 (100.00%)	sg13g2_einvn_2
+// ---------------------------------------------	sg13g2_einvn_2
+// Coverage                                     	sg13g2_einvn_2
+//   --------------------------                 	sg13g2_einvn_2
+//   test_coverage                      100.00% 	sg13g2_einvn_2
+//   fault_coverage                     100.00% 	sg13g2_einvn_2
+//   atpg_effectiveness                 100.00% 	sg13g2_einvn_2
+// ---------------------------------------------	sg13g2_einvn_2
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_einvn_4
+// ---------------------
+// Fault Statistics for instance sg13g2_einvn_4
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_einvn_4
+//                                   (total)    	sg13g2_einvn_4
+// ----------------------------  ---------------	sg13g2_einvn_4
+//   FU (full)                          6       	sg13g2_einvn_4
+//   --------------------------  ---------------	sg13g2_einvn_4
+//   DS (det_simulation)             6 (100.00%)	sg13g2_einvn_4
+// ---------------------------------------------	sg13g2_einvn_4
+// Coverage                                     	sg13g2_einvn_4
+//   --------------------------                 	sg13g2_einvn_4
+//   test_coverage                      100.00% 	sg13g2_einvn_4
+//   fault_coverage                     100.00% 	sg13g2_einvn_4
+//   atpg_effectiveness                 100.00% 	sg13g2_einvn_4
+// ---------------------------------------------	sg13g2_einvn_4
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_einvn_8
+// ---------------------
+// Fault Statistics for instance sg13g2_einvn_8
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_einvn_8
+//                                   (total)    	sg13g2_einvn_8
+// ----------------------------  ---------------	sg13g2_einvn_8
+//   FU (full)                          6       	sg13g2_einvn_8
+//   --------------------------  ---------------	sg13g2_einvn_8
+//   DS (det_simulation)             6 (100.00%)	sg13g2_einvn_8
+// ---------------------------------------------	sg13g2_einvn_8
+// Coverage                                     	sg13g2_einvn_8
+//   --------------------------                 	sg13g2_einvn_8
+//   test_coverage                      100.00% 	sg13g2_einvn_8
+//   fault_coverage                     100.00% 	sg13g2_einvn_8
+//   atpg_effectiveness                 100.00% 	sg13g2_einvn_8
+// ---------------------------------------------	sg13g2_einvn_8
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_fill_1
+// ---------------------
+// Fault Statistics for instance sg13g2_fill_1
+// -----------------------------------------
+// Fault Classes                    #faults   	sg13g2_fill_1
+//                                  (total)   	sg13g2_fill_1
+// ----------------------------  -------------	sg13g2_fill_1
+//   FU (full)                         0      	sg13g2_fill_1
+//   --------------------------  -------------	sg13g2_fill_1
+// -------------------------------------------	sg13g2_fill_1
+// Coverage                                   	sg13g2_fill_1
+//   --------------------------               	sg13g2_fill_1
+// -------------------------------------------	sg13g2_fill_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_fill_2
+// ---------------------
+// Fault Statistics for instance sg13g2_fill_2
+// -----------------------------------------
+// Fault Classes                    #faults   	sg13g2_fill_2
+//                                  (total)   	sg13g2_fill_2
+// ----------------------------  -------------	sg13g2_fill_2
+//   FU (full)                         0      	sg13g2_fill_2
+//   --------------------------  -------------	sg13g2_fill_2
+// -------------------------------------------	sg13g2_fill_2
+// Coverage                                   	sg13g2_fill_2
+//   --------------------------               	sg13g2_fill_2
+// -------------------------------------------	sg13g2_fill_2
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_fill_4
+// ---------------------
+// Fault Statistics for instance sg13g2_fill_4
+// -----------------------------------------
+// Fault Classes                    #faults   	sg13g2_fill_4
+//                                  (total)   	sg13g2_fill_4
+// ----------------------------  -------------	sg13g2_fill_4
+//   FU (full)                         0      	sg13g2_fill_4
+//   --------------------------  -------------	sg13g2_fill_4
+// -------------------------------------------	sg13g2_fill_4
+// Coverage                                   	sg13g2_fill_4
+//   --------------------------               	sg13g2_fill_4
+// -------------------------------------------	sg13g2_fill_4
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_fill_8
+// ---------------------
+// Fault Statistics for instance sg13g2_fill_8
+// -----------------------------------------
+// Fault Classes                    #faults   	sg13g2_fill_8
+//                                  (total)   	sg13g2_fill_8
+// ----------------------------  -------------	sg13g2_fill_8
+//   FU (full)                         0      	sg13g2_fill_8
+//   --------------------------  -------------	sg13g2_fill_8
+// -------------------------------------------	sg13g2_fill_8
+// Coverage                                   	sg13g2_fill_8
+//   --------------------------               	sg13g2_fill_8
+// -------------------------------------------	sg13g2_fill_8
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_inv_1
+// ---------------------
+// Fault Statistics for instance sg13g2_inv_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_inv_1
+//                                   (total)    	sg13g2_inv_1
+// ----------------------------  ---------------	sg13g2_inv_1
+//   FU (full)                          4       	sg13g2_inv_1
+//   --------------------------  ---------------	sg13g2_inv_1
+//   DS (det_simulation)             4 (100.00%)	sg13g2_inv_1
+// ---------------------------------------------	sg13g2_inv_1
+// Coverage                                     	sg13g2_inv_1
+//   --------------------------                 	sg13g2_inv_1
+//   test_coverage                      100.00% 	sg13g2_inv_1
+//   fault_coverage                     100.00% 	sg13g2_inv_1
+//   atpg_effectiveness                 100.00% 	sg13g2_inv_1
+// ---------------------------------------------	sg13g2_inv_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_inv_16
+// ---------------------
+// Fault Statistics for instance sg13g2_inv_16
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_inv_16
+//                                   (total)    	sg13g2_inv_16
+// ----------------------------  ---------------	sg13g2_inv_16
+//   FU (full)                          4       	sg13g2_inv_16
+//   --------------------------  ---------------	sg13g2_inv_16
+//   DS (det_simulation)             4 (100.00%)	sg13g2_inv_16
+// ---------------------------------------------	sg13g2_inv_16
+// Coverage                                     	sg13g2_inv_16
+//   --------------------------                 	sg13g2_inv_16
+//   test_coverage                      100.00% 	sg13g2_inv_16
+//   fault_coverage                     100.00% 	sg13g2_inv_16
+//   atpg_effectiveness                 100.00% 	sg13g2_inv_16
+// ---------------------------------------------	sg13g2_inv_16
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_inv_2
+// ---------------------
+// Fault Statistics for instance sg13g2_inv_2
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_inv_2
+//                                   (total)    	sg13g2_inv_2
+// ----------------------------  ---------------	sg13g2_inv_2
+//   FU (full)                          4       	sg13g2_inv_2
+//   --------------------------  ---------------	sg13g2_inv_2
+//   DS (det_simulation)             4 (100.00%)	sg13g2_inv_2
+// ---------------------------------------------	sg13g2_inv_2
+// Coverage                                     	sg13g2_inv_2
+//   --------------------------                 	sg13g2_inv_2
+//   test_coverage                      100.00% 	sg13g2_inv_2
+//   fault_coverage                     100.00% 	sg13g2_inv_2
+//   atpg_effectiveness                 100.00% 	sg13g2_inv_2
+// ---------------------------------------------	sg13g2_inv_2
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_inv_4
+// ---------------------
+// Fault Statistics for instance sg13g2_inv_4
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_inv_4
+//                                   (total)    	sg13g2_inv_4
+// ----------------------------  ---------------	sg13g2_inv_4
+//   FU (full)                          4       	sg13g2_inv_4
+//   --------------------------  ---------------	sg13g2_inv_4
+//   DS (det_simulation)             4 (100.00%)	sg13g2_inv_4
+// ---------------------------------------------	sg13g2_inv_4
+// Coverage                                     	sg13g2_inv_4
+//   --------------------------                 	sg13g2_inv_4
+//   test_coverage                      100.00% 	sg13g2_inv_4
+//   fault_coverage                     100.00% 	sg13g2_inv_4
+//   atpg_effectiveness                 100.00% 	sg13g2_inv_4
+// ---------------------------------------------	sg13g2_inv_4
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_inv_8
+// ---------------------
+// Fault Statistics for instance sg13g2_inv_8
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_inv_8
+//                                   (total)    	sg13g2_inv_8
+// ----------------------------  ---------------	sg13g2_inv_8
+//   FU (full)                          4       	sg13g2_inv_8
+//   --------------------------  ---------------	sg13g2_inv_8
+//   DS (det_simulation)             4 (100.00%)	sg13g2_inv_8
+// ---------------------------------------------	sg13g2_inv_8
+// Coverage                                     	sg13g2_inv_8
+//   --------------------------                 	sg13g2_inv_8
+//   test_coverage                      100.00% 	sg13g2_inv_8
+//   fault_coverage                     100.00% 	sg13g2_inv_8
+//   atpg_effectiveness                 100.00% 	sg13g2_inv_8
+// ---------------------------------------------	sg13g2_inv_8
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_lgcp_1
+// ---------------------
+// Fault Statistics for instance sg13g2_lgcp_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_lgcp_1
+//                                   (total)    	sg13g2_lgcp_1
+// ----------------------------  ---------------	sg13g2_lgcp_1
+//   FU (full)                          4       	sg13g2_lgcp_1
+//   --------------------------  ---------------	sg13g2_lgcp_1
+//   DS (det_simulation)             4 (100.00%)	sg13g2_lgcp_1
+// ---------------------------------------------	sg13g2_lgcp_1
+// Coverage                                     	sg13g2_lgcp_1
+//   --------------------------                 	sg13g2_lgcp_1
+//   test_coverage                      100.00% 	sg13g2_lgcp_1
+//   fault_coverage                     100.00% 	sg13g2_lgcp_1
+//   atpg_effectiveness                 100.00% 	sg13g2_lgcp_1
+// ---------------------------------------------	sg13g2_lgcp_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_mux2_1
+// ---------------------
+// Fault Statistics for instance sg13g2_mux2_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_mux2_1
+//                                   (total)    	sg13g2_mux2_1
+// ----------------------------  ---------------	sg13g2_mux2_1
+//   FU (full)                          8       	sg13g2_mux2_1
+//   --------------------------  ---------------	sg13g2_mux2_1
+//   DS (det_simulation)             8 (100.00%)	sg13g2_mux2_1
+// ---------------------------------------------	sg13g2_mux2_1
+// Coverage                                     	sg13g2_mux2_1
+//   --------------------------                 	sg13g2_mux2_1
+//   test_coverage                      100.00% 	sg13g2_mux2_1
+//   fault_coverage                     100.00% 	sg13g2_mux2_1
+//   atpg_effectiveness                 100.00% 	sg13g2_mux2_1
+// ---------------------------------------------	sg13g2_mux2_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_mux2_2
+// ---------------------
+// Fault Statistics for instance sg13g2_mux2_2
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_mux2_2
+//                                   (total)    	sg13g2_mux2_2
+// ----------------------------  ---------------	sg13g2_mux2_2
+//   FU (full)                          8       	sg13g2_mux2_2
+//   --------------------------  ---------------	sg13g2_mux2_2
+//   DS (det_simulation)             8 (100.00%)	sg13g2_mux2_2
+// ---------------------------------------------	sg13g2_mux2_2
+// Coverage                                     	sg13g2_mux2_2
+//   --------------------------                 	sg13g2_mux2_2
+//   test_coverage                      100.00% 	sg13g2_mux2_2
+//   fault_coverage                     100.00% 	sg13g2_mux2_2
+//   atpg_effectiveness                 100.00% 	sg13g2_mux2_2
+// ---------------------------------------------	sg13g2_mux2_2
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_mux4_1
+// ---------------------
+// Fault Statistics for instance sg13g2_mux4_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_mux4_1
+//                                   (total)    	sg13g2_mux4_1
+// ----------------------------  ---------------	sg13g2_mux4_1
+//   FU (full)                          14      	sg13g2_mux4_1
+//   --------------------------  ---------------	sg13g2_mux4_1
+//   DS (det_simulation)            14 (100.00%)	sg13g2_mux4_1
+// ---------------------------------------------	sg13g2_mux4_1
+// Coverage                                     	sg13g2_mux4_1
+//   --------------------------                 	sg13g2_mux4_1
+//   test_coverage                      100.00% 	sg13g2_mux4_1
+//   fault_coverage                     100.00% 	sg13g2_mux4_1
+//   atpg_effectiveness                 100.00% 	sg13g2_mux4_1
+// ---------------------------------------------	sg13g2_mux4_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_nand2_1
+// ---------------------
+// Fault Statistics for instance sg13g2_nand2_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_nand2_1
+//                                   (total)    	sg13g2_nand2_1
+// ----------------------------  ---------------	sg13g2_nand2_1
+//   FU (full)                          6       	sg13g2_nand2_1
+//   --------------------------  ---------------	sg13g2_nand2_1
+//   DS (det_simulation)             6 (100.00%)	sg13g2_nand2_1
+// ---------------------------------------------	sg13g2_nand2_1
+// Coverage                                     	sg13g2_nand2_1
+//   --------------------------                 	sg13g2_nand2_1
+//   test_coverage                      100.00% 	sg13g2_nand2_1
+//   fault_coverage                     100.00% 	sg13g2_nand2_1
+//   atpg_effectiveness                 100.00% 	sg13g2_nand2_1
+// ---------------------------------------------	sg13g2_nand2_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_nand2_2
+// ---------------------
+// Fault Statistics for instance sg13g2_nand2_2
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_nand2_2
+//                                   (total)    	sg13g2_nand2_2
+// ----------------------------  ---------------	sg13g2_nand2_2
+//   FU (full)                          6       	sg13g2_nand2_2
+//   --------------------------  ---------------	sg13g2_nand2_2
+//   DS (det_simulation)             6 (100.00%)	sg13g2_nand2_2
+// ---------------------------------------------	sg13g2_nand2_2
+// Coverage                                     	sg13g2_nand2_2
+//   --------------------------                 	sg13g2_nand2_2
+//   test_coverage                      100.00% 	sg13g2_nand2_2
+//   fault_coverage                     100.00% 	sg13g2_nand2_2
+//   atpg_effectiveness                 100.00% 	sg13g2_nand2_2
+// ---------------------------------------------	sg13g2_nand2_2
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_nand2b_1
+// ---------------------
+// Fault Statistics for instance sg13g2_nand2b_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_nand2b_1
+//                                   (total)    	sg13g2_nand2b_1
+// ----------------------------  ---------------	sg13g2_nand2b_1
+//   FU (full)                          6       	sg13g2_nand2b_1
+//   --------------------------  ---------------	sg13g2_nand2b_1
+//   DS (det_simulation)             6 (100.00%)	sg13g2_nand2b_1
+// ---------------------------------------------	sg13g2_nand2b_1
+// Coverage                                     	sg13g2_nand2b_1
+//   --------------------------                 	sg13g2_nand2b_1
+//   test_coverage                      100.00% 	sg13g2_nand2b_1
+//   fault_coverage                     100.00% 	sg13g2_nand2b_1
+//   atpg_effectiveness                 100.00% 	sg13g2_nand2b_1
+// ---------------------------------------------	sg13g2_nand2b_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_nand2b_2
+// ---------------------
+// Fault Statistics for instance sg13g2_nand2b_2
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_nand2b_2
+//                                   (total)    	sg13g2_nand2b_2
+// ----------------------------  ---------------	sg13g2_nand2b_2
+//   FU (full)                          6       	sg13g2_nand2b_2
+//   --------------------------  ---------------	sg13g2_nand2b_2
+//   DS (det_simulation)             6 (100.00%)	sg13g2_nand2b_2
+// ---------------------------------------------	sg13g2_nand2b_2
+// Coverage                                     	sg13g2_nand2b_2
+//   --------------------------                 	sg13g2_nand2b_2
+//   test_coverage                      100.00% 	sg13g2_nand2b_2
+//   fault_coverage                     100.00% 	sg13g2_nand2b_2
+//   atpg_effectiveness                 100.00% 	sg13g2_nand2b_2
+// ---------------------------------------------	sg13g2_nand2b_2
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_nand3_1
+// ---------------------
+// Fault Statistics for instance sg13g2_nand3_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_nand3_1
+//                                   (total)    	sg13g2_nand3_1
+// ----------------------------  ---------------	sg13g2_nand3_1
+//   FU (full)                          8       	sg13g2_nand3_1
+//   --------------------------  ---------------	sg13g2_nand3_1
+//   DS (det_simulation)             8 (100.00%)	sg13g2_nand3_1
+// ---------------------------------------------	sg13g2_nand3_1
+// Coverage                                     	sg13g2_nand3_1
+//   --------------------------                 	sg13g2_nand3_1
+//   test_coverage                      100.00% 	sg13g2_nand3_1
+//   fault_coverage                     100.00% 	sg13g2_nand3_1
+//   atpg_effectiveness                 100.00% 	sg13g2_nand3_1
+// ---------------------------------------------	sg13g2_nand3_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_nand3b_1
+// ---------------------
+// Fault Statistics for instance sg13g2_nand3b_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_nand3b_1
+//                                   (total)    	sg13g2_nand3b_1
+// ----------------------------  ---------------	sg13g2_nand3b_1
+//   FU (full)                          8       	sg13g2_nand3b_1
+//   --------------------------  ---------------	sg13g2_nand3b_1
+//   DS (det_simulation)             8 (100.00%)	sg13g2_nand3b_1
+// ---------------------------------------------	sg13g2_nand3b_1
+// Coverage                                     	sg13g2_nand3b_1
+//   --------------------------                 	sg13g2_nand3b_1
+//   test_coverage                      100.00% 	sg13g2_nand3b_1
+//   fault_coverage                     100.00% 	sg13g2_nand3b_1
+//   atpg_effectiveness                 100.00% 	sg13g2_nand3b_1
+// ---------------------------------------------	sg13g2_nand3b_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_nand4_1
+// ---------------------
+// Fault Statistics for instance sg13g2_nand4_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_nand4_1
+//                                   (total)    	sg13g2_nand4_1
+// ----------------------------  ---------------	sg13g2_nand4_1
+//   FU (full)                          10      	sg13g2_nand4_1
+//   --------------------------  ---------------	sg13g2_nand4_1
+//   DS (det_simulation)            10 (100.00%)	sg13g2_nand4_1
+// ---------------------------------------------	sg13g2_nand4_1
+// Coverage                                     	sg13g2_nand4_1
+//   --------------------------                 	sg13g2_nand4_1
+//   test_coverage                      100.00% 	sg13g2_nand4_1
+//   fault_coverage                     100.00% 	sg13g2_nand4_1
+//   atpg_effectiveness                 100.00% 	sg13g2_nand4_1
+// ---------------------------------------------	sg13g2_nand4_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_nor2_1
+// ---------------------
+// Fault Statistics for instance sg13g2_nor2_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_nor2_1
+//                                   (total)    	sg13g2_nor2_1
+// ----------------------------  ---------------	sg13g2_nor2_1
+//   FU (full)                          6       	sg13g2_nor2_1
+//   --------------------------  ---------------	sg13g2_nor2_1
+//   DS (det_simulation)             6 (100.00%)	sg13g2_nor2_1
+// ---------------------------------------------	sg13g2_nor2_1
+// Coverage                                     	sg13g2_nor2_1
+//   --------------------------                 	sg13g2_nor2_1
+//   test_coverage                      100.00% 	sg13g2_nor2_1
+//   fault_coverage                     100.00% 	sg13g2_nor2_1
+//   atpg_effectiveness                 100.00% 	sg13g2_nor2_1
+// ---------------------------------------------	sg13g2_nor2_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_nor2_2
+// ---------------------
+// Fault Statistics for instance sg13g2_nor2_2
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_nor2_2
+//                                   (total)    	sg13g2_nor2_2
+// ----------------------------  ---------------	sg13g2_nor2_2
+//   FU (full)                          6       	sg13g2_nor2_2
+//   --------------------------  ---------------	sg13g2_nor2_2
+//   DS (det_simulation)             6 (100.00%)	sg13g2_nor2_2
+// ---------------------------------------------	sg13g2_nor2_2
+// Coverage                                     	sg13g2_nor2_2
+//   --------------------------                 	sg13g2_nor2_2
+//   test_coverage                      100.00% 	sg13g2_nor2_2
+//   fault_coverage                     100.00% 	sg13g2_nor2_2
+//   atpg_effectiveness                 100.00% 	sg13g2_nor2_2
+// ---------------------------------------------	sg13g2_nor2_2
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_nor2b_1
+// ---------------------
+// Fault Statistics for instance sg13g2_nor2b_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_nor2b_1
+//                                   (total)    	sg13g2_nor2b_1
+// ----------------------------  ---------------	sg13g2_nor2b_1
+//   FU (full)                          6       	sg13g2_nor2b_1
+//   --------------------------  ---------------	sg13g2_nor2b_1
+//   DS (det_simulation)             6 (100.00%)	sg13g2_nor2b_1
+// ---------------------------------------------	sg13g2_nor2b_1
+// Coverage                                     	sg13g2_nor2b_1
+//   --------------------------                 	sg13g2_nor2b_1
+//   test_coverage                      100.00% 	sg13g2_nor2b_1
+//   fault_coverage                     100.00% 	sg13g2_nor2b_1
+//   atpg_effectiveness                 100.00% 	sg13g2_nor2b_1
+// ---------------------------------------------	sg13g2_nor2b_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_nor2b_2
+// ---------------------
+// Fault Statistics for instance sg13g2_nor2b_2
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_nor2b_2
+//                                   (total)    	sg13g2_nor2b_2
+// ----------------------------  ---------------	sg13g2_nor2b_2
+//   FU (full)                          6       	sg13g2_nor2b_2
+//   --------------------------  ---------------	sg13g2_nor2b_2
+//   DS (det_simulation)             6 (100.00%)	sg13g2_nor2b_2
+// ---------------------------------------------	sg13g2_nor2b_2
+// Coverage                                     	sg13g2_nor2b_2
+//   --------------------------                 	sg13g2_nor2b_2
+//   test_coverage                      100.00% 	sg13g2_nor2b_2
+//   fault_coverage                     100.00% 	sg13g2_nor2b_2
+//   atpg_effectiveness                 100.00% 	sg13g2_nor2b_2
+// ---------------------------------------------	sg13g2_nor2b_2
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_nor3_1
+// ---------------------
+// Fault Statistics for instance sg13g2_nor3_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_nor3_1
+//                                   (total)    	sg13g2_nor3_1
+// ----------------------------  ---------------	sg13g2_nor3_1
+//   FU (full)                          8       	sg13g2_nor3_1
+//   --------------------------  ---------------	sg13g2_nor3_1
+//   DS (det_simulation)             8 (100.00%)	sg13g2_nor3_1
+// ---------------------------------------------	sg13g2_nor3_1
+// Coverage                                     	sg13g2_nor3_1
+//   --------------------------                 	sg13g2_nor3_1
+//   test_coverage                      100.00% 	sg13g2_nor3_1
+//   fault_coverage                     100.00% 	sg13g2_nor3_1
+//   atpg_effectiveness                 100.00% 	sg13g2_nor3_1
+// ---------------------------------------------	sg13g2_nor3_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_nor3_2
+// ---------------------
+// Fault Statistics for instance sg13g2_nor3_2
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_nor3_2
+//                                   (total)    	sg13g2_nor3_2
+// ----------------------------  ---------------	sg13g2_nor3_2
+//   FU (full)                          8       	sg13g2_nor3_2
+//   --------------------------  ---------------	sg13g2_nor3_2
+//   DS (det_simulation)             8 (100.00%)	sg13g2_nor3_2
+// ---------------------------------------------	sg13g2_nor3_2
+// Coverage                                     	sg13g2_nor3_2
+//   --------------------------                 	sg13g2_nor3_2
+//   test_coverage                      100.00% 	sg13g2_nor3_2
+//   fault_coverage                     100.00% 	sg13g2_nor3_2
+//   atpg_effectiveness                 100.00% 	sg13g2_nor3_2
+// ---------------------------------------------	sg13g2_nor3_2
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_nor4_1
+// ---------------------
+// Fault Statistics for instance sg13g2_nor4_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_nor4_1
+//                                   (total)    	sg13g2_nor4_1
+// ----------------------------  ---------------	sg13g2_nor4_1
+//   FU (full)                          10      	sg13g2_nor4_1
+//   --------------------------  ---------------	sg13g2_nor4_1
+//   DS (det_simulation)            10 (100.00%)	sg13g2_nor4_1
+// ---------------------------------------------	sg13g2_nor4_1
+// Coverage                                     	sg13g2_nor4_1
+//   --------------------------                 	sg13g2_nor4_1
+//   test_coverage                      100.00% 	sg13g2_nor4_1
+//   fault_coverage                     100.00% 	sg13g2_nor4_1
+//   atpg_effectiveness                 100.00% 	sg13g2_nor4_1
+// ---------------------------------------------	sg13g2_nor4_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_nor4_2
+// ---------------------
+// Fault Statistics for instance sg13g2_nor4_2
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_nor4_2
+//                                   (total)    	sg13g2_nor4_2
+// ----------------------------  ---------------	sg13g2_nor4_2
+//   FU (full)                          10      	sg13g2_nor4_2
+//   --------------------------  ---------------	sg13g2_nor4_2
+//   DS (det_simulation)            10 (100.00%)	sg13g2_nor4_2
+// ---------------------------------------------	sg13g2_nor4_2
+// Coverage                                     	sg13g2_nor4_2
+//   --------------------------                 	sg13g2_nor4_2
+//   test_coverage                      100.00% 	sg13g2_nor4_2
+//   fault_coverage                     100.00% 	sg13g2_nor4_2
+//   atpg_effectiveness                 100.00% 	sg13g2_nor4_2
+// ---------------------------------------------	sg13g2_nor4_2
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_o21ai_1
+// ---------------------
+// Fault Statistics for instance sg13g2_o21ai_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_o21ai_1
+//                                   (total)    	sg13g2_o21ai_1
+// ----------------------------  ---------------	sg13g2_o21ai_1
+//   FU (full)                          8       	sg13g2_o21ai_1
+//   --------------------------  ---------------	sg13g2_o21ai_1
+//   DS (det_simulation)             8 (100.00%)	sg13g2_o21ai_1
+// ---------------------------------------------	sg13g2_o21ai_1
+// Coverage                                     	sg13g2_o21ai_1
+//   --------------------------                 	sg13g2_o21ai_1
+//   test_coverage                      100.00% 	sg13g2_o21ai_1
+//   fault_coverage                     100.00% 	sg13g2_o21ai_1
+//   atpg_effectiveness                 100.00% 	sg13g2_o21ai_1
+// ---------------------------------------------	sg13g2_o21ai_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_or2_1
+// ---------------------
+// Fault Statistics for instance sg13g2_or2_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_or2_1
+//                                   (total)    	sg13g2_or2_1
+// ----------------------------  ---------------	sg13g2_or2_1
+//   FU (full)                          6       	sg13g2_or2_1
+//   --------------------------  ---------------	sg13g2_or2_1
+//   DS (det_simulation)             6 (100.00%)	sg13g2_or2_1
+// ---------------------------------------------	sg13g2_or2_1
+// Coverage                                     	sg13g2_or2_1
+//   --------------------------                 	sg13g2_or2_1
+//   test_coverage                      100.00% 	sg13g2_or2_1
+//   fault_coverage                     100.00% 	sg13g2_or2_1
+//   atpg_effectiveness                 100.00% 	sg13g2_or2_1
+// ---------------------------------------------	sg13g2_or2_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_or2_2
+// ---------------------
+// Fault Statistics for instance sg13g2_or2_2
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_or2_2
+//                                   (total)    	sg13g2_or2_2
+// ----------------------------  ---------------	sg13g2_or2_2
+//   FU (full)                          6       	sg13g2_or2_2
+//   --------------------------  ---------------	sg13g2_or2_2
+//   DS (det_simulation)             6 (100.00%)	sg13g2_or2_2
+// ---------------------------------------------	sg13g2_or2_2
+// Coverage                                     	sg13g2_or2_2
+//   --------------------------                 	sg13g2_or2_2
+//   test_coverage                      100.00% 	sg13g2_or2_2
+//   fault_coverage                     100.00% 	sg13g2_or2_2
+//   atpg_effectiveness                 100.00% 	sg13g2_or2_2
+// ---------------------------------------------	sg13g2_or2_2
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_or3_1
+// ---------------------
+// Fault Statistics for instance sg13g2_or3_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_or3_1
+//                                   (total)    	sg13g2_or3_1
+// ----------------------------  ---------------	sg13g2_or3_1
+//   FU (full)                          8       	sg13g2_or3_1
+//   --------------------------  ---------------	sg13g2_or3_1
+//   DS (det_simulation)             8 (100.00%)	sg13g2_or3_1
+// ---------------------------------------------	sg13g2_or3_1
+// Coverage                                     	sg13g2_or3_1
+//   --------------------------                 	sg13g2_or3_1
+//   test_coverage                      100.00% 	sg13g2_or3_1
+//   fault_coverage                     100.00% 	sg13g2_or3_1
+//   atpg_effectiveness                 100.00% 	sg13g2_or3_1
+// ---------------------------------------------	sg13g2_or3_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_or3_2
+// ---------------------
+// Fault Statistics for instance sg13g2_or3_2
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_or3_2
+//                                   (total)    	sg13g2_or3_2
+// ----------------------------  ---------------	sg13g2_or3_2
+//   FU (full)                          8       	sg13g2_or3_2
+//   --------------------------  ---------------	sg13g2_or3_2
+//   DS (det_simulation)             8 (100.00%)	sg13g2_or3_2
+// ---------------------------------------------	sg13g2_or3_2
+// Coverage                                     	sg13g2_or3_2
+//   --------------------------                 	sg13g2_or3_2
+//   test_coverage                      100.00% 	sg13g2_or3_2
+//   fault_coverage                     100.00% 	sg13g2_or3_2
+//   atpg_effectiveness                 100.00% 	sg13g2_or3_2
+// ---------------------------------------------	sg13g2_or3_2
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_or4_1
+// ---------------------
+// Fault Statistics for instance sg13g2_or4_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_or4_1
+//                                   (total)    	sg13g2_or4_1
+// ----------------------------  ---------------	sg13g2_or4_1
+//   FU (full)                          10      	sg13g2_or4_1
+//   --------------------------  ---------------	sg13g2_or4_1
+//   DS (det_simulation)            10 (100.00%)	sg13g2_or4_1
+// ---------------------------------------------	sg13g2_or4_1
+// Coverage                                     	sg13g2_or4_1
+//   --------------------------                 	sg13g2_or4_1
+//   test_coverage                      100.00% 	sg13g2_or4_1
+//   fault_coverage                     100.00% 	sg13g2_or4_1
+//   atpg_effectiveness                 100.00% 	sg13g2_or4_1
+// ---------------------------------------------	sg13g2_or4_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_or4_2
+// ---------------------
+// Fault Statistics for instance sg13g2_or4_2
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_or4_2
+//                                   (total)    	sg13g2_or4_2
+// ----------------------------  ---------------	sg13g2_or4_2
+//   FU (full)                          10      	sg13g2_or4_2
+//   --------------------------  ---------------	sg13g2_or4_2
+//   DS (det_simulation)            10 (100.00%)	sg13g2_or4_2
+// ---------------------------------------------	sg13g2_or4_2
+// Coverage                                     	sg13g2_or4_2
+//   --------------------------                 	sg13g2_or4_2
+//   test_coverage                      100.00% 	sg13g2_or4_2
+//   fault_coverage                     100.00% 	sg13g2_or4_2
+//   atpg_effectiveness                 100.00% 	sg13g2_or4_2
+// ---------------------------------------------	sg13g2_or4_2
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_sdfbbp_1
+// ---------------------
+// Fault Statistics for instance sg13g2_sdfbbp_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_sdfbbp_1
+//                                   (total)    	sg13g2_sdfbbp_1
+// ----------------------------  ---------------	sg13g2_sdfbbp_1
+//   FU (full)                          12      	sg13g2_sdfbbp_1
+//   --------------------------  ---------------	sg13g2_sdfbbp_1
+//   DS (det_simulation)            12 (100.00%)	sg13g2_sdfbbp_1
+// ---------------------------------------------	sg13g2_sdfbbp_1
+// Coverage                                     	sg13g2_sdfbbp_1
+//   --------------------------                 	sg13g2_sdfbbp_1
+//   test_coverage                      100.00% 	sg13g2_sdfbbp_1
+//   fault_coverage                     100.00% 	sg13g2_sdfbbp_1
+//   atpg_effectiveness                 100.00% 	sg13g2_sdfbbp_1
+// ---------------------------------------------	sg13g2_sdfbbp_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_sdfrbp_1
+// ---------------------
+// Fault Statistics for instance sg13g2_sdfrbp_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_sdfrbp_1
+//                                   (total)    	sg13g2_sdfrbp_1
+// ----------------------------  ---------------	sg13g2_sdfrbp_1
+//   FU (full)                          12      	sg13g2_sdfrbp_1
+//   --------------------------  ---------------	sg13g2_sdfrbp_1
+//   DS (det_simulation)            12 (100.00%)	sg13g2_sdfrbp_1
+// ---------------------------------------------	sg13g2_sdfrbp_1
+// Coverage                                     	sg13g2_sdfrbp_1
+//   --------------------------                 	sg13g2_sdfrbp_1
+//   test_coverage                      100.00% 	sg13g2_sdfrbp_1
+//   fault_coverage                     100.00% 	sg13g2_sdfrbp_1
+//   atpg_effectiveness                 100.00% 	sg13g2_sdfrbp_1
+// ---------------------------------------------	sg13g2_sdfrbp_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_sdfrbp_2
+// ---------------------
+// Fault Statistics for instance sg13g2_sdfrbp_2
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_sdfrbp_2
+//                                   (total)    	sg13g2_sdfrbp_2
+// ----------------------------  ---------------	sg13g2_sdfrbp_2
+//   FU (full)                          12      	sg13g2_sdfrbp_2
+//   --------------------------  ---------------	sg13g2_sdfrbp_2
+//   DS (det_simulation)            12 (100.00%)	sg13g2_sdfrbp_2
+// ---------------------------------------------	sg13g2_sdfrbp_2
+// Coverage                                     	sg13g2_sdfrbp_2
+//   --------------------------                 	sg13g2_sdfrbp_2
+//   test_coverage                      100.00% 	sg13g2_sdfrbp_2
+//   fault_coverage                     100.00% 	sg13g2_sdfrbp_2
+//   atpg_effectiveness                 100.00% 	sg13g2_sdfrbp_2
+// ---------------------------------------------	sg13g2_sdfrbp_2
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_sdfrbpq_1
+// ---------------------
+// Fault Statistics for instance sg13g2_sdfrbpq_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_sdfrbpq_1
+//                                   (total)    	sg13g2_sdfrbpq_1
+// ----------------------------  ---------------	sg13g2_sdfrbpq_1
+//   FU (full)                          10      	sg13g2_sdfrbpq_1
+//   --------------------------  ---------------	sg13g2_sdfrbpq_1
+//   DS (det_simulation)            10 (100.00%)	sg13g2_sdfrbpq_1
+// ---------------------------------------------	sg13g2_sdfrbpq_1
+// Coverage                                     	sg13g2_sdfrbpq_1
+//   --------------------------                 	sg13g2_sdfrbpq_1
+//   test_coverage                      100.00% 	sg13g2_sdfrbpq_1
+//   fault_coverage                     100.00% 	sg13g2_sdfrbpq_1
+//   atpg_effectiveness                 100.00% 	sg13g2_sdfrbpq_1
+// ---------------------------------------------	sg13g2_sdfrbpq_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_sdfrbpq_2
+// ---------------------
+// Fault Statistics for instance sg13g2_sdfrbpq_2
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_sdfrbpq_2
+//                                   (total)    	sg13g2_sdfrbpq_2
+// ----------------------------  ---------------	sg13g2_sdfrbpq_2
+//   FU (full)                          10      	sg13g2_sdfrbpq_2
+//   --------------------------  ---------------	sg13g2_sdfrbpq_2
+//   DS (det_simulation)            10 (100.00%)	sg13g2_sdfrbpq_2
+// ---------------------------------------------	sg13g2_sdfrbpq_2
+// Coverage                                     	sg13g2_sdfrbpq_2
+//   --------------------------                 	sg13g2_sdfrbpq_2
+//   test_coverage                      100.00% 	sg13g2_sdfrbpq_2
+//   fault_coverage                     100.00% 	sg13g2_sdfrbpq_2
+//   atpg_effectiveness                 100.00% 	sg13g2_sdfrbpq_2
+// ---------------------------------------------	sg13g2_sdfrbpq_2
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_sighold
+// ---------------------
+// Fault Statistics for instance sg13g2_sighold
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_sighold
+//                                   (total)    	sg13g2_sighold
+// ----------------------------  ---------------	sg13g2_sighold
+//   FU (full)                          2       	sg13g2_sighold
+//   --------------------------  ---------------	sg13g2_sighold
+//   DS (det_simulation)             2 (100.00%)	sg13g2_sighold
+// ---------------------------------------------	sg13g2_sighold
+// Coverage                                     	sg13g2_sighold
+//   --------------------------                 	sg13g2_sighold
+//   test_coverage                      100.00% 	sg13g2_sighold
+//   fault_coverage                     100.00% 	sg13g2_sighold
+//   atpg_effectiveness                 100.00% 	sg13g2_sighold
+// ---------------------------------------------	sg13g2_sighold
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_slgcp_1
+// ---------------------
+// Fault Statistics for instance sg13g2_slgcp_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_slgcp_1
+//                                   (total)    	sg13g2_slgcp_1
+// ----------------------------  ---------------	sg13g2_slgcp_1
+//   FU (full)                          6       	sg13g2_slgcp_1
+//   --------------------------  ---------------	sg13g2_slgcp_1
+//   DS (det_simulation)             6 (100.00%)	sg13g2_slgcp_1
+// ---------------------------------------------	sg13g2_slgcp_1
+// Coverage                                     	sg13g2_slgcp_1
+//   --------------------------                 	sg13g2_slgcp_1
+//   test_coverage                      100.00% 	sg13g2_slgcp_1
+//   fault_coverage                     100.00% 	sg13g2_slgcp_1
+//   atpg_effectiveness                 100.00% 	sg13g2_slgcp_1
+// ---------------------------------------------	sg13g2_slgcp_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_tiehi
+// ---------------------
+// Fault Statistics for instance sg13g2_tiehi
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_tiehi
+//                                   (total)    	sg13g2_tiehi
+// ----------------------------  ---------------	sg13g2_tiehi
+//   FU (full)                          1       	sg13g2_tiehi
+//   --------------------------  ---------------	sg13g2_tiehi
+//   DS (det_simulation)             1 (100.00%)	sg13g2_tiehi
+// ---------------------------------------------	sg13g2_tiehi
+// Coverage                                     	sg13g2_tiehi
+//   --------------------------                 	sg13g2_tiehi
+//   test_coverage                      100.00% 	sg13g2_tiehi
+//   fault_coverage                     100.00% 	sg13g2_tiehi
+//   atpg_effectiveness                 100.00% 	sg13g2_tiehi
+// ---------------------------------------------	sg13g2_tiehi
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_tielo
+// ---------------------
+// Fault Statistics for instance sg13g2_tielo
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_tielo
+//                                   (total)    	sg13g2_tielo
+// ----------------------------  ---------------	sg13g2_tielo
+//   FU (full)                          1       	sg13g2_tielo
+//   --------------------------  ---------------	sg13g2_tielo
+//   DS (det_simulation)             1 (100.00%)	sg13g2_tielo
+// ---------------------------------------------	sg13g2_tielo
+// Coverage                                     	sg13g2_tielo
+//   --------------------------                 	sg13g2_tielo
+//   test_coverage                      100.00% 	sg13g2_tielo
+//   fault_coverage                     100.00% 	sg13g2_tielo
+//   atpg_effectiveness                 100.00% 	sg13g2_tielo
+// ---------------------------------------------	sg13g2_tielo
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_xnor2_1
+// ---------------------
+// Fault Statistics for instance sg13g2_xnor2_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_xnor2_1
+//                                   (total)    	sg13g2_xnor2_1
+// ----------------------------  ---------------	sg13g2_xnor2_1
+//   FU (full)                          6       	sg13g2_xnor2_1
+//   --------------------------  ---------------	sg13g2_xnor2_1
+//   DS (det_simulation)             6 (100.00%)	sg13g2_xnor2_1
+// ---------------------------------------------	sg13g2_xnor2_1
+// Coverage                                     	sg13g2_xnor2_1
+//   --------------------------                 	sg13g2_xnor2_1
+//   test_coverage                      100.00% 	sg13g2_xnor2_1
+//   fault_coverage                     100.00% 	sg13g2_xnor2_1
+//   atpg_effectiveness                 100.00% 	sg13g2_xnor2_1
+// ---------------------------------------------	sg13g2_xnor2_1
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_xor2_1
+// ---------------------
+// Fault Statistics for instance sg13g2_xor2_1
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_xor2_1
+//                                   (total)    	sg13g2_xor2_1
+// ----------------------------  ---------------	sg13g2_xor2_1
+//   FU (full)                          6       	sg13g2_xor2_1
+//   --------------------------  ---------------	sg13g2_xor2_1
+//   DS (det_simulation)             6 (100.00%)	sg13g2_xor2_1
+// ---------------------------------------------	sg13g2_xor2_1
+// Coverage                                     	sg13g2_xor2_1
+//   --------------------------                 	sg13g2_xor2_1
+//   test_coverage                      100.00% 	sg13g2_xor2_1
+//   fault_coverage                     100.00% 	sg13g2_xor2_1
+//   atpg_effectiveness                 100.00% 	sg13g2_xor2_1
+// ---------------------------------------------	sg13g2_xor2_1
+// 
+// ***** Fault (pessimistic) Coverage Summary by Decile ***** 
+//  See file fault_coverage_0_to_10_percent_models for a list
+//  of models in 0 to 10% decile, etc. for each nonNULL decile.
+//  No faults  --- 7 models.
+//  0% to 10%  ---  4 models.
+//    100%      --  90 models.
+// ---------------------------------------------------------
+// ---------------------------------------------------------
+// Verification Summary:
+//    101 Total Models
+// ALL PASSED for all patterns.
+//   All known model output values predicted by ATPG agreed with Verilog sim.
+//   In some cases, this only means ATPG could not exercise the model.  See below.
+// 
+// Always check transcript for model translation messages.
+// Always check the output ATPG library file with remodels for the strings:
+//    "BlackBox", "EDIT & place _cram",  and "PARTIALLY TRANSLATED MODULE".
+// Always check sim.log for untestable Ram & DRC messages.
+// Always check low coverage models to see if low coverage is expected (IO pads
+//     may have 40% coverage and be good, whereas 85% may be bad for a mux scan model).
+// See the Fault Coverage Summary above these messages and associated files for
+//     for the model names with low coverage.  For model specific coverages, check
+//     the verify.results file or the sim.log file. Model specific (-instance)
+//     reports follow overall statistics in sim.log.
+// 
+// The following 4 Models were Completely BlackBoxed:
+// ihp_dff_err
+// ihp_dff_r_err
+// ihp_dff_s_err
+// ihp_dff_sr_err
+// 
+// User invoked Libcomp with following + arguments for Verilog translation.
+// +define+TETRAMAX 
+// 
+
+//  command: exit
+/home/jd.guerrero/Documents/Tessent/tech/tessent/lib_create
+//  LibComp  2022.3    Thu Aug 11 22:57:52 GMT 2022
+//       Unpublished work. Copyright 2022 Siemens
+//
+//      This material contains trade secrets or otherwise confidential
+//  information owned by Siemens Industry Software Inc. or its affiliates
+//   (collectively, "SISW"), or its licensors. Access to and use of this
+//     information is strictly limited as set forth in the Customer's
+//                   applicable agreements with SISW.
+//
+//
+//  Siemens software executing under undetermined architecture.
+//
+//
+// Note: Dofile <filename> omitted.  Using /eda/Siemens/2022-23/RHELx86/TESSENT_2022.3/lib/tools/libcomp/libcomp.do.default.
+//
+//  Reading Verilog Netlist ...
+//  command: add models -all
+//  command: set system mode translation
+//  Will translate verilog module sg13g2_Corner
+//  Will translate verilog module sg13g2_Filler1000
+//  Will translate verilog module sg13g2_Filler10000
+//  Will translate verilog module sg13g2_Filler200
+//  Will translate verilog module sg13g2_Filler2000
+//  Will translate verilog module sg13g2_Filler400
+//  Will translate verilog module sg13g2_Filler4000
+//  Will translate verilog module sg13g2_IOPadAnalog
+//  Will translate verilog module sg13g2_IOPadIOVdd
+//  Will translate verilog module sg13g2_IOPadIOVss
+//  Will translate verilog module sg13g2_IOPadIn
+//  Will translate verilog module sg13g2_IOPadInOut16mA
+//  Will translate verilog module sg13g2_IOPadInOut30mA
+//  Will translate verilog module sg13g2_IOPadInOut4mA
+//  Will translate verilog module sg13g2_IOPadOut16mA
+//  Will translate verilog module sg13g2_IOPadOut30mA
+//  Will translate verilog module sg13g2_IOPadOut4mA
+//  Will translate verilog module sg13g2_IOPadTriOut16mA
+//  Will translate verilog module sg13g2_IOPadTriOut30mA
+//  Will translate verilog module sg13g2_IOPadTriOut4mA
+//  Will translate verilog module sg13g2_IOPadVdd
+//  Will translate verilog module sg13g2_IOPadVss
+//  command: run
+// Translated verilog module 'sg13g2_Corner'.
+// Translated verilog module 'sg13g2_Filler1000'.
+// Translated verilog module 'sg13g2_Filler10000'.
+// Translated verilog module 'sg13g2_Filler200'.
+// Translated verilog module 'sg13g2_Filler2000'.
+// Translated verilog module 'sg13g2_Filler400'.
+// Translated verilog module 'sg13g2_Filler4000'.
+// Translated verilog module 'sg13g2_IOPadAnalog'.
+// Translated verilog module 'sg13g2_IOPadIOVdd'.
+// Translated verilog module 'sg13g2_IOPadIOVss'.
+// Translated verilog module 'sg13g2_IOPadIn'.
+// Translated verilog module 'sg13g2_IOPadInOut16mA'.
+// Translated verilog module 'sg13g2_IOPadInOut30mA'.
+// Translated verilog module 'sg13g2_IOPadInOut4mA'.
+// Translated verilog module 'sg13g2_IOPadOut16mA'.
+// Translated verilog module 'sg13g2_IOPadOut30mA'.
+// Translated verilog module 'sg13g2_IOPadOut4mA'.
+// Translated verilog module 'sg13g2_IOPadTriOut16mA'.
+// Translated verilog module 'sg13g2_IOPadTriOut30mA'.
+// Translated verilog module 'sg13g2_IOPadTriOut4mA'.
+// Translated verilog module 'sg13g2_IOPadVdd'.
+// Translated verilog module 'sg13g2_IOPadVss'.
+
+// Total translation cpu run time =    0.00 seconds.
+//  command: write library libcomp.atpglib -rep
+// Writing ATPG Models...
+// 
+// Verifying ATPG Library using Invocation :
+//    lcVerify -no_scan_rams -no_atpg_prims libcomp.atpglib  <verilog_source>
+// 
+// 
+// 
+// Library Verification Run
+// Verifying libcomp.atpglib
+// Run at Thu Nov 13 11:37:40 2025
+// 
+//     User invoked Libcomp with following + arguments for Verilog translation.
+//     +define+TETRAMAX 
+// 
+// ---------------------------------------------------------
+// Summary Statistics for Library libcomp.atpglib
+// -----------------------------------------
+// Fault Statistics for Library libcomp.atpglib
+// -----------------------------------------
+// Fault Classes                     #faults   
+//                                   (total)   
+// ----------------------------  --------------
+//   FU (full)                         122     
+//   --------------------------  --------------
+//   DS (det_simulation)           114 (93.44%)
+//   AU (atpg_untestable)            8 ( 6.56%)
+// --------------------------------------------
+// Fault Sub-classes                           
+//   --------------------------                
+//   AU (atpg_untestable)                      
+//     SEQ   (sequential_depth)      8 ( 6.56%)
+// --------------------------------------------
+// Coverage                                    
+//   --------------------------                
+//   test_coverage                      93.44% 
+//   fault_coverage                     93.44% 
+//   atpg_effectiveness                100.00% 
+// --------------------------------------------
+// Test Pattern Statistics for Library libcomp.atpglib
+// -------------------------------------------
+// #test_patterns                            9 
+// #simulated_patterns                       9 
+// ---------------------------------------------------------
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_Corner
+// ---------------------
+// Fault Statistics for instance sg13g2_Corner
+// -----------------------------------------
+// Fault Classes           #faults   	sg13g2_Corner
+//                         (total)   	sg13g2_Corner
+// -------------------  -------------	sg13g2_Corner
+//   FU (full)                0      	sg13g2_Corner
+//   -----------------  -------------	sg13g2_Corner
+// ----------------------------------	sg13g2_Corner
+// Coverage                          	sg13g2_Corner
+//   -----------------               	sg13g2_Corner
+// ----------------------------------	sg13g2_Corner
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_Filler1000
+// ---------------------
+// Fault Statistics for instance sg13g2_Filler1000
+// -----------------------------------------
+// Fault Classes           #faults   	sg13g2_Filler1000
+//                         (total)   	sg13g2_Filler1000
+// -------------------  -------------	sg13g2_Filler1000
+//   FU (full)                0      	sg13g2_Filler1000
+//   -----------------  -------------	sg13g2_Filler1000
+// ----------------------------------	sg13g2_Filler1000
+// Coverage                          	sg13g2_Filler1000
+//   -----------------               	sg13g2_Filler1000
+// ----------------------------------	sg13g2_Filler1000
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_Filler10000
+// ---------------------
+// Fault Statistics for instance sg13g2_Filler10000
+// -----------------------------------------
+// Fault Classes           #faults   	sg13g2_Filler10000
+//                         (total)   	sg13g2_Filler10000
+// -------------------  -------------	sg13g2_Filler10000
+//   FU (full)                0      	sg13g2_Filler10000
+//   -----------------  -------------	sg13g2_Filler10000
+// ----------------------------------	sg13g2_Filler10000
+// Coverage                          	sg13g2_Filler10000
+//   -----------------               	sg13g2_Filler10000
+// ----------------------------------	sg13g2_Filler10000
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_Filler200
+// ---------------------
+// Fault Statistics for instance sg13g2_Filler200
+// -----------------------------------------
+// Fault Classes           #faults   	sg13g2_Filler200
+//                         (total)   	sg13g2_Filler200
+// -------------------  -------------	sg13g2_Filler200
+//   FU (full)                0      	sg13g2_Filler200
+//   -----------------  -------------	sg13g2_Filler200
+// ----------------------------------	sg13g2_Filler200
+// Coverage                          	sg13g2_Filler200
+//   -----------------               	sg13g2_Filler200
+// ----------------------------------	sg13g2_Filler200
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_Filler2000
+// ---------------------
+// Fault Statistics for instance sg13g2_Filler2000
+// -----------------------------------------
+// Fault Classes           #faults   	sg13g2_Filler2000
+//                         (total)   	sg13g2_Filler2000
+// -------------------  -------------	sg13g2_Filler2000
+//   FU (full)                0      	sg13g2_Filler2000
+//   -----------------  -------------	sg13g2_Filler2000
+// ----------------------------------	sg13g2_Filler2000
+// Coverage                          	sg13g2_Filler2000
+//   -----------------               	sg13g2_Filler2000
+// ----------------------------------	sg13g2_Filler2000
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_Filler400
+// ---------------------
+// Fault Statistics for instance sg13g2_Filler400
+// -----------------------------------------
+// Fault Classes           #faults   	sg13g2_Filler400
+//                         (total)   	sg13g2_Filler400
+// -------------------  -------------	sg13g2_Filler400
+//   FU (full)                0      	sg13g2_Filler400
+//   -----------------  -------------	sg13g2_Filler400
+// ----------------------------------	sg13g2_Filler400
+// Coverage                          	sg13g2_Filler400
+//   -----------------               	sg13g2_Filler400
+// ----------------------------------	sg13g2_Filler400
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_Filler4000
+// ---------------------
+// Fault Statistics for instance sg13g2_Filler4000
+// -----------------------------------------
+// Fault Classes           #faults   	sg13g2_Filler4000
+//                         (total)   	sg13g2_Filler4000
+// -------------------  -------------	sg13g2_Filler4000
+//   FU (full)                0      	sg13g2_Filler4000
+//   -----------------  -------------	sg13g2_Filler4000
+// ----------------------------------	sg13g2_Filler4000
+// Coverage                          	sg13g2_Filler4000
+//   -----------------               	sg13g2_Filler4000
+// ----------------------------------	sg13g2_Filler4000
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_IOPadAnalog
+// ---------------------
+// Fault Statistics for instance sg13g2_IOPadAnalog
+// -----------------------------------------
+// Fault Classes                     #faults    	sg13g2_IOPadAnalog
+//                                   (total)    	sg13g2_IOPadAnalog
+// ----------------------------  ---------------	sg13g2_IOPadAnalog
+//   FU (full)                          4       	sg13g2_IOPadAnalog
+//   --------------------------  ---------------	sg13g2_IOPadAnalog
+//   AU (atpg_untestable)            4 (100.00%)	sg13g2_IOPadAnalog
+// ---------------------------------------------	sg13g2_IOPadAnalog
+// Fault Sub-classes                            	sg13g2_IOPadAnalog
+//   --------------------------                 	sg13g2_IOPadAnalog
+//   AU (atpg_untestable)                       	sg13g2_IOPadAnalog
+//     SEQ   (sequential_depth)      4 (100.00%)	sg13g2_IOPadAnalog
+// ---------------------------------------------	sg13g2_IOPadAnalog
+// Coverage                                     	sg13g2_IOPadAnalog
+//   --------------------------                 	sg13g2_IOPadAnalog
+//   test_coverage                        0.00% 	sg13g2_IOPadAnalog
+//   fault_coverage                       0.00% 	sg13g2_IOPadAnalog
+//   atpg_effectiveness                 100.00% 	sg13g2_IOPadAnalog
+// ---------------------------------------------	sg13g2_IOPadAnalog
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_IOPadIOVdd
+// ---------------------
+// Fault Statistics for instance sg13g2_IOPadIOVdd
+// -----------------------------------------
+// Fault Classes           #faults   	sg13g2_IOPadIOVdd
+//                         (total)   	sg13g2_IOPadIOVdd
+// -------------------  -------------	sg13g2_IOPadIOVdd
+//   FU (full)                0      	sg13g2_IOPadIOVdd
+//   -----------------  -------------	sg13g2_IOPadIOVdd
+// ----------------------------------	sg13g2_IOPadIOVdd
+// Coverage                          	sg13g2_IOPadIOVdd
+//   -----------------               	sg13g2_IOPadIOVdd
+// ----------------------------------	sg13g2_IOPadIOVdd
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_IOPadIOVss
+// ---------------------
+// Fault Statistics for instance sg13g2_IOPadIOVss
+// -----------------------------------------
+// Fault Classes           #faults   	sg13g2_IOPadIOVss
+//                         (total)   	sg13g2_IOPadIOVss
+// -------------------  -------------	sg13g2_IOPadIOVss
+//   FU (full)                0      	sg13g2_IOPadIOVss
+//   -----------------  -------------	sg13g2_IOPadIOVss
+// ----------------------------------	sg13g2_IOPadIOVss
+// Coverage                          	sg13g2_IOPadIOVss
+//   -----------------               	sg13g2_IOPadIOVss
+// ----------------------------------	sg13g2_IOPadIOVss
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_IOPadIn
+// ---------------------
+// Fault Statistics for instance sg13g2_IOPadIn
+// -----------------------------------------
+// Fault Classes              #faults    	sg13g2_IOPadIn
+//                            (total)    	sg13g2_IOPadIn
+// ---------------------  ---------------	sg13g2_IOPadIn
+//   FU (full)                   4       	sg13g2_IOPadIn
+//   -------------------  ---------------	sg13g2_IOPadIn
+//   DS (det_simulation)      4 (100.00%)	sg13g2_IOPadIn
+// --------------------------------------	sg13g2_IOPadIn
+// Coverage                              	sg13g2_IOPadIn
+//   -------------------                 	sg13g2_IOPadIn
+//   test_coverage               100.00% 	sg13g2_IOPadIn
+//   fault_coverage              100.00% 	sg13g2_IOPadIn
+//   atpg_effectiveness          100.00% 	sg13g2_IOPadIn
+// --------------------------------------	sg13g2_IOPadIn
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_IOPadInOut16mA
+// ---------------------
+// Fault Statistics for instance sg13g2_IOPadInOut16mA
+// -----------------------------------------
+// Fault Classes              #faults    	sg13g2_IOPadInOut16mA
+//                            (total)    	sg13g2_IOPadInOut16mA
+// ---------------------  ---------------	sg13g2_IOPadInOut16mA
+//   FU (full)                   8       	sg13g2_IOPadInOut16mA
+//   -------------------  ---------------	sg13g2_IOPadInOut16mA
+//   DS (det_simulation)      8 (100.00%)	sg13g2_IOPadInOut16mA
+// --------------------------------------	sg13g2_IOPadInOut16mA
+// Coverage                              	sg13g2_IOPadInOut16mA
+//   -------------------                 	sg13g2_IOPadInOut16mA
+//   test_coverage               100.00% 	sg13g2_IOPadInOut16mA
+//   fault_coverage              100.00% 	sg13g2_IOPadInOut16mA
+//   atpg_effectiveness          100.00% 	sg13g2_IOPadInOut16mA
+// --------------------------------------	sg13g2_IOPadInOut16mA
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_IOPadInOut30mA
+// ---------------------
+// Fault Statistics for instance sg13g2_IOPadInOut30mA
+// -----------------------------------------
+// Fault Classes              #faults    	sg13g2_IOPadInOut30mA
+//                            (total)    	sg13g2_IOPadInOut30mA
+// ---------------------  ---------------	sg13g2_IOPadInOut30mA
+//   FU (full)                   8       	sg13g2_IOPadInOut30mA
+//   -------------------  ---------------	sg13g2_IOPadInOut30mA
+//   DS (det_simulation)      8 (100.00%)	sg13g2_IOPadInOut30mA
+// --------------------------------------	sg13g2_IOPadInOut30mA
+// Coverage                              	sg13g2_IOPadInOut30mA
+//   -------------------                 	sg13g2_IOPadInOut30mA
+//   test_coverage               100.00% 	sg13g2_IOPadInOut30mA
+//   fault_coverage              100.00% 	sg13g2_IOPadInOut30mA
+//   atpg_effectiveness          100.00% 	sg13g2_IOPadInOut30mA
+// --------------------------------------	sg13g2_IOPadInOut30mA
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_IOPadInOut4mA
+// ---------------------
+// Fault Statistics for instance sg13g2_IOPadInOut4mA
+// -----------------------------------------
+// Fault Classes              #faults    	sg13g2_IOPadInOut4mA
+//                            (total)    	sg13g2_IOPadInOut4mA
+// ---------------------  ---------------	sg13g2_IOPadInOut4mA
+//   FU (full)                   8       	sg13g2_IOPadInOut4mA
+//   -------------------  ---------------	sg13g2_IOPadInOut4mA
+//   DS (det_simulation)      8 (100.00%)	sg13g2_IOPadInOut4mA
+// --------------------------------------	sg13g2_IOPadInOut4mA
+// Coverage                              	sg13g2_IOPadInOut4mA
+//   -------------------                 	sg13g2_IOPadInOut4mA
+//   test_coverage               100.00% 	sg13g2_IOPadInOut4mA
+//   fault_coverage              100.00% 	sg13g2_IOPadInOut4mA
+//   atpg_effectiveness          100.00% 	sg13g2_IOPadInOut4mA
+// --------------------------------------	sg13g2_IOPadInOut4mA
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_IOPadOut16mA
+// ---------------------
+// Fault Statistics for instance sg13g2_IOPadOut16mA
+// -----------------------------------------
+// Fault Classes              #faults    	sg13g2_IOPadOut16mA
+//                            (total)    	sg13g2_IOPadOut16mA
+// ---------------------  ---------------	sg13g2_IOPadOut16mA
+//   FU (full)                   4       	sg13g2_IOPadOut16mA
+//   -------------------  ---------------	sg13g2_IOPadOut16mA
+//   DS (det_simulation)      4 (100.00%)	sg13g2_IOPadOut16mA
+// --------------------------------------	sg13g2_IOPadOut16mA
+// Coverage                              	sg13g2_IOPadOut16mA
+//   -------------------                 	sg13g2_IOPadOut16mA
+//   test_coverage               100.00% 	sg13g2_IOPadOut16mA
+//   fault_coverage              100.00% 	sg13g2_IOPadOut16mA
+//   atpg_effectiveness          100.00% 	sg13g2_IOPadOut16mA
+// --------------------------------------	sg13g2_IOPadOut16mA
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_IOPadOut30mA
+// ---------------------
+// Fault Statistics for instance sg13g2_IOPadOut30mA
+// -----------------------------------------
+// Fault Classes              #faults    	sg13g2_IOPadOut30mA
+//                            (total)    	sg13g2_IOPadOut30mA
+// ---------------------  ---------------	sg13g2_IOPadOut30mA
+//   FU (full)                   4       	sg13g2_IOPadOut30mA
+//   -------------------  ---------------	sg13g2_IOPadOut30mA
+//   DS (det_simulation)      4 (100.00%)	sg13g2_IOPadOut30mA
+// --------------------------------------	sg13g2_IOPadOut30mA
+// Coverage                              	sg13g2_IOPadOut30mA
+//   -------------------                 	sg13g2_IOPadOut30mA
+//   test_coverage               100.00% 	sg13g2_IOPadOut30mA
+//   fault_coverage              100.00% 	sg13g2_IOPadOut30mA
+//   atpg_effectiveness          100.00% 	sg13g2_IOPadOut30mA
+// --------------------------------------	sg13g2_IOPadOut30mA
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_IOPadOut4mA
+// ---------------------
+// Fault Statistics for instance sg13g2_IOPadOut4mA
+// -----------------------------------------
+// Fault Classes              #faults    	sg13g2_IOPadOut4mA
+//                            (total)    	sg13g2_IOPadOut4mA
+// ---------------------  ---------------	sg13g2_IOPadOut4mA
+//   FU (full)                   4       	sg13g2_IOPadOut4mA
+//   -------------------  ---------------	sg13g2_IOPadOut4mA
+//   DS (det_simulation)      4 (100.00%)	sg13g2_IOPadOut4mA
+// --------------------------------------	sg13g2_IOPadOut4mA
+// Coverage                              	sg13g2_IOPadOut4mA
+//   -------------------                 	sg13g2_IOPadOut4mA
+//   test_coverage               100.00% 	sg13g2_IOPadOut4mA
+//   fault_coverage              100.00% 	sg13g2_IOPadOut4mA
+//   atpg_effectiveness          100.00% 	sg13g2_IOPadOut4mA
+// --------------------------------------	sg13g2_IOPadOut4mA
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_IOPadTriOut16mA
+// ---------------------
+// Fault Statistics for instance sg13g2_IOPadTriOut16mA
+// -----------------------------------------
+// Fault Classes              #faults    	sg13g2_IOPadTriOut16mA
+//                            (total)    	sg13g2_IOPadTriOut16mA
+// ---------------------  ---------------	sg13g2_IOPadTriOut16mA
+//   FU (full)                   6       	sg13g2_IOPadTriOut16mA
+//   -------------------  ---------------	sg13g2_IOPadTriOut16mA
+//   DS (det_simulation)      6 (100.00%)	sg13g2_IOPadTriOut16mA
+// --------------------------------------	sg13g2_IOPadTriOut16mA
+// Coverage                              	sg13g2_IOPadTriOut16mA
+//   -------------------                 	sg13g2_IOPadTriOut16mA
+//   test_coverage               100.00% 	sg13g2_IOPadTriOut16mA
+//   fault_coverage              100.00% 	sg13g2_IOPadTriOut16mA
+//   atpg_effectiveness          100.00% 	sg13g2_IOPadTriOut16mA
+// --------------------------------------	sg13g2_IOPadTriOut16mA
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_IOPadTriOut30mA
+// ---------------------
+// Fault Statistics for instance sg13g2_IOPadTriOut30mA
+// -----------------------------------------
+// Fault Classes              #faults    	sg13g2_IOPadTriOut30mA
+//                            (total)    	sg13g2_IOPadTriOut30mA
+// ---------------------  ---------------	sg13g2_IOPadTriOut30mA
+//   FU (full)                   6       	sg13g2_IOPadTriOut30mA
+//   -------------------  ---------------	sg13g2_IOPadTriOut30mA
+//   DS (det_simulation)      6 (100.00%)	sg13g2_IOPadTriOut30mA
+// --------------------------------------	sg13g2_IOPadTriOut30mA
+// Coverage                              	sg13g2_IOPadTriOut30mA
+//   -------------------                 	sg13g2_IOPadTriOut30mA
+//   test_coverage               100.00% 	sg13g2_IOPadTriOut30mA
+//   fault_coverage              100.00% 	sg13g2_IOPadTriOut30mA
+//   atpg_effectiveness          100.00% 	sg13g2_IOPadTriOut30mA
+// --------------------------------------	sg13g2_IOPadTriOut30mA
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_IOPadTriOut4mA
+// ---------------------
+// Fault Statistics for instance sg13g2_IOPadTriOut4mA
+// -----------------------------------------
+// Fault Classes              #faults    	sg13g2_IOPadTriOut4mA
+//                            (total)    	sg13g2_IOPadTriOut4mA
+// ---------------------  ---------------	sg13g2_IOPadTriOut4mA
+//   FU (full)                   6       	sg13g2_IOPadTriOut4mA
+//   -------------------  ---------------	sg13g2_IOPadTriOut4mA
+//   DS (det_simulation)      6 (100.00%)	sg13g2_IOPadTriOut4mA
+// --------------------------------------	sg13g2_IOPadTriOut4mA
+// Coverage                              	sg13g2_IOPadTriOut4mA
+//   -------------------                 	sg13g2_IOPadTriOut4mA
+//   test_coverage               100.00% 	sg13g2_IOPadTriOut4mA
+//   fault_coverage              100.00% 	sg13g2_IOPadTriOut4mA
+//   atpg_effectiveness          100.00% 	sg13g2_IOPadTriOut4mA
+// --------------------------------------	sg13g2_IOPadTriOut4mA
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_IOPadVdd
+// ---------------------
+// Fault Statistics for instance sg13g2_IOPadVdd
+// -----------------------------------------
+// Fault Classes           #faults   	sg13g2_IOPadVdd
+//                         (total)   	sg13g2_IOPadVdd
+// -------------------  -------------	sg13g2_IOPadVdd
+//   FU (full)                0      	sg13g2_IOPadVdd
+//   -----------------  -------------	sg13g2_IOPadVdd
+// ----------------------------------	sg13g2_IOPadVdd
+// Coverage                          	sg13g2_IOPadVdd
+//   -----------------               	sg13g2_IOPadVdd
+// ----------------------------------	sg13g2_IOPadVdd
+// 
+// ---------------------------------------------------------
+// Model : sg13g2_IOPadVss
+// ---------------------
+// Fault Statistics for instance sg13g2_IOPadVss
+// -----------------------------------------
+// Fault Classes           #faults   	sg13g2_IOPadVss
+//                         (total)   	sg13g2_IOPadVss
+// -------------------  -------------	sg13g2_IOPadVss
+//   FU (full)                0      	sg13g2_IOPadVss
+//   -----------------  -------------	sg13g2_IOPadVss
+// ----------------------------------	sg13g2_IOPadVss
+// Coverage                          	sg13g2_IOPadVss
+//   -----------------               	sg13g2_IOPadVss
+// ----------------------------------	sg13g2_IOPadVss
+// 
+// ***** Fault (pessimistic) Coverage Summary by Decile ***** 
+//  See file fault_coverage_0_to_10_percent_models for a list
+//  of models in 0 to 10% decile, etc. for each nonNULL decile.
+//  No faults  --- 11 models.
+//  0% to 10%  ---  1 models.
+//    100%      --  10 models.
+// ---------------------------------------------------------
+// ---------------------------------------------------------
+// Verification Summary:
+//     22 Total Models
+// ALL PASSED for all patterns.
+//   All known model output values predicted by ATPG agreed with Verilog sim.
+//   In some cases, this only means ATPG could not exercise the model.  See below.
+// 
+// Always check transcript for model translation messages.
+// Always check the output ATPG library file with remodels for the strings:
+//    "BlackBox", "EDIT & place _cram",  and "PARTIALLY TRANSLATED MODULE".
+// Always check sim.log for untestable Ram & DRC messages.
+// Always check low coverage models to see if low coverage is expected (IO pads
+//     may have 40% coverage and be good, whereas 85% may be bad for a mux scan model).
+// See the Fault Coverage Summary above these messages and associated files for
+//     for the model names with low coverage.  For model specific coverages, check
+//     the verify.results file or the sim.log file. Model specific (-instance)
+//     reports follow overall statistics in sim.log.
+// 
+// User invoked Libcomp with following + arguments for Verilog translation.
+// +define+TETRAMAX 
+// 
+
+//  command: exit

@@ -1,0 +1,731 @@
+iProcsForModule memlibc_memory_bist_assembly
+
+iProc go_nogo {} {
+
+   iReset
+   iNote "Setting up MemoryBist controller mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst"
+   iNote "Releasing asynchronous reset"
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply
+
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply
+
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b1
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b1
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply
+
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0b000
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0]
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b0
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 0b1
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 0b0
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b1
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b0
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b0
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b0
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b0
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply
+
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0b000
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0bX00
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply
+
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0b001
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0b000
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.BIST_SI_Pipeline 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.DIAG_EN_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.CMP_EN_MASK_EN[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.CMP_EN_PARITY[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MEM_SELECT_REG0[0] 0b1
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.REDUCED_ADDR_CNT_EN_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.ALGO_SEL_CNT_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.SELECT_COMMON_OPSET_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.SELECT_COMMON_DATA_PAT_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MICROCODE_EN_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.INST_POINTER_REG_HW[0:5] 0b000000
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.A_ADD_REG_Y_HW[0:3] 0b0000
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.A_ADD_REG_X_HW[0:8] 0b000000000
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.B_ADD_REG_Y_HW[0:3] 0b0000
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.B_ADD_REG_X_HW[0:8] 0b000000000
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.JCNT_HW[0:2] 0b000
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.OPSET_SELECT_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.WDATA_REG_HW[0:1] 0b00
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.EDATA_REG_HW[0:1] 0b00
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.X_ADDR_BIT_SEL_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.Y_ADDR_BIT_SEL_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.REPEATLOOP_A_CNTR_REG_HW[0:1] 0b00
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.REPEATLOOP_B_CNTR_REG_HW[0:1] 0b00
+   iWrite mem_container_inst_m1_mem_inst_interface_inst.FREEZE_STOP_ERROR_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.STOP_ON_ERROR_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.FREEZE_STOP_ERROR_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.STOP_ERROR_CNT_REG_HW[0:11] 0b000000000000
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.BIST_SO_Pipeline 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply
+
+   iRunLoop 1 -tck
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0b011
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0bX01
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply
+
+   iRunLoop 1 -tck
+   iNote "Checking GO is FAIL before execution"
+   iNote "Checking DONE is FAIL before execution"
+   iNote "Starting MemoryBist controller execution : mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst"
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0b011
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0b011
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 0b0
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 0b1
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply
+
+   iRunLoop 1 -tck
+   iRunLoop -time 3605100ns
+   iNote "Checking GO is PASS after execution completion"
+   iNote "Checking DONE is PASS after execution completion"
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply
+
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0b001
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0bX11
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply
+
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply
+
+   iNote "Checking GO_ID bits are PASS"
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0b001
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0bX01
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply
+
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.BIST_SI_Pipeline 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.DIAG_EN_REG[0] 0b0
+   iRead  mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.DIAG_EN_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.CMP_EN_MASK_EN[0] 0b0
+   iRead  mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.CMP_EN_MASK_EN[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.CMP_EN_PARITY[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MEM_SELECT_REG0[0] 0b1
+   iRead  mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MEM_SELECT_REG0[0] 0b1
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.REDUCED_ADDR_CNT_EN_REG[0] 0b0
+   iRead  mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.REDUCED_ADDR_CNT_EN_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.ALGO_SEL_CNT_REG[0] 0b0
+   iRead  mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.ALGO_SEL_CNT_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.SELECT_COMMON_OPSET_REG[0] 0b0
+   iRead  mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.SELECT_COMMON_OPSET_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.SELECT_COMMON_DATA_PAT_REG[0] 0b0
+   iRead  mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.SELECT_COMMON_DATA_PAT_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MICROCODE_EN_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.INST_POINTER_REG_HW[0:5] 0b000000
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.A_ADD_REG_Y_HW[0:3] 0b0000
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.A_ADD_REG_X_HW[0:8] 0b000000000
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.B_ADD_REG_Y_HW[0:3] 0b0000
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.B_ADD_REG_X_HW[0:8] 0b000000000
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.JCNT_HW[0:2] 0b000
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.OPSET_SELECT_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.WDATA_REG_HW[0:1] 0b00
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.EDATA_REG_HW[0:1] 0b00
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.X_ADDR_BIT_SEL_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.Y_ADDR_BIT_SEL_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.REPEATLOOP_A_CNTR_REG_HW[0:1] 0b00
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.REPEATLOOP_B_CNTR_REG_HW[0:1] 0b00
+   iWrite mem_container_inst_m1_mem_inst_interface_inst.GO_ID_REG[31:0] 0b00000000000000000000000000000000
+   iRead  mem_container_inst_m1_mem_inst_interface_inst.GO_ID_REG[31:0] 0b00000000000000000000000000000000
+   iWrite mem_container_inst_m1_mem_inst_interface_inst.FREEZE_STOP_ERROR_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.STOP_ON_ERROR_REG[0] 0b0
+   iRead  mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.STOP_ON_ERROR_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.FREEZE_STOP_ERROR_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.STOP_ERROR_CNT_REG_HW[0:11] 0b000000000000
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.BIST_SO_Pipeline 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply
+
+   iRunLoop 1 -tck
+
+}
+
+
+iProcsForModule memlibc_memory_bist_assembly
+
+iProc algo1 {} {
+
+   iNote "Setting up MemoryBist controller mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst"
+   iNote "Releasing asynchronous reset"
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b1
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply
+
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0b001
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0]
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b0
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 0b1
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 0b1
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b1
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b0
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b0
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b0
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b0
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply
+
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0b000
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0bX01
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply
+
+   iNote "Selecting algorithm SMARCHCHKBCIL"
+   iNote "Selecting operation set SYNC"
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0b001
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0b000
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.BIST_SI_Pipeline 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.DIAG_EN_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.CMP_EN_MASK_EN[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.CMP_EN_PARITY[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MEM_SELECT_REG0[0] 0b1
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.REDUCED_ADDR_CNT_EN_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.ALGO_SEL_CNT_REG[0] 0b1
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.SELECT_COMMON_OPSET_REG[0] 0b1
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.SELECT_COMMON_DATA_PAT_REG[0] 0b1
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.MICROCODE_EN_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.INST_POINTER_REG_HW[0:5] 0b000000
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.A_ADD_REG_Y_HW[0:3] 0b0000
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.A_ADD_REG_X_HW[0:8] 0b000000000
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.B_ADD_REG_Y_HW[0:3] 0b0000
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.B_ADD_REG_X_HW[0:8] 0b000000000
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.JCNT_HW[0:2] 0b000
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.OPSET_SELECT_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.WDATA_REG_HW[0:1] 0b01
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.EDATA_REG_HW[0:1] 0b01
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.X_ADDR_BIT_SEL_REG[0] 0b1
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.Y_ADDR_BIT_SEL_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.REPEATLOOP_A_CNTR_REG_HW[0:1] 0b00
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.REPEATLOOP_B_CNTR_REG_HW[0:1] 0b00
+   iWrite mem_container_inst_m1_mem_inst_interface_inst.FREEZE_STOP_ERROR_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.STOP_ON_ERROR_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.FREEZE_STOP_ERROR_REG[0] 0b0
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.STOP_ERROR_CNT_REG_HW[0:11] 0b000000000000
+   iWrite mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst.BIST_SO_Pipeline 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply
+
+   iRunLoop 1 -tck
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0b011
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0bX01
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply
+
+   iRunLoop 1 -tck
+   iNote "Checking GO is FAIL before execution"
+   iNote "Checking DONE is FAIL before execution"
+   iNote "Starting MemoryBist controller execution : mem_container_inst_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst"
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0b011
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0b011
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 0b0
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 0b1
+   iNote "tessent_pragma optional_iRead"
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply
+
+   iRunLoop 1 -tck
+   iRunLoop -time 3605100ns
+   iNote "Checking GO is PASS after execution completion"
+   iNote "Checking DONE is PASS after execution completion"
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply
+
+   iRunLoop 1 -tck
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0b001
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0bX11
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply
+
+
+}

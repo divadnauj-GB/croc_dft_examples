@@ -1,0 +1,222 @@
+iProcsForModule memlibc_memory_bist_assembly
+
+iProc memlibc_memory_bist_assembly {} {
+
+   iReset
+   iNote "Activate selection for scan mux memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.scan_in_mux, selection 1: sib, ltest_en = 2'bxx -> scan_in_mux = ijtag_si"
+   iNote "Scan in verification pattern to the following scan register:"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, load value = 1"
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply -end_in_pause
+
+   iNote "Scan out verification pattern from the following scan register:"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, expected value = 1"
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iApply
+
+   iNote "Activate selection of the following scan muxes:"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.scan_in_mux, selection 0: sib, ltest_en = 2'b10 -> scan_in_mux = ijtag_from_so"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si"
+   iNote "Scan in verification pattern to the following scan registers:"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, load value = 0"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, load value = 1"
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply -end_in_pause
+
+   iNote "Scan out verification pattern from the following scan registers:"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, expected value = 0"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, expected value = 1"
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iApply
+
+   iNote "Activate selection of the following scan muxes:"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.scan_in_mux, selection 0: sib, ltest_en = 2'b10 -> scan_in_mux = ijtag_from_so"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_sib_mux_inst, selection 0: ctl_group_sib = 1'b0 -> ctl_sib_mux_inst = tdr_bypass_sib_inst"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_mux_inst, selection 0: tdr_bypass_sib_inst = 1'b0 -> tdr_bypass_sib_mux_inst = si"
+   iNote "Scan in verification pattern to the following scan registers:"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst, load value = 1"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib, load value = 1"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, load value = 0"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, load value = 1"
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply -end_in_pause
+
+   iNote "Scan out verification pattern from the following scan registers:"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst, expected value = 1"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib, expected value = 1"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, expected value = 0"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, expected value = 1"
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iApply
+
+   iNote "Activate selection of the following scan muxes:"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.scan_in_mux, selection 0: sib, ltest_en = 2'b10 -> scan_in_mux = ijtag_from_so"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_sib_mux_inst, selection 1: ctl_group_sib = 1'b1 -> ctl_sib_mux_inst = mbist_go_0"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.fromBistMux_0, selection 1: bistEn_int\[0\], BIST_SETUP_tdr\[1\], ChainBypassMode = 3'bxxx -> fromBistMux_0 = tdr_bypass_sib_inst"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_mux_inst, selection 0: tdr_bypass_sib_inst = 1'b0 -> tdr_bypass_sib_mux_inst = si"
+   iNote "Scan in verification pattern to the following scan registers:"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst, load value = 0"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0, load value = 0"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0, load value = 1"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib, load value = 1"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, load value = 0"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, load value = 1"
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply -end_in_pause
+
+   iNote "Scan out verification pattern from the following scan registers:"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst, expected value = 0"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0, expected value = 0"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0, expected value = 1"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib, expected value = 1"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, expected value = 0"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, expected value = 1"
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iApply
+
+   iNote "Activate selection of the following scan muxes:"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.scan_in_mux, selection 0: sib, ltest_en = 2'b10 -> scan_in_mux = ijtag_from_so"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_sib_mux_inst, selection 0: ctl_group_sib = 1'b0 -> ctl_sib_mux_inst = tdr_bypass_sib_inst"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_mux_inst, selection 1: tdr_bypass_sib_inst = 1'b1 -> tdr_bypass_sib_mux_inst = ENABLE_MEM_RESET_tdr"
+   iNote "Scan in verification pattern to the following scan registers:"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr\[2:0\], load value = 111"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr, load value = 1"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr, load value = 1"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr, load value = 0"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr, load value = 0"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr, load value = 0"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr, load value = 0"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr, load value = 1"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr, load value = 1"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr, load value = 1"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr, load value = 1"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr, load value = 0"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr, load value = 0"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst, load value = 1"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib, load value = 1"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, load value = 0"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, load value = 1"
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0b111
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iApply -end_in_pause
+
+   iNote "Scan out verification pattern from the following scan registers:"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr\[2:0\], expected value = 111"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr, expected value = 1"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr, expected value = 1"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr, expected value = 0"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr, expected value = 0"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr, expected value = 0"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr, expected value = 0"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr, expected value = 1"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr, expected value = 1"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr, expected value = 1"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr, expected value = 1"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr, expected value = 0"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr, expected value = 0"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst, expected value = 1"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib, expected value = 1"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, expected value = 0"
+   iNote "  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, expected value = 1"
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0b000
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0] 0b111
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 0b1
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib 0b1
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib 0b0
+   iWrite memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b0
+   iRead  memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib 0b1
+   iApply
+
+
+}

@@ -1,0 +1,101 @@
+// Regular Expression file for ihp library: ihp-sg13g2
+// Date: August 23, 2012.
+
+regexp_verbosity = verbose;
+
+cell_attributes (
+        undefined_nonscan = warn ;
+
+//
+// Add attributes to cells to used for DFT
+// 
+
+model ("^sg13g2_sdf(.*)_(.*)$") (
+    scan_type = scan_cell;
+    nonscan_model = "sg13g2_df\1";
+    input (D) (data_in;)
+    input (SCD) (scan_in;)
+    input (SCE) (scan_enable;)
+    input (RESET_B) (active_low_reset;)
+    input (SET_B) (active_low_set;)
+    input (CLK) (posedge_clock;)
+    output (Q) (scan_out;)
+    output (Q_N) (scan_out_inv;)
+)
+
+model ("^sg13g2_df(.*)_(.*)$") (
+    cell_type = dff;
+    input (D) (data_in;)
+    input (RESET_B) (active_low_reset;)
+    input (SET_B) (active_low_set;)
+    input (CLK) (posedge_clock;)
+    output (Q) (scan_out;)
+    output (Q_N) (scan_out_inv;)
+)
+
+model ("^sg13g2_mux2(.*)$") (
+    cell_type = mux;
+    input (A0) (mux_in0;)
+    input (A1) (mux_in1;)
+    input (S) (mux_select;)
+    output (X) ()
+    )
+
+model ("^sg13g2_mux4(.*)$") (
+    cell_type = mux;
+    input (A0) (mux_in0;)
+    input (A1) (mux_in1;)
+    input (A2) (mux_in0;)
+    input (A3) (mux_in1;)
+    input (S0) (mux_select0;)
+    input (S1) (mux_select1;)
+    output (X) ()
+    )
+
+model ("^sg13g2_inv(.*)$") (
+    cell_type = inverter;
+    )
+
+model ("^sg13g2_buf(.*)$") (
+    cell_type = buffer;
+    )
+ 
+model ("^sg13g2_nand(.*)$") (
+    cell_type = nand ;
+    )
+
+model ("^sg13g2_and(.*)$") (
+    cell_type = and ;
+    )
+ 
+model ("^sg13g2_or(.*)$") (
+    cell_type = or ;
+    )
+ 
+model ("^sg13g2_nor(.*)$") (
+    cell_type = nor ;
+    )
+ 
+model ("^sg13g2_xor(.*)$") (
+    cell_type = xor ;
+    )
+model ("^sg13g2_slgcp(.*)$$") (
+    cell_type = clock_gating_and;
+    input (GATE) (func_enable;)
+    input (SCE) (scan_enable)
+    input (CLK) (posedge_clock;)
+    output (GCLK) (clock_out;)
+    )
+
+model ("^sg13g2_dlh(.*)$") (
+    cell_type = latch ;
+    input (GATE) (active_high_clock;)
+    )
+model ("^sg13g2_dll(.*)$") (
+    cell_type = latch ;
+    input (GATE_N) (active_low_clock;)
+    )
+)
+
+
+

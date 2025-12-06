@@ -1,0 +1,60 @@
+#-------------------------------------------------
+#  File created by: Tessent Shell
+#          Version: 2022.3
+#       Created on: Sat Nov 15 20:33:32 EST 2025
+#-------------------------------------------------
+
+set design_source_dictionary \
+{
+  read1 {
+    format {
+      "verilog_2001"
+    }
+    work_library {
+      "work"
+    }
+    files {
+      "./memlibc_memory_bist_assembly_rtl_tessent_mbist_bap.v"
+      "./memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller.v"
+      "./memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_interface_m1.v"
+    }
+    libraries {
+      {directory "../memlibc_memory_bist_assembly_rtl_cells.instrument"}
+    }
+    extensions {
+      ".v" ".v.gz"
+    }
+    defines {
+    }
+    incdirs {
+    }
+    options {
+      "-blackbox" "-no_overwrite"
+    }
+  }
+  read2 {
+    format {
+      "verilog_2001"
+    }
+    work_library {
+      "work"
+    }
+    files {
+      "./memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_assembly.v"
+    }
+    libraries {
+    }
+    extensions {
+    }
+    defines {
+    }
+    incdirs {
+    }
+    options {
+      "-ignore_synthesis_off_sections" "off" "-no_lib_rescan" "-pragma_list" ""
+    }
+  }
+  logical_design_library_list {work}
+  default_logical_design_library {work}
+}
+ 

@@ -1,0 +1,38 @@
+// Regular Expression file for ihp library: ihp-sg13g2
+// Date: August 23, 2012.
+
+regexp_verbosity = verbose;
+
+cell_attributes (
+        undefined_nonscan = warn ;
+
+model ("^sg13g2_IOPadIn") (
+    cell_type = pad ;
+    inout (pad) (pad_from_io;)
+    output (p2c) (pad_from_pad;)
+    )
+
+model ("^sg13g2_IOPadOut(.*)$") (
+    cell_type = pad ;
+    input (c2p) (pad_to_pad;)
+    inout (pad) (pad_to_io;)
+    )
+
+model ("^sg13g2_IOPadInOut(.*)$") (
+    cell_type = pad ;
+    input (c2p) (pad_to_pad;)
+    input (c2p_en) (pad_enable_high;)
+    inout (pad) (pad_pad_io;)
+    output (p2c) (pad_from_pad;)
+    )
+
+model ("^sg13g2_IOPadTriOut(.*)$") (
+    cell_type = pad ;
+    input (c2p) (pad_to_pad;)
+    input (c2p_en) (pad_enable_high;)
+    inout (pad) (pad_pad_io;)
+    )
+)
+
+
+

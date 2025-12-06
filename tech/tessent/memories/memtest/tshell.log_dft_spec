@@ -1,0 +1,203 @@
+/eda/Siemens/2022-23/RHELx86/TESSENT_2022.3/bin/tessent -shell -dofile dft_spec.do -log tshell.log_dft_spec -replace
+//  Tessent Shell  2022.3    Thu Aug 11 22:57:52 GMT 2022
+//                Unpublished work. Copyright 2022 Siemens
+//
+//      This material contains trade secrets or otherwise confidential 
+//  information owned by Siemens Industry Software Inc. or its affiliates 
+//   (collectively, "SISW"), or its licensors. Access to and use of this 
+//     information is strictly limited as set forth in the Customer's 
+//                   applicable agreements with SISW. 
+//
+//  Siemens software executing under x86-64 Linux on Sat Nov 15 20:33:01 EST 2025.
+//  64 bit version
+//  Host: bello.darknet.local (257018 MB RAM, 49151 MB Swap)
+//
+//  command: #-----------------------------------------------------------
+//  command: # This file created by : memlibCertify
+//  command: #     Software version : 2022.3
+//  command: #           Created on : 11/15/25 20:33:00
+//  command: #-----------------------------------------------------------
+//  command: # --
+//  command: # -- Dft Insertion
+//  command: # --
+//  command: set bist_clk_period 10ns
+//  command: set design_name memlibc_memory_bist_assembly
+//  command: set_context dft -rtl
+//  command: read_core_descriptions /home/jd.guerrero/Documents/Tessent/tech/tessent/memories/RM_IHPSG13_1P_8192x32_c4.tcd_memory
+//  command: read_verilog /home/jd.guerrero/Documents/Tessent/tech/ihp-sg13g2/libs.ref/sg13g2_sram/t-verilog/RM_IHPSG13_1P_8192x32_c4.v -exclude_from_file_dictionary
+//  command: read_verilog /home/jd.guerrero/Documents/Tessent/tech/ihp-sg13g2/libs.ref/sg13g2_sram/t-verilog/RM_IHPSG13_1P_core_behavioral.v -exclude_from_file_dictionary
+//  command: set assembly_file_path  [get_tsdb_output_directory]/memory_bist_assemblies/${design_name}.[get_defaults_value DftSpecification/rtl_extension]
+//  command: set dft_spec_file_path  [get_tsdb_output_directory]/dft_inserted_designs/${design_name}_rtl.dft_spec
+//  command: if { [file exists $assembly_file_path] } {
+//             file delete $assembly_file_path
+//           }
+//  command: create_memory_certification_design -design_name $design_name -clock_period $bist_clk_period
+//  Warning: File: /home/jd.guerrero/Documents/Tessent/tech/ihp-sg13g2/libs.ref/sg13g2_sram/t-verilog/RM_IHPSG13_1P_core_behavioral.v, Line: 80:  Module 'SRAM_1P_behavioral' contains unsupported net 'WRITE_TRU'.
+//  Writing design ./tsdb_outdir/memory_bist_assemblies/memlibc_memory_bist_assembly.v
+//  Warning: File: /home/jd.guerrero/Documents/Tessent/tech/ihp-sg13g2/libs.ref/sg13g2_sram/t-verilog/RM_IHPSG13_1P_core_behavioral.v, Line: 80:  Module 'SRAM_1P_behavioral' contains unsupported net 'WRITE_TRU'.
+//  Memory certification assembly module 'memlibc_memory_bist_assembly' has been created.
+//  command: set_dft_specification_requirements -memory_test on
+//  command: check_design_rules 
+//  Flattening process completed, cell instances=1, gates=115, PIs=50, POs=32, CPU time=0.05 sec.
+//  ---------------------------------------------------------------------------
+//  Begin circuit learning analyses.
+//  --------------------------------
+//  Learning completed, CPU time=0.00 sec.
+//  command: if { [file exists ${dft_spec_file_path}] } {
+//             puts "## Reading DftSpecification from '${dft_spec_file_path}'"
+//             read_config_data ${dft_spec_file_path}
+//             set dft_spec [get_config_elements DftSpecification]
+//           } else {
+//             set dft_spec [create_dft_specification -replace]
+//           #
+//           # Including custom algorithms and operation sets in DftSpecification
+//           #
+//             set extra_algorithm_list [list]
+//             foreach_in_collection algo [get_config_elements MemoryOperationsSpecification/Algorithm -silent] {
+//               lappend extra_algorithm_list [get_config_value $algo -id algorithm_name]
+//             }
+//             if { [llength $extra_algorithm_list] > 0 } {
+//               foreach_in_collection ctrl_algo [get_config_elements MemoryBist/Controller/AdvancedOptions/extra_algorithms -in $dft_spec] {
+//                 set_config_value $ctrl_algo $extra_algorithm_list
+//               }
+//             }
+//             set extra_opset_list [list]
+//             foreach_in_collection opset [get_config_elements MemoryOperationsSpecification/OperationSet -silent] {
+//               lappend extra_opset_list [get_config_value $opset -id operation_set_name]
+//             }
+//             if { [llength $extra_opset_list] > 0 } {
+//               foreach_in_collection extra_opset [get_config_elements MemoryBist/Controller/AdvancedOptions/extra_operation_sets -in $dft_spec] {
+//                 set_config_value $extra_opset $extra_opset_list
+//               }
+//             }
+//             # Annotate memory_library_name
+//             foreach_in_collection mi_obj [get_config_elements -in $dft_spec MemoryBist/Controller/Step/MemoryInterface] {
+//               set tcd_memory_name [get_attribute_value_list -name tcd_memory_name [get_instances [get_config_value instance_name -in $mi_obj]]]
+//               set_config_value memory_library_name -in $mi_obj $tcd_memory_name
+//             }
+//           }
+//  sub-command: create_dft_specification -replace 
+//  
+//  Begin creation of DftSpecification(memlibc_memory_bist_assembly,rtl)
+//    Creation of RtlCells wrapper
+//    Creation of IjtagNetwork wrapper
+//    Creation of MemoryBist wrapper
+//    Creation of MemoryBisr wrapper
+//  
+//  Done  creation of DftSpecification(memlibc_memory_bist_assembly,rtl)
+//  
+//  sub-command: set_config_value memory_library_name -in {/DftSpecification(memlibc_memory_bist_assembly,rtl)/MemoryBist/Controller(c1)/Step/MemoryInterface(m1)} RM_IHPSG13_1P_8192x32_c4 
+//  command: report_config_data $dft_spec
+
+DftSpecification(memlibc_memory_bist_assembly,rtl) {
+  IjtagNetwork {
+    HostScanInterface(ijtag) {
+      Sib(sti) {
+        Attributes {
+          tessent_dft_function : scan_tested_instrument_host;
+        }
+        Sib(mbist) {
+        }
+      }
+    }
+  }
+  MemoryBist {
+    ijtag_host_interface : Sib(mbist);
+    Controller(c1) {
+      clock_domain_label : BIST_CLK;
+      Step {
+        MemoryInterface(m1) {
+          instance_name : mem_container_inst/m1_mem_inst;
+          memory_library_name : RM_IHPSG13_1P_8192x32_c4;
+        }
+      }
+    }
+  }
+}
+//  command: process_dft_specification 
+//  
+//  Begin processing of /DftSpecification(memlibc_memory_bist_assembly,rtl)
+//    --- IP generation phase ---
+//    Validation of IjtagNetwork
+//    Validation of MemoryBist
+//    Processing of RtlCells
+//      Generating Verilog RTL Cells
+//        Verilog RTL : ./tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_and2.v
+//        Verilog RTL : ./tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_or2.v
+//        Verilog RTL : ./tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_buf.v
+//        Verilog RTL : ./tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_clk_buf.v
+//        Verilog RTL : ./tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_inv.v
+//        Verilog RTL : ./tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_clk_inv.v
+//        Verilog RTL : ./tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_mux2.v
+//        Verilog RTL : ./tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_clk_mux2.v
+//        Verilog RTL : ./tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_clk_gate_and.v
+//        Verilog RTL : ./tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_posedge_synchronizer_reset.v
+//
+//      Loading the generated RTL verilog files (4) to enable instantiating the contained modules
+//      into the design.
+//
+//      Loading the generated structural verilog files (6) to enable instantiating the contained modules
+//      into the design.
+//    Processing of IjtagNetwork
+//      Generating design files for IJTAG SIB module memlibc_memory_bist_assembly_rtl_tessent_sib_1
+//        Verilog RTL : ./tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_ijtag.instrument/memlibc_memory_bist_assembly_rtl_tessent_sib_1.v
+//        IJTAG ICL   : ./tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_ijtag.instrument/memlibc_memory_bist_assembly_rtl_tessent_sib_1.icl
+//        TCD Scan    : ./tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_ijtag.instrument/memlibc_memory_bist_assembly_rtl_tessent_sib_1.tcd_scan
+//        CTL         : ./tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_ijtag.instrument/memlibc_memory_bist_assembly_rtl_tessent_sib_1.ctl
+//        TCD         : ./tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_ijtag.instrument/memlibc_memory_bist_assembly_rtl_tessent_sib_1.tcd
+//        PDL         : ./tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_ijtag.instrument/memlibc_memory_bist_assembly_rtl_tessent_sib_1.pdl
+//      Generating design files for IJTAG SIB module memlibc_memory_bist_assembly_rtl_tessent_sib_2
+//        Verilog RTL : ./tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_ijtag.instrument/memlibc_memory_bist_assembly_rtl_tessent_sib_2.v
+//        IJTAG ICL   : ./tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_ijtag.instrument/memlibc_memory_bist_assembly_rtl_tessent_sib_2.icl
+//
+//      Loading the generated RTL verilog files (2) to enable instantiating the contained modules
+//      into the design.
+//    Processing of MemoryBist
+//      Generating the IJTAG ICL for the memories.
+//      Generating design files for MemoryBist Controller(c1)
+//  Warning: There are warnings issued while generating design files for MemoryBist controller(s).
+//           Review the messages in the following generation log files:
+//           ./tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1.generation_log
+//      Generating design files for Bist Access Port
+//
+//      Loading the generated RTL verilog files (3) to enable instantiating the contained modules
+//      into the design.
+//      Generating design files for MemoryBist controller assembly
+//    --- Instrument insertion phase ---
+//   Inserting instruments of type 'ijtag'
+//   Inserting instruments of type 'memory_bist'
+//  
+//    Writing out modified source design in ./tsdb_outdir/dft_inserted_designs/memlibc_memory_bist_assembly_rtl.dft_inserted_design
+//    Writing out specification in ./tsdb_outdir/dft_inserted_designs/memlibc_memory_bist_assembly_rtl.dft_spec
+//  
+//  Done  processing of DftSpecification(memlibc_memory_bist_assembly,rtl)
+//  
+//  command: extract_icl 
+//  Note: Updating the hierarchical data model to reflect RTL design changes.
+//  Warning: File: /home/jd.guerrero/Documents/Tessent/tech/ihp-sg13g2/libs.ref/sg13g2_sram/t-verilog/RM_IHPSG13_1P_core_behavioral.v, Line: 80:  Module 'SRAM_1P_behavioral' contains unsupported net 'WRITE_TRU'.
+//  Writing design source dictionary : ./tsdb_outdir/dft_inserted_designs/memlibc_memory_bist_assembly_rtl.dft_inserted_design/memlibc_memory_bist_assembly.design_source_dictionary
+//  Warning: Rule FN1 violation occurs 263158 times
+//  Warning: Rule FP13 violation occurs 38 times
+//  Flattening process completed, cell instances=1, gates=401, PIs=57, POs=33, CPU time=0.09 sec.
+//  ---------------------------------------------------------------------------
+//  Begin circuit learning analyses.
+//  --------------------------------
+//  Learning completed, CPU time=0.00 sec.
+//  ---------------------------------------------------------------------------
+//  Begin ICL extraction.
+//  ---------------------
+//  ICL extraction completed, ICL instances=6, CPU time=0.05 sec.
+//  ---------------------------------------------------------------------------
+//  ---------------------------------------------------------------------------
+//  Begin ICL elaboration and checking.
+//  -----------------------------------
+//  ICL elaboration completed, CPU time=0.04 sec.
+//  ---------------------------------------------------------------------------
+//  Writing ICL file : ./tsdb_outdir/dft_inserted_designs/memlibc_memory_bist_assembly_rtl.dft_inserted_design/memlibc_memory_bist_assembly.icl
+//  Writing consolidated PDL file: ./tsdb_outdir/dft_inserted_designs/memlibc_memory_bist_assembly_rtl.dft_inserted_design/memlibc_memory_bist_assembly.pdl
+//  Extracting SDC...
+//  Writing SDC file: ./tsdb_outdir/dft_inserted_designs/memlibc_memory_bist_assembly_rtl.dft_inserted_design/memlibc_memory_bist_assembly.sdc
+//  Writing DFT info dictionary: ./tsdb_outdir/dft_inserted_designs/memlibc_memory_bist_assembly_rtl.dft_inserted_design/memlibc_memory_bist_assembly.dft_info_dictionary
+//  Writing IJTAG graybox files in directory: ./tsdb_outdir/dft_inserted_designs/memlibc_memory_bist_assembly_rtl.dft_inserted_design/ijtag_graybox
+//  Warning: File: /home/jd.guerrero/Documents/Tessent/tech/ihp-sg13g2/libs.ref/sg13g2_sram/t-verilog/RM_IHPSG13_1P_core_behavioral.v, Line: 80:  Module 'SRAM_1P_behavioral' contains unsupported net 'WRITE_TRU'.
+//  command: exit 

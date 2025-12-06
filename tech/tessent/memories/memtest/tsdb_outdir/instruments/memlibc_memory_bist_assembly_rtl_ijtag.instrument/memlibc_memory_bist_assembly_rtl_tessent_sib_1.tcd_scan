@@ -1,0 +1,48 @@
+//--------------------------------------------------------------------------
+//
+//  Unpublished work. Copyright 2021 Siemens
+//
+//  This material contains trade secrets or otherwise confidential 
+//  information owned by Siemens Industry Software Inc. or its affiliates 
+//  (collectively, SISW), or its licensors. Access to and use of this 
+//  information is strictly limited as set forth in the Customer's 
+//  applicable agreements with SISW.
+//
+//--------------------------------------------------------------------------
+//  File created by: Tessent Shell
+//          Version: 2022.3
+//       Created on: Sat Nov 15 20:33:15 EST 2025
+//--------------------------------------------------------------------------
+
+Core(memlibc_memory_bist_assembly_rtl_tessent_sib_1) {
+  Scan {
+    module_type                 : occ;
+    allow_scan_out_retiming     : 0;
+    occ_type                    : sti;
+    supports_add_core_instances : 1;
+    is_hard_module              : 1;
+    traceable                   : 1;
+    Clock(ltest_clk) {
+      off_state       : 1'b0;
+    }
+    ClockOut (tessent_persistent_cell_ltest_clock_mux/y) {
+      slow_clock_input : ltest_clk;
+    }
+    CaptureClockEn(tessent_persistent_cell_occ_clock_gate/fe) {
+      clock_input : ltest_clk;
+    }
+    TestEn(ltest_en) {
+      active_polarity : 1'b1;
+    }
+    ScanEn(ltest_scan_en) {
+      active_polarity : 1'b1;
+    }
+    ScanChain {
+      length          : 7;
+      scan_in_port    : ltest_si;
+      scan_out_port   : ltest_so;
+      scan_in_clock   : ltest_clk;
+      scan_out_clock  : ~ltest_clk;
+    }
+  }
+}

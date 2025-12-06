@@ -1,0 +1,59 @@
+MemoryTemplate (RM_IHPSG13_1P_8192x32_c4) {
+
+   MemoryType      : SRAM;
+   CellName        : RM_IHPSG13_1P_8192x32_c4;
+   Algorithm       : SMarchCHKBCil;
+   transparentMode : SyncMux;
+   logicalPorts    : 1rw;
+   MinHold         : 2;
+   NumberOfWords   : 8192;
+   MilliWattsPerMegaHertz : 1.2;
+   DataOutStage    : None;
+      Port (A_CLK)  {
+                    Function    : Clock;
+                    Direction   : Input;
+                    Polarity    : ActiveHigh;
+      } 
+
+      Port (A_DLY)  {
+                    Function    : LogicHigh;
+                    Direction   : Input;
+      } 
+      Port (A_DIN[31:0]) { 
+                    Function    : Data; 
+                    Direction   : Input;
+      }
+      port (A_ADDR[12:0]) {
+                    function    : Address;
+                    Direction   : Input;
+      }
+      port (A_MEN) {
+                    function    : Select;
+                    Direction   : Input;
+      }
+      port (A_WEN) {
+                    function    : WriteEnable;
+                    Direction   : Input;
+      }
+      port (A_REN) {
+                    function    : ReadEnable;
+                    Direction   : Input;
+      }
+      Port (A_DOUT[31:0]) { 
+                    Function    : Data; 
+                    Direction   : Output; 
+      }
+  
+
+      AddressCounter {
+           Function (Address) {
+               LogicalAddressMap {
+                   RowAddress[8:0]    : Address [12:4];
+                   ColumnAddress[3:0] : Address [3:0];  
+               }
+           }
+      }
+
+     OperationSet : sync;
+
+}

@@ -1,0 +1,32 @@
+//-------------------------------------------------
+//  File created by: Tessent Shell
+//          Version: 2022.3
+//       Created on: Sat Nov 15 20:33:32 EST 2025
+//-------------------------------------------------
+
+
+DftSpecification(memlibc_memory_bist_assembly,rtl) {
+  IjtagNetwork {
+    HostScanInterface(ijtag) {
+      Sib(sti) {
+        Attributes {
+          tessent_dft_function : scan_tested_instrument_host;
+        }
+        Sib(mbist) {
+        }
+      }
+    }
+  }
+  MemoryBist {
+    ijtag_host_interface : Sib(mbist);
+    Controller(c1) {
+      clock_domain_label : BIST_CLK;
+      Step {
+        MemoryInterface(m1) {
+          instance_name : mem_container_inst/m1_mem_inst;
+          memory_library_name : RM_IHPSG13_1P_8192x32_c4;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+puts "" 
+puts "===========" 
+puts " Important " 
+puts "===========" 
+puts "The dft_summary_dictionary file will be retired in a future release." 
+puts "A new tool command will be implemented to generate the same information." 
+puts "" 
+
+set dft_summary {
+  memlibc_memory_bist_assembly {
+    mentor::memory_bist::DftSpecification {
+      SummaryInfo {
+        version 1
+        current_design memlibc_memory_bist_assembly
+        DesignInstance {
+          - {
+            DesignId {
+              rtl {
+                Controller {
+                  mem_container_inst/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst {
+                    bist_clock_period_ns 10.0
+                    bist_clock_connection BIST_CLK
+                    module_name memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller
+                    design_instance mem_container_inst/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_inst
+                    bap_module_name memlibc_memory_bist_assembly_rtl_tessent_mbist_bap
+                    bap_design_instance memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst
+                    bist_port {memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst/bistEn[0]}
+                    Step {
+                      0 {
+                        StepInfo {
+                          power_mw 120.00
+                          run_time_ns 3604740.0
+                          test_cycles 360474
+                          comparator_location per_interface
+                        }
+                        MemoryInstance {
+                          mem_container_inst/m1_mem_inst {
+                            power_mw 120.00
+                            interface_id m1
+                            template /Core(RM_IHPSG13_1P_8192x32_c4)/Memory
+                            type sram
+                            object_id instance:0
+                            MemoryInterfaceInfo {
+                              design_instance mem_container_inst/m1_mem_inst_interface_inst
+                              module_name memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_interface_m1
+                            }
+                            logical_ports 1RW
+                            test_ports 1
+                          }
+                        }
+                      }
+                    }
+                    power_mw 120.00
+                    run_time_ns 3604740.0
+                    test_cycles 360474
+                    flop_count 129
+                    soft_instruction_count 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+etlibcertify ihp-sg13g2_stdcell | tee etlibcertify.log 

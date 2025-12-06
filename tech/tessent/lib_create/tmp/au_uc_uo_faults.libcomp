@@ -1,0 +1,19 @@
+FaultInformation {
+ version : 1;
+ FaultType (Stuck) {
+  FaultList {
+   FaultCollapsing : FALSE;
+   Format : Identifier, Class, Location;
+   Instance ("") {
+      0,  AU.SEQ,    "/sg13g2_IOPadAnalog__pad";
+      1,  AU.SEQ,    "/sg13g2_IOPadAnalog__pad";
+      0,  AU.SEQ,    "/sg13g2_IOPadAnalog__padres";
+      1,  AU.SEQ,    "/sg13g2_IOPadAnalog__padres";
+      0,  AU.SEQ,    "/sg13g2_IOPadAnalog/padres";
+      1,  AU.SEQ,    "/sg13g2_IOPadAnalog/padres";
+      0,  AU.SEQ,    "/sg13g2_IOPadAnalog/pad";
+      1,  AU.SEQ,    "/sg13g2_IOPadAnalog/pad";
+   }
+  }
+ }
+}

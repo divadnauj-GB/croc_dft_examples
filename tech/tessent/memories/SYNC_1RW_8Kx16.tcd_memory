@@ -1,0 +1,52 @@
+MemoryTemplate (SYNC_1RW_8Kx16) {
+
+   MemoryType      : SRAM;
+   CellName        : SYNC_1RW_8Kx16;
+   Algorithm       : SMarchCHKBCil;
+   transparentMode : SyncMux;
+   logicalPorts    : 1rw;
+   MinHold         : 2;
+   NumberOfWords   : 8192;
+   MilliWattsPerMegaHertz : 1.2;
+   DataOutStage    : None;
+      Port (CLK)  {
+                    Function    : Clock;
+                    Polarity    : ActiveHigh;
+      } 
+      Port (WEN) {  
+                    Function    : WriteEnable; 
+                    Polarity    : ActiveLow; 
+      } 
+      Port (D[15:0]) { 
+                    Function    : Data; 
+                    Direction   : Input; 
+      }
+      Port (Q[15:0]) { 
+                    Function    : Data; 
+                    Direction   : Output; 
+      }
+      port (A[12:0]) {
+                    function    : Address;
+      }
+      port (CEN) {
+                    function    : Select;
+                    Polarity    : ActiveLow; 
+      }
+      port (OEN) {
+                    function    : OutputEnable;  //Tristate enable
+                    Direction   : Input;
+					Polarity    : ActiveLow; 
+      }
+
+      AddressCounter {
+           Function (Address) {
+               LogicalAddressMap {
+                   RowAddress[8:0]    : Address [12:4];
+                   ColumnAddress[3:0] : Address [3:0];  
+               }
+           }
+      }
+
+     OperationSet : sync;
+
+}

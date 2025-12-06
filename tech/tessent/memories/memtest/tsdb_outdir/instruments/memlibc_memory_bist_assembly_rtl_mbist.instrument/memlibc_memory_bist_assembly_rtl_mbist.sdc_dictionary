@@ -1,0 +1,652 @@
+#--------------------------------------------------------------------------
+#
+#  Unpublished work. Copyright 2021 Siemens
+#
+#  This material contains trade secrets or otherwise confidential 
+#  information owned by Siemens Industry Software Inc. or its affiliates 
+#  (collectively, SISW), or its licensors. Access to and use of this 
+#  information is strictly limited as set forth in the Customer's 
+#  applicable agreements with SISW.
+#
+#--------------------------------------------------------------------------
+#  File created by: Tessent Shell
+#          Version: 2022.3
+#       Created on: Sat Nov 15 20:33:21 EST 2025
+#--------------------------------------------------------------------------
+
+
+
+set memlibc_memory_bist_assembly_rtl_mbist {
+  memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller {
+    version 3
+    controller {
+      mcp0 {
+        from {
+          cells {{$tessent_controller_instance/MBISTPG_ADD_GEN/AX_ADD_REG*} }
+        }
+        through {
+          pins {{$tessent_controller_instance/tessent_persistent_cell_INH_LAST_ADDR_CNT/y} }
+        }
+        to {
+          cells {{$tessent_controller_instance/MBISTPG_ADD_GEN/BX_ADD_REG*} }
+        }
+        setup 2
+        hold 1
+      }
+      mcp1 {
+        from {
+          cells {{$tessent_controller_instance/MBISTPG_ADD_GEN/BX_ADD_REG*} }
+        }
+        through {
+          pins {{$tessent_controller_instance/tessent_persistent_cell_INH_LAST_ADDR_CNT/y} }
+        }
+        to {
+          cells {{$tessent_controller_instance/MBISTPG_ADD_GEN/AX_ADD_REG*} }
+        }
+        setup 2
+        hold 1
+      }
+      mcp2 {
+        from {
+          cells {{$tessent_controller_instance/MBISTPG_ADD_GEN/AY_ADD_REG*} }
+        }
+        through {
+          pins {{$tessent_controller_instance/tessent_persistent_cell_INH_LAST_ADDR_CNT/y} }
+        }
+        to {
+          cells {{$tessent_controller_instance/MBISTPG_ADD_GEN/BY_ADD_REG*} }
+        }
+        setup 2
+        hold 1
+      }
+      mcp3 {
+        from {
+          cells {{$tessent_controller_instance/MBISTPG_ADD_GEN/BY_ADD_REG*} }
+        }
+        through {
+          pins {{$tessent_controller_instance/tessent_persistent_cell_INH_LAST_ADDR_CNT/y} }
+        }
+        to {
+          cells {{$tessent_controller_instance/MBISTPG_ADD_GEN/AY_ADD_REG*} }
+        }
+        setup 2
+        hold 1
+      }
+      mcp4 {
+        from {
+          cells {{$tessent_controller_instance/MBISTPG_CTL_COMP/STOP_ON_ERROR*} }
+        }
+        to {
+          clocks {{$tessent_bist_clock} }
+        }
+        setup 2
+        hold 1
+      }
+      mcp5 {
+        from {
+          cells {{$tessent_controller_instance/MBISTPG_CTL_COMP/STOP_ON_ERROR*} }
+        }
+        to {
+          cells {{$tessent_controller_instance/MBISTPG_CTL_COMP/STOP_ON_ERROR*} }
+        }
+        setup 1
+        hold 0
+      }
+      mcp6 {
+        from {
+          cells {{$tessent_controller_instance/MICROCODE_EN_REG*} }
+        }
+        to {
+          clocks {{$tessent_bist_clock} }
+        }
+        setup 2
+        hold 1
+      }
+      mcp7 {
+        from {
+          cells {{$tessent_controller_instance/MICROCODE_EN_REG*} }
+        }
+        to {
+          cells {{$tessent_controller_instance/MICROCODE_EN_REG*} }
+        }
+        setup 1
+        hold 0
+      }
+      mcp8 {
+        from {
+          cells {{$tessent_controller_instance/ALGO_SEL_CNT_REG*} }
+        }
+        to {
+          clocks {{$tessent_bist_clock} }
+        }
+        setup 3
+        hold 2
+      }
+      mcp9 {
+        from {
+          cells {{$tessent_controller_instance/ALGO_SEL_CNT_REG*} }
+        }
+        to {
+          cells {{$tessent_controller_instance/ALGO_SEL_CNT_REG*} }
+        }
+        setup 1
+        hold 0
+      }
+      mcp10 {
+        from {
+          cells {{$tessent_controller_instance/REDUCED_ADDR_CNT_EN_REG*} }
+        }
+        to {
+          clocks {{$tessent_bist_clock} }
+        }
+        setup 2
+        hold 1
+      }
+      mcp11 {
+        from {
+          cells {{$tessent_controller_instance/REDUCED_ADDR_CNT_EN_REG*} }
+        }
+        to {
+          cells {{$tessent_controller_instance/REDUCED_ADDR_CNT_EN_REG*} }
+        }
+        setup 1
+        hold 0
+      }
+      mcp12 {
+        from {
+          cells {{$tessent_controller_instance/DIAG_EN_R*} }
+        }
+        to {
+          clocks {{$tessent_bist_clock} }
+        }
+        setup 2
+        hold 1
+      }
+      mcp13 {
+        from {
+          cells {{$tessent_controller_instance/DIAG_EN_R*} }
+        }
+        to {
+          cells {{$tessent_controller_instance/DIAG_EN_R*} }
+        }
+        setup 1
+        hold 0
+      }
+      mcp14 {
+        from {
+          cells {{$tessent_controller_instance/MEM_SELECT_REG*} }
+        }
+        to {
+          clocks {{$tessent_bist_clock} }
+        }
+        setup 2
+        hold 1
+      }
+      mcp15 {
+        from {
+          cells {{$tessent_controller_instance/MEM_SELECT_REG*} }
+        }
+        to {
+          cells {{$tessent_controller_instance/MEM_SELECT_REG*} }
+        }
+        setup 1
+        hold 0
+      }
+      mcp16 {
+        from {
+          cells {{$tessent_controller_instance/MBISTPG_FSM/STATE*} }
+        }
+        through {
+          pins {{$tessent_controller_instance/tessent_persistent_cell_BIST_RUN/y} }
+        }
+        setup 2
+        hold 1
+      }
+      mcp17 {
+        from {
+          clocks {{$tessent_bist_clock} }
+        }
+        through {
+          cells {
+            {$tessent_controller_instance/MBISTPG_POINTER_CNTRL/EXECUTE**}
+            {$tessent_controller_instance/MBISTPG_POINTER_CNTRL/INST_POINTER*}
+          }
+        }
+        to {
+          cells {{$tessent_controller_instance/MBISTPG_POINTER_CNTRL/LAST_STATE_DONE_REG*} }
+        }
+        setup 2
+        hold 1
+      }
+      mcp18 {
+        from {
+          clocks {{$tessent_bist_clock} }
+        }
+        through {
+          cells {
+            {$tessent_controller_instance/MBISTPG_CTL_COMP/ERROR_CNT_REG_reg?5?}
+            {$tessent_controller_instance/MBISTPG_CTL_COMP/ERROR_CNT_REG_reg?4?}
+            {$tessent_controller_instance/MBISTPG_CTL_COMP/ERROR_CNT_REG_reg?3?}
+            {$tessent_controller_instance/MBISTPG_CTL_COMP/ERROR_CNT_REG_reg?2?}
+            {$tessent_controller_instance/MBISTPG_CTL_COMP/ERROR_CNT_REG_reg?1?}
+            {$tessent_controller_instance/MBISTPG_CTL_COMP/ERROR_CNT_REG_reg?0?}
+          }
+        }
+        to {
+          cells {
+            {$tessent_controller_instance/MBISTPG_CTL_COMP/ERROR_CNT_REG_reg?11?}
+            {$tessent_controller_instance/MBISTPG_CTL_COMP/ERROR_CNT_REG_reg?10?}
+            {$tessent_controller_instance/MBISTPG_CTL_COMP/ERROR_CNT_REG_reg?9?}
+            {$tessent_controller_instance/MBISTPG_CTL_COMP/ERROR_CNT_REG_reg?8?}
+            {$tessent_controller_instance/MBISTPG_CTL_COMP/ERROR_CNT_REG_reg?7?}
+            {$tessent_controller_instance/MBISTPG_CTL_COMP/ERROR_CNT_REG_reg?6?}
+          }
+        }
+        setup 2
+        hold 1
+      }
+      mcp19 {
+        from {
+          clocks {{$tessent_bist_clock} }
+        }
+        through {
+          cells {
+            {$tessent_controller_instance/MBISTPG_CTL_COMP/FL_CNT_REG_reg?5?}
+            {$tessent_controller_instance/MBISTPG_CTL_COMP/FL_CNT_REG_reg?4?}
+            {$tessent_controller_instance/MBISTPG_CTL_COMP/FL_CNT_REG_reg?3?}
+            {$tessent_controller_instance/MBISTPG_CTL_COMP/FL_CNT_REG_reg?2?}
+            {$tessent_controller_instance/MBISTPG_CTL_COMP/FL_CNT_REG_reg?1?}
+            {$tessent_controller_instance/MBISTPG_CTL_COMP/FL_CNT_REG_reg?0?}
+          }
+        }
+        to {
+          cells {
+            {$tessent_controller_instance/MBISTPG_CTL_COMP/FL_CNT_REG_reg?11?}
+            {$tessent_controller_instance/MBISTPG_CTL_COMP/FL_CNT_REG_reg?10?}
+            {$tessent_controller_instance/MBISTPG_CTL_COMP/FL_CNT_REG_reg?9?}
+            {$tessent_controller_instance/MBISTPG_CTL_COMP/FL_CNT_REG_reg?8?}
+            {$tessent_controller_instance/MBISTPG_CTL_COMP/FL_CNT_REG_reg?7?}
+            {$tessent_controller_instance/MBISTPG_CTL_COMP/FL_CNT_REG_reg?6?}
+          }
+        }
+        setup 2
+        hold 1
+      }
+      mcp20 {
+        from {
+          cells {
+            {$tessent_controller_instance/MBISTPG_POINTER_CNTRL/EXECUTE_ADD*_CMD**}
+            {$tessent_controller_instance/MBISTPG_POINTER_CNTRL/EXECUTE_LOOP_CMD**}
+          }
+        }
+        through {
+          pins {{$tessent_controller_instance/tessent_persistent_cell_INH_LAST_ADDR_CNT/y} }
+        }
+        to {
+          cells {
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/AX_ADD_REG*}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/BX_ADD_REG*}
+          }
+        }
+        setup 2
+        hold 1
+      }
+      mcp21 {
+        from {
+          cells {
+            {$tessent_controller_instance/MBISTPG_POINTER_CNTRL/EXECUTE_ADD*_CMD**}
+            {$tessent_controller_instance/MBISTPG_POINTER_CNTRL/EXECUTE_LOOP_CMD**}
+          }
+        }
+        through {
+          pins {{$tessent_controller_instance/tessent_persistent_cell_INH_LAST_ADDR_CNT/y} }
+        }
+        to {
+          cells {
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/AY_ADD_REG*}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/BY_ADD_REG*}
+          }
+        }
+        setup 2
+        hold 1
+      }
+      mcp22 {
+        from {
+          cells {
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/AX_ADD_REG*}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/BX_ADD_REG*}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/AY_ADD_REG*}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/BY_ADD_REG*}
+            {$tessent_controller_instance/MBISTPG_POINTER_CNTRL/EXECUTE**}
+            {$tessent_controller_instance/MBISTPG_POINTER_CNTRL/LAST_STATE_DONE_REG*}
+            {$tessent_controller_instance/MBISTPG_FSM/RUNTEST_EN_REG_reg?3?}
+            {$tessent_controller_instance/MBISTPG_SIGNAL_GEN/JCNT*}
+            {$tessent_controller_instance/MBISTPG_REPEAT_LOOP_CNTRL/LOOP_A_CNTR*}
+            {$tessent_controller_instance/MBISTPG_REPEAT_LOOP_CNTRL/LOOP_B_CNTR*}
+            {$tessent_controller_instance/MBISTPG_POINTER_CNTRL/INST_POINTER*}
+          }
+        }
+        through {
+          pins {
+            {$tessent_controller_instance/tessent_persistent_cell_X1_MINMAX_TRIGGER/y}
+            {$tessent_controller_instance/tessent_persistent_cell_Y1_MINMAX_TRIGGER/y}
+            {$tessent_controller_instance/tessent_persistent_cell_LOOPCOUNTMAX_TRIGGER/y}
+            {$tessent_controller_instance/MBISTPG_POINTER_CNTRL/tessent_persistent_cell_NEXT_POINTER0/y}
+            {$tessent_controller_instance/MBISTPG_POINTER_CNTRL/tessent_persistent_cell_NEXT_POINTER1/y}
+            {$tessent_controller_instance/MBISTPG_POINTER_CNTRL/tessent_persistent_cell_NEXT_POINTER2/y}
+            {$tessent_controller_instance/MBISTPG_POINTER_CNTRL/tessent_persistent_cell_NEXT_POINTER3/y}
+            {$tessent_controller_instance/MBISTPG_POINTER_CNTRL/tessent_persistent_cell_NEXT_POINTER4/y}
+            {$tessent_controller_instance/MBISTPG_POINTER_CNTRL/tessent_persistent_cell_NEXT_POINTER5/y}
+          }
+        }
+        to {
+          cells {
+            {$tessent_controller_instance/MBISTPG_POINTER_CNTRL/EXECUTE**}
+            {$tessent_controller_instance/MBISTPG_REPEAT_LOOP_CNTRL/LOOP_A_CNTR*}
+            {$tessent_controller_instance/MBISTPG_REPEAT_LOOP_CNTRL/LOOP_B_CNTR*}
+            {$tessent_controller_instance/MBISTPG_POINTER_CNTRL/LAST_STATE_DONE_REG*}
+            {$tessent_controller_instance/MBISTPG_POINTER_CNTRL/INST_POINTER*}
+            {$tessent_controller_instance/MBISTPG_FSM/RUNTEST_EN_REG_reg?0?}
+            {$tessent_controller_instance/MBISTPG_FSM/STATE*}
+          }
+        }
+        setup 2
+        hold 1
+      }
+      mcp23 {
+        from {
+          clocks {{$tessent_bist_clock} }
+        }
+        through {
+          cells {{$tessent_controller_instance/MBISTPG_POINTER_CNTRL/EXECUTE**} }
+        }
+        to {
+          cells {
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/AX_ADD_REG*}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/BX_ADD_REG*}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/AY_ADD_REG*}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/BY_ADD_REG*}
+            {$tessent_controller_instance/MBISTPG_REPEAT_LOOP_CNTRL/LOOP_A_CNTR*}
+            {$tessent_controller_instance/MBISTPG_REPEAT_LOOP_CNTRL/LOOP_B_CNTR*}
+            {$tessent_controller_instance/MBISTPG_DATA_GEN/EDATA_REG*}
+            {$tessent_controller_instance/MBISTPG_DATA_GEN/WDATA_REG*}
+            {$tessent_controller_instance/MBISTPG_FSM/RUNTEST_EN_REG_reg?0?}
+            {$tessent_controller_instance/MBISTPG_FSM/STATE*}
+          }
+        }
+        setup 2
+        hold 1
+      }
+      mcp24 {
+        from {
+          clocks {{$tessent_bist_clock} }
+        }
+        through {
+          cells {
+            {$tessent_controller_instance/MBISTPG_REPEAT_LOOP_CNTRL/LOOP_A_CNTR*}
+            {$tessent_controller_instance/MBISTPG_REPEAT_LOOP_CNTRL/LOOP_B_CNTR*}
+          }
+        }
+        to {
+          cells {
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/AX_ADD_REG*}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/BX_ADD_REG*}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/AY_ADD_REG*}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/BY_ADD_REG*}
+          }
+        }
+        setup 2
+        hold 1
+      }
+      mcp25 {
+        from {
+          cells {{$tessent_controller_instance/MBISTPG_SIGNAL_GEN/OPSET_SELECT_REG*} }
+        }
+        to {
+          clocks {{$tessent_bist_clock} }
+        }
+        setup 2
+        hold 1
+      }
+      mcp26 {
+        from {
+          cells {{$tessent_controller_instance/MBISTPG_SIGNAL_GEN/OPSET_SELECT_REG*} }
+        }
+        to {
+          cells {{$tessent_controller_instance/MBISTPG_SIGNAL_GEN/OPSET_SELECT_REG*} }
+        }
+        setup 1
+        hold 0
+      }
+      mcp27 {
+        from {
+          cells {{$tessent_controller_instance/MBISTPG_DATA_GEN/X_ADDR_BIT_SEL_REG*} }
+        }
+        to {
+          clocks {{$tessent_bist_clock} }
+        }
+        setup 2
+        hold 1
+      }
+      mcp28 {
+        from {
+          cells {{$tessent_controller_instance/MBISTPG_DATA_GEN/X_ADDR_BIT_SEL_REG*} }
+        }
+        to {
+          cells {{$tessent_controller_instance/MBISTPG_DATA_GEN/X_ADDR_BIT_SEL_REG*} }
+        }
+        setup 1
+        hold 0
+      }
+      mcp29 {
+        from {
+          cells {{$tessent_controller_instance/MBISTPG_DATA_GEN/Y_ADDR_BIT_SEL_REG*} }
+        }
+        to {
+          clocks {{$tessent_bist_clock} }
+        }
+        setup 2
+        hold 1
+      }
+      mcp30 {
+        from {
+          cells {{$tessent_controller_instance/MBISTPG_DATA_GEN/Y_ADDR_BIT_SEL_REG*} }
+        }
+        to {
+          cells {{$tessent_controller_instance/MBISTPG_DATA_GEN/Y_ADDR_BIT_SEL_REG*} }
+        }
+        setup 1
+        hold 0
+      }
+      mcp31 {
+        through {
+          pins {
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/tessent_persistent_cell_X_ADD_CNT_0/y}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/tessent_persistent_cell_X_ADD_CNT_1/y}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/tessent_persistent_cell_X_ADD_CNT_2/y}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/tessent_persistent_cell_X_ADD_CNT_3/y}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/tessent_persistent_cell_X_ADD_CNT_4/y}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/tessent_persistent_cell_X_ADD_CNT_5/y}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/tessent_persistent_cell_X_ADD_CNT_6/y}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/tessent_persistent_cell_X_ADD_CNT_7/y}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/tessent_persistent_cell_X_ADD_CNT_8/y}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/tessent_persistent_cell_Y_ADD_CNT_0/y}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/tessent_persistent_cell_Y_ADD_CNT_1/y}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/tessent_persistent_cell_Y_ADD_CNT_2/y}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/tessent_persistent_cell_Y_ADD_CNT_3/y}
+          }
+        }
+        to {
+          cells {
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/AX_ADD_REG*}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/BX_ADD_REG*}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/AY_ADD_REG*}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/BY_ADD_REG*}
+          }
+        }
+        setup 2
+        hold 1
+      }
+      mcp32 {
+        from {
+          cells {
+            {$tessent_controller_instance/MBISTPG_POINTER_CNTRL/EXECUTE_ADD_REG_SELECT_REG1*}
+            {$tessent_controller_instance/MBISTPG_REPEAT_LOOP_CNTRL/LOOP_A_CNTR*}
+            {$tessent_controller_instance/MBISTPG_REPEAT_LOOP_CNTRL/LOOP_B_CNTR*}
+          }
+        }
+        through {
+          pins {{$tessent_controller_instance/tessent_persistent_cell_INH_LAST_ADDR_CNT/y} }
+        }
+        to {
+          cells {
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/AX_ADD_REG*}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/BX_ADD_REG*}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/AY_ADD_REG*}
+            {$tessent_controller_instance/MBISTPG_ADD_GEN/BY_ADD_REG*}
+          }
+        }
+        setup 2
+        hold 1
+      }
+      mcp33 {
+        from {
+          cells {{$tessent_controller_instance/BIST_EN_RETIME2*} }
+        }
+        through {
+          pins {
+            {$tessent_controller_instance/tessent_persistent_cell_BIST_ON/y}
+            {$tessent_controller_instance/tessent_persistent_cell_AND_DEFAULT_MODE/y}
+          }
+        }
+        setup 2
+        hold 1
+      }
+      sdt0 {
+        targets {
+          pins {{$tessent_controller_instance/tessent_persistent_cell_BIST_CLK_INT/s} }
+        }
+      }
+      signals {
+        go {
+          persistent_buffer tessent_persistent_cell_MBISTPG_GO
+        }
+        done {
+          persistent_buffer tessent_persistent_cell_MBISTPG_DONE
+        }
+      }
+    }
+    interfaces {
+      m1 {
+        mcp0 {
+          from {
+            cells {{$tessent_interface_instance/BIST_INPUT_SELECT*} }
+          }
+          through {
+            pins {{$tessent_interface_instance/tessent_persistent_cell_BIST_INPUT_SELECT_INT/y} }
+          }
+          setup 2
+          hold 1
+        }
+        custom0 {
+          code {set_multicycle_path -setup 2 -start \\n    -from [get_cells [list $tessent_controller_instance/MBISTPG_POINTER_CNTRL/EXECUTE_ADD_REG_SELECT**]] \\n    -to   [get_cells $tessent_interface_instance/A_DOUT_SCAN_IN*]  \nset_multicycle_path -hold  1 -end \\n    -from [get_cells [list $tessent_controller_instance/MBISTPG_POINTER_CNTRL/EXECUTE_ADD_REG_SELECT**]] \\n    -to   [get_cells $tessent_interface_instance/A_DOUT_SCAN_IN*]  \n}
+        }
+        custom1 {
+          code {set_multicycle_path -setup 2 -start \\n    -from [get_cells [list  \\n        $tessent_controller_instance/MBISTPG_POINTER_CNTRL/EXECUTE_ADD_REG_SELECT** \\n        $tessent_controller_instance/MBISTPG_ADD_GEN/AX_ADD_REG* \\n        $tessent_controller_instance/MBISTPG_ADD_GEN/BX_ADD_REG* \\n        $tessent_controller_instance/MBISTPG_ADD_GEN/AY_ADD_REG* \\n        $tessent_controller_instance/MBISTPG_ADD_GEN/BY_ADD_REG* \\n        $tessent_controller_instance/MBISTPG_POINTER_CNTRL/INST_POINTER* \\n        $tessent_controller_instance/MBISTPG_FSM/RUNTEST_EN_REG_reg?3?]] \\n    -to   [get_cells  $tessent_interface_instance/MBISTPG_STATUS/GO_ID_REG*]  \nset_multicycle_path -hold  1 -end   \\n    -from [get_cells [list  \\n        $tessent_controller_instance/MBISTPG_POINTER_CNTRL/EXECUTE_ADD_REG_SELECT** \\n        $tessent_controller_instance/MBISTPG_ADD_GEN/AX_ADD_REG* \\n        $tessent_controller_instance/MBISTPG_ADD_GEN/BX_ADD_REG* \\n        $tessent_controller_instance/MBISTPG_ADD_GEN/AY_ADD_REG* \\n        $tessent_controller_instance/MBISTPG_ADD_GEN/BY_ADD_REG* \\n        $tessent_controller_instance/MBISTPG_POINTER_CNTRL/INST_POINTER* \\n        $tessent_controller_instance/MBISTPG_FSM/RUNTEST_EN_REG_reg?3?]] \\n    -to   [get_cells  $tessent_interface_instance/MBISTPG_STATUS/GO_ID_REG*]  \n}
+        }
+        sdt0 {
+          targets {
+            pins {{$tessent_interface_instance/tessent_persistent_cell_BIST_CLK_OR_TCK/s} }
+          }
+        }
+      }
+    }
+  }
+  clock_gate_prefix tessent_persistent_cell_
+  clock_mux_input1 b
+  Cells {
+    Buf {
+      type RtlCells
+      module_name memlibc_memory_bist_assembly_rtl_tessent_buf
+      input a
+      output y
+    }
+    ClkMux2 {
+      type RtlCells
+      module_name memlibc_memory_bist_assembly_rtl_tessent_clk_mux2
+      input0 a
+      input1 b
+      select s
+      output y
+    }
+    ClkBuf {
+      type RtlCells
+      module_name memlibc_memory_bist_assembly_rtl_tessent_clk_buf
+      input a
+      output y
+    }
+    ClkGateAnd {
+      type RtlCells
+      module_name memlibc_memory_bist_assembly_rtl_tessent_clk_gate_and
+      clock_in clk
+      functional_enable fe
+      functional_enable_polarity 1
+      test_enable te
+      test_enable_polarity 1
+      clock_out clkg
+    }
+  }
+  memlibc_memory_bist_assembly_rtl_tessent_mbist_bap {
+    version 9
+    persistent_buffer_output_pin y
+    persistent_clock_buffer_output_pin y
+    persistent_mux_output_pin y
+    include_async_interface OFF
+    use_multicycle_paths on
+    signals {
+      bist_async_reset {
+        persistent_buffer tessent_persistent_cell_BIST_ASYNC_RESET
+        active_polarity active_low
+      }
+      tck_mode {
+        persistent_buffer tessent_persistent_cell_TCK_MODE
+      }
+      bist_en_num 1
+      bist_en0 {
+        persistent_buffer tessent_persistent_cell_bistEn_0
+      }
+      bist_hold {
+        persistent_buffer tessent_persistent_cell_BIST_HOLD
+      }
+      to_bist {
+        register toBist
+      }
+      from_bist_retime {
+        register fromBist_retime
+      }
+      mcp_tdr_buffers {
+        tessent_persistent_cell_BIST_SETUP_2_buf
+        tessent_persistent_cell_BIST_SETUP_1_buf
+        tessent_persistent_cell_BIST_SETUP_0_buf
+        tessent_persistent_cell_BIST_ASYNC_RESET
+        tessent_persistent_cell_TCK_MODE
+        tessent_persistent_cell_ENABLE_MEM_RESET_buf
+        tessent_persistent_cell_REDUCED_ADDRESS_COUNT_buf
+        tessent_persistent_cell_BIST_SELECT_TEST_DATA_buf
+        tessent_persistent_cell_BIST_ALGO_MODE0_buf
+        tessent_persistent_cell_BIST_ALGO_MODE1_buf
+        tessent_persistent_cell_BIST_DIAG_EN_buf
+        tessent_persistent_cell_FL_CNT_MODE0_buf
+        tessent_persistent_cell_FL_CNT_MODE1_buf
+        tessent_persistent_cell_INCLUDE_MEM_RESULTS_REG_buf
+        tessent_persistent_cell_CHAIN_BYPASS_EN_buf
+      }
+      to_controllers_tck {
+        pin tessent_persistent_cell_BUF_C_TCK/y
+      }
+      to_interfaces_tck {
+        pin tessent_persistent_cell_BUF_I_TCK/y
+      }
+    }
+  }
+}

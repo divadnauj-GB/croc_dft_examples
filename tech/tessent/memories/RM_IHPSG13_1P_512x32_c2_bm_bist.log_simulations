@@ -1,0 +1,57 @@
+/eda/Siemens/2022-23/RHELx86/TESSENT_2022.3/bin/tessent -shell -dofile simulations.do -log tshell.log_simulations -replace
+//  Tessent Shell  2022.3    Thu Aug 11 22:57:52 GMT 2022
+//                Unpublished work. Copyright 2022 Siemens
+//
+//      This material contains trade secrets or otherwise confidential 
+//  information owned by Siemens Industry Software Inc. or its affiliates 
+//   (collectively, "SISW"), or its licensors. Access to and use of this 
+//     information is strictly limited as set forth in the Customer's 
+//                   applicable agreements with SISW. 
+//
+//  Siemens software executing under x86-64 Linux on Sat Nov 15 20:30:13 EST 2025.
+//  64 bit version
+//  Host: bello.darknet.local (257018 MB RAM, 49151 MB Swap)
+//
+//  command: #-----------------------------------------------------------
+//  command: # This file created by : memlibCertify
+//  command: #     Software version : 2022.3
+//  command: #           Created on : 11/15/25 20:29:26
+//  command: #-----------------------------------------------------------
+//  command: # --
+//  command: # -- Simulation 
+//  command: # --
+//  command: set_context patterns -ijtag
+//  command: set design_name memlibc_memory_bist_assembly
+//  command: set_simulation_library_sources -v /home/jd.guerrero/Documents/Tessent/tech/ihp-sg13g2/libs.ref/sg13g2_sram/t-verilog/RM_IHPSG13_1P_512x32_c2_bm_bist.v -v /home/jd.guerrero/Documents/Tessent/tech/ihp-sg13g2/libs.ref/sg13g2_sram/t-verilog/RM_IHPSG13_1P_core_behavioral_bm_bist.v -f VerilogOptions 
+//  command: # Add the following run_testbench_simulations option(s) to capture
+//  command: # the simulation waveforms:
+//  command: #  -store_simulation_waveforms on
+//  command: # If using the Questa simulator, the debug database can be
+//  command: # generated using the following option:
+//  command: #  -simulator_options -debugDB
+//  command: set sim_options ""
+//  command: if { [file exists SimOptions] } {
+//             if { [file readable SimOptions] } {
+//               set f [open SimOptions r]
+//               set sim_options [read $f]
+//               close $f
+//             }
+//           }
+//  command: run_testbench_simulations -design_name ${design_name} -design_id rtl {*}$sim_options
+Starting 3 simulations for ./simulation_outdir/memlibc_memory_bist_assembly_rtl.simulation_signoff
+//  Waiting for the simulation(s) to complete
+
+unscheduled 0 queued 0 running 0 pass 3 fail 0
+//  command: check_testbench_simulations -report -design_name ${design_name} -design_id rtl 
+
+// Simulation status for ./simulation_outdir/memlibc_memory_bist_assembly_rtl.simulation_signoff
+// =============================================================================================
+// -----------------------------------  ------  -----------  -----------  ----------------------------
+// Pattern Name                         Status  Unexpected   Missing      Date
+//                                              Miscompares  Miscompares
+// -----------------------------------  ------  -----------  -----------  ----------------------------
+// ICLNetwork                           pass           0            0     Sat Nov 15 20:30:27 EST 2025
+// MemoryBist_P1                        pass           0            0     Sat Nov 15 20:30:32 EST 2025
+// MemoryBist_ParallelRetentionTest_P1  pass           0            0     Sat Nov 15 20:30:37 EST 2025
+//
+//  command: exit 

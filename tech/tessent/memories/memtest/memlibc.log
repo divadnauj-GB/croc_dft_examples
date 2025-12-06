@@ -1,0 +1,30 @@
+
+********************************************************************************
+*                                                                              *
+*                                 memlibCertify                                *
+*                               Version: 2022.3                                *
+*                                                                              *
+********************************************************************************
+
+Command-line: 
+
+  /eda/Siemens/2022-23/RHELx86/TESSENT_2022.3/bin/memlibc  \
+    -memlib ../RM_IHPSG13_1P_64x64_c2_bm_bist.tcd_memory  \
+    -simModelFile ../../../ihp-sg13g2/libs.ref/sg13g2_sram/t-verilog/RM_IHPSG13_1P_core_behavioral_bm_bist  \
+    -simModelFile ../../../ihp-sg13g2/libs.ref/sg13g2_sram/t-verilog/RM_IHPSG13_1P_64x64_c2_bm_bist  \
+    -extension v:vg
+
+  -Found memory template: [RM_IHPSG13_1P_64x64_c2_bm_bist]
+  -MemoryType : SRAM
+  -CellName : RM_IHPSG13_1P_64x64_c2_bm_bist
+  -Memory algorithm : SMARCHCHKBCIL
+  -OperationSet : sync
+
+Generating MemoryBist configuration files
+Generating Tessent Shell Do Files
+
+Info: Type 'make all' to execute the memory library certification process
+      or execute the particular certification process phases with
+        make gen       # Create/Process DFT specification
+        make testbench # Create/Process Patterns specification
+        make sim_rtl   # Run testbench simulations

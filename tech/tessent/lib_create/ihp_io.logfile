@@ -1,0 +1,105 @@
+/eda/Siemens/2022-23/RHELx86/TESSENT_2022.3/bin/fastscan -lib /home/jd.guerrero/Documents/Tessent/tech/tessent/lib_create/../libcomp_io.atpglib -lib ihp_io.regexp -dofile fs_io.do -logfile ihp_io.logfile -replace
+//  Tessent FastScan  2022.3    Thu Aug 11 22:57:52 GMT 2022
+//                Unpublished work. Copyright 2022 Siemens
+//
+//      This material contains trade secrets or otherwise confidential 
+//  information owned by Siemens Industry Software Inc. or its affiliates 
+//   (collectively, "SISW"), or its licensors. Access to and use of this 
+//     information is strictly limited as set forth in the Customer's 
+//                   applicable agreements with SISW. 
+//
+//  Siemens software executing under x86-64 Linux on Sun Nov 16 16:17:22 EST 2025.
+//  64 bit version
+//  Host: bello.darknet.local (257018 MB RAM, 49151 MB Swap)
+//
+
+//  mtfastscan_c license will expire in 14 days...
+//  Compiling library  ...
+//  Reading DFT Library file /home/jd.guerrero/Documents/Tessent/tech/tessent/lib_create/../libcomp_io.atpglib
+//  Finished reading file /home/jd.guerrero/Documents/Tessent/tech/tessent/lib_create/../libcomp_io.atpglib
+//  Reading DFT Library file ihp_io.regexp
+//  Warning: model regexp '^sg13g2_IOPadIn' line 9,
+//    of file 'ihp_io.regexp'.
+//    Regexp '^sg13g2_IOPadIn' has one of two anchors (one at front of regexp).  Was this intended?
+//  Finished reading file ihp_io.regexp
+//  Warning: Auto anchor insertion is on. Some regexp had anchor at only one end.
+//           Place 'regexp = no_anchors;' in cell_attributes{..} to prevent automatically adding missing anchor.
+//  command: write_cell_library ../ihp-sg13g2_io.tcelllib -replace
+//
+//  Note: Processing Tessent Cell Library information to allow cell information access.
+//        Following messages apply to that processing.
+//
+//  Warning: Inout pin 'pad' in model 'sg13g2_IOPadIn' is used as an input only
+//           line 95 file '/home/jd.guerrero/Documents/Tessent/tech/tessent/lib_create/../libcomp_io.atpglib'.
+//  Full match of model_attribute {..  model expression '^sg13g2_IOPadIn$' on line 9
+//       of file 'ihp_io.regexp',
+//    with model 'sg13g2_IOPadIn' on line 95
+//       of file '/home/jd.guerrero/Documents/Tessent/tech/tessent/lib_create/../libcomp_io.atpglib'.
+//    Full match of attribute port name '^pad$' with model port name 'pad'.
+//    Full match of attribute port name '^p2c$' with model port name 'p2c'.
+//  Full match of model_attribute {..  model expression '^sg13g2_IOPadInOut(.*)$' on line 21
+//       of file 'ihp_io.regexp',
+//    with model 'sg13g2_IOPadInOut16mA' on line 106
+//       of file '/home/jd.guerrero/Documents/Tessent/tech/tessent/lib_create/../libcomp_io.atpglib'.
+//    Full match of attribute port name '^pad$' with model port name 'pad'.
+//    Full match of attribute port name '^c2p$' with model port name 'c2p'.
+//    Full match of attribute port name '^c2p_en$' with model port name 'c2p_en'.
+//    Full match of attribute port name '^p2c$' with model port name 'p2c'.
+//  Full match of model_attribute {..  model expression '^sg13g2_IOPadInOut(.*)$' on line 21
+//       of file 'ihp_io.regexp',
+//    with model 'sg13g2_IOPadInOut30mA' on line 120
+//       of file '/home/jd.guerrero/Documents/Tessent/tech/tessent/lib_create/../libcomp_io.atpglib'.
+//    Full match of attribute port name '^pad$' with model port name 'pad'.
+//    Full match of attribute port name '^c2p$' with model port name 'c2p'.
+//    Full match of attribute port name '^c2p_en$' with model port name 'c2p_en'.
+//    Full match of attribute port name '^p2c$' with model port name 'p2c'.
+//  Full match of model_attribute {..  model expression '^sg13g2_IOPadInOut(.*)$' on line 21
+//       of file 'ihp_io.regexp',
+//    with model 'sg13g2_IOPadInOut4mA' on line 134
+//       of file '/home/jd.guerrero/Documents/Tessent/tech/tessent/lib_create/../libcomp_io.atpglib'.
+//    Full match of attribute port name '^pad$' with model port name 'pad'.
+//    Full match of attribute port name '^c2p$' with model port name 'c2p'.
+//    Full match of attribute port name '^c2p_en$' with model port name 'c2p_en'.
+//    Full match of attribute port name '^p2c$' with model port name 'p2c'.
+//  Full match of model_attribute {..  model expression '^sg13g2_IOPadOut(.*)$' on line 15
+//       of file 'ihp_io.regexp',
+//    with model 'sg13g2_IOPadOut16mA' on line 148
+//       of file '/home/jd.guerrero/Documents/Tessent/tech/tessent/lib_create/../libcomp_io.atpglib'.
+//    Full match of attribute port name '^pad$' with model port name 'pad'.
+//    Full match of attribute port name '^c2p$' with model port name 'c2p'.
+//  Full match of model_attribute {..  model expression '^sg13g2_IOPadOut(.*)$' on line 15
+//       of file 'ihp_io.regexp',
+//    with model 'sg13g2_IOPadOut30mA' on line 159
+//       of file '/home/jd.guerrero/Documents/Tessent/tech/tessent/lib_create/../libcomp_io.atpglib'.
+//    Full match of attribute port name '^pad$' with model port name 'pad'.
+//    Full match of attribute port name '^c2p$' with model port name 'c2p'.
+//  Full match of model_attribute {..  model expression '^sg13g2_IOPadOut(.*)$' on line 15
+//       of file 'ihp_io.regexp',
+//    with model 'sg13g2_IOPadOut4mA' on line 170
+//       of file '/home/jd.guerrero/Documents/Tessent/tech/tessent/lib_create/../libcomp_io.atpglib'.
+//    Full match of attribute port name '^pad$' with model port name 'pad'.
+//    Full match of attribute port name '^c2p$' with model port name 'c2p'.
+//  Full match of model_attribute {..  model expression '^sg13g2_IOPadTriOut(.*)$' on line 29
+//       of file 'ihp_io.regexp',
+//    with model 'sg13g2_IOPadTriOut16mA' on line 181
+//       of file '/home/jd.guerrero/Documents/Tessent/tech/tessent/lib_create/../libcomp_io.atpglib'.
+//    Full match of attribute port name '^pad$' with model port name 'pad'.
+//    Full match of attribute port name '^c2p$' with model port name 'c2p'.
+//    Full match of attribute port name '^c2p_en$' with model port name 'c2p_en'.
+//  Full match of model_attribute {..  model expression '^sg13g2_IOPadTriOut(.*)$' on line 29
+//       of file 'ihp_io.regexp',
+//    with model 'sg13g2_IOPadTriOut30mA' on line 193
+//       of file '/home/jd.guerrero/Documents/Tessent/tech/tessent/lib_create/../libcomp_io.atpglib'.
+//    Full match of attribute port name '^pad$' with model port name 'pad'.
+//    Full match of attribute port name '^c2p$' with model port name 'c2p'.
+//    Full match of attribute port name '^c2p_en$' with model port name 'c2p_en'.
+//  Full match of model_attribute {..  model expression '^sg13g2_IOPadTriOut(.*)$' on line 29
+//       of file 'ihp_io.regexp',
+//    with model 'sg13g2_IOPadTriOut4mA' on line 205
+//       of file '/home/jd.guerrero/Documents/Tessent/tech/tessent/lib_create/../libcomp_io.atpglib'.
+//    Full match of attribute port name '^pad$' with model port name 'pad'.
+//    Full match of attribute port name '^c2p$' with model port name 'c2p'.
+//    Full match of attribute port name '^c2p_en$' with model port name 'c2p_en'.
+//  End processing Tessent Cell Library to allow cell information access.
+
+//  command: exit -d

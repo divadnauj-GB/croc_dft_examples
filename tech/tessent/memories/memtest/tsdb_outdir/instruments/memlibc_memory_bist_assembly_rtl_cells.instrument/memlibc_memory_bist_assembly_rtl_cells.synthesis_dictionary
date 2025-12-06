@@ -1,0 +1,103 @@
+#--------------------------------------------------------------------------
+#
+#  Unpublished work. Copyright 2021 Siemens
+#
+#  This material contains trade secrets or otherwise confidential 
+#  information owned by Siemens Industry Software Inc. or its affiliates 
+#  (collectively, SISW), or its licensors. Access to and use of this 
+#  information is strictly limited as set forth in the Customer's 
+#  applicable agreements with SISW.
+#
+#--------------------------------------------------------------------------
+#  File created by: Tessent Shell
+#          Version: 2022.3
+#       Created on: Sat Nov 15 20:33:15 EST 2025
+#--------------------------------------------------------------------------
+
+set synthesis_dictionary {
+  design_source_dictionary {
+    read1 {
+      format verilog_2001
+      work_library work
+      files {
+        ./memlibc_memory_bist_assembly_rtl_tessent_and2.v ./memlibc_memory_bist_assembly_rtl_tessent_or2.v
+        ./memlibc_memory_bist_assembly_rtl_tessent_buf.v ./memlibc_memory_bist_assembly_rtl_tessent_clk_buf.v
+        ./memlibc_memory_bist_assembly_rtl_tessent_inv.v ./memlibc_memory_bist_assembly_rtl_tessent_clk_inv.v
+        ./memlibc_memory_bist_assembly_rtl_tessent_mux2.v ./memlibc_memory_bist_assembly_rtl_tessent_clk_mux2.v
+        ./memlibc_memory_bist_assembly_rtl_tessent_clk_gate_and.v ./memlibc_memory_bist_assembly_rtl_tessent_posedge_synchronizer_reset.v
+      }
+    }
+  }
+  designs_dictionary {
+    memlibc_memory_bist_assembly_rtl_tessent_and2 {
+      output_files {
+        memlibc_memory_bist_assembly_rtl_tessent_and2.vg {
+          module_name_list memlibc_memory_bist_assembly_rtl_tessent_and2
+        }
+      }
+    }
+    memlibc_memory_bist_assembly_rtl_tessent_or2 {
+      output_files {
+        memlibc_memory_bist_assembly_rtl_tessent_or2.vg {
+          module_name_list memlibc_memory_bist_assembly_rtl_tessent_or2
+        }
+      }
+    }
+    memlibc_memory_bist_assembly_rtl_tessent_buf {
+      output_files {
+        memlibc_memory_bist_assembly_rtl_tessent_buf.vg {
+          module_name_list memlibc_memory_bist_assembly_rtl_tessent_buf
+        }
+      }
+    }
+    memlibc_memory_bist_assembly_rtl_tessent_clk_buf {
+      output_files {
+        memlibc_memory_bist_assembly_rtl_tessent_clk_buf.vg {
+          module_name_list memlibc_memory_bist_assembly_rtl_tessent_clk_buf
+        }
+      }
+    }
+    memlibc_memory_bist_assembly_rtl_tessent_inv {
+      output_files {
+        memlibc_memory_bist_assembly_rtl_tessent_inv.vg {
+          module_name_list memlibc_memory_bist_assembly_rtl_tessent_inv
+        }
+      }
+    }
+    memlibc_memory_bist_assembly_rtl_tessent_clk_inv {
+      output_files {
+        memlibc_memory_bist_assembly_rtl_tessent_clk_inv.vg {
+          module_name_list memlibc_memory_bist_assembly_rtl_tessent_clk_inv
+        }
+      }
+    }
+    memlibc_memory_bist_assembly_rtl_tessent_mux2 {
+      output_files {
+        memlibc_memory_bist_assembly_rtl_tessent_mux2.vg {
+          module_name_list memlibc_memory_bist_assembly_rtl_tessent_mux2
+        }
+      }
+    }
+    memlibc_memory_bist_assembly_rtl_tessent_clk_mux2 {
+      output_files {
+        memlibc_memory_bist_assembly_rtl_tessent_clk_mux2.vg {
+          module_name_list memlibc_memory_bist_assembly_rtl_tessent_clk_mux2
+        }
+      }
+    }
+    memlibc_memory_bist_assembly_rtl_tessent_clk_gate_and {
+      output_files {
+        memlibc_memory_bist_assembly_rtl_tessent_clk_gate_and.vg {
+          module_name_list memlibc_memory_bist_assembly_rtl_tessent_clk_gate_and
+        }
+      }
+    }
+    memlibc_memory_bist_assembly_rtl_tessent_posedge_synchronizer_reset {
+      output_files {
+        memlibc_memory_bist_assembly_rtl_tessent_posedge_synchronizer_reset.vg {
+          module_name_list memlibc_memory_bist_assembly_rtl_tessent_posedge_synchronizer_reset
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,142 @@
+  # 
+  # Connection Info dictionary for MemoryBist controller C1
+  # 
+  proc C1_ConnectionInfo.defaults {args} {
+  # Setting default connection variables {{{
+  set ControllerInfo(controllerInstancePath) -
+  set ControllerInfo(instantiate_controller) yes
+  set ControllerInfo(create_shared_bus_assembly) yes
+  set ControllerInfo(create_controller_assembly) no
+  set ControllerInfo(BIST_ON) BIST_ON
+  set ControllerInfo(m1) -
+  set ControllerInfo(m1_interface_instance) -
+  set ControllerInfo(BIST_CLK) BIST_CLK
+  set ControllerInfo(BIST_HOLD) -
+  set ControllerInfo(BIST_SETUP2) -
+  set ControllerInfo(BIST_SETUP1) -
+  set ControllerInfo(BIST_SETUP0) -
+  set ControllerInfo(BIST_SELECT_TEST_DATA) -
+  set ControllerInfo(TCK_INTERFACES) -
+  set ControllerInfo(TCK) -
+  set ControllerInfo(BIST_ALGO_MODE1) -
+  set ControllerInfo(BIST_ALGO_MODE0) -
+  set ControllerInfo(ENABLE_MEM_RESET) `logiclow
+  set ControllerInfo(REDUCED_ADDRESS_COUNT) -
+  set ControllerInfo(BIST_ASYNC_RESET) -
+  set ControllerInfo(LV_TM) `logiclow
+  set ControllerInfo(MEM_BYPASS_EN) `logiclow
+  set ControllerInfo(SCAN_SHIFT_EN) `logiclow
+  set ControllerInfo(MCP_BOUNDING_EN) `logiclow
+  set ControllerInfo(BIST_SI) -
+  set ControllerInfo(MBISTPG_SO) MBISTPG_SO
+  set ControllerInfo(MBISTPG_EN) -
+  set ControllerInfo(MBISTPG_DONE) MBISTPG_DONE
+  set ControllerInfo(MBISTPG_ASSEMBLY_DONE) BIST_DONE
+  set ControllerInfo(MBISTPG_GO) MBISTPG_GO
+  set ControllerInfo(MBISTPG_ASSEMBLY_GO) BIST_GO
+  set ControllerInfo(BIST_DIAG_EN) MBISTPG_DIAG_EN
+  set ControllerInfo(FL_CNT_MODE0) FL_CNT_MODE[0]
+  set ControllerInfo(FL_CNT_MODE1) FL_CNT_MODE[1]
+  # Setting default connection variables }}}
+  return [array get ControllerInfo]
+  }
+  proc C1_ConnectionInfo {controller_info_ptr args} {
+    upvar $controller_info_ptr ControllerInfo
+  instantiate memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller $ControllerInfo(controllerInstancePath) -condition "$ControllerInfo(instantiate_controller) && $ControllerInfo(create_shared_bus_assembly)"
+  connect $ControllerInfo(BIST_CLK) $ControllerInfo(controllerInstancePath)/BIST_CLK -group bist_clk -connect_before_move yes
+  connect $ControllerInfo(BIST_HOLD) $ControllerInfo(controllerInstancePath)/BIST_HOLD -group bist_hold
+  connect $ControllerInfo(BIST_SETUP2) $ControllerInfo(controllerInstancePath)/BIST_SETUP2 -group bist_setup
+  connect $ControllerInfo(BIST_SETUP1) $ControllerInfo(controllerInstancePath)/BIST_SETUP[1] -group bist_setup
+  connect $ControllerInfo(BIST_SETUP0) $ControllerInfo(controllerInstancePath)/BIST_SETUP[0] -group bist_setup
+  connect $ControllerInfo(BIST_SELECT_TEST_DATA) $ControllerInfo(controllerInstancePath)/MBISTPG_TESTDATA_SELECT -group bist_select_test_data
+  connect $ControllerInfo(TCK) $ControllerInfo(controllerInstancePath)/TCK -group ijtag
+  connect $ControllerInfo(LV_TM) $ControllerInfo(controllerInstancePath)/LV_TM -group scan
+  connect $ControllerInfo(MEM_BYPASS_EN) $ControllerInfo(controllerInstancePath)/MEM_BYPASS_EN -group scan
+  connect $ControllerInfo(MCP_BOUNDING_EN) $ControllerInfo(controllerInstancePath)/MCP_BOUNDING_EN -group scan
+  connect $ControllerInfo(BIST_ON) $ControllerInfo(controllerInstancePath)/BIST_ON_TO_COLLAR -condition "$ControllerInfo(create_controller_assembly)" -group bist_on
+  connect $ControllerInfo(BIST_ALGO_MODE1) $ControllerInfo(controllerInstancePath)/MBISTPG_ALGO_MODE[1] -group algo_mode
+  connect $ControllerInfo(BIST_ALGO_MODE0) $ControllerInfo(controllerInstancePath)/MBISTPG_ALGO_MODE[0] -group algo_mode
+  connect $ControllerInfo(ENABLE_MEM_RESET) $ControllerInfo(controllerInstancePath)/MBISTPG_MEM_RST -group memory_reset
+  connect $ControllerInfo(REDUCED_ADDRESS_COUNT) $ControllerInfo(controllerInstancePath)/MBISTPG_REDUCED_ADDR_CNT_EN -group rac
+  connect $ControllerInfo(BIST_ASYNC_RESET) $ControllerInfo(controllerInstancePath)/MBISTPG_ASYNC_RESETN -group async_reset
+  connect $ControllerInfo(BIST_SI) $ControllerInfo(controllerInstancePath)/BIST_SI -group bist_si
+  connect $ControllerInfo(MBISTPG_SO) $ControllerInfo(controllerInstancePath)/MBISTPG_SO -group bist_so
+  connect $ControllerInfo(MBISTPG_EN) $ControllerInfo(controllerInstancePath)/MBISTPG_EN -group bist_en
+  connect $ControllerInfo(MBISTPG_DONE) $ControllerInfo(controllerInstancePath)/MBISTPG_DONE -group bist_done
+  connect $ControllerInfo(MBISTPG_ASSEMBLY_DONE) $ControllerInfo(controllerInstancePath)/MBISTPG_DONE -condition "$ControllerInfo(create_controller_assembly)" -group bist_done
+  connect $ControllerInfo(MBISTPG_GO) $ControllerInfo(controllerInstancePath)/MBISTPG_GO -group bist_go
+  connect $ControllerInfo(MBISTPG_ASSEMBLY_GO) $ControllerInfo(controllerInstancePath)/MBISTPG_GO -condition "$ControllerInfo(create_controller_assembly)" -group bist_go
+  connect $ControllerInfo(BIST_DIAG_EN) $ControllerInfo(controllerInstancePath)/MBISTPG_DIAG_EN -group diag
+  connect $ControllerInfo(FL_CNT_MODE0) $ControllerInfo(controllerInstancePath)/FL_CNT_MODE[0] -group fl_count_mode
+  connect $ControllerInfo(FL_CNT_MODE1) $ControllerInfo(controllerInstancePath)/FL_CNT_MODE[1] -group fl_count_mode
+  instantiate memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_interface_m1 $ControllerInfo(m1_interface_instance) -condition "$ControllerInfo(create_shared_bus_assembly)"
+  connect $ControllerInfo(BIST_CLK) $ControllerInfo(m1_interface_instance)/BIST_CLK -group collar_bist_clk -connect_before_move yes
+  connect $ControllerInfo(LV_TM) $ControllerInfo(m1_interface_instance)/LV_TM -group tm
+  connect $ControllerInfo(MEM_BYPASS_EN) $ControllerInfo(m1_interface_instance)/MEM_BYPASS_EN -group scan
+  connect $ControllerInfo(SCAN_SHIFT_EN) $ControllerInfo(m1_interface_instance)/SCAN_SHIFT_EN -group scan
+  connect $ControllerInfo(MCP_BOUNDING_EN) $ControllerInfo(m1_interface_instance)/MCP_BOUNDING_EN -group scan
+  constant `open $ControllerInfo(m1_interface_instance)/SCAN_OBS_FLOPS
+  connect $ControllerInfo(controllerInstancePath)/BIST_SELECT $ControllerInfo(m1_interface_instance)/BIST_SELECT -group fsm
+  connect $ControllerInfo(controllerInstancePath)/BIST_WRITEENABLE $ControllerInfo(m1_interface_instance)/BIST_WRITEENABLE -group fsm
+  connect $ControllerInfo(controllerInstancePath)/BIST_READENABLE $ControllerInfo(m1_interface_instance)/BIST_READENABLE -group fsm
+  connect $ControllerInfo(controllerInstancePath)/BIST_CMP $ControllerInfo(m1_interface_instance)/BIST_CMP -group bist_cmp
+  connect $ControllerInfo(INCLUDE_MEM_RESULTS_REG) $ControllerInfo(m1_interface_instance)/INCLUDE_MEM_RESULTS_REG -group bist_go_id
+  connect $ControllerInfo(controllerInstancePath)/BIST_COL_ADD[3] $ControllerInfo(m1_interface_instance)/BIST_COL_ADD[3] -group col_add
+  connect $ControllerInfo(controllerInstancePath)/BIST_COL_ADD[2] $ControllerInfo(m1_interface_instance)/BIST_COL_ADD[2] -group col_add
+  connect $ControllerInfo(controllerInstancePath)/BIST_COL_ADD[1] $ControllerInfo(m1_interface_instance)/BIST_COL_ADD[1] -group col_add
+  connect $ControllerInfo(controllerInstancePath)/BIST_COL_ADD[0] $ControllerInfo(m1_interface_instance)/BIST_COL_ADD[0] -group col_add
+  connect $ControllerInfo(controllerInstancePath)/BIST_ROW_ADD[8] $ControllerInfo(m1_interface_instance)/BIST_ROW_ADD[8] -group row_add
+  connect $ControllerInfo(controllerInstancePath)/BIST_ROW_ADD[7] $ControllerInfo(m1_interface_instance)/BIST_ROW_ADD[7] -group row_add
+  connect $ControllerInfo(controllerInstancePath)/BIST_ROW_ADD[6] $ControllerInfo(m1_interface_instance)/BIST_ROW_ADD[6] -group row_add
+  connect $ControllerInfo(controllerInstancePath)/BIST_ROW_ADD[5] $ControllerInfo(m1_interface_instance)/BIST_ROW_ADD[5] -group row_add
+  connect $ControllerInfo(controllerInstancePath)/BIST_ROW_ADD[4] $ControllerInfo(m1_interface_instance)/BIST_ROW_ADD[4] -group row_add
+  connect $ControllerInfo(controllerInstancePath)/BIST_ROW_ADD[3] $ControllerInfo(m1_interface_instance)/BIST_ROW_ADD[3] -group row_add
+  connect $ControllerInfo(controllerInstancePath)/BIST_ROW_ADD[2] $ControllerInfo(m1_interface_instance)/BIST_ROW_ADD[2] -group row_add
+  connect $ControllerInfo(controllerInstancePath)/BIST_ROW_ADD[1] $ControllerInfo(m1_interface_instance)/BIST_ROW_ADD[1] -group row_add
+  connect $ControllerInfo(controllerInstancePath)/BIST_ROW_ADD[0] $ControllerInfo(m1_interface_instance)/BIST_ROW_ADD[0] -group row_add
+  connect $ControllerInfo(controllerInstancePath)/BIST_COLLAR_EN0 $ControllerInfo(m1_interface_instance)/BIST_COLLAR_EN -group bist_collar_en
+  connect $ControllerInfo(controllerInstancePath)/BIST_RUN_TO_COLLAR0 $ControllerInfo(m1_interface_instance)/BIST_RUN -group bist_run_to_collar
+  connect $ControllerInfo(BIST_ASYNC_RESET) $ControllerInfo(m1_interface_instance)/BIST_ASYNC_RESETN -group collar_async_reset
+  connect $ControllerInfo(TCK_INTERFACES) $ControllerInfo(m1_interface_instance)/TCK -group clocks
+  connect $ControllerInfo(controllerInstancePath)/BIST_TESTDATA_SELECT_TO_COLLAR $ControllerInfo(m1_interface_instance)/BIST_TESTDATA_SELECT_TO_COLLAR -group testdata_select
+  connect $ControllerInfo(controllerInstancePath)/BIST_ON_TO_COLLAR $ControllerInfo(m1_interface_instance)/BIST_ON -group bist_on
+  connect $ControllerInfo(controllerInstancePath)/BIST_WRITE_DATA[1] $ControllerInfo(m1_interface_instance)/BIST_WRITE_DATA[1] -group write_data
+  connect $ControllerInfo(controllerInstancePath)/BIST_WRITE_DATA[0] $ControllerInfo(m1_interface_instance)/BIST_WRITE_DATA[0] -group write_data
+  connect $ControllerInfo(controllerInstancePath)/BIST_EXPECT_DATA[1] $ControllerInfo(m1_interface_instance)/BIST_EXPECT_DATA[1] -group exp_data
+  connect $ControllerInfo(controllerInstancePath)/BIST_EXPECT_DATA[0] $ControllerInfo(m1_interface_instance)/BIST_EXPECT_DATA[0] -group exp_data
+  connect $ControllerInfo(controllerInstancePath)/CHKBCI_PHASE $ControllerInfo(m1_interface_instance)/CHKBCI_PHASE -group chkbci_phase
+  connect $ControllerInfo(controllerInstancePath)/BIST_SHIFT_COLLAR $ControllerInfo(m1_interface_instance)/BIST_SHIFT_COLLAR -group bist_shift_collar
+  connect $ControllerInfo(m1_interface_instance)/BIST_SI $ControllerInfo(controllerInstancePath)/MEM0_BIST_COLLAR_SI -group bist_si
+  connect $ControllerInfo(m1_interface_instance)/BIST_SO $ControllerInfo(controllerInstancePath)/MEM0_BIST_COLLAR_SO -group bist_so
+  connect $ControllerInfo(controllerInstancePath)/BIST_COLLAR_SETUP $ControllerInfo(m1_interface_instance)/BIST_COLLAR_SETUP -group bist_collar_setup
+  connect $ControllerInfo(controllerInstancePath)/BIST_CLEAR_DEFAULT $ControllerInfo(m1_interface_instance)/BIST_CLEAR_DEFAULT -group bist_clear_default
+  connect $ControllerInfo(controllerInstancePath)/BIST_CLEAR $ControllerInfo(m1_interface_instance)/BIST_CLEAR -group bist_clear
+  connect $ControllerInfo(BIST_SETUP0) $ControllerInfo(m1_interface_instance)/BIST_SETUP0 -group bist_setup
+  connect $ControllerInfo(controllerInstancePath)/FREEZE_STOP_ERROR $ControllerInfo(m1_interface_instance)/FREEZE_STOP_ERROR -group soe
+  connect $ControllerInfo(controllerInstancePath)/ERROR_CNT_ZERO $ControllerInfo(m1_interface_instance)/ERROR_CNT_ZERO -group soe
+  connect $ControllerInfo(controllerInstancePath)/BIST_COLLAR_HOLD $ControllerInfo(m1_interface_instance)/BIST_COLLAR_HOLD -group soe
+  connect $ControllerInfo(controllerInstancePath)/BIST_COLLAR_DIAG_EN $ControllerInfo(m1_interface_instance)/BIST_DIAG_EN -group diag
+  connect $ControllerInfo(m1_interface_instance)/BIST_GO $ControllerInfo(controllerInstancePath)/BIST_COLLAR_GO -group bist_go
+  connect $ControllerInfo(controllerInstancePath)/MBISTPG_RESET_REG_SETUP2 $ControllerInfo(m1_interface_instance)/RESET_REG_SETUP2 -group setup
+  move [string cat $ControllerInfo(m1)/ {A_MEN}] [string cat $ControllerInfo(m1_interface_instance)/ {A_MEN_IN}] -condition "$ControllerInfo(create_shared_bus_assembly)"
+  constant `open [string cat $ControllerInfo(m1)/ {A_MEN}] -condition "$ControllerInfo(create_shared_bus_assembly)"
+  connect [string cat $ControllerInfo(m1_interface_instance)/ {A_MEN}] [string cat $ControllerInfo(m1)/ {A_MEN}] -condition "$ControllerInfo(create_shared_bus_assembly)" -group control_port_A_MEN
+  move [string cat $ControllerInfo(m1)/ {A_WEN}] [string cat $ControllerInfo(m1_interface_instance)/ {A_WEN_IN}] -condition "$ControllerInfo(create_shared_bus_assembly)"
+  constant `open [string cat $ControllerInfo(m1)/ {A_WEN}] -condition "$ControllerInfo(create_shared_bus_assembly)"
+  connect [string cat $ControllerInfo(m1_interface_instance)/ {A_WEN}] [string cat $ControllerInfo(m1)/ {A_WEN}] -condition "$ControllerInfo(create_shared_bus_assembly)" -group control_port_A_WEN
+  move [string cat $ControllerInfo(m1)/ {A_REN}] [string cat $ControllerInfo(m1_interface_instance)/ {A_REN_IN}] -condition "$ControllerInfo(create_shared_bus_assembly)"
+  constant `open [string cat $ControllerInfo(m1)/ {A_REN}] -condition "$ControllerInfo(create_shared_bus_assembly)"
+  connect [string cat $ControllerInfo(m1_interface_instance)/ {A_REN}] [string cat $ControllerInfo(m1)/ {A_REN}] -condition "$ControllerInfo(create_shared_bus_assembly)" -group control_port_A_REN
+  move [string cat $ControllerInfo(m1)/ {A_ADDR}] [string cat $ControllerInfo(m1_interface_instance)/ {A_ADDR_IN}] -condition "$ControllerInfo(create_shared_bus_assembly)"
+  constant `open [string cat $ControllerInfo(m1)/ {A_ADDR}] -condition "$ControllerInfo(create_shared_bus_assembly)"
+  connect [string cat $ControllerInfo(m1_interface_instance)/ {A_ADDR}] [string cat $ControllerInfo(m1)/ {A_ADDR}] -condition "$ControllerInfo(create_shared_bus_assembly)" -group address_A_ADDR
+  move [string cat $ControllerInfo(m1)/ {A_DIN}] [string cat $ControllerInfo(m1_interface_instance)/ {A_DIN_IN}] -condition "$ControllerInfo(create_shared_bus_assembly)"
+  constant `open [string cat $ControllerInfo(m1)/ {A_DIN}] -condition "$ControllerInfo(create_shared_bus_assembly)"
+  connect [string cat $ControllerInfo(m1_interface_instance)/ {A_DIN}] [string cat $ControllerInfo(m1)/ {A_DIN}] -condition "$ControllerInfo(create_shared_bus_assembly)" -group data_A_DIN
+  move [string cat $ControllerInfo(m1)/ {A_DOUT}] [string cat $ControllerInfo(m1_interface_instance)/ {A_DOUT}] -condition "$ControllerInfo(create_shared_bus_assembly)"
+  constant `open [string cat $ControllerInfo(m1)/ {A_DOUT}] -condition "$ControllerInfo(create_shared_bus_assembly)"
+  connect [string cat $ControllerInfo(m1)/ {A_DOUT}] [string cat $ControllerInfo(m1_interface_instance)/ {A_DOUT_IN}] -condition "$ControllerInfo(create_shared_bus_assembly)" -group data_A_DOUT
+  constant `open [string cat $ControllerInfo(m1)/ {A_DLY}] -condition "$ControllerInfo(create_shared_bus_assembly)"
+  constant `logicHigh [string cat $ControllerInfo(m1)/ {A_DLY}] -condition "$ControllerInfo(create_shared_bus_assembly)"
+  }
+  set merger_proc_name C1_ConnectionInfo

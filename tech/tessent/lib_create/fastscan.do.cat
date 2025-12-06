@@ -1,0 +1,5 @@
+// Do the actions Libcomp will always do
+dofile fastscan.do
+
+// Ensure exit.
+exit -discard

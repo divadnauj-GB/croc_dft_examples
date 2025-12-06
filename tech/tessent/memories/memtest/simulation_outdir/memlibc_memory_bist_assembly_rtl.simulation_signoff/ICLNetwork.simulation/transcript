@@ -1,0 +1,129 @@
+# vsim -c -lib dut_work -L dut_work -L tsdb_ijtag_graybox -do "run -all; exit" "+nowarnTFMPC" "+NEWPATH=./patterns_directory" ICLNetwork_configuration 
+# Start time: 20:34:00 on Nov 15,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# //  Questa Sim-64
+# //  Version 2022.4 linux_x86_64 Oct 18 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading work.ICLNetwork_configuration(fast)
+# Loading work.TB(fast)
+# run -all
+# Found New Path ./patterns_directory
+# 
+# Loading ./patterns_directory/ICLNetwork.v.po.name
+# 
+# Loading ./patterns_directory/ICLNetwork.v.0.vec
+# 
+# 0ns: Pattern_set memlibc_memory_bist_assembly
+# 200ns:  Activate selection for scan mux memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.scan_in_mux, selection 1: sib, ltest_en = 2'bxx -> scan_in_mux = ijtag_si
+# 300ns:  Scan in verification pattern to the following scan register:
+# 300ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, load value = 1
+# 700ns:  Scan out verification pattern from the following scan register:
+# 700ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, expected value = 1
+# 1100ns:  Activate selection of the following scan muxes:
+# 1100ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.scan_in_mux, selection 0: sib, ltest_en = 2'b10 -> scan_in_mux = ijtag_from_so
+# 1100ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 1200ns:  Scan in verification pattern to the following scan registers:
+# 1200ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, load value = 0
+# 1200ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, load value = 1
+# 1700ns:  Scan out verification pattern from the following scan registers:
+# 1700ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, expected value = 0
+# 1700ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, expected value = 1
+# 2200ns:  Activate selection of the following scan muxes:
+# 2200ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.scan_in_mux, selection 0: sib, ltest_en = 2'b10 -> scan_in_mux = ijtag_from_so
+# 2200ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 2200ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_sib_mux_inst, selection 0: ctl_group_sib = 1'b0 -> ctl_sib_mux_inst = tdr_bypass_sib_inst
+# 2200ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_mux_inst, selection 0: tdr_bypass_sib_inst = 1'b0 -> tdr_bypass_sib_mux_inst = si
+# 2300ns:  Scan in verification pattern to the following scan registers:
+# 2300ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst, load value = 1
+# 2300ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib, load value = 1
+# 2300ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, load value = 0
+# 2300ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, load value = 1
+# 3000ns:  Scan out verification pattern from the following scan registers:
+# 3000ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst, expected value = 1
+# 3000ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib, expected value = 1
+# 3000ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, expected value = 0
+# 3000ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, expected value = 1
+# 3700ns:  Activate selection of the following scan muxes:
+# 3700ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.scan_in_mux, selection 0: sib, ltest_en = 2'b10 -> scan_in_mux = ijtag_from_so
+# 3700ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 3700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_sib_mux_inst, selection 1: ctl_group_sib = 1'b1 -> ctl_sib_mux_inst = mbist_go_0
+# 3700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.fromBistMux_0, selection 1: bistEn_int[0], BIST_SETUP_tdr[1], ChainBypassMode = 3'bxxx -> fromBistMux_0 = tdr_bypass_sib_inst
+# 3700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_mux_inst, selection 0: tdr_bypass_sib_inst = 1'b0 -> tdr_bypass_sib_mux_inst = si
+# 3800ns:  Scan in verification pattern to the following scan registers:
+# 3800ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst, load value = 0
+# 3800ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0, load value = 0
+# 3800ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0, load value = 1
+# 3800ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib, load value = 1
+# 3800ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, load value = 0
+# 3800ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, load value = 1
+# 4700ns:  Scan out verification pattern from the following scan registers:
+# 4700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst, expected value = 0
+# 4700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0, expected value = 0
+# 4700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0, expected value = 1
+# 4700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib, expected value = 1
+# 4700ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, expected value = 0
+# 4700ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, expected value = 1
+# 5600ns:  Activate selection of the following scan muxes:
+# 5600ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.scan_in_mux, selection 0: sib, ltest_en = 2'b10 -> scan_in_mux = ijtag_from_so
+# 5600ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 5600ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_sib_mux_inst, selection 0: ctl_group_sib = 1'b0 -> ctl_sib_mux_inst = tdr_bypass_sib_inst
+# 5600ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_mux_inst, selection 1: tdr_bypass_sib_inst = 1'b1 -> tdr_bypass_sib_mux_inst = ENABLE_MEM_RESET_tdr
+# 5700ns:  Scan in verification pattern to the following scan registers:
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0], load value = 111
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr, load value = 1
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr, load value = 1
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr, load value = 0
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr, load value = 0
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr, load value = 0
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr, load value = 0
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr, load value = 1
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr, load value = 1
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr, load value = 1
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr, load value = 1
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr, load value = 0
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr, load value = 0
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst, load value = 1
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib, load value = 1
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, load value = 0
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, load value = 1
+# 7900ns:  Scan out verification pattern from the following scan registers:
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0], expected value = 111
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr, expected value = 1
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr, expected value = 1
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr, expected value = 0
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr, expected value = 0
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr, expected value = 0
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr, expected value = 0
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr, expected value = 1
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr, expected value = 1
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr, expected value = 1
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr, expected value = 1
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr, expected value = 0
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr, expected value = 0
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst, expected value = 1
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib, expected value = 1
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, expected value = 0
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, expected value = 1
+# 
+# Simulation finished at time 10201
+# Number of miscompares            =           0
+# Number of 0/1 compares           =          47
+# Number of Z compares             =           0
+# 
+# No error between simulated and expected patterns
+# 
+# ** Note: $finish    : ./patterns_directory/ICLNetwork.v(1275)
+#    Time: 10202 ns  Iteration: 1  Instance: /TB
+# End time: 20:34:01 on Nov 15,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

@@ -1,0 +1,214 @@
+set simulation_dict {
+  version 2
+  top_design_logical_library "work"
+  patterns {
+    ICLNetwork {
+      testbench_module_name      TB
+      current_design_view        ijtag_graybox
+      top_design_instance_name   DUT_inst
+      top_module_name_list {}
+      extra_simulation_file_list {}
+      simulation_macro_list {}
+      lower_instances {}
+      file_list {
+         "ICLNetwork.pdl"
+         "ICLNetwork.v"
+         "ICLNetwork.v.0.vec"
+         "ICLNetwork.v.cfg"
+         "ICLNetwork.v.po.name"
+      }
+      icl_time "Sun Nov 16 01:33:34 GMT 2025"
+      sim_data_files ok
+    }
+    MemoryBist_P1 {
+      testbench_module_name      TB
+      current_design_view        full
+      top_design_instance_name   DUT_inst
+      top_module_name_list {}
+      extra_simulation_file_list {}
+      simulation_macro_list {}
+      lower_instances {}
+      file_list {
+         "MemoryBist_P1.pdl"
+         "MemoryBist_P1.v"
+         "MemoryBist_P1.v.0.vec"
+         "MemoryBist_P1.v.cfg"
+         "MemoryBist_P1.v.po.name"
+      }
+      icl_time "Sun Nov 16 01:33:34 GMT 2025"
+      sim_data_files ok
+    }
+    MemoryBist_ParallelRetentionTest_P1 {
+      testbench_module_name      TB
+      current_design_view        full
+      top_design_instance_name   DUT_inst
+      top_module_name_list {}
+      extra_simulation_file_list {}
+      simulation_macro_list {}
+      lower_instances {}
+      file_list {
+         "MemoryBist_ParallelRetentionTest_P1.pdl"
+         "MemoryBist_ParallelRetentionTest_P1.v"
+         "MemoryBist_ParallelRetentionTest_P1.v.0.vec"
+         "MemoryBist_ParallelRetentionTest_P1.v.cfg"
+         "MemoryBist_ParallelRetentionTest_P1.v.po.name"
+      }
+      icl_time "Sun Nov 16 01:33:34 GMT 2025"
+      sim_data_files ok
+    }
+  }
+
+  design_source_dictionary {
+    read1 {
+      format       "verilog_2001"
+      work_library "work"
+
+      files {
+        "../../dft_inserted_designs/memlibc_memory_bist_assembly_rtl.dft_inserted_design/modified_rtl_files/memlibc_memory_bist_assembly.v"
+      }
+      libraries {
+      }
+      extensions {
+      }
+      defines {
+      }
+      incdirs {
+      }
+      options {
+        "-ignore_synthesis_off_sections" "off" "-no_lib_rescan" "-pragma_list" ""
+      }
+      is_current_design 1
+      modules_dict {
+        memlibc_memory_bist_assembly {needed_in_views {full ijtag_graybox}}
+      }
+    }
+
+    read2 {
+      format       "verilog_2001"
+      work_library "work"
+
+      files {
+        "../../instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_mux2.v"
+        "../../instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_clk_mux2.v"
+        "../../instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_clk_gate_and.v"
+        "../../instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_posedge_synchronizer_reset.v"
+      }
+      libraries {
+      }
+      extensions {
+      }
+      defines {
+      }
+      incdirs {
+      }
+      options {
+        "-no_overwrite"
+      }
+      modules_dict {
+        memlibc_memory_bist_assembly {needed_in_views {full ijtag_graybox}}
+      }
+    }
+
+    read3 {
+      format       "verilog_2001"
+      work_library "work"
+
+      files {
+        "../../instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_and2.v"
+        "../../instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_or2.v"
+        "../../instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_buf.v"
+        "../../instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_clk_buf.v"
+        "../../instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_inv.v"
+        "../../instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_clk_inv.v"
+      }
+      libraries {
+      }
+      extensions {
+      }
+      defines {
+      }
+      incdirs {
+      }
+      options {
+        "-no_overwrite"
+      }
+      modules_dict {
+        memlibc_memory_bist_assembly {needed_in_views {full ijtag_graybox}}
+      }
+    }
+
+    read4 {
+      format       "verilog_2001"
+      work_library "work"
+
+      files {
+        "../../instruments/memlibc_memory_bist_assembly_rtl_ijtag.instrument/memlibc_memory_bist_assembly_rtl_tessent_sib_1.v"
+        "../../instruments/memlibc_memory_bist_assembly_rtl_ijtag.instrument/memlibc_memory_bist_assembly_rtl_tessent_sib_2.v"
+      }
+      libraries {
+      }
+      extensions {
+      }
+      defines {
+      }
+      incdirs {
+      }
+      options {
+        "-no_overwrite"
+      }
+      modules_dict {
+        memlibc_memory_bist_assembly {needed_in_views {full ijtag_graybox}}
+      }
+    }
+
+    read5 {
+      format       "verilog_2001"
+      work_library "work"
+
+      files {
+        "../../instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/memlibc_memory_bist_assembly_rtl_tessent_mbist_bap.v"
+        "../../instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller.v"
+        "../../instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_interface_m1.v"
+      }
+      libraries {
+      }
+      extensions {
+      }
+      defines {
+      }
+      incdirs {
+      }
+      options {
+        "-no_overwrite"
+      }
+      modules_dict {
+        memlibc_memory_bist_assembly {needed_in_views {full ijtag_graybox}}
+      }
+    }
+
+    read6 {
+      format       "verilog_2001"
+      work_library "work"
+
+      files {
+        "../../dft_inserted_designs/memlibc_memory_bist_assembly_rtl.dft_inserted_design/ijtag_graybox/memlibc_memory_bist_assembly.v_ijtag_graybox"
+      }
+      libraries {
+      }
+      extensions {
+      }
+      defines {
+      }
+      incdirs {
+      }
+      options {
+        "-ignore_synthesis_off_sections" "off" "-no_lib_rescan" "-pragma_list" ""
+      }
+      is_graybox_view 1
+      modules_dict {
+        memlibc_memory_bist_assembly {needed_in_views ijtag_graybox}
+      }
+    }
+    logical_design_library_list { work }
+  }
+}

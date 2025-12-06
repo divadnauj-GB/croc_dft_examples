@@ -1,0 +1,203 @@
+set_dofile_abort off 
+// Make sure inability to generate patterns does not stop at the ATPG> prompt
+//   Normally one would not want to do this, but we are using ATPG abnormally
+//   in this library flow.  No scan chains, for example.
+set_dofile_abort off
+
+// Set this so floating untranslated logic does not mismatch due to Z
+set_tied_signals X
+
+// Make sure we never generate clock_po patterns
+set_pattern_type -clock_po off
+
+// To allow efficient simulation of subchains if -scan_rams invoked.  It does
+//   keep corresponding internal Verilog and ATPG library names identical.
+//set_internal_name on
+//set_parallel_load_subchain on
+
+set_flat_model_options -remove_unused_library_pins off
+
+// Flatten model so gate types reported below same in FastScan and Flextest
+//   If wait until after Set System Mode ATPG, FlexTest types are reported
+//   in FlexTest (Z2X instead of ZVAL, for example).
+// Allows examination to ensure _pull, etc. made it into ATPG view.
+create_flat_model
+
+echo "//  Report the post flattened primitive gate types."
+report_gate -type histogram
+
+
+// The following helps with stronger verification.  It allows better TSD
+//    enable exercising for output stage of bidi pad, for example.
+set_z_handling external z
+
+// The following provides the most pessimistic coverage, but is best to
+//    bring attention to unmodeled (X producing) holes in models.
+set_possible_credit 0
+
+// Ensure that any undefined instances are allowed into ATPG.
+add_black_box -auto
+
+
+// Following attempts to define all clocks, and/or read/write controls for
+//   Rams, DFFs, and LATs.
+//   User should check A1 and A7 violations for failures,
+//   and use Add Write Control and Add Read Control if necessary
+//   to allow ATPG to exercise the Ram(s).
+// NOTE: User can Add Clock (or Write Control or Read Control)
+//   in this dofile prior to this command, and they will be kept.
+//   They are simulated forward to find effects before analysis.
+// NOTE also that -constrain_pis_that_drive_nothing is necessary
+//   to prevent false mismatches due to notifiers being toggled
+//   (ATPG random fills unused inputs unless told not to, and
+//   this makes a Verilog UDP with notifier go to X).
+//
+ANAlyze_COntrol_Signals -add_clocks -constrain_pis_that_drive_nothing -nofault_clock_stuck_inactive
+
+// Report pin constraint, clock, write controls, and read controls
+//   so user can see what was automatically added.
+report_pin_constraints
+report_clocks
+report_write_controls
+report_read_controls
+
+// Set DRCs to more appropriate settings for this atypical flow.
+set_drc_handling C2 Warning
+set_drc_handling D5 Note
+set_drc_handling D6 Note
+set_drc_handling assert1 Note
+set_drc_handling assert2 Note
+set_drc_handling assert3 Note
+
+// Do not automatically identify pulse gens (Error: if they drive PO).
+//    Otherwise, this can halt the verification flow.
+set_pulse_generators off
+
+// Gets better coverage / exercising of some faults even when Create
+//    Patterns says it is not needed.
+set_split_capture_cycle on
+
+// Align ATPG with new simulatro
+set_clock_off_simulation on
+
+// Prepare for ATPG and do DRC checks.
+set_system_mode atpg
+
+echo ""
+echo ""
+echo "*** ASSERT VIOLATIONS ***"
+report_drc_rules assert1 -verbose
+report_drc_rules assert2 -verbose
+report_drc_rules assert3 -verbose
+
+
+echo ""
+echo ""
+echo "*** CLOCK VIOLATIONS ***"
+report_drc_rules C2 -verbose
+report_drc_rules C7 -verbose
+
+
+// Report the more problematic Ram DRC violations.
+echo ""
+echo ""
+echo "*** MEMORY VIOLATIONS ***"
+// Report the more problematic Ram DRC violations.
+echo "Following violations due to control off analysis."
+echo "Report write ports not controlled when write controls all off."
+report_drc_rules A1 -verbose
+
+echo "Report read ports with Hold not controlled when read controls all off."
+report_drc_rules A7 -verbose
+
+echo "Following violations due to load_unload procedure analysis."
+echo "Report write ports and Hold read ports not controlled before shift."
+report_drc_rules A6 -verbose
+
+echo "Following violations due to unobservable rams."
+report_drc_rules A14 -verbose
+
+echo "Following violations due to read controls constrained inactive."
+report_drc_rules A15 -verbose
+
+echo "Following violations due to write controls constrained inactive."
+report_drc_rules A16 -verbose
+
+echo "Following reports all Unstable RAM ports. ROM ports are always stable."
+report_gate -type ram -unstable
+
+// Make sure have enough depth.  With a Zhold, and a latch or dff, plus
+//   a final PO measure, it could take depth 3.  With a memory, it could
+//   take depth 4.  A memory with a latch could take depth 5.
+//   In some situations, the automatic Create Patterns settings are too
+//   low to exercise some logic.
+set_pattern_type -sequential 5 -multiple_load on
+
+set_abort_limit 500
+
+// Add all faults, then Delete TIed faults so can report most pessimistic coverage.
+add_faults -all
+
+// Delete tied faults.
+delete_faults -cl ti
+
+// Delete clock cone faults.
+delete_faults -clock_cone
+
+// Uncomment Analyze Restrictions below if cannot generate patterns and asked to
+//    use this command in the ATPG output file, sim.log
+//**analyze_restrictions -auto
+
+// Make sure no contention in patterns generated.
+set_contention_check on -atpg
+
+//** If cannot get patterns due to contention, comment out above set contention check command,
+//**    and uncomment the two lines below.
+//**echo "Normally do not do this.  Use to debug cause of no patterns."
+//**set contention check off
+
+// Generate the patterns.
+create_patterns
+
+// Try to pick up some AU faults / tests.
+reset_au_faults
+update_implication_detections
+
+// Also, rerun just to be sure.  Sometimes running again gets another fault.
+run
+
+
+// Delete REdundant faults to prevent reporting distractions.
+delete_faults -cl re
+
+// Make a final simulation to pick up any faults that are detected.
+compress_patterns -reset_au
+
+// Report this for later investigations as to settings.
+report_environment
+
+// Make final coverage statistics easier to find.
+echo " "
+echo " "
+echo "// *** FINAL COVERAGE STATISTICS ***"
+// Report results of all runs above.
+report_statistics
+
+// Write harness containing references to models out as Verilog netlist.
+//    Using positional rather than .pinname output because some of our
+//    models are Verilog UDPs, which syntactically allow only positional.
+write netlist design.v -verilog -rep -positional
+
+// Save all effective patterns (detected at least one stuck-at fault).
+write_patterns pat.v -verilog -rep
+
+// Save an ASCII version of the same patterns for examination & debugging.
+write_patterns pat.ascii -Ascii -rep
+
+report_statistics -model all
+
+echo "*** WRITING all AU UC and UO FAULTS to file ./au_uc_uo_faults.libcomp ***"
+write_faults ./au_uc_uo_faults.libcomp -cl au -cl uc -cl uo -rep
+exit -d
+
+

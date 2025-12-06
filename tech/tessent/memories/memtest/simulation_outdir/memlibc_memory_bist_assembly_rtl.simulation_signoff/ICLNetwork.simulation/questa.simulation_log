@@ -1,0 +1,573 @@
+Number of expected miscompares = 0
+
+
+vlib dut_work
+vlib tsdb_ijtag_graybox
+vmap dut_work dut_work
+QuestaSim-64 vmap 2022.4 Lib Mapping Utility 2022.10 Oct 18 2022
+vmap dut_work dut_work 
+Copying /software/eda/Siemens/2022-23/RHELx86/QUESTA-CORE-PRIME_2022.4/questasim/linux_x86_64/../modelsim.ini to modelsim.ini
+Modifying modelsim.ini
+vmap tsdb_ijtag_graybox tsdb_ijtag_graybox
+QuestaSim-64 vmap 2022.4 Lib Mapping Utility 2022.10 Oct 18 2022
+vmap tsdb_ijtag_graybox tsdb_ijtag_graybox 
+Modifying modelsim.ini
+
+
+# Entry 1
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      -f ../../../VerilogOptions \
+      "../../../tsdb_outdir/dft_inserted_designs/memlibc_memory_bist_assembly_rtl.dft_inserted_design/modified_rtl_files/memlibc_memory_bist_assembly.v" \
+      -f questa.arguments_1
+QuestaSim-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 20:33:57 on Nov 15,2025
+vlog -work dut_work -L dut_work -mixedansiports "+librescan" -ysearchlib -mfcu -f ../../../VerilogOptions ../../../tsdb_outdir/dft_inserted_designs/memlibc_memory_bist_assembly_rtl.dft_inserted_design/modified_rtl_files/memlibc_memory_bist_assembly.v -f questa.arguments_1 
+-- Compiling module memlibc_memory_bist_assembly
+-- Compiling module memlibc_memory_bist_assembly_mem_container
+-- Scanning library file '/home/jd.guerrero/Documents/Tessent/tech/ihp-sg13g2/libs.ref/sg13g2_sram/t-verilog/RM_IHPSG13_1P_8192x32_c4.v'
+-- Compiling module RM_IHPSG13_1P_8192x32_c4
+-- Scanning library file '/home/jd.guerrero/Documents/Tessent/tech/ihp-sg13g2/libs.ref/sg13g2_sram/t-verilog/RM_IHPSG13_1P_core_behavioral.v'
+-- Scanning library file '/eda/Siemens/2022-23/RHELx86/TESSENT_2022.3/lnx-x86/lib64/hdleng/lib/dft_sim.v'
+-- Scanning library file '/home/jd.guerrero/Documents/Tessent/tech/ihp-sg13g2/libs.ref/sg13g2_sram/t-verilog/RM_IHPSG13_1P_core_behavioral.v'
+-- Compiling module SRAM_1P_behavioral
+
+Referenced (but uncompiled) modules or primitives:
+	memlibc_memory_bist_assembly_rtl_tessent_sib_1
+	memlibc_memory_bist_assembly_rtl_tessent_sib_2
+	memlibc_memory_bist_assembly_rtl_tessent_mbist_bap
+	memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller
+	memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_interface_m1
+
+Top level modules:
+	memlibc_memory_bist_assembly
+End time: 20:33:57 on Nov 15,2025, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 1"; fi
+
+# Entry 2
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      -f ../../../VerilogOptions \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_mux2.v" \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_clk_mux2.v" \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_clk_gate_and.v" \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_posedge_synchronizer_reset.v" \
+      -f questa.arguments_1
+QuestaSim-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 20:33:57 on Nov 15,2025
+vlog -work dut_work -L dut_work -mixedansiports "+librescan" -ysearchlib -mfcu -f ../../../VerilogOptions ../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_mux2.v ../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_clk_mux2.v ../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_clk_gate_and.v ../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_posedge_synchronizer_reset.v -f questa.arguments_1 
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_mux2
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_clk_mux2
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_clk_gate_and
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_posedge_synchronizer_reset
+
+Top level modules:
+	memlibc_memory_bist_assembly_rtl_tessent_mux2
+	memlibc_memory_bist_assembly_rtl_tessent_clk_mux2
+	memlibc_memory_bist_assembly_rtl_tessent_clk_gate_and
+	memlibc_memory_bist_assembly_rtl_tessent_posedge_synchronizer_reset
+End time: 20:33:57 on Nov 15,2025, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 2"; fi
+
+# Entry 3
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      -f ../../../VerilogOptions \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_and2.v" \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_or2.v" \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_buf.v" \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_clk_buf.v" \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_inv.v" \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_clk_inv.v" \
+      -f questa.arguments_1
+QuestaSim-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 20:33:57 on Nov 15,2025
+vlog -work dut_work -L dut_work -mixedansiports "+librescan" -ysearchlib -mfcu -f ../../../VerilogOptions ../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_and2.v ../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_or2.v ../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_buf.v ../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_clk_buf.v ../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_inv.v ../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_clk_inv.v -f questa.arguments_1 
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_and2
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_or2
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_buf
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_clk_buf
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_inv
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_clk_inv
+
+Top level modules:
+	memlibc_memory_bist_assembly_rtl_tessent_and2
+	memlibc_memory_bist_assembly_rtl_tessent_or2
+	memlibc_memory_bist_assembly_rtl_tessent_buf
+	memlibc_memory_bist_assembly_rtl_tessent_clk_buf
+	memlibc_memory_bist_assembly_rtl_tessent_inv
+	memlibc_memory_bist_assembly_rtl_tessent_clk_inv
+End time: 20:33:57 on Nov 15,2025, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 3"; fi
+
+# Entry 4
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      -f ../../../VerilogOptions \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_ijtag.instrument/memlibc_memory_bist_assembly_rtl_tessent_sib_1.v" \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_ijtag.instrument/memlibc_memory_bist_assembly_rtl_tessent_sib_2.v" \
+      -f questa.arguments_1
+QuestaSim-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 20:33:57 on Nov 15,2025
+vlog -work dut_work -L dut_work -mixedansiports "+librescan" -ysearchlib -mfcu -f ../../../VerilogOptions ../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_ijtag.instrument/memlibc_memory_bist_assembly_rtl_tessent_sib_1.v ../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_ijtag.instrument/memlibc_memory_bist_assembly_rtl_tessent_sib_2.v -f questa.arguments_1 
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_sib_1
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_sib_2
+-- Scanning library file '/home/jd.guerrero/Documents/Tessent/tech/ihp-sg13g2/libs.ref/sg13g2_sram/t-verilog/RM_IHPSG13_1P_8192x32_c4.v'
+
+Top level modules:
+	memlibc_memory_bist_assembly_rtl_tessent_sib_1
+	memlibc_memory_bist_assembly_rtl_tessent_sib_2
+End time: 20:33:58 on Nov 15,2025, Elapsed time: 0:00:01
+Errors: 0, Warnings: 0
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 4"; fi
+
+# Entry 5
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      -f ../../../VerilogOptions \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/memlibc_memory_bist_assembly_rtl_tessent_mbist_bap.v" \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller.v" \
+      "../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_interface_m1.v" \
+      -f questa.arguments_1
+QuestaSim-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 20:33:58 on Nov 15,2025
+vlog -work dut_work -L dut_work -mixedansiports "+librescan" -ysearchlib -mfcu -f ../../../VerilogOptions ../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/memlibc_memory_bist_assembly_rtl_tessent_mbist_bap.v ../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller.v ../../../tsdb_outdir/instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_interface_m1.v -f questa.arguments_1 
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_mbist_bap
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_tdr
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_sib
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_ctl_sib
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_ctl_comp
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_pointer_cntrl
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_add_format
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_add_gen
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_fsm
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_signal_gen
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_repeat_loop_cntrl
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_data_gen
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_interface_m1
+-- Compiling module memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_interface_m1_STATUS
+-- Scanning library file '/home/jd.guerrero/Documents/Tessent/tech/ihp-sg13g2/libs.ref/sg13g2_sram/t-verilog/RM_IHPSG13_1P_8192x32_c4.v'
+
+Top level modules:
+	memlibc_memory_bist_assembly_rtl_tessent_mbist_bap
+	memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller
+	memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_interface_m1
+End time: 20:33:58 on Nov 15,2025, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 5"; fi
+
+# Entry 6
+vlog -work tsdb_ijtag_graybox -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      -f ../../../VerilogOptions \
+      "../../../tsdb_outdir/dft_inserted_designs/memlibc_memory_bist_assembly_rtl.dft_inserted_design/ijtag_graybox/memlibc_memory_bist_assembly.v_ijtag_graybox" \
+      -f questa.arguments_1
+QuestaSim-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 20:33:58 on Nov 15,2025
+vlog -work tsdb_ijtag_graybox -L dut_work -mixedansiports "+librescan" -ysearchlib -mfcu -f ../../../VerilogOptions ../../../tsdb_outdir/dft_inserted_designs/memlibc_memory_bist_assembly_rtl.dft_inserted_design/ijtag_graybox/memlibc_memory_bist_assembly.v_ijtag_graybox -f questa.arguments_1 
+-- Compiling module memlibc_memory_bist_assembly
+-- Compiling module memlibc_memory_bist_assembly_ts_graybox_memlibc_memory_bist_assembly_mem_container_1
+-- Compiling module memlibc_memory_bist_assembly_ts_graybox_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_interface_m1_1
+-- Compiling module memlibc_memory_bist_assembly_ts_graybox_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller_1
+-- Compiling module memlibc_memory_bist_assembly_ts_graybox_memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_interface_m1_STATUS_1
+-- Scanning library file '/home/jd.guerrero/Documents/Tessent/tech/ihp-sg13g2/libs.ref/sg13g2_sram/t-verilog/RM_IHPSG13_1P_8192x32_c4.v'
+-- Scanning library file '/home/jd.guerrero/Documents/Tessent/tech/ihp-sg13g2/libs.ref/sg13g2_sram/t-verilog/RM_IHPSG13_1P_core_behavioral.v'
+-- Scanning library file '/eda/Siemens/2022-23/RHELx86/TESSENT_2022.3/lnx-x86/lib64/hdleng/lib/dft_sim.v'
+
+Referenced (but uncompiled) modules or primitives:
+	memlibc_memory_bist_assembly_rtl_tessent_sib_1
+	memlibc_memory_bist_assembly_rtl_tessent_sib_2
+	memlibc_memory_bist_assembly_rtl_tessent_mbist_bap
+	memlibc_memory_bist_assembly_rtl_tessent_buf
+
+Top level modules:
+	memlibc_memory_bist_assembly
+End time: 20:33:58 on Nov 15,2025, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 6"; fi
+
+# Entry 7
+vlog -work tsdb_ijtag_graybox -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      -f ../../../VerilogOptions \
+      "/eda/Siemens/2022-23/RHELx86/TESSENT_2022.3/lnx-x86/lib64/hdleng/lib/dft_sim.v" \
+      -f questa.arguments_1
+QuestaSim-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 20:33:58 on Nov 15,2025
+vlog -work tsdb_ijtag_graybox -L dut_work -mixedansiports "+librescan" -ysearchlib -mfcu -f ../../../VerilogOptions /eda/Siemens/2022-23/RHELx86/TESSENT_2022.3/lnx-x86/lib64/hdleng/lib/dft_sim.v -f questa.arguments_1 
+-- Compiling module RTLC_BUF
+-- Compiling module RTLC_INV
+-- Compiling module RTLC_AND2
+-- Compiling module RTLC_AND3
+-- Compiling module RTLC_AND4
+-- Compiling module RTLC_AND5
+-- Compiling module RTLC_NAND2
+-- Compiling module RTLC_NAND3
+-- Compiling module RTLC_NAND4
+-- Compiling module RTLC_NAND5
+-- Compiling module RTLC_OR2
+-- Compiling module RTLC_OR3
+-- Compiling module RTLC_OR4
+-- Compiling module RTLC_OR5
+-- Compiling module RTLC_NOR2
+-- Compiling module RTLC_NOR3
+-- Compiling module RTLC_NOR4
+-- Compiling module RTLC_NOR5
+-- Compiling module RTLC_XOR2
+-- Compiling module RTLC_XOR3
+-- Compiling module RTLC_XOR4
+-- Compiling module RTLC_XNOR2
+-- Compiling module RTLC_XNOR3
+-- Compiling module RTLC_XNOR4
+-- Compiling module RTLC_AO21
+-- Compiling module RTLC_AO211
+-- Compiling module RTLC_AO22
+-- Compiling module RTLC_AO222
+-- Compiling module RTLC_AOI21
+-- Compiling module RTLC_AOI211
+-- Compiling module RTLC_AOI22
+-- Compiling module RTLC_AOI222
+-- Compiling module RTLC_OA31
+-- Compiling module RTLC_OAI21
+-- Compiling module RTLC_OAI211
+-- Compiling module RTLC_OAI22
+-- Compiling module RTLC_MAJ3
+-- Compiling module RTLC_PRIM_MUX1
+-- Compiling module RTLC_PRIM_MUX4
+-- Compiling module RTLC_MUX2
+-- Compiling module RTLC_MUX2I
+-- Compiling module RTLC_MUX21L
+-- Compiling module RTLC_MUX4
+-- Compiling module RTLC_OAI2222
+-- Compiling module RTLC_DEC24L
+-- Compiling module RTLC_FADD
+-- Compiling module RTLC_HADD
+-- Compiling module RTLC_PRIM_DFF
+-- Compiling module RTLC_PRIM_DFFE
+-- Compiling module RTLC_FD
+-- Compiling module RTLC_FD_SCAN
+-- Compiling module RTLC_FDE
+-- Compiling module RTLC_FDE_SCAN
+-- Compiling module RTLC_FDN
+-- Compiling module RTLC_FDN_SCAN
+-- Compiling module RTLC_FDP
+-- Compiling module RTLC_FDP_SCAN
+-- Compiling module RTLC_FDPCE
+-- Compiling module RTLC_FDPCE_SCAN
+-- Compiling module RTLC_FDPC
+-- Compiling module RTLC_FDPC_SCAN
+-- Compiling module RTLC_FDCP
+-- Compiling module RTLC_FDCP_SCAN
+-- Compiling module RTLC_FDCPE
+-- Compiling module RTLC_FDCPE_SCAN
+-- Compiling module RTLC_FDPE
+-- Compiling module RTLC_FDPE_SCAN
+-- Compiling module RTLC_FDC
+-- Compiling module RTLC_FDC_SCAN
+-- Compiling module RTLC_FDCE
+-- Compiling module RTLC_FDCE_SCAN
+-- Compiling module RTLC_PRIM_LATCH
+-- Compiling module RTLC_LD
+-- Compiling module RTLC_LDP
+-- Compiling module RTLC_LDC
+-- Compiling module RTLC_LDPC
+-- Compiling module RTLC_LDN
+-- Compiling module RTLC_LDN2
+-- Compiling module RTLC_BUFIZ
+-- Compiling module RTLC_OBUFZ
+-- Compiling module RTLC_IBUF
+-- Compiling module RTLC_OBUF
+-- Compiling module RTLC_PULLUP
+-- Compiling module RTLC_PULLDOWN
+-- Compiling module RTLC_KEEPER
+-- Compiling module RTLC_FDPC_INIT1
+-- Compiling module RTLC_FDPC_INIT1_SCAN
+-- Compiling module RTLC_FDPC_INIT0
+-- Compiling module RTLC_FDPC_INIT0_SCAN
+-- Compiling module RTLC_PRIM_SYNC_DFF
+-- Compiling module RTLC_PRIM_SYNC_DFFE
+-- Compiling module RTLC_FDSP
+-- Compiling module RTLC_FDSP_SCAN
+-- Compiling module RTLC_FDSC
+-- Compiling module RTLC_FDSC_SCAN
+-- Compiling module RTLC_FDSPC
+-- Compiling module RTLC_FDSPC_SCAN
+-- Compiling module RTLC_FDSPE
+-- Compiling module RTLC_FDSPE_SCAN
+-- Compiling module RTLC_FDSCE
+-- Compiling module RTLC_FDSCE_SCAN
+-- Compiling module RTLC_FDSPCE
+-- Compiling module RTLC_FDSPCE_SCAN
+
+Top level modules:
+	RTLC_BUF
+	RTLC_AND3
+	RTLC_AND4
+	RTLC_AND5
+	RTLC_NAND2
+	RTLC_NAND3
+	RTLC_NAND4
+	RTLC_NAND5
+	RTLC_OR3
+	RTLC_OR4
+	RTLC_OR5
+	RTLC_NOR2
+	RTLC_NOR3
+	RTLC_NOR4
+	RTLC_NOR5
+	RTLC_XOR2
+	RTLC_XOR4
+	RTLC_XNOR2
+	RTLC_XNOR3
+	RTLC_XNOR4
+	RTLC_AO21
+	RTLC_AO211
+	RTLC_AO22
+	RTLC_AO222
+	RTLC_AOI21
+	RTLC_AOI22
+	RTLC_AOI222
+	RTLC_OA31
+	RTLC_OAI21
+	RTLC_OAI211
+	RTLC_OAI22
+	RTLC_MUX2I
+	RTLC_MUX21L
+	RTLC_MUX4
+	RTLC_OAI2222
+	RTLC_DEC24L
+	RTLC_FADD
+	RTLC_HADD
+	RTLC_FD
+	RTLC_FD_SCAN
+	RTLC_FDE
+	RTLC_FDE_SCAN
+	RTLC_FDN
+	RTLC_FDN_SCAN
+	RTLC_FDP
+	RTLC_FDP_SCAN
+	RTLC_FDPCE
+	RTLC_FDPCE_SCAN
+	RTLC_FDPC_SCAN
+	RTLC_FDCP_SCAN
+	RTLC_FDCPE
+	RTLC_FDCPE_SCAN
+	RTLC_FDPE
+	RTLC_FDPE_SCAN
+	RTLC_FDC
+	RTLC_FDC_SCAN
+	RTLC_FDCE
+	RTLC_FDCE_SCAN
+	RTLC_LD
+	RTLC_LDP
+	RTLC_LDC
+	RTLC_LDPC
+	RTLC_LDN
+	RTLC_LDN2
+	RTLC_BUFIZ
+	RTLC_OBUFZ
+	RTLC_IBUF
+	RTLC_OBUF
+	RTLC_PULLUP
+	RTLC_PULLDOWN
+	RTLC_KEEPER
+	RTLC_FDPC_INIT1
+	RTLC_FDPC_INIT1_SCAN
+	RTLC_FDPC_INIT0
+	RTLC_FDPC_INIT0_SCAN
+	RTLC_FDSP
+	RTLC_FDSP_SCAN
+	RTLC_FDSC
+	RTLC_FDSC_SCAN
+	RTLC_FDSPC
+	RTLC_FDSPC_SCAN
+	RTLC_FDSPE
+	RTLC_FDSPE_SCAN
+	RTLC_FDSCE
+	RTLC_FDSCE_SCAN
+	RTLC_FDSPCE
+	RTLC_FDSPCE_SCAN
+End time: 20:33:58 on Nov 15,2025, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 7"; fi
+
+# Entry 8
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      -f ../../../VerilogOptions \
+      "./patterns_directory/ICLNetwork.v" \
+      -f questa.arguments_1
+QuestaSim-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 20:33:58 on Nov 15,2025
+vlog -work dut_work -L dut_work -mixedansiports "+librescan" -ysearchlib -mfcu -f ../../../VerilogOptions ./patterns_directory/ICLNetwork.v -f questa.arguments_1 
+-- Compiling module TB
+-- Scanning library file '/home/jd.guerrero/Documents/Tessent/tech/ihp-sg13g2/libs.ref/sg13g2_sram/t-verilog/RM_IHPSG13_1P_8192x32_c4.v'
+
+Top level modules:
+	TB
+End time: 20:33:58 on Nov 15,2025, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 8"; fi
+
+# Entry 9
+vlog -work dut_work -L dut_work -mixedansiports +librescan  -ysearchlib -mfcu \
+      -f ../../../VerilogOptions \
+      "./patterns.configuration"
+QuestaSim-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 20:33:58 on Nov 15,2025
+vlog -work dut_work -L dut_work -mixedansiports "+librescan" -ysearchlib -mfcu -f ../../../VerilogOptions ./patterns.configuration 
+-- Compiling configuration ICLNetwork_configuration
+
+Top level modules:
+	ICLNetwork_configuration
+End time: 20:33:59 on Nov 15,2025, Elapsed time: 0:00:01
+Errors: 0, Warnings: 0
+if [ $? != 0 ] ; then xitval=-1; echo "Failure on entry 9"; fi
+
+if [ $xitval -ne 0 ]; then
+  echo "Compilation failed"
+  exit $xitval
+fi
+
+vsim -c -lib "dut_work" -L dut_work -L tsdb_ijtag_graybox -do 'run -all; exit' +nowarnTFMPC +NEWPATH=./patterns_directory \
+      ICLNetwork_configuration
+Reading pref.tcl
+#
+# Incompatible version of Codelink.  Please install 10.0 or newer
+#
+
+# 2022.4
+
+# vsim -c -lib dut_work -L dut_work -L tsdb_ijtag_graybox -do "run -all; exit" "+nowarnTFMPC" "+NEWPATH=./patterns_directory" ICLNetwork_configuration 
+# Start time: 20:34:00 on Nov 15,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# //  Questa Sim-64
+# //  Version 2022.4 linux_x86_64 Oct 18 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading work.ICLNetwork_configuration(fast)
+# Loading work.TB(fast)
+# run -all
+# Found New Path ./patterns_directory
+# 
+# Loading ./patterns_directory/ICLNetwork.v.po.name
+# 
+# Loading ./patterns_directory/ICLNetwork.v.0.vec
+# 
+# 0ns: Pattern_set memlibc_memory_bist_assembly
+# 200ns:  Activate selection for scan mux memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.scan_in_mux, selection 1: sib, ltest_en = 2'bxx -> scan_in_mux = ijtag_si
+# 300ns:  Scan in verification pattern to the following scan register:
+# 300ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, load value = 1
+# 700ns:  Scan out verification pattern from the following scan register:
+# 700ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, expected value = 1
+# 1100ns:  Activate selection of the following scan muxes:
+# 1100ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.scan_in_mux, selection 0: sib, ltest_en = 2'b10 -> scan_in_mux = ijtag_from_so
+# 1100ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.scan_in_mux, selection 0: sib = 1'b0 -> scan_in_mux = ijtag_si
+# 1200ns:  Scan in verification pattern to the following scan registers:
+# 1200ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, load value = 0
+# 1200ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, load value = 1
+# 1700ns:  Scan out verification pattern from the following scan registers:
+# 1700ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, expected value = 0
+# 1700ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, expected value = 1
+# 2200ns:  Activate selection of the following scan muxes:
+# 2200ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.scan_in_mux, selection 0: sib, ltest_en = 2'b10 -> scan_in_mux = ijtag_from_so
+# 2200ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 2200ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_sib_mux_inst, selection 0: ctl_group_sib = 1'b0 -> ctl_sib_mux_inst = tdr_bypass_sib_inst
+# 2200ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_mux_inst, selection 0: tdr_bypass_sib_inst = 1'b0 -> tdr_bypass_sib_mux_inst = si
+# 2300ns:  Scan in verification pattern to the following scan registers:
+# 2300ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst, load value = 1
+# 2300ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib, load value = 1
+# 2300ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, load value = 0
+# 2300ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, load value = 1
+# 3000ns:  Scan out verification pattern from the following scan registers:
+# 3000ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst, expected value = 1
+# 3000ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib, expected value = 1
+# 3000ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, expected value = 0
+# 3000ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, expected value = 1
+# 3700ns:  Activate selection of the following scan muxes:
+# 3700ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.scan_in_mux, selection 0: sib, ltest_en = 2'b10 -> scan_in_mux = ijtag_from_so
+# 3700ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 3700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_sib_mux_inst, selection 1: ctl_group_sib = 1'b1 -> ctl_sib_mux_inst = mbist_go_0
+# 3700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.fromBistMux_0, selection 1: bistEn_int[0], BIST_SETUP_tdr[1], ChainBypassMode = 3'bxxx -> fromBistMux_0 = tdr_bypass_sib_inst
+# 3700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_mux_inst, selection 0: tdr_bypass_sib_inst = 1'b0 -> tdr_bypass_sib_mux_inst = si
+# 3800ns:  Scan in verification pattern to the following scan registers:
+# 3800ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst, load value = 0
+# 3800ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0, load value = 0
+# 3800ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0, load value = 1
+# 3800ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib, load value = 1
+# 3800ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, load value = 0
+# 3800ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, load value = 1
+# 4700ns:  Scan out verification pattern from the following scan registers:
+# 4700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst, expected value = 0
+# 4700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_done_0, expected value = 0
+# 4700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.mbist_go_0, expected value = 1
+# 4700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib, expected value = 1
+# 4700ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, expected value = 0
+# 4700ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, expected value = 1
+# 5600ns:  Activate selection of the following scan muxes:
+# 5600ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.scan_in_mux, selection 0: sib, ltest_en = 2'b10 -> scan_in_mux = ijtag_from_so
+# 5600ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.scan_in_mux, selection 1: sib = 1'b1 -> scan_in_mux = ijtag_from_so
+# 5600ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_sib_mux_inst, selection 0: ctl_group_sib = 1'b0 -> ctl_sib_mux_inst = tdr_bypass_sib_inst
+# 5600ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_mux_inst, selection 1: tdr_bypass_sib_inst = 1'b1 -> tdr_bypass_sib_mux_inst = ENABLE_MEM_RESET_tdr
+# 5700ns:  Scan in verification pattern to the following scan registers:
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0], load value = 111
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr, load value = 1
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr, load value = 1
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr, load value = 0
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr, load value = 0
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr, load value = 0
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr, load value = 0
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr, load value = 1
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr, load value = 1
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr, load value = 1
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr, load value = 1
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr, load value = 0
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr, load value = 0
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst, load value = 1
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib, load value = 1
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, load value = 0
+# 5700ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, load value = 1
+# 7900ns:  Scan out verification pattern from the following scan registers:
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SETUP_tdr[2:0], expected value = 111
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.TCK_MODE_tdr, expected value = 1
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.CHAIN_BYPASS_EN_tdr, expected value = 1
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.INCLUDE_MEM_RESULTS_REG_tdr, expected value = 0
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE1_tdr, expected value = 0
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.FL_CNT_MODE0_tdr, expected value = 0
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ASYNC_RESET_tdr, expected value = 0
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_DIAG_EN_tdr, expected value = 1
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE1_tdr, expected value = 1
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_ALGO_MODE0_tdr, expected value = 1
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.BIST_SELECT_TEST_DATA_tdr, expected value = 1
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.REDUCED_ADDRESS_COUNT_tdr, expected value = 0
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ENABLE_MEM_RESET_tdr, expected value = 0
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.tdr_bypass_sib_inst, expected value = 1
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_mbist_bap_inst.ctl_group_sib, expected value = 1
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_mbist_inst.sib, expected value = 0
+# 7900ns:   memlibc_memory_bist_assembly_rtl_tessent_sib_sti_inst.sib, expected value = 1
+# 
+# Simulation finished at time 10201
+# Number of miscompares            =           0
+# Number of 0/1 compares           =          47
+# Number of Z compares             =           0
+# 
+# No error between simulated and expected patterns
+# 
+# ** Note: $finish    : ./patterns_directory/ICLNetwork.v(1275)
+#    Time: 10202 ns  Iteration: 1  Instance: /TB
+# End time: 20:34:01 on Nov 15,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+if [ $? != 0 ] ; then xitval=-1; fi
+
+if [ $xitval -ne 0 ]; then
+  echo "Simulation failed"
+fi
+
+exit $xitval
+exit0

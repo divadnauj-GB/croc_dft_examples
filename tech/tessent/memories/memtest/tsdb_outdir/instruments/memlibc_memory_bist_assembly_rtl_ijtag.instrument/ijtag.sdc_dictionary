@@ -1,0 +1,54 @@
+#--------------------------------------------------------------------------
+#
+#  Unpublished work. Copyright 2021 Siemens
+#
+#  This material contains trade secrets or otherwise confidential 
+#  information owned by Siemens Industry Software Inc. or its affiliates 
+#  (collectively, SISW), or its licensors. Access to and use of this 
+#  information is strictly limited as set forth in the Customer's 
+#  applicable agreements with SISW.
+#
+#--------------------------------------------------------------------------
+#  File created by: Tessent Shell
+#          Version: 2022.3
+#       Created on: Sat Nov 15 20:33:15 EST 2025
+#--------------------------------------------------------------------------
+
+set ijtag_sdc_dictionary {
+  memlibc_memory_bist_assembly_rtl_tessent_sib_1 {
+    ltest_clock_mux {
+      persistent_cell tessent_persistent_cell_ltest_clock_mux
+    }
+    version 0
+    mini_occ {
+      clock_gate_pin tessent_persistent_cell_occ_clock_gate/clkg
+    }
+  }
+  Cells {
+    Cell.Buf.input a
+    Cell.Buf.module_name memlibc_memory_bist_assembly_rtl_tessent_buf
+    Cell.Buf.output y
+    Cell.ClkBuf.input a
+    Cell.ClkBuf.module_name memlibc_memory_bist_assembly_rtl_tessent_clk_buf
+    Cell.ClkBuf.output y
+    Cell.ClkGateAnd.clock_in clk
+    Cell.ClkGateAnd.clock_out clkg
+    Cell.ClkGateAnd.functional_enable fe
+    Cell.ClkGateAnd.functional_enable_polarity 1
+    Cell.ClkGateAnd.module_name memlibc_memory_bist_assembly_rtl_tessent_clk_gate_and
+    Cell.ClkGateAnd.test_enable te
+    Cell.ClkGateAnd.test_enable_polarity 1
+    Cell.ClkMux2.input0 a
+    Cell.ClkMux2.input1 b
+    Cell.ClkMux2.module_name memlibc_memory_bist_assembly_rtl_tessent_clk_mux2
+    Cell.ClkMux2.output y
+    Cell.ClkMux2.select s
+    Cell.Mux2.input0 a
+    Cell.Mux2.input1 b
+    Cell.Mux2.module_name memlibc_memory_bist_assembly_rtl_tessent_mux2
+    Cell.Mux2.output y
+    Cell.Mux2.select s
+    persistent_cell_prefix tessent_persistent_cell_
+    persistent_clock_cell_prefix tessent_persistent_cell_
+  }
+}

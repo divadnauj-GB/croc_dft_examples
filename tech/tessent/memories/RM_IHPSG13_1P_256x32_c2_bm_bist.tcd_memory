@@ -1,0 +1,89 @@
+MemoryTemplate (RM_IHPSG13_1P_256x32_c2_bm_bist) {
+
+   MemoryType      : SRAM;
+   CellName        : RM_IHPSG13_1P_256x32_c2_bm_bist;
+   Algorithm       : SMarchCHKBCil;
+   transparentMode : SyncMux;
+   logicalPorts    : 1rw;
+   MinHold         : 2;
+   NumberOfWords   : 256;
+   MilliWattsPerMegaHertz : 1.2;
+   DataOutStage    : None;
+      Port (A_CLK)  {
+                    Function    : None;
+                    Direction   : Input;
+      } 
+      Port (A_DLY)  {
+                    Function    : LogicHigh;
+                    Direction   : Input;
+      } 
+      Port (A_DIN[31:0]) { 
+                    Function    : None; 
+                    Direction   : Input;
+      }
+      port (A_ADDR[7:0]) {
+                    function    : None;
+                    Direction   : Input;
+      }
+      port (A_BM[31:0]) {
+                    function    : None;
+                    Direction   : Input;
+      }
+      port (A_MEN) {
+                    function    : None;
+                    Direction   : Input;
+      }
+      port (A_WEN) {
+                    function    : None;
+                    Direction   : Input;
+      }
+      port (A_REN) {
+                    function    : None;
+                    Direction   : Input;
+      }
+      Port (A_BIST_CLK)  {
+                    Function    : Clock;
+                    Direction   : Input;
+                    Polarity    : ActiveHigh;
+      } 
+      Port (A_BIST_DIN[31:0]) { 
+                    Function    : Data; 
+                    Direction   : Input; 
+      }
+      Port (A_DOUT[31:0]) { 
+                    Function    : Data; 
+                    Direction   : Output; 
+      }
+      port (A_BIST_ADDR[7:0]) {
+                    Function    : Address;
+                    Direction   : Input;
+      }
+      port (A_BIST_BM[31:0]) {
+                    Function    : GroupWriteEnable;
+                    Direction   : Input;
+      }
+      port (A_BIST_MEN) {
+                    Function    : Select;
+      }
+      port (A_BIST_WEN) {
+                    Function    : WriteEnable;
+      }
+      port (A_BIST_REN) {
+                    Function    : ReadEnable;
+      }
+      port (A_BIST_EN) {
+                    Function    : BistEn;
+      }
+
+      AddressCounter {
+           Function (Address) {
+               LogicalAddressMap {
+                   RowAddress[5:0]    : Address [7:2];
+                   ColumnAddress[1:0] : Address [1:0];  
+               }
+           }
+      }
+
+     OperationSet : sync;
+
+}

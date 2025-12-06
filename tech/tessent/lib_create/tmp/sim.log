@@ -1,0 +1,937 @@
+ 
+//  Note: -no_scan_rams   Will invoke FastScan ATPG with PI/PO harness even if ram primitives exist.
+//
+//  Note: -no_atpg_prims    Will invoke Verilog simulation without ATPG library primitives file included.
+//
+//  Note: Invoking fastscan with :
+//      <mgc_dft_tree>/bin/fastscan  -dof fastscan.do.cat -lib libcomp.atpglib  -load_warnings -sensitive  -model all 
+//
+//  Tessent FastScan  2022.3    Thu Aug 11 22:57:52 GMT 2022
+//                Unpublished work. Copyright 2022 Siemens
+//
+//      This material contains trade secrets or otherwise confidential 
+//  information owned by Siemens Industry Software Inc. or its affiliates 
+//   (collectively, "SISW"), or its licensors. Access to and use of this 
+//     information is strictly limited as set forth in the Customer's 
+//                   applicable agreements with SISW. 
+//
+//  Siemens software executing under x86-64 Linux on Thu Nov 13 12:08:41 EST 2025.
+//  64 bit version
+//  Host: bello.darknet.local (257018 MB RAM, 49151 MB Swap)
+//
+//  Compiling library  ...
+//  Reading DFT Library file libcomp.atpglib
+//  Finished reading file libcomp.atpglib
+//  Warning: Inout pin 'pad' in model 'sg13g2_IOPadIn' is used as an input only
+//           line 95 file 'libcomp.atpglib'.
+//  Reading Model 'all' ...
+//  command: set_dofile_abort off 
+//  command: set_dofile_abort off
+//  command: set_tied_signals X
+//  command: set_pattern_type -clock_po off
+//  Settings :
+//             -SEQuential     0
+//             -MULtiple_load  OFF
+//  command: set_flat_model_options -remove_unused_library_pins off
+//  command: create_flat_model 
+//  Warning: Total number of loops broken = 1
+//  Warning: Rule FP7 violation occurs 1 times
+//  Flattening process completed, cell instances=22, gates=73, PIs=27, POs=16, CPU time=0.01 sec.
+//  ---------------------------------------------------------------------------
+//  Begin circuit learning analyses.
+//  --------------------------------
+//  Learning completed, CPU time=0.00 sec.
+//  command: echo "//  Report the post flattened primitive gate types."
+//  Report the post flattened primitive gate types. 
+//  command: report_gates -type histogram
+//  ---------------------------------------------------------------------------
+//  List of histogram of gates
+//  ---------------------------------------------------------------------------
+//  BUF   1          *
+//  PI    27         **************************************************
+//  PO    16         *****************************
+//  TIE1  1          *
+//  TSD   6          ***********
+//  BUS   18         *********************************
+//  ZVAL  1          *
+//  SW    2          ***
+//  FB_BUF 1          *
+//  Total gate types = 9, total flatten gates = 73
+//  command: set_z_handling external z
+//  command: set_possible_credit 0
+//  command: add_black_boxes -auto
+//  Warning: Flattened model deleted.
+//  command: analyze_control_signals -add_clocks -constrain_pis_that_drive_nothing -nofault_clock_stuck_inactive
+//  Warning: Total number of loops broken = 1
+//  Warning: Rule FP7 violation occurs 1 times
+//  Flattening process completed, cell instances=22, gates=73, PIs=27, POs=16, CPU time=0.00 sec.
+//  ---------------------------------------------------------------------------
+//  Begin circuit learning analyses.
+//  --------------------------------
+//  Learning completed, CPU time=0.00 sec.
+//
+//  After flattening, "analyze_control_signals -add_clocks" analysis shows that :
+//    No RAM primitives exist.  No ram clocks, read controls, or write controls need be added.
+//    No DFF or Latch ATPG primitives exist.  No clocks need to be added.
+//  Warning: Flattened model deleted.
+//  command: report_pin_constraints 
+//  command: report_clocks 
+//  No clocks have been defined.
+//  command: report_write_controls 
+//  Warning: No write controls have been identified.
+//  command: report_read_controls 
+//  Warning: No read controls have been identified.
+//  command: set_drc_handling C2 Warning
+//  command: set_drc_handling D5 Note
+//  command: set_drc_handling D6 Note
+//  command: set_drc_handling assert1 Note
+//  command: set_drc_handling assert2 Note
+//  command: set_drc_handling assert3 Note
+//  command: set_pulse_generators off
+//  command: set_split_capture_cycle on
+//  command: set_clock_off_simulation on
+//  command: set_system_mode atpg
+//  Warning: Total number of loops broken = 1
+//  Warning: Rule FP7 violation occurs 1 times
+//  Flattening process completed, cell instances=22, gates=73, PIs=27, POs=16, CPU time=0.00 sec.
+//  ---------------------------------------------------------------------------
+//  Begin circuit learning analyses.
+//  --------------------------------
+//  Learning completed, CPU time=0.00 sec.
+//  ---------------------------------------------------------------------------
+//  Begin scan chain identification process, memory elements = 0.
+//  ---------------------------------------------------------------------------
+//  Circuit has no memory elements.
+//  ATPG bus checking results: pass=0, bidi=11, fail=0, abort=0, CPU time=0.00 sec.
+//  largest sequential test depth = 0, largest controllability depth = 0, largest observability depth = 0
+//  command: echo ""
+ 
+//  command: echo ""
+ 
+//  command: echo "*** ASSERT VIOLATIONS ***"
+*** ASSERT VIOLATIONS *** 
+//  command: report_drc_rules assert1 -verbose
+//  command: report_drc_rules assert2 -verbose
+//  command: report_drc_rules assert3 -verbose
+//  command: echo ""
+ 
+//  command: echo ""
+ 
+//  command: echo "*** CLOCK VIOLATIONS ***"
+*** CLOCK VIOLATIONS *** 
+//  command: report_drc_rules C2 -verbose
+//  command: report_drc_rules C7 -verbose
+//  command: echo ""
+ 
+//  command: echo ""
+ 
+//  command: echo "*** MEMORY VIOLATIONS ***"
+*** MEMORY VIOLATIONS *** 
+//  command: echo "Following violations due to control off analysis."
+Following violations due to control off analysis. 
+//  command: echo "Report write ports not controlled when write controls all off."
+Report write ports not controlled when write controls all off. 
+//  command: report_drc_rules A1 -verbose
+//  command: echo "Report read ports with Hold not controlled when read controls all off."
+Report read ports with Hold not controlled when read controls all off. 
+//  command: report_drc_rules A7 -verbose
+//  command: echo "Following violations due to load_unload procedure analysis."
+Following violations due to load_unload procedure analysis. 
+//  command: echo "Report write ports and Hold read ports not controlled before shift."
+Report write ports and Hold read ports not controlled before shift. 
+//  command: report_drc_rules A6 -verbose
+//  command: echo "Following violations due to unobservable rams."
+Following violations due to unobservable rams. 
+//  command: report_drc_rules A14 -verbose
+//  command: echo "Following violations due to read controls constrained inactive."
+Following violations due to read controls constrained inactive. 
+//  command: report_drc_rules A15 -verbose
+//  command: echo "Following violations due to write controls constrained inactive."
+Following violations due to write controls constrained inactive. 
+//  command: report_drc_rules A16 -verbose
+//  command: echo "Following reports all Unstable RAM ports. ROM ports are always stable."
+Following reports all Unstable RAM ports. ROM ports are always stable. 
+//  command: report_gates -type ram -unstable
+//  ---------------------------------------------------------------------------
+//  List of RAM (Unstable) gates
+//  ---------------------------------------------------------------------------
+//  Total number of ram gates reported = 0
+
+//  command: set_pattern_type -sequential 5 -multiple_load on
+//  Settings :
+//             -SEQuential     5
+//             -MULtiple_load  ON
+//  command: set_abort_limit 500
+//  command: add_faults -all
+//  command: delete_faults -cl ti
+//  Warning: No faults were deleted.
+//  command: delete_faults -clock_cone
+//  command: set_contention_check on -atpg
+//  command: create_patterns 
+// | ------------------------------------------------------------------------------------------------------------------ |
+// |                                             Analyzing the design                                                   |
+// |                                                                                                                    |
+// |      Current clock restriction setting:     Domain_clock (edge interaction)                                        |
+// |                                             (optimal)                                                              |
+// |                                                                                                                    |
+// |       Current contention check setting:     On -atpg                                                               |
+// |                                Warning:     ATPG run time may increase.                                            |
+// |                                                                                                                    |
+// |            Current abort limit setting:     500                                                                    |
+// | ------------------------------------------------------------------------------------------------------------------ |
+// |                                                                                                                    |
+// |               Current sequential depth:     5                                                                      |
+// |               Optimal sequential depth:     0                                                                      |
+// |                                Warning:     Unnecessarily large depth may increase run time.                       |
+// |                                                                                                                    |
+// | ------------------------------------------------------------------------------------------------------------------ |
+//  ------------------------------------------------------------------------
+//  Simulation performed for #gates = 73  #faults = 114
+//  system mode = ATPG    pattern source = internal patterns
+//  ------------------------------------------------------------------------
+//  #patterns  test      #faults  #faults    # eff.    # test         process      RE/AU/AAB
+//  simulated  coverage  in list  detected   patterns  patterns       CPU time
+//   ---        ------      ---       ---      ---       ---          0.38 sec     0/8/0
+//   18         93.44%        0       114        9         9          0.38 sec
+//  -----------------------------------------------------------------------
+//  Performing redundant fault identification for 8 faults
+//  -----------------------------------------------------------------------
+//  deterministic ATPG invoked with abort limit = 500
+//  # red.    # non-red.   # abort     # remn.   progress   test        process
+//  faults      faults      faults      faults              coverage    CPU time
+//       0           8          0            0   100.00%    93.44%       0.00 sec
+
+              Statistics Report             
+               Stuck-at Faults              
+--------------------------------------------
+Fault Classes                     #faults   
+                                  (total)   
+----------------------------  --------------
+  FU (full)                         122     
+  --------------------------  --------------
+  DS (det_simulation)           114 (93.44%)
+  AU (atpg_untestable)            8 ( 6.56%)
+--------------------------------------------
+Fault Sub-classes                           
+  --------------------------                
+  AU (atpg_untestable)                      
+    SEQ   (sequential_depth)      8 ( 6.56%)
+--------------------------------------------
+Coverage                                    
+  --------------------------                
+  test_coverage                      93.44% 
+  fault_coverage                     93.44% 
+  atpg_effectiveness                100.00% 
+--------------------------------------------
+#test_patterns                            9 
+#simulated_patterns                      18 
+CPU_time (secs)                         3.7 
+--------------------------------------------
+
+//  command: reset_au_faults 
+//  command: update_implication_detections 
+//  command: run 
+//  Note: The "create_patterns" command is usually preferred over the "run"
+//        command for test pattern generation and typically provides
+//        significantly better results.
+//  ------------------------------------------------------------------------
+//  Simulation performed for #gates = 73  #faults = 8
+//  system mode = ATPG    pattern source = internal patterns
+//  ------------------------------------------------------------------------
+//  #patterns  test      #faults  #faults    # eff.    # test         process      RE/AU/AAB
+//  simulated  coverage  in list  detected   patterns  patterns       CPU time
+//  begin random patterns: capture clock = none, observe point = REG_PO
+//  deterministic ATPG invoked with abort limit = 500
+//   ---        ------      ---       ---      ---       ---          0.00 sec     0/8/0
+//  command: delete_faults -cl re
+//  Warning: No faults were deleted.
+//  command: compress_patterns -reset_au
+//  ------------------------------------------------------------------------
+//  Pass#1: reverse pattern compression performed for 122 faults on 9 patterns
+//  ------------------------------------------------------------------------
+//  #patterns  test      #faults  #faults    # eff.    # test         process 
+//  simulated  coverage  in list  detected   patterns  patterns       CPU time
+//   9          93.44%        8       114        9         9          0.00 sec
+//  command: report_environment 
+abort limit =             500
+atpg compression =        OFF
+atpg limits =             none
+bist initialization =     X
+bus simulation method =   global
+capture clock =           none
+checkpoint =              OFF
+clock restriction =       domain_clocks (same-edge interaction)
+clock_off simulation =    ON
+contention check =        ON,   mode = bus,   handling = warning   -atpg
+DRC transient detection = ON -NOVerbose
+fails report =            OFF
+fault mode =              uncollapsed
+fault type =              stuck
+gate level =              design
+gate report =             normal
+iddq checks =             none,   handling = warning
+iddq strobe =             label
+learn reporting =         OFF
+logfile handling =        OFF
+net dominance =           WIRE
+net resolution =          WIRE
+observation point =       master
+pattern classification =  ON
+pattern source =          internal
+pattern type =            sequential_depth = 5,  multiple_load = ON
+possible credit =         0%
+pulse generators =        OFF
+RAM initialization =      uninitialized
+RAM test mode   =         static_pass_thru
+random atpg =             ON
+random clocks =           none
+random patterns =         1024
+screen display =          ON
+shadow checking =         ON
+skew load =               OFF
+split capture cycle =     ON
+stability check =         ON
+system mode =             atpg
+TLA loop handling =       ON
+trace report =            OFF
+Z handling =              int=X  ext=Z
+Zhold behavior =          ON
+//  command: echo " "
+  
+//  command: echo " "
+  
+//  command: echo "// *** FINAL COVERAGE STATISTICS ***"
+// *** FINAL COVERAGE STATISTICS *** 
+//  command: report_statistics 
+              Statistics Report             
+               Stuck-at Faults              
+--------------------------------------------
+Fault Classes                     #faults   
+                                  (total)   
+----------------------------  --------------
+  FU (full)                         122     
+  --------------------------  --------------
+  DS (det_simulation)           114 (93.44%)
+  AU (atpg_untestable)            8 ( 6.56%)
+--------------------------------------------
+Fault Sub-classes                           
+  --------------------------                
+  AU (atpg_untestable)                      
+    SEQ   (sequential_depth)      8 ( 6.56%)
+--------------------------------------------
+Coverage                                    
+  --------------------------                
+  test_coverage                      93.44% 
+  fault_coverage                     93.44% 
+  atpg_effectiveness                100.00% 
+--------------------------------------------
+#test_patterns                            9 
+#simulated_patterns                       9 
+CPU_time (secs)                         3.7 
+--------------------------------------------
+
+//  command: write netlist design.v -verilog -rep -positional
+//  Writing VERILOG netlist ...
+//  command: write_patterns pat.v -verilog -rep
+//  command: write_patterns pat.ascii -Ascii -rep
+//  command: report_statistics -model all
+
+  report_statistics -Instance sg13g2_Corner
+         Statistics Report        
+          Stuck-at Faults         
+----------------------------------
+Fault Classes           #faults   
+                        (total)   
+-------------------  -------------
+  FU (full)                0      
+  -----------------  -------------
+----------------------------------
+Coverage                          
+  -----------------               
+----------------------------------
+#test_patterns                  9 
+#simulated_patterns             9 
+CPU_time (secs)               3.7 
+----------------------------------
+
+
+  report_statistics -Instance sg13g2_Filler1000
+         Statistics Report        
+          Stuck-at Faults         
+----------------------------------
+Fault Classes           #faults   
+                        (total)   
+-------------------  -------------
+  FU (full)                0      
+  -----------------  -------------
+----------------------------------
+Coverage                          
+  -----------------               
+----------------------------------
+#test_patterns                  9 
+#simulated_patterns             9 
+CPU_time (secs)               3.7 
+----------------------------------
+
+
+  report_statistics -Instance sg13g2_Filler10000
+         Statistics Report        
+          Stuck-at Faults         
+----------------------------------
+Fault Classes           #faults   
+                        (total)   
+-------------------  -------------
+  FU (full)                0      
+  -----------------  -------------
+----------------------------------
+Coverage                          
+  -----------------               
+----------------------------------
+#test_patterns                  9 
+#simulated_patterns             9 
+CPU_time (secs)               3.7 
+----------------------------------
+
+
+  report_statistics -Instance sg13g2_Filler200
+         Statistics Report        
+          Stuck-at Faults         
+----------------------------------
+Fault Classes           #faults   
+                        (total)   
+-------------------  -------------
+  FU (full)                0      
+  -----------------  -------------
+----------------------------------
+Coverage                          
+  -----------------               
+----------------------------------
+#test_patterns                  9 
+#simulated_patterns             9 
+CPU_time (secs)               3.7 
+----------------------------------
+
+
+  report_statistics -Instance sg13g2_Filler2000
+         Statistics Report        
+          Stuck-at Faults         
+----------------------------------
+Fault Classes           #faults   
+                        (total)   
+-------------------  -------------
+  FU (full)                0      
+  -----------------  -------------
+----------------------------------
+Coverage                          
+  -----------------               
+----------------------------------
+#test_patterns                  9 
+#simulated_patterns             9 
+CPU_time (secs)               3.7 
+----------------------------------
+
+
+  report_statistics -Instance sg13g2_Filler400
+         Statistics Report        
+          Stuck-at Faults         
+----------------------------------
+Fault Classes           #faults   
+                        (total)   
+-------------------  -------------
+  FU (full)                0      
+  -----------------  -------------
+----------------------------------
+Coverage                          
+  -----------------               
+----------------------------------
+#test_patterns                  9 
+#simulated_patterns             9 
+CPU_time (secs)               3.7 
+----------------------------------
+
+
+  report_statistics -Instance sg13g2_Filler4000
+         Statistics Report        
+          Stuck-at Faults         
+----------------------------------
+Fault Classes           #faults   
+                        (total)   
+-------------------  -------------
+  FU (full)                0      
+  -----------------  -------------
+----------------------------------
+Coverage                          
+  -----------------               
+----------------------------------
+#test_patterns                  9 
+#simulated_patterns             9 
+CPU_time (secs)               3.7 
+----------------------------------
+
+
+  report_statistics -Instance sg13g2_IOPadAnalog
+              Statistics Report              
+               Stuck-at Faults               
+---------------------------------------------
+Fault Classes                     #faults    
+                                  (total)    
+----------------------------  ---------------
+  FU (full)                          4       
+  --------------------------  ---------------
+  AU (atpg_untestable)            4 (100.00%)
+---------------------------------------------
+Fault Sub-classes                            
+  --------------------------                 
+  AU (atpg_untestable)                       
+    SEQ   (sequential_depth)      4 (100.00%)
+---------------------------------------------
+Coverage                                     
+  --------------------------                 
+  test_coverage                        0.00% 
+  fault_coverage                       0.00% 
+  atpg_effectiveness                 100.00% 
+---------------------------------------------
+#test_patterns                             9 
+#simulated_patterns                        9 
+CPU_time (secs)                          3.7 
+---------------------------------------------
+
+
+  report_statistics -Instance sg13g2_IOPadIOVdd
+         Statistics Report        
+          Stuck-at Faults         
+----------------------------------
+Fault Classes           #faults   
+                        (total)   
+-------------------  -------------
+  FU (full)                0      
+  -----------------  -------------
+----------------------------------
+Coverage                          
+  -----------------               
+----------------------------------
+#test_patterns                  9 
+#simulated_patterns             9 
+CPU_time (secs)               3.7 
+----------------------------------
+
+
+  report_statistics -Instance sg13g2_IOPadIOVss
+         Statistics Report        
+          Stuck-at Faults         
+----------------------------------
+Fault Classes           #faults   
+                        (total)   
+-------------------  -------------
+  FU (full)                0      
+  -----------------  -------------
+----------------------------------
+Coverage                          
+  -----------------               
+----------------------------------
+#test_patterns                  9 
+#simulated_patterns             9 
+CPU_time (secs)               3.7 
+----------------------------------
+
+
+  report_statistics -Instance sg13g2_IOPadIn
+           Statistics Report          
+            Stuck-at Faults           
+--------------------------------------
+Fault Classes              #faults    
+                           (total)    
+---------------------  ---------------
+  FU (full)                   4       
+  -------------------  ---------------
+  DS (det_simulation)      4 (100.00%)
+--------------------------------------
+Coverage                              
+  -------------------                 
+  test_coverage               100.00% 
+  fault_coverage              100.00% 
+  atpg_effectiveness          100.00% 
+--------------------------------------
+#test_patterns                      9 
+#simulated_patterns                 9 
+CPU_time (secs)                   3.7 
+--------------------------------------
+
+
+  report_statistics -Instance sg13g2_IOPadInOut16mA
+           Statistics Report          
+            Stuck-at Faults           
+--------------------------------------
+Fault Classes              #faults    
+                           (total)    
+---------------------  ---------------
+  FU (full)                   8       
+  -------------------  ---------------
+  DS (det_simulation)      8 (100.00%)
+--------------------------------------
+Coverage                              
+  -------------------                 
+  test_coverage               100.00% 
+  fault_coverage              100.00% 
+  atpg_effectiveness          100.00% 
+--------------------------------------
+#test_patterns                      9 
+#simulated_patterns                 9 
+CPU_time (secs)                   3.7 
+--------------------------------------
+
+
+  report_statistics -Instance sg13g2_IOPadInOut30mA
+           Statistics Report          
+            Stuck-at Faults           
+--------------------------------------
+Fault Classes              #faults    
+                           (total)    
+---------------------  ---------------
+  FU (full)                   8       
+  -------------------  ---------------
+  DS (det_simulation)      8 (100.00%)
+--------------------------------------
+Coverage                              
+  -------------------                 
+  test_coverage               100.00% 
+  fault_coverage              100.00% 
+  atpg_effectiveness          100.00% 
+--------------------------------------
+#test_patterns                      9 
+#simulated_patterns                 9 
+CPU_time (secs)                   3.7 
+--------------------------------------
+
+
+  report_statistics -Instance sg13g2_IOPadInOut4mA
+           Statistics Report          
+            Stuck-at Faults           
+--------------------------------------
+Fault Classes              #faults    
+                           (total)    
+---------------------  ---------------
+  FU (full)                   8       
+  -------------------  ---------------
+  DS (det_simulation)      8 (100.00%)
+--------------------------------------
+Coverage                              
+  -------------------                 
+  test_coverage               100.00% 
+  fault_coverage              100.00% 
+  atpg_effectiveness          100.00% 
+--------------------------------------
+#test_patterns                      9 
+#simulated_patterns                 9 
+CPU_time (secs)                   3.7 
+--------------------------------------
+
+
+  report_statistics -Instance sg13g2_IOPadOut16mA
+           Statistics Report          
+            Stuck-at Faults           
+--------------------------------------
+Fault Classes              #faults    
+                           (total)    
+---------------------  ---------------
+  FU (full)                   4       
+  -------------------  ---------------
+  DS (det_simulation)      4 (100.00%)
+--------------------------------------
+Coverage                              
+  -------------------                 
+  test_coverage               100.00% 
+  fault_coverage              100.00% 
+  atpg_effectiveness          100.00% 
+--------------------------------------
+#test_patterns                      9 
+#simulated_patterns                 9 
+CPU_time (secs)                   3.7 
+--------------------------------------
+
+
+  report_statistics -Instance sg13g2_IOPadOut30mA
+           Statistics Report          
+            Stuck-at Faults           
+--------------------------------------
+Fault Classes              #faults    
+                           (total)    
+---------------------  ---------------
+  FU (full)                   4       
+  -------------------  ---------------
+  DS (det_simulation)      4 (100.00%)
+--------------------------------------
+Coverage                              
+  -------------------                 
+  test_coverage               100.00% 
+  fault_coverage              100.00% 
+  atpg_effectiveness          100.00% 
+--------------------------------------
+#test_patterns                      9 
+#simulated_patterns                 9 
+CPU_time (secs)                   3.7 
+--------------------------------------
+
+
+  report_statistics -Instance sg13g2_IOPadOut4mA
+           Statistics Report          
+            Stuck-at Faults           
+--------------------------------------
+Fault Classes              #faults    
+                           (total)    
+---------------------  ---------------
+  FU (full)                   4       
+  -------------------  ---------------
+  DS (det_simulation)      4 (100.00%)
+--------------------------------------
+Coverage                              
+  -------------------                 
+  test_coverage               100.00% 
+  fault_coverage              100.00% 
+  atpg_effectiveness          100.00% 
+--------------------------------------
+#test_patterns                      9 
+#simulated_patterns                 9 
+CPU_time (secs)                   3.7 
+--------------------------------------
+
+
+  report_statistics -Instance sg13g2_IOPadTriOut16mA
+           Statistics Report          
+            Stuck-at Faults           
+--------------------------------------
+Fault Classes              #faults    
+                           (total)    
+---------------------  ---------------
+  FU (full)                   6       
+  -------------------  ---------------
+  DS (det_simulation)      6 (100.00%)
+--------------------------------------
+Coverage                              
+  -------------------                 
+  test_coverage               100.00% 
+  fault_coverage              100.00% 
+  atpg_effectiveness          100.00% 
+--------------------------------------
+#test_patterns                      9 
+#simulated_patterns                 9 
+CPU_time (secs)                   3.7 
+--------------------------------------
+
+
+  report_statistics -Instance sg13g2_IOPadTriOut30mA
+           Statistics Report          
+            Stuck-at Faults           
+--------------------------------------
+Fault Classes              #faults    
+                           (total)    
+---------------------  ---------------
+  FU (full)                   6       
+  -------------------  ---------------
+  DS (det_simulation)      6 (100.00%)
+--------------------------------------
+Coverage                              
+  -------------------                 
+  test_coverage               100.00% 
+  fault_coverage              100.00% 
+  atpg_effectiveness          100.00% 
+--------------------------------------
+#test_patterns                      9 
+#simulated_patterns                 9 
+CPU_time (secs)                   3.7 
+--------------------------------------
+
+
+  report_statistics -Instance sg13g2_IOPadTriOut4mA
+           Statistics Report          
+            Stuck-at Faults           
+--------------------------------------
+Fault Classes              #faults    
+                           (total)    
+---------------------  ---------------
+  FU (full)                   6       
+  -------------------  ---------------
+  DS (det_simulation)      6 (100.00%)
+--------------------------------------
+Coverage                              
+  -------------------                 
+  test_coverage               100.00% 
+  fault_coverage              100.00% 
+  atpg_effectiveness          100.00% 
+--------------------------------------
+#test_patterns                      9 
+#simulated_patterns                 9 
+CPU_time (secs)                   3.7 
+--------------------------------------
+
+
+  report_statistics -Instance sg13g2_IOPadVdd
+         Statistics Report        
+          Stuck-at Faults         
+----------------------------------
+Fault Classes           #faults   
+                        (total)   
+-------------------  -------------
+  FU (full)                0      
+  -----------------  -------------
+----------------------------------
+Coverage                          
+  -----------------               
+----------------------------------
+#test_patterns                  9 
+#simulated_patterns             9 
+CPU_time (secs)               3.7 
+----------------------------------
+
+
+  report_statistics -Instance sg13g2_IOPadVss
+         Statistics Report        
+          Stuck-at Faults         
+----------------------------------
+Fault Classes           #faults   
+                        (total)   
+-------------------  -------------
+  FU (full)                0      
+  -----------------  -------------
+----------------------------------
+Coverage                          
+  -----------------               
+----------------------------------
+#test_patterns                  9 
+#simulated_patterns             9 
+CPU_time (secs)               3.7 
+----------------------------------
+
+//  command: echo "*** WRITING all AU UC and UO FAULTS to file ./au_uc_uo_faults.libcomp ***"
+*** WRITING all AU UC and UO FAULTS to file ./au_uc_uo_faults.libcomp *** 
+//  command: write_faults ./au_uc_uo_faults.libcomp -cl au -cl uc -cl uo -rep
+//  command: exit -d
+//
+//  Note: Invoking vlog with :
+//      vlog   +define+TETRAMAX  pat.v design.v  +libext+.v+.udp +librescan
+//
+QuestaSim-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 12:08:45 on Nov 13,2025
+vlog "+define+TETRAMAX" pat.v design.v "+libext+.v+.udp" "+librescan" 
+-- Compiling module MGC_DFT_LIB_ALL_pat_v_ctl
+-- Compiling module MGC_DFT_LIB_ALL
+
+Top level modules:
+	MGC_DFT_LIB_ALL_pat_v_ctl
+End time: 12:08:45 on Nov 13,2025, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+QuestaSim-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 12:08:45 on Nov 13,2025
+vlog "+define+TETRAMAX" /home/jd.guerrero/Documents/Tessent/tech/ihp-sg13g2/libs.ref/sg13g2_io/verilog/sg13g2_io.v "+libext+.v+.V+.udp" "+librescan" 
+-- Compiling module sg13g2_Corner
+-- Compiling module sg13g2_Filler200
+-- Compiling module sg13g2_Filler400
+-- Compiling module sg13g2_Filler1000
+-- Compiling module sg13g2_Filler2000
+-- Compiling module sg13g2_Filler4000
+-- Compiling module sg13g2_Filler10000
+-- Compiling module sg13g2_IOPadIn
+-- Compiling module sg13g2_IOPadOut4mA
+-- Compiling module sg13g2_IOPadOut16mA
+-- Compiling module sg13g2_IOPadOut30mA
+-- Compiling module sg13g2_IOPadTriOut4mA
+-- Compiling module sg13g2_IOPadTriOut16mA
+-- Compiling module sg13g2_IOPadTriOut30mA
+-- Compiling module sg13g2_IOPadInOut4mA
+-- Compiling module sg13g2_IOPadInOut16mA
+-- Compiling module sg13g2_IOPadInOut30mA
+-- Compiling module sg13g2_IOPadAnalog
+-- Compiling module sg13g2_IOPadIOVss
+-- Compiling module sg13g2_IOPadIOVdd
+-- Compiling module sg13g2_IOPadVss
+-- Compiling module sg13g2_IOPadVdd
+
+Top level modules:
+	sg13g2_Corner
+	sg13g2_Filler200
+	sg13g2_Filler400
+	sg13g2_Filler1000
+	sg13g2_Filler2000
+	sg13g2_Filler4000
+	sg13g2_Filler10000
+	sg13g2_IOPadIn
+	sg13g2_IOPadOut4mA
+	sg13g2_IOPadOut16mA
+	sg13g2_IOPadOut30mA
+	sg13g2_IOPadTriOut4mA
+	sg13g2_IOPadTriOut16mA
+	sg13g2_IOPadTriOut30mA
+	sg13g2_IOPadInOut4mA
+	sg13g2_IOPadInOut16mA
+	sg13g2_IOPadInOut30mA
+	sg13g2_IOPadAnalog
+	sg13g2_IOPadIOVss
+	sg13g2_IOPadIOVdd
+	sg13g2_IOPadVss
+	sg13g2_IOPadVdd
+End time: 12:08:45 on Nov 13,2025, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+//
+//  Note: Invoking vsim with :
+//      vsim -voptargs=+acc MGC_DFT_LIB_ALL_pat_v_ctl -t 1ns -c -do "run -all; quit" +nospecify +nowarnTSCALE
+//
+Reading pref.tcl
+#
+# Incompatible version of Codelink.  Please install 10.0 or newer
+#
+
+# 2022.4
+
+# vsim -voptargs="+acc" MGC_DFT_LIB_ALL_pat_v_ctl -t 1ns -c -do "run -all; quit" "+nospecify" "+nowarnTSCALE" 
+# Start time: 12:08:48 on Nov 13,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# //  Questa Sim-64
+# //  Version 2022.4 linux_x86_64 Oct 18 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading work.MGC_DFT_LIB_ALL_pat_v_ctl(fast)
+# Loading work.MGC_DFT_LIB_ALL(fast)
+# Loading work.sg13g2_Corner(fast)
+# Loading work.sg13g2_Filler1000(fast)
+# Loading work.sg13g2_Filler10000(fast)
+# Loading work.sg13g2_Filler200(fast)
+# Loading work.sg13g2_Filler2000(fast)
+# Loading work.sg13g2_Filler400(fast)
+# Loading work.sg13g2_Filler4000(fast)
+# Loading work.sg13g2_IOPadAnalog(fast)
+# Loading work.sg13g2_IOPadIOVdd(fast)
+# Loading work.sg13g2_IOPadIOVss(fast)
+# Loading work.sg13g2_IOPadIn(fast)
+# Loading work.sg13g2_IOPadInOut16mA(fast)
+# Loading work.sg13g2_IOPadInOut30mA(fast)
+# Loading work.sg13g2_IOPadInOut4mA(fast)
+# Loading work.sg13g2_IOPadOut16mA(fast)
+# Loading work.sg13g2_IOPadOut30mA(fast)
+# Loading work.sg13g2_IOPadOut4mA(fast)
+# Loading work.sg13g2_IOPadTriOut16mA(fast)
+# Loading work.sg13g2_IOPadTriOut30mA(fast)
+# Loading work.sg13g2_IOPadTriOut4mA(fast)
+# Loading work.sg13g2_IOPadVdd(fast)
+# Loading work.sg13g2_IOPadVss(fast)
+# run -all
+# Loading pat.v.po.name
+# Loading pat.v.0.vec
+# 
+# No error between simulated and expected patterns
+# 
+# ** Note: $finish    : pat.v(1059)
+#    Time: 362 ns  Iteration: 1  Instance: /MGC_DFT_LIB_ALL_pat_v_ctl
+# End time: 12:08:50 on Nov 13,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 1

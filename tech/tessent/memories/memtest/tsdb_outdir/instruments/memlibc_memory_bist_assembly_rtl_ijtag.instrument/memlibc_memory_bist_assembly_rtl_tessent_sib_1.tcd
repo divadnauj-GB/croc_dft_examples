@@ -1,0 +1,63 @@
+//--------------------------------------------------------------------------
+//
+//  Unpublished work. Copyright 2021 Siemens
+//
+//  This material contains trade secrets or otherwise confidential 
+//  information owned by Siemens Industry Software Inc. or its affiliates 
+//  (collectively, SISW), or its licensors. Access to and use of this 
+//  information is strictly limited as set forth in the Customer's 
+//  applicable agreements with SISW.
+//
+//--------------------------------------------------------------------------
+//  File created by: Tessent Shell
+//          Version: 2022.3
+//       Created on: Sat Nov 15 20:33:15 EST 2025
+//--------------------------------------------------------------------------
+
+Core(memlibc_memory_bist_assembly_rtl_tessent_sib_1) {
+  Occ {
+    version: 4;
+    clock_type : tck;
+    Interface {
+      SlowClock(ltest_clk) {
+            persistent_pin: tessent_persistent_cell_cts_stop_buf/y;
+      }
+      ScanEnable(ltest_scan_en) {
+            persistent_pin: tessent_persistent_cell_ltest_scan_en_buf/y;
+      }
+      StaticClockControlMode(ltest_static_clock_control_mode) {
+            persistent_pin: tessent_persistent_cell_static_clock_control_mode_buf/y;
+      }
+      ClockSequence(ltest_clock_sequence[1:0]) {
+            persistent_pin(0): tessent_persistent_cell_clock_sequence_buf_0/y;
+            persistent_pin(1): tessent_persistent_cell_clock_sequence_buf_1/y;
+      }
+      ScanInput(ltest_si) {
+            persistent_pin: tessent_persistent_cell_ltest_scan_in_buf/y;
+      }
+      ScanOutput(ltest_so) {
+            persistent_pin: tessent_persistent_cell_occ_ctrl_so_buf/y;
+      }
+      ShiftRegisterClock(tessent_persistent_cell_cts_stop_buf/y) {
+      }
+      GatedClock(tessent_persistent_cell_ltest_clock_mux/y) {
+      }
+    }
+    Parameters {
+      iproc : setup;
+      StaticClockControl {
+        parameter     : static_clock_control;
+        type          : string;
+        default_value : off;
+      }
+    }
+    ControlBits {
+      ControlBit(occ_ctrl[0]) {
+      }
+      ControlBit(occ_ctrl[1]) {
+      }
+    }
+    capture_trigger: shift_en;
+    static_clock_control: external;
+  }
+}

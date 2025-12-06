@@ -1,0 +1,157 @@
+#-------------------------------------------------
+#  File created by: Tessent Shell
+#          Version: 2022.3
+#       Created on: Sat Nov 15 20:33:35 EST 2025
+#-------------------------------------------------
+
+set design_source_dictionary \
+{
+  read1 {
+    format {
+      "verilog_2001"
+    }
+    work_library {
+      "work"
+    }
+    files {
+      "./modified_rtl_files/memlibc_memory_bist_assembly.v"
+    }
+    libraries {
+    }
+    extensions {
+    }
+    defines {
+    }
+    incdirs {
+    }
+    options {
+      "-ignore_synthesis_off_sections" "off" "-no_lib_rescan" "-pragma_list" ""
+    }
+    is_current_design on
+  }
+  read2 {
+    format {
+      "verilog_2001"
+    }
+    work_library {
+      "work"
+    }
+    files {
+      "../../instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_mux2.v"
+      "../../instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_clk_mux2.v"
+      "../../instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_clk_gate_and.v"
+      "../../instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_posedge_synchronizer_reset.v"
+    }
+    libraries {
+    }
+    extensions {
+    }
+    defines {
+    }
+    incdirs {
+    }
+    options {
+      "-no_overwrite"
+    }
+  }
+  read3 {
+    format {
+      "verilog_2001"
+    }
+    work_library {
+      "work"
+    }
+    files {
+      "../../instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_and2.v"
+      "../../instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_or2.v"
+      "../../instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_buf.v"
+      "../../instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_clk_buf.v"
+      "../../instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_inv.v"
+      "../../instruments/memlibc_memory_bist_assembly_rtl_cells.instrument/memlibc_memory_bist_assembly_rtl_tessent_clk_inv.v"
+    }
+    libraries {
+    }
+    extensions {
+    }
+    defines {
+    }
+    incdirs {
+    }
+    options {
+      "-no_overwrite"
+    }
+  }
+  read4 {
+    format {
+      "verilog_2001"
+    }
+    work_library {
+      "work"
+    }
+    files {
+      "../../instruments/memlibc_memory_bist_assembly_rtl_ijtag.instrument/memlibc_memory_bist_assembly_rtl_tessent_sib_1.v"
+      "../../instruments/memlibc_memory_bist_assembly_rtl_ijtag.instrument/memlibc_memory_bist_assembly_rtl_tessent_sib_2.v"
+    }
+    libraries {
+    }
+    extensions {
+    }
+    defines {
+    }
+    incdirs {
+    }
+    options {
+      "-no_overwrite"
+    }
+  }
+  read5 {
+    format {
+      "verilog_2001"
+    }
+    work_library {
+      "work"
+    }
+    files {
+      "../../instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/memlibc_memory_bist_assembly_rtl_tessent_mbist_bap.v"
+      "../../instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_controller.v"
+      "../../instruments/memlibc_memory_bist_assembly_rtl_mbist.instrument/memlibc_memory_bist_assembly_rtl_tessent_mbist_c1_interface_m1.v"
+    }
+    libraries {
+    }
+    extensions {
+    }
+    defines {
+    }
+    incdirs {
+    }
+    options {
+      "-no_overwrite"
+    }
+  }
+  read6 {
+    format {
+      "verilog_2001"
+    }
+    work_library {
+      "work"
+    }
+    files {
+      "./ijtag_graybox/memlibc_memory_bist_assembly.v_ijtag_graybox"
+    }
+    libraries {
+    }
+    extensions {
+    }
+    defines {
+    }
+    incdirs {
+    }
+    options {
+      "-ignore_synthesis_off_sections" "off" "-no_lib_rescan" "-pragma_list" ""
+    }
+    is_graybox_view on
+  }
+  logical_design_library_list {work}
+  default_logical_design_library {work}
+}
+ 
