@@ -1,0 +1,18 @@
+#! /bin/csh -f
+
+rm -rf work
+vlib work
+
+
+
+vlog ../../tech/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v
+vlog ../../tech/ihp-sg13g2/libs.ref/sg13g2_io/verilog/sg13g2_io.v
+vlog ../../tech/ihp-sg13g2/libs.ref/sg13g2_sram/verilog/RM_IHPSG13_1P_core_behavioral_bm_bist.v
+vlog +define+FUNCTIONAL ../../tech/ihp-sg13g2/libs.ref/sg13g2_sram/verilog/RM_IHPSG13_1P_256x64_c2_bm_bist.v
+sleep 1
+vlog ../tsdb_outdir/dft_inserted_designs/croc_chip_gate2.dft_inserted_design/croc_chip.vg 
+sleep 1
+vlog patterns/croc_chip_lbist_parallel.v 
+sleep 1
+vsim +nowarnTSCALE croc_chip_croc_chip_lbist_parallel_v_ctl -l logfiles/verilog.log_lbist_parallel -debugdb -voptargs="+acc" +nospecify +nowarnTSCALE -c -do "run -all ; exit"
+

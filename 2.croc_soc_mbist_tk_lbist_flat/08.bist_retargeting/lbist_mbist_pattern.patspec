@@ -1,0 +1,120 @@
+PatternsSpecification(croc_chip,gate2,signoff) {
+  AdvancedOptions {
+    ConstantPortSettings {
+      unused0_i : 0;
+      rst_ni : 1 ;
+      jtag_trst_ni : 1;
+    }
+  }
+  Patterns(ICLNetwork) {
+    ICLNetworkVerify(croc_chip) {
+    }
+  }
+  Patterns(JtagBscanPatterns) {
+    tester_period : 100ns;
+    TestStep(JtagBscanTestStep) {
+      BoundaryScan {
+        RunTest(test_logic_reset) {
+        }
+        RunTest(inst_reg) {
+        }
+        RunTest(bypass_reg) {
+        }
+        RunTest(bscan_reg) {
+        }
+        RunTest(input) {
+        }
+        RunTest(sample) {
+        }
+        RunTest(highz) {
+          // The pad driver of the following 'output2' ports cannot be disabled with the 'HIGHZ' instruction.
+          // This violates the IEEE 1149.1 standard since the standard demands that 'HIGHZ' disables all pad driver.
+          // The 'highz' run test would check those ports for 'Z' unless overridden here.
+          PinComparesOverride {
+            jtag_tdo_o : X;
+            uart_tx_o : X;
+            status_o : X;
+            unused0_o : X;
+            unused1_o : X;
+            unused2_o : X;
+            unused3_o : X;
+            unused4_o : X;
+            unused5_o : X;
+            unused6_o : X;
+            unused7_o : X;
+          }
+        }
+        RunTest(clamp) {
+        }
+        RunTest(output) {
+        }
+      }
+    }
+  }
+  Patterns(LogicBist_croc_chip) {
+    ClockPeriods {
+      clk_i : 100.00ns;
+      jtag_tck_i : 100.00ns;
+    }
+   SimulationOptions {
+        logic_bist_debug : bist_registers_and_clock_verify;
+      }
+   TestStep(serial_load) {
+      LogicBist {
+        CoreInstance(.) {
+          run_mode : run_time_prog;
+          mode_name : lbist ;//same as set_current_mode in lbist fault simulation 
+          begin_pattern : 0;
+          end_pattern : 7 ;
+		      misr_compares : 1 ;
+          DiagnosisOptions {
+            extract_flop_data : on ;
+          }
+        }
+      }
+    }
+  }
+  Patterns(MemoryBist_P1) {
+    DftControlSettings {
+      all_test : 1;
+    }
+    ClockPeriods {
+      clk_i : 10.0ns;
+    }
+    TestStep(go_nogo) {
+      MemoryBist {
+        run_mode : run_time_prog;
+        reduced_address_count : on;
+        Controller(i_croc_soc_i_croc_croc_chip_rtl1_tessent_mbist_c1_controller_inst) {
+          DiagnosisOptions {
+            compare_go : on;
+            compare_go_id : on;
+          }
+        }
+      }
+    }
+  }
+  Patterns(MemoryBist_ParallelRetentionTest_P1) {
+    DftControlSettings {
+      all_test : 1;
+    }
+    ClockPeriods {
+      clk_i : 10.0ns;
+    }
+    TestStep(ParallelRetentionTest) {
+      MemoryBist {
+        run_mode : hw_default;
+        parallel_retention_time : 0;
+        reduced_address_count : on;
+        Controller(i_croc_soc_i_croc_croc_chip_rtl1_tessent_mbist_c1_controller_inst) {
+          parallel_retention_group : 1;
+          DiagnosisOptions {
+            compare_go_id : on;
+          }
+        }
+      }
+    }
+  }
+}
+
+

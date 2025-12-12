@@ -1,0 +1,55 @@
+#! /bin/sh -f
+#\
+mkdir -p logfiles
+#\
+exec tessent -shell -log logfiles/$0.log -replace -dofile "$0"
+
+set PDK_ROOT ../../tech
+
+set_context  dft -test_point -no_rtl -design_id gate1
+
+read_cell_library ${PDK_ROOT}/tessent/ihp-sg13g2_stdcell.tcelllib
+read_cell_library ${PDK_ROOT}/tessent/ihp-sg13g2_io.tcelllib
+read_cell_library ${PDK_ROOT}/tessent/memories/RM_IHPSG13_1P_256x64_c2_bm_bist.atpglib
+
+set_tsdb_output_directory ../tsdb_outdir
+
+# Define location of memory library files
+#set_design_sources -format tcd_memory -Y ${PDK_ROOT}/tessent/memories -extension tcd_memory
+
+# Read memory verilog model
+#read_verilog ${PDK_ROOT}/ihp-sg13g2/libs.ref/sg13g2_sram/verilog/*.v -exclude_from_file_dictionary
+# Read the verilog
+
+read_verilog ../03.synthesis/croc_chip.vg
+# Read the design files from the RTL insertion pass
+# Use the -no_hdl switch to skip reading the netlist as the synthesized netlist has already been read
+
+read_design croc_chip -design_identifier rtl2 -no_hdl -verbose
+# set_module_matching_options -suffix_pattern_list {_[0-9]+} -regexp
+#add_black_boxes -modules { \
+#                    RM_IHPSG13_1P_256x64_c2_bm_bist \
+#             }
+# add_black_box -auto
+read_sdc ../03.synthesis/croc_chip.merged_sdc
+set_current_design croc_chip
+
+add_input_constraint rst_ni -C1
+add_input_constraint jtag_trst_ni -C1
+set_test_point_analysis_options -total_number 500
+
+
+set_test_point_analysis_option -shared_observe_points_per_flop 5
+set_test_point_types { lbist_test_coverage edt_pattern_count } 
+set_test_logic -set on -reset on
+# no test points in Tessent-inserted IPs
+add_notest_point [ get_instance *tessent* ]
+
+set_system_mode analysis
+analyze_test_points
+write_test_point_dofile tpi.dofile -all -replace
+insert_test_logic
+report_test_logic
+exit
+
+

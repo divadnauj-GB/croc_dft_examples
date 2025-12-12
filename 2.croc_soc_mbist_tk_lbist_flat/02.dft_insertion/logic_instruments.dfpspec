@@ -1,0 +1,74 @@
+  Occ {
+    ijtag_host_interface: Sib(occ);
+    capture_trigger: capture_en;
+    static_clock_control: both;
+    Controller(clk_i) {
+      clock_intercept_node: clk_i;
+    }
+    Controller(jtag_tck_i) {
+      clock_intercept_node: jtag_tck_i;
+    }
+  }
+
+  LogicBist {
+    ijtag_host_interface: Sib(lbist);
+    Controller(c0) {
+      burn_in : on ;
+      pre_post_shift_dead_cycles : 8 ;
+      SingleChainForDiagnosis { Present : on ; }  
+      ShiftCycles { max :800 ; }   
+      CaptureCycles { max : 7; }   
+      PatternCount { max : 1024; }   
+      WarmupPatternCount { max : 255; }
+      Connections {
+        shift_clock_src: clk_i;
+      }
+    }
+    NcpIndexDecoder{
+      Ncp(ALL) {
+        cycle(0): OCC(clk_i) ;
+        cycle(1): OCC(jtag_tck_i);
+      }
+      Ncp(single_pulse) {
+        cycle(0): OCC(clk_i);
+      }
+      Ncp(double_pulse) {
+        cycle(0): OCC(clk_i);
+        cycle(1): OCC(clk_i);
+      }
+      Ncp(bscan_occ) {
+        cycle(0): bscan_occ   ; 
+      }
+      Ncp(sti_occ_ncp) {
+        cycle(0): croc_chip_rtl1_tessent_sib_1;
+        }
+    }
+  }
+  
+  EDT {
+     ijtag_host_interface : Sib(edt);
+       Controller (c0) {
+        longest_chain_range : 100, 200 ;
+        scan_chain_count : 10;
+        input_channel_count : 1;
+        output_channel_count : 1;
+        Connections +{
+          EdtChannelsIn(1) {
+            port_pin_name : croc_chip_rtl1_tessent_bscan_logical_group_DEF_inst/unused3_i_AuxIn;
+          }
+          EdtChannelsOut(1) {
+            port_pin_name : croc_chip_rtl1_tessent_bscan_logical_group_DEF_inst/unused4_o_AuxOut;
+          }
+        }
+        LogicBistOptions { 
+          present : on ; 
+          misr_input_ratio : 1 ;
+          chain_mask_register_ratio : 1 ;
+          ShiftPowerOptions {
+            present : on ;
+            default_operation : disabled ;
+            SwitchingThresholdPercentage { min : 25 ; }
+         }
+        }
+    }
+  }
