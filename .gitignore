@@ -20,3 +20,8 @@ croc/
 *.txt
 *.sdc
 
+*.dc_shell_import_script
+*.merged_sdc
+run_fsim-
+run_clk_domains
+
