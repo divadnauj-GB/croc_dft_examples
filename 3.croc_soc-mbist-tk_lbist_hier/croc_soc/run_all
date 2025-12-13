@@ -1,0 +1,49 @@
+cd 1.insert_mbist
+rm -rf ../tsdb_outdir
+
+cd ../1.insert_mbist
+rm -rf logfiles/*
+./run_mbist_insertion
+
+cd ../2.insert_htklb_occ
+rm -rf logfiles/*
+./run_htklb_occ_insertion
+
+cd ../3.synthesize_rtl
+rm -rf logfiles/*
+./run_dc_synthesis
+
+cd ../4.insert_testpoint_xbound_scan
+rm -rf logfiles/*
+./run_testpoint_xbound_scan_insertion
+
+cd ../5.lbist_fault_simulation
+rm -rf logfiles/*
+rm -rf patterns/*
+rm -rf work
+./run_lbist_fault_simulations
+
+cd ../6.lbist_patterns_generation
+rm -rf logfiles/*
+rm -rf patterns/*
+rm -rf work
+./run_lbist_patterns_generation
+
+cd ../7.generate_atpg_patterns
+rm -rf logfiles/*
+rm -rf patterns/*
+rm -rf work
+./1.run_graybox_generation
+./2.run_ext_multi_stuck
+./3.run_internal_stuck
+./4.run_ext_multi_transition
+./5.run_internal_transition
+./6.run_sims
+
+cd ../8.generate_ccm_patterns
+rm -rf logfiles/*
+rm -rf patterns/*
+rm -rf work
+./run_ccm_pattern
+
+cd ../

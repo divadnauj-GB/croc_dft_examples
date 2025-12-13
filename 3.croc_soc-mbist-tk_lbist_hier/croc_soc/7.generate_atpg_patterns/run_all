@@ -1,0 +1,6 @@
+./1.run_graybox_generation  
+./2.run_ext_multi_stuck  
+./3.run_internal_stuck  
+./4.run_ext_multi_transition  
+./5.run_internal_transition 
+./6.run_sims

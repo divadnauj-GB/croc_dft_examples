@@ -1,0 +1,100 @@
+#! /bin/sh -f
+#\
+mkdir -p logfiles; export PDK_ROOT_SYN="$(realpath "../../../tech/synopsys")"; echo $PDK_ROOT_SYN
+#\
+exec tessent -shell -log logfiles/$0.log -replace -dofile "$0"
+proc cleanup { {pathname_list ""}  } {
+  file delete -force  simulation_outdir  ;
+  file delete -force  ../tsdb_outdir ;
+  foreach pathname $pathname_list { file delete -force $pathname  ; } ;
+ }
+
+set PDK_ROOT ../../../tech
+
+##Setting context to dft and  we are inserting DFT into rtl-level design
+set_context dft -rtl -design_id rtl1
+
+##Setting where the tsdb_outdir is to be located, default is at the current working directory
+set_tsdb_output_directory ../tsdb_outdir
+
+# Read Tessent Library
+read_cell_library ${PDK_ROOT}/tessent/ihp-sg13g2_stdcell.tcelllib
+read_cell_library ${PDK_ROOT}/tessent/ihp-sg13g2_io.tcelllib
+
+##Read in the memory library model
+set_design_sources -format tcd_memory -Y ${PDK_ROOT}/tessent/memories -extension tcd_memory
+
+##Read in memory verilog model
+read_verilog ${PDK_ROOT}/ihp-sg13g2/libs.ref/sg13g2_sram/verilog/RM_IHPSG13_1P_core_behavioral_bm_bist.v -exclude_from_file_dictionary -interface_only
+read_verilog ${PDK_ROOT}/ihp-sg13g2/libs.ref/sg13g2_sram/verilog/RM_IHPSG13_1P_256x64_c2_bm_bist.v -exclude_from_file_dictionary -interface_only
+
+##Read in the design
+read_verilog -format sv2009 -f croc.flist -verbose
+
+##set design 
+set_current_design croc_soc
+
+##Setting the design level as physical_block. Design does not has pads
+set_design_level physical_block
+
+##Specifying to insert memory test and logic test
+add_dft_signal controller_chain_mode -create_with_tdr
+
+
+set_dft_specification_requirements  -memory_test on 
+
+add_clocks 0 clk_i -period 10ns
+
+
+
+check_design_rules
+
+report_memory_instances
+
+
+set spec [create_dft_specification]
+report_config_data $spec
+
+report_config_data $spec
+
+
+# add post MBIST insertion proc to bring BAP pins to top level for testing at that level
+
+#proc process_dft_specification.post_insertion {topWrapper args} {
+#
+#  create_connection DBAP_control/start processor_core_rtl1_tessent_mbist_bap_inst/sys_test_start
+##  create_connection DBAP_control/algo_select_en processor_core_rtl1_tessent_mbist_bap_inst/sys_select_common_algo 
+##  create_connection DBAP_control/ctrl_select processor_core_rtl1_tessent_mbist_bap_inst/sys_ctrl_select
+##  create_connection DBAP_control/algo_select processor_core_rtl1_tessent_mbist_bap_inst/sys_algo_select
+##  create_connection DBAP_control/opset_select processor_core_rtl1_tessent_mbist_bap_inst/sys_opset_select
+##  create_connection DBAP_control/step_select processor_core_rtl1_tessent_mbist_bap_inst/sys_step_select
+##  create_connection DBAP_control/opset_select_en processor_core_rtl1_tessent_mbist_bap_inst/sys_select_common_opset
+##  create_connection DBAP_control/step_select_en processor_core_rtl1_tessent_mbist_bap_inst/sys_step_select_en
+#  create_connection DBAP_control/done processor_core_rtl1_tessent_mbist_bap_inst/sys_test_done
+#  create_connection DBAP_control/pass processor_core_rtl1_tessent_mbist_bap_inst/sys_test_pass
+#  create_connection [get_port reset_n]  processor_core_rtl1_tessent_mbist_bap_inst/sys_reset
+#  create_connection DBAP_control/clkout  processor_core_rtl1_tessent_mbist_bap_inst/sys_clock
+#}
+
+
+## The hardware gets generated here
+process_dft_specification
+## The icl for the entire design gets created
+extract_icl
+
+
+## Generate testbenches  
+create_pattern_specification
+process_pattern_specification
+
+#Point to the libraries and run the simulation 
+set_simulation_library_sources -v ${PDK_ROOT}/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v -v ${PDK_ROOT}/ihp-sg13g2/libs.ref/sg13g2_io/verilog/sg13g2_io.v -v ${PDK_ROOT}/ihp-sg13g2/libs.ref/sg13g2_sram/verilog/*.v 
+
+## Run Simulations
+run_testbench_simulations -compilation_options {verilog {+define+FUNCTIONAL}}
+## If simulation fails use the command below
+check_testbench_simulations -report_status
+
+
+exit
+
