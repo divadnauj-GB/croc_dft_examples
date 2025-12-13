@@ -1,9 +1,0 @@
-
-Tessent Scan is used to perform Scan Insertion
-
-Script to use : run_scan_insertion
-Log file is at : logfiles/scan_insertion.log
-
-4.scan_insertion : The netlist from Synthesis directory is used
-                   Scan inserted netlist is written into the tsdb_outdir with design_id gate
-                  

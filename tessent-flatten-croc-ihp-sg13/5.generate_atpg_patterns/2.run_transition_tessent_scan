@@ -1,4 +1,0 @@
-#! /bin/sh -f
-#\
-export SCAN_TOOL=Tessent_Scan
-tessent -shell -log logfiles/$0.log -replace -dofile transition.do

@@ -1,8 +1,0 @@
-
-Script to use : run_insert_mbist_bscan
-Log file: logfiles/insert_bscan_mbist.log
-
-1.insert_bscan_mbist: 
-                     In this step, memory bist, TAP and boundary scan gets inserted using DFTSpecification.
-
-                     The property "max_segment_length_for_logictest" is used to divide the boundary scan into multiple segments.

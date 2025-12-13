@@ -1,8 +1,0 @@
-
-Script to use: run_dc_synthesis
-Log file: logfiles/run_dc_synthesis.log
-
-3.synthesize_rtl: In this directory, the design is synthesized using DC Shell
-          i       The script "for_dc_synthesis_edt_occ.tcl" that collects all the orignial RTL and newly generated Hardware comes from the previous Step 
-
-

@@ -1,8 +1,0 @@
-set search_path "$search_path DB scripts synlib /home/jd.guerrero/Documents/Tessent/tech/synopsys"
-
-set link_library { "*" ihp-sg13g2_stdcell.db ihp-sg13g2_io.db }
-set target_library { ihp-sg13g2_stdcell.db ihp-sg13g2_io.db }
-set symbol_library { generic.sdb }
-
-# set_dont_use {sg13g2_stdcell_typ_1p20V_25C/sg13g2_sdf*}
-set_dont_use {{sg13g2_stdcell_typ_1p20V_25C/sg13g2_sdfbbp_1}}
