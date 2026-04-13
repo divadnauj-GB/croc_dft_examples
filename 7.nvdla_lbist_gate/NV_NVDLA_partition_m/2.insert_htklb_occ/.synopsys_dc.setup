@@ -1,0 +1,40 @@
+set company "Mentor Graphics"
+set designer "User"
+set view_background "black"
+
+set PDK_ROOT $::env(PDK_ROOT_SYN)
+
+puts "Absolute path to SDC file: $PDK_ROOT"
+
+set view_script_submenu_items {"Clean Sweep" "remove_design -designs"}
+define_design_lib work -path WORK
+
+set search_path "$search_path DB scripts synlib $PDK_ROOT"
+
+set link_library { "*" ihp-sg13g2_stdcell.db ihp-sg13g2_io.db RM_IHPSG13_1P_256x64_c2_bm_bist.db }
+set target_library { ihp-sg13g2_stdcell.db ihp-sg13g2_io.db RM_IHPSG13_1P_256x64_c2_bm_bist.db }
+set symbol_library { generic.sdb }
+
+# set_dont_use {sg13g2_stdcell_typ_1p20V_25C/sg13g2_sdf*}
+set_dont_use {{sg13g2_stdcell_typ_1p20V_25C/sg13g2_sdfbbp_1}}
+
+set compile_seqmap_enable_output_inversion true
+
+set bus_dimension_separator_style       {][}
+set bus_inference_style                 {%s[%d]}
+set bus_naming_style                        {%s[%d]}
+set bus_range_separator_style               ":"
+set hdlout_internal_busses                  "false"
+set verilogout_equation                     "false"
+set verilogout_higher_designs_first         "false"
+set verilogout_ignore_case                  "true"
+set verilogout_no_negative_index            "true"
+set verilogout_no_tri                       "true"
+set verilogout_show_unconnected_pins        "true"
+set verilogout_single_bit                   "false"
+set verilogout_unconnected_prefix   "SYNOPSYS_UNCONNECTED_"
+
+set change_names_dont_change_bus_members    "false"
+set change_names_update_inst_tree           "true"
+set uniquify_naming_style                   "%s_%d"
+
