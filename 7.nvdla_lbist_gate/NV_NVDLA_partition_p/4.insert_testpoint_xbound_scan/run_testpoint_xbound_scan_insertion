@@ -49,7 +49,7 @@ set_static_dft_signal_value ltest_en 1
 report_static_dft_signal_settings
 
 # specify the number of testpoint (integer or integer %)
-set_test_point_analysis_options -total_number 500
+set_test_point_analysis_options -total_number 5000
 #specify how many observe points will be observed by one scan cell
 set_test_point_insertion_options  -observe_point_share 5
 

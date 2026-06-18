@@ -72,8 +72,8 @@ read_config_data -replace -in $patt_spec -from_string {
   }
   Patterns(LogicBist_NV_NVDLA_partition_p) {
     ClockPeriods {
-      nvdla_core_clk :500.00ns;
-      test_clock: 500.00ns;
+      nvdla_core_clk :10.00ns;
+      test_clock: 40.00ns;
     }
    SimulationOptions {
         logic_bist_debug : bist_registers_and_clock_verify;
