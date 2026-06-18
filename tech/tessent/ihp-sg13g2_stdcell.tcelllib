@@ -18,24 +18,24 @@ array_delimiter = "[]";
 
 
 dft_cell_selection ( default ) (
-  clock_buffer = sg13g2_buf_2;
-  clock_inverter = sg13g2_inv_1;
-  clock_mux =  sg13g2_mux2_1;
-  clock_and =  sg13g2_and2_1;
-  clock_or =  sg13g2_or2_1;
-  clock_gating_and = sg13g2_slgcp_1;
-  buffer = sg13g2_buf_2;
-  inverter = sg13g2_inv_1;
-  and =  sg13g2_and2_1;
-  nand =  sg13g2_nand2_1;
-  or =  sg13g2_or2_1;
-  nor =  sg13g2_nor2_1;
-  xor =  sg13g2_xor2_1;
-  mux =  sg13g2_mux2_1;
-  posedge_dff = sg13g2_dfrbp_1 /*reset*/ ;
-  active_high_latch = sg13g2_dlhq_1 , sg13g2_dlhr_1 /*reset*/  ;
-  active_low_latch = sg13g2_dllr_1 /*reset*/   ;
-  posedge_scan_cell = sg13g2_sdfrbp_1 /*reset*/ ;
+  clock_buffer = sg13g2_buf_16 ;
+  clock_inverter = sg13g2_inv_16 ;
+  clock_mux =  sg13g2_mux2_2 ;
+  clock_and =  sg13g2_and2_2, sg13g2_and3_2, sg13g2_and4_2 ;
+  clock_or =  sg13g2_or2_2 ;
+  clock_gating_and = sg13g2_slgcp_1 ;
+  buffer = sg13g2_buf_1 ;
+  inverter = sg13g2_inv_1 ;
+  and =  sg13g2_and2_1, sg13g2_and3_1, sg13g2_and4_1 ;
+  nand =  sg13g2_nand2_1, sg13g2_nand3_1, sg13g2_nand4_1;
+  or =  sg13g2_or2_1, sg13g2_or3_1, sg13g2_or4_1 ;
+  nor =  sg13g2_nor2_1, sg13g2_nor3_1, sg13g2_nor4_1;
+  xor =  sg13g2_xor2_1 ;
+  mux =  sg13g2_mux2_1, sg13g2_mux4_1 ;
+  posedge_dff = sg13g2_dfrbp_1 /*, sg13g2_dfrbp_2, sg13g2_dfrbpq_1, sg13g2_dfrbpq_2*/ ;
+  active_high_latch = sg13g2_dlhq_1 , sg13g2_dlhr_1   ;
+  active_low_latch = sg13g2_dllr_1    ;
+  posedge_scan_cell = /*sg13g2_sdfrbp_1,*/ sg13g2_sdfbbp_1 /*,  sg13g2_sdfrbp_2, sg13g2_sdfrbpq_1, sg13g2_sdfrbpq_2*/ ;
 ) // end dft_cell_selection
 
 model ihp_dff
@@ -488,9 +488,9 @@ model sg13g2_and2_1
   cell_type = and;
   simulation_function = and;
 
-  input (A) ( )
-  input (B) ( )
-  output (X) ( )
+  input (A) ( data_in )
+  input (B) ( data_in )
+  output (X) (data_out )
   (
     primitive = _and mlc_and_1 (A, B, X);
   )
@@ -504,9 +504,9 @@ model sg13g2_and2_2
   cell_type = and;
   simulation_function = and;
 
-  input (A) ( )
-  input (B) ( )
-  output (X) ( )
+  input (A) ( data_in )
+  input (B) ( data_in )
+  output (X) ( data_out )
   (
     primitive = _and mlc_and_1 (A, B, X);
   )
@@ -520,10 +520,10 @@ model sg13g2_and3_1
   cell_type = and;
   simulation_function = and;
 
-  input (A) ( )
-  input (B) ( )
-  input (C) ( )
-  output (X) ( )
+  input (A) ( data_in )
+  input (B) ( data_in )
+  input (C) ( data_in )
+  output (X) ( data_out )
   (
     primitive = _and mlc_and_1 (A, B, C, X);
   )
@@ -537,10 +537,10 @@ model sg13g2_and3_2
   cell_type = and;
   simulation_function = and;
 
-  input (A) ( )
-  input (B) ( )
-  input (C) ( )
-  output (X) ( )
+  input (A) ( data_in )
+  input (B) ( data_in )
+  input (C) ( data_in )
+  output (X) ( data_out )
   (
     primitive = _and mlc_and_1 (A, B, C, X);
   )
@@ -555,11 +555,11 @@ model sg13g2_and4_1
   cell_type = and;
   simulation_function = and;
 
-  input (A) ( )
-  input (B) ( )
-  input (C) ( )
-  input (D) ( )
-  output (X) ( )
+  input (A) ( data_in )
+  input (B) ( data_in )
+  input (C) ( data_in )
+  input (D) ( data_in )
+  output (X) ( data_out )
   (
     primitive = _and mlc_and_1 (A, B, C, D, X);
   )
@@ -574,11 +574,11 @@ model sg13g2_and4_2
   cell_type = and;
   simulation_function = and;
 
-  input (A) ( )
-  input (B) ( )
-  input (C) ( )
-  input (D) ( )
-  output (X) ( )
+  input (A) ( data_in )
+  input (B) ( data_in )
+  input (C) ( data_in )
+  input (D) ( data_in )
+  output (X) ( data_out )
   (
     primitive = _and mlc_and_1 (A, B, C, D, X);
   )
@@ -1643,6 +1643,7 @@ model sg13g2_sdfrbp_1
   model_source = verilog_module;
   simulation_function = scan_cell;
   cell_type = scan_cell;
+
 
   input (D) ( data_in; )
   input (SCD) ( scan_in; )

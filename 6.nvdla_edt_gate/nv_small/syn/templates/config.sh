@@ -72,15 +72,19 @@ export PT_PATH="/home/tools/synopsys/pt_2016.12-SP3-2/bin"
 
 export RELEASE_DIR="/home/jd.guerrero/Documents/dft_examples/tech"
 export RAM_LIB_DIR="."
-export TARGET_LIB="${RELEASE_DIR}/synopsys/ihp-sg13g2_stdcell.db"
+export TARGET_LIB="${RELEASE_DIR}/synopsys/sg13g2_stdcell_typ_1p50V_25C.db"
 export LINK_LIB="\
-    ${RELEASE_DIR}/synopsys/ihp-sg13g2_stdcell.db \
+    ${RELEASE_DIR}/synopsys/sg13g2_stdcell_typ_1p50V_25C.db \
+    ${RELEASE_DIR}/synopsys/sg13g2_stdcell_typ_1p20V_25C.db \
+    ${RELEASE_DIR}/synopsys/sg13g2_stdcell_fast_1p32V_m40C.db \
+    ${RELEASE_DIR}/synopsys/sg13g2_stdcell_fast_1p65V_m40C.db \
+    ${RELEASE_DIR}/synopsys/sg13g2_stdcell_slow_1p08V_125C.db \
+    ${RELEASE_DIR}/synopsys/sg13g2_stdcell_slow_1p35V_125C.db \
     ${DC_PATH}/../libraries/syn/dw_foundation.sldb \
-    ${DC_PATH}/../libraries/syn/gtech.db \
     ${DC_PATH}/../libraries/syn/standard.sldb \
 "
 
-export MW_LIB="${RELEASE_DIR}"
+export MW_LIB="${RELEASE_DIR}/synopsys"
 
 export TF_FILE="${RELEASE_DIR}/tech.A01/astro/v1d0_1e/N16_ICC_14M_4Xa1Xd6Xe2Z_UTRDL_1.0_1e.tf_vhv.20160404.production.pnr"
 export TLUPLUS_FILE="${RELEASE_DIR}/tech.A01/star/plusv1d0p2/cln16ff+_1p14m_4xa1xd6xe2z_mim_ut-alrdl_typical.tluplus"
@@ -89,7 +93,7 @@ export MIN_ROUTING_LAYER="M2A"
 export MAX_ROUTING_LAYER="M12E"
 export HORIZONTAL_LAYERS="M2A M4A M6D M8E M10E M12E VM1 RDL"
 export VERTICAL_LAYERS="M1 M3A M5A M7E M9E M11E VM2 UBM"
-export WIRELOAD_MODEL_NAME="tsmc16ff_from_smq"
+export WIRELOAD_MODEL_NAME="50k"
 export WIRELOAD_MODEL_FILE=""
 export DONT_USE_LIST=""
 

@@ -493,7 +493,8 @@ if {[shell_is_in_topographical_mode] && ${SYN_MODE} == "dcg" && ![shell_is_in_ex
 } elseif {[shell_is_in_exploration_mode]} {
     set compile_command "compile_exploration   -gate_clock"
 }  else {
-    set compile_command "compile_ultra  -no_autoungroup -scan"
+    #set compile_command "compile_ultra  -no_autoungroup -scan"
+    set compile_command "compile_ultra  -no_autoungroup -timing_high_effort_script -retime"
 }
 
 puts "${synMsgInfo} Structuring from scratch with compile command: $compile_command"

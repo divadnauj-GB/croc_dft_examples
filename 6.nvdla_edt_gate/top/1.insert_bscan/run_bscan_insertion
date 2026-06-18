@@ -1,0 +1,104 @@
+#! /bin/sh -f
+#\
+mkdir -p logfiles
+#\
+export PDK_ROOT_SYN="$(realpath "../../../tech/synopsys")"; echo $PDK_ROOT_SYN
+#\
+exec tessent -shell -log logfiles/$0.log -replace -dofile "$0"
+
+set PDK_ROOT ../../../tech
+
+# Set the context to insert DFT into Gate-level design
+set_context dft -no_rtl -design_id gate
+
+# Set the location of the TSDB. Default is the current working directory.
+set_tsdb_output_directory ../tsdb_outdir
+
+# Open the TSDB of all the child cores
+open_tsdb ../../croc_soc/tsdb_outdir
+
+# Read the tessent cell library
+read_cell_library ${PDK_ROOT}/tessent/ihp-sg13g2_stdcell.tcelllib
+read_cell_library ${PDK_ROOT}/tessent/ihp-sg13g2_io.tcelllib
+
+set_design_sources -format verilog -v ${PDK_ROOT}/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/*.v -v ${PDK_ROOT}/ihp-sg13g2/libs.ref/sg13g2_io/verilog/*.v 
+read_verilog ${PDK_ROOT}/ihp-sg13g2/libs.ref/sg13g2_sram/verilog/RM_IHPSG13_1P_256x64_c2_bm_bist.v -interface_only -exclude_from_file_dictionary
+
+read_verilog ../../croc/rtl/croc_chip_top.sv -verbose
+
+set_current_design croc_chip_top
+
+set_design_level chip
+
+# Define set_dft_specification_requirements to insert boundary scan at chip-level
+set_dft_specification_requirements -boundary_scan on 
+
+# Specify the TAP pins using set_attribute_value
+set_attribute_value tck_p -name function -value tck
+set_attribute_value tdi_p -name function -value tdi
+set_attribute_value tms_p -name function -value tms
+set_attribute_value trst_p -name function -value trst
+set_attribute_value tdo_p -name function -value tdo
+
+# Specify pins that cannot add any boundary scan cells
+set_boundary_scan_port_options clk_i -cell_options dont_touch
+set_boundary_scan_port_options jtag_tck_i -cell_options dont_touch
+set_boundary_scan_port_options rst_ni -cell_options dont_touch
+set_boundary_scan_port_options jtag_trst_ni -cell_options dont_touch
+
+set_boundary_scan_port_options unused0_i -cell_options dont_touch
+set_boundary_scan_port_options unused1_i -cell_options dont_touch
+set_boundary_scan_port_options unused2_i -cell_options dont_touch
+
+report_dft_signal_names
+
+# Add DFT Signals
+add_dft_signals scan_en  -source_node { unused0_i  }
+
+
+
+report_dft_signals
+
+# Specify the clocks
+add_clocks 0 clk_i -period 10ns
+
+check_design_rules
+
+# Create and report a DFT Specification
+set spec [create_dft_specification]
+
+report_config_data $spec
+# Segment the boundary scan to be used during logic test
+set_config_value $spec/BoundaryScan/max_segment_length_for_logictest  80
+
+# Add auxilary mux on the inputs and outputs used for EDT Channel pins
+read_config_data -in ${spec}/BoundaryScan -from_string {
+  AuxiliaryInputOutputPorts {
+    auxiliary_input_ports  : unused3_i, unused4_i, unused5_i ;
+    auxiliary_output_ports  : unused4_o, unused5_o, unused6_o ;
+  }
+}
+
+report_config_data $spec
+
+# Generate and insert the hardware
+process_dft_specification
+
+# Extract IJAG network and create ICL file for the design
+extract_icl
+
+# Synthesize just the hardware created in this pass using DC-Shell
+#set_run_synthesis_options dc_shell -pre_compilation_commands { set compile_seqmap_enable_output_inversion true}
+run_synthesis 
+
+# Create patterns(testbenches) to verify the inserted DFT logic
+create_patterns_specification
+process_pattern_specification
+
+# Point to the libraries and run simultion
+set_simulation_library_sources -v ${PDK_ROOT}/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v -v ${PDK_ROOT}/ihp-sg13g2/libs.ref/sg13g2_io/verilog/sg13g2_io.v -v ${PDK_ROOT}/ihp-sg13g2/libs.ref/sg13g2_sram/verilog/*.v 
+
+run_testbench_simulations -compilation_options {verilog {+define+TETRAMAX +define+FUNCTIONAL}}
+check_testbench_simulations -report_status
+
+exit

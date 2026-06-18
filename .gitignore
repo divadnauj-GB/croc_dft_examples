@@ -7,6 +7,8 @@ synthesis_outdir/
 tsdb_outdir/
 croc/
 
+init.sh
+
 fault_list
 *.vg
 *.log

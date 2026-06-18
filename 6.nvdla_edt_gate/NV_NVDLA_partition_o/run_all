@@ -1,0 +1,35 @@
+#cd 0.netlist_generation
+#./run_dc_synthesis
+
+#cd ../1.insert_mbist
+#rm -rf ../tsdb_outdir
+
+#cd ../1.insert_mbist
+#rm -rf logfiles/*
+#./run_mbist_insertion
+
+cd ./2.insert_edt_occ
+rm -rf logfiles/*
+./run_edt_occ_insertion
+
+# cd ../3.synthesize_rtl
+# rm -rf logfiles/*
+# ./run_dc_synthesis
+
+cd ../4.insert_scan
+rm -rf logfiles/*
+./run_scan_insertion
+
+cd ../7.generate_atpg_patterns
+rm -rf logfiles/*
+rm -rf patterns/*
+rm -rf work
+./1.run_graybox_generation.sh
+./2.run_ext_multi_stuck
+./3.run_internal_stuck
+./4.run_ext_multi_transition
+./5.run_internal_transition
+./7.merge_faults_report
+./6.run_sims
+
+#cd ../

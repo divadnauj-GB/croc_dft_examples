@@ -66,7 +66,11 @@ add_dft_control_points [get_nets */nvdla_core_clk_slcg_1/p_clkgate/qd] -dft_sign
 add_dft_control_points [get_nets */nvdla_core_clk_slcg_0/p_clkgate/qd] -dft_signal_source_name all_test
 add_dft_control_points [get_nets */nvdla_core_clk_mgate/p_clkgate/qd] -dft_signal_source_name all_test
 add_dft_control_points [get_nets */UJ_clk_jtag_Data_reg_r0/qd] -dft_signal_source_name all_test
+add_dft_control_points [get_nets \u_NV_NVDLA_sdp/u_wdma/u_cmd/u_dfifo/nvdla_core_clk_mgated_enable ] -dft_signal_source_name all_test
+add_dft_control_points [get_nets \u_NV_NVDLA_sdp/u_rdma/u_mrdma/u_eg/u_cmd/u_sfifo/nvdla_core_clk_mgated_enable ] -dft_signal_source_name all_test
 
+#add_nonscan_instances \u_NV_NVDLA_sdp/u_wdma/u_cmd/u_dfifo/nvdla_core_clk_mgate/p_clkgate/qd_reg
+#add_nonscan_instances \u_NV_NVDLA_sdp/u_rdma/u_mrdma/u_eg/u_cmd/u_sfifo/nvdla_core_clk_mgate/p_clkgate/qd_reg
 add_nonscan_instances \u_NV_NVDLA_sdp/u_rdma/u_nrdma/u_lat_fifo/ram/r_nv_ram_rwsp_16x65/testInst_ram_access_lockup/Q_reg
 add_nonscan_instances \u_NV_NVDLA_sdp/u_rdma/u_nrdma/u_cq/ram/r_nv_ram_rwsp_16x16/testInst_ram_access_lockup/Q_reg
 add_nonscan_instances \u_NV_NVDLA_sdp/u_rdma/u_brdma/u_lat_fifo/ram/r_nv_ram_rwsp_16x65/testInst_ram_access_lockup/Q_reg
@@ -121,6 +125,8 @@ read_config_data -in $spec -from_string {
 process_dft_specification
 ## The icl for the entire design gets created
 extract_icl 
+set_run_synthesis_options dc_shell -post_compilation_commands {"redirect -append Synth.report {report_qor -significant_digits 4}"}
+
 run_synthesis
 # write script for design compilation
 write_design_import_script  for_dc_synthesis.tcl -replace

@@ -1,0 +1,78 @@
+#! /bin/sh -f
+#\
+mkdir -p logfiles; mkdir -p patterns
+#\
+exec tessent -shell -log logfiles/$0.log -replace -dofile "$0"
+
+set PDK_ROOT ../../../tech
+
+set_context pattern -scan
+
+# Point to the TSDB directory
+set_tsdb_output_directory ../tsdb_outdir
+
+# Open the TSDB directory of all the child cores
+open_tsdb ../../croc_soc/tsdb_outdir
+
+# Read the tessent cell library
+read_cell_library ${PDK_ROOT}/tessent/ihp-sg13g2_stdcell.tcelllib
+read_cell_library ${PDK_ROOT}/tessent/ihp-sg13g2_io.tcelllib
+
+
+#read_verilog ../1.insert_bscan/fusebox/LVFuseBox.vb -exclude
+#read_verilog ../1.insert_bscan/fusebox/genericFuseBox.vb
+#read_core_description ../1.insert_bscan/fusebox/genericFuseBox.tcd_fbox
+#
+set_design_sources -format verilog -v ${PDK_ROOT}/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/*.v -v ${PDK_ROOT}/ihp-sg13g2/libs.ref/sg13g2_io/verilog/*.v 
+read_verilog ${PDK_ROOT}/ihp-sg13g2/libs.ref/sg13g2_sram/verilog/RM_IHPSG13_1P_256x64_c2_bm_bist.v -interface_only -exclude_from_file_dictionary
+
+read_design croc_chip_top -design_id post_layout -verbose
+read_design croc_soc_GpioCount32 -design_id post_layout -view full -verbose
+
+
+set_current_design croc_chip_top
+
+# Specify the current mode using a different name than what was used during scan insertion with the add_scan_mode command
+set_current_mode ccm_atpg
+
+add_core_instance -current_design -design_id gate3 -mode ccm_atpg
+
+# Importing the scan mode used during scan insertion
+#import_scan_mode controller_chain_mode
+report_core_instances
+
+
+# Set the following DFT Signal value to apply the shift_capture_clock to the Scan Tested network during capture phase of ATPG
+set_static_dft_signal_values tck_occ_en 1
+report_static_dft_signal_settings
+add_input_constraints rst_ni -c1
+add_black_box -auto
+set_system_mode analysis
+report_statistics -detail
+
+add_faults [get_instance {i_croc_soc/*tessent_lbist_inst* i_croc_soc/*tessent_edt_lbist_c1_inst* i_croc_soc/*tessent_single* chip*in_system*}]
+
+
+# Generate Patterns
+create_patterns
+report_statistics -detail
+
+# Store TCD, flat_model, fault list and patDB format files in the TSDB directory
+write_tsdb_data -replace
+
+# Write Verilog patterns for simulation
+write_patterns patterns/croc_chip_top_ccm_parallel.v -verilog -parallel -replace -scan -parameter_list {SIM_KEEP_PATH 1}
+set_pattern_filtering -sample_per_type 2
+write_patterns patterns/croc_chip_top_ccm_serial.v -verilog -serial -replace -parameter_list {SIM_KEEP_PATH 1}
+
+# Write the STIL pattern for tester
+write_patterns patterns/croc_chip_top_edt_stuck.stil -stil -replace
+
+# Total coverage for stuck-at patterns at the chip-level including the child wrapped cores
+read_faults -module croc_soc_GpioCount32 -fault_type stuck -mode edt_int_stuck -merge -graybox
+read_faults -design_id post_layout -fault_type stuck -mode edt_top_stuck -merge 
+
+
+report_statistics -detail
+exit
+

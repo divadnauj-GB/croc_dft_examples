@@ -1,0 +1,38 @@
+#! /bin/sh -f
+#\
+cd 1.insert_bscan
+
+rm -rf ../tsdb_outdir
+cd ../1.insert_bscan
+./run_bscan_insertion
+
+cd ../2.insert_edt_occ
+./run_edt_occ_insertion
+
+cd ../3.insert_scan
+./run_scan_insertion
+
+cd ../4.generate_atpg_patterns
+./1.run_tk_chip_stuck
+./2.run_tk_chip_ccm
+./3.run_tk_chip_transition
+./run_sims
+
+cd ../5.retarget_atpg_patterns
+./run_retarget_mode1
+./run_retarget_mode1_transition
+./run_sims
+./run_dft_instr_signoff
+
+cd ../netlist
+./run_dc_postlayout
+
+cd ../6.generate_atpg_patterns_post_layout
+./0.write_design_in_tsdb
+./1.run_tk_chip_stuck
+./2.run_tk_chip_transition
+./3.run_tk_chip_ccm
+./4.run_retarget_mode1
+./5.run_retarget_mode1_transition
+./run_sims
+./run_dft_instr_signoff

@@ -11,12 +11,14 @@ define_design_lib work -path WORK
 
 set search_path "$search_path DB scripts synlib $PDK_ROOT"
 
-set link_library { "*" ihp-sg13g2_stdcell.db ihp-sg13g2_io.db RM_IHPSG13_1P_256x64_c2_bm_bist.db }
-set target_library { ihp-sg13g2_stdcell.db ihp-sg13g2_io.db RM_IHPSG13_1P_256x64_c2_bm_bist.db }
+set link_library { "*" sg13g2_stdcell_typ_1p50V_25C.db sg13g2_stdcell_typ_1p20V_25C.db sg13g2_stdcell_slow_1p35V_125C.db sg13g2_stdcell_slow_1p08V_125C.db sg13g2_stdcell_fast_1p65V_m40C.db sg13g2_stdcell_fast_1p32V_m40C.db ihp-sg13g2_io.db RM_IHPSG13_1P_256x64_c2_bm_bist.db}
+set target_library { sg13g2_stdcell_typ_1p50V_25C.db ihp-sg13g2_io.db RM_IHPSG13_1P_256x64_c2_bm_bist.db}
+
 set symbol_library { generic.sdb }
 
-# set_dont_use {sg13g2_stdcell_typ_1p20V_25C/sg13g2_sdf*}
-set_dont_use {{sg13g2_stdcell_typ_1p20V_25C/sg13g2_sdfbbp_1}}
+# set_dont_use {sg13g2_stdcell_typ_1p50V_25C/sg13g2_sdf*}
+set_dont_use {{sg13g2_stdcell_typ_1p50V_25C/sg13g2_sdfbbp_1}}
+
 
 set compile_seqmap_enable_output_inversion true
 

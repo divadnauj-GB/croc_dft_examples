@@ -1,0 +1,39 @@
+#! /bin/csh -f
+
+rm -rf work
+vlib work
+
+vlog ../../../tech/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v
+vlog ../../../tech/ihp-sg13g2/libs.ref/sg13g2_io/verilog/sg13g2_io.v
+vlog ../../../tech/ihp-sg13g2/libs.ref/sg13g2_sram/verilog/RM_IHPSG13_1P_core_behavioral_bm_bist.v
+vlog +define+FUNCTIONAL ../../../tech/ihp-sg13g2/libs.ref/sg13g2_sram/verilog/RM_IHPSG13_1P_256x64_c2_bm_bist.v
+
+vlog ../tsdb_outdir/dft_inserted_designs/croc_chip_top_post_layout.dft_inserted_design/croc_chip_top.vg 
+vlog ../../croc_soc/tsdb_outdir/dft_inserted_designs/croc_soc_GpioCount32_post_layout.dft_inserted_design/croc_soc_GpioCount32.vg 
+
+vlog patterns/croc_chip_top_edt_parallel_stuck.v
+vsim -c -voptargs="+acc" croc_chip_top_croc_chip_top_edt_parallel_stuck_v_ctl -l logfiles/verilog.log_croc_chip_top_edt_parallel_stuck -do "if {0} {log -r /*}; run -all"
+
+vlog patterns/croc_chip_top_edt_serial_stuck.v
+vsim -c -voptargs="+acc" croc_chip_top_croc_chip_top_edt_serial_stuck_v_ctl -l logfiles/verilog.log_croc_chip_top_edt_serial_stuck -do "if {0} {log -r /*}; run -all"
+
+vlog patterns/croc_chip_top_edt_transition_parallel.v
+vsim -c -voptargs="+acc" croc_chip_top_croc_chip_top_edt_transition_parallel_v_ctl -l logfiles/verilog.log_croc_chip_top_edt_transition_parallel -do "if {0} {log -r /*}; run -all"
+
+vlog patterns/croc_chip_top_edt_transition_serial.v
+vsim -c -voptargs="+acc" croc_chip_top_croc_chip_top_edt_transition_serial_v_ctl -l logfiles/verilog.log_croc_chip_top_edt_transition_serial -do "if {0} {log -r /*}; run -all"
+
+vlog patterns/croc_soc_edt_stuck_retargeted.v 
+vsim -c -voptargs="+acc" croc_chip_top_croc_soc_edt_stuck_retargeted_v_ctl -l logfiles/verilog.log_croc_soc_edt_stuck_retargeted  -do "if {0} {log -r /*}; run -all"
+
+vlog patterns/croc_soc_edt_stuck_retargeted_serial.v 
+vsim -c -voptargs="+acc" croc_chip_top_croc_soc_edt_stuck_retargeted_serial_v_ctl -l logfiles/verilog.log_croc_soc_edt_stuck_retargeted_serial  -do "if {0} {log -r /*}; run -all"
+
+vlog patterns/croc_soc_edt_transition_retargeted.v 
+vsim -c -voptargs="+acc" croc_chip_top_croc_soc_edt_transition_retargeted_v_ctl -l logfiles/verilog.log_croc_soc_edt_transition_retargeted  -do "if {0} {log -r /*}; run -all"
+
+vlog patterns/croc_soc_edt_transition_retargeted_serial.v 
+vsim -c -voptargs="+acc" croc_chip_top_croc_soc_edt_transition_retargeted_serial_v_ctl -l logfiles/verilog.log_croc_soc_edt_transition_retargeted_serial  -do "if {0} {log -r /*}; run -all"
+
+
+

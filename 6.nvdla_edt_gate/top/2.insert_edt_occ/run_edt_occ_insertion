@@ -1,0 +1,152 @@
+#! /bin/sh -f
+#\
+mkdir -p logfiles ; export PDK_ROOT_SYN="$(realpath "../../../tech/synopsys")"; echo $PDK_ROOT_SYN
+#\
+exec tessent -shell -log logfiles/$0.log -replace -dofile "$0"
+
+set PDK_ROOT ../../../tech
+
+# Set the context to insert DFT
+# Define a new design ID
+set_context dft -no_rtl -design_id gate2
+
+# Set the location of the TSDB. Default is the current working directory.
+set_tsdb_output_directory ../tsdb_outdir
+
+# Open the TSDB of all the child cores
+open_tsdb ../../croc_soc/tsdb_outdir
+
+
+# Read the tessent cell library
+read_cell_library ${PDK_ROOT}/tessent/ihp-sg13g2_stdcell.tcelllib
+read_cell_library ${PDK_ROOT}/tessent/ihp-sg13g2_io.tcelllib
+
+# Read the verilog
+set_design_sources -format verilog -v ${PDK_ROOT}/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/*.v -v ${PDK_ROOT}/ihp-sg13g2/libs.ref/sg13g2_io/verilog/*.v 
+read_verilog ${PDK_ROOT}/ihp-sg13g2/libs.ref/sg13g2_sram/verilog/RM_IHPSG13_1P_256x64_c2_bm_bist.v -interface_only -exclude_from_file_dictionary
+
+read_design croc_chip_top -design_id gate -verbose
+read_design croc_soc_GpioCount32 -design_id gate3 -view graybox -verbose
+
+set_current_design croc_chip_top
+
+# The design level is already specified in first pass and no need to specify it again
+
+# Add DFT Signals
+# DFT Signal used for BoundaryScan to be used with logic test without contacting inputs
+add_dft_signals int_ltest_en output_pad_disable 
+# DFT Signals used for Scan Tested Network with Instruments like memorybist/boundary scan
+add_dft_signals tck_occ_en 
+# DFT Signal used for logic test
+add_dft_signals ltest_en 
+# DFT Signal used by top-level EDT
+add_dft_signals edt_mode 
+add_dft_signals edt_update test_clock -source_nodes {unused1_i unused2_i}
+# Create shift_capture_clock and edt_clock as gated versions of test_clock
+add_dft_signals shift_capture_clock edt_clock -create_from_other_signals
+# DFT Signals used for retargeting lower level ATPG patterns
+add_dft_signals retargeting1_mode 
+
+# Simple TAM(Test Access Mechanism) connections
+# For chip_top, edt_mode - The asterisk(*) below means do not make connection to the data inputs.
+add_dft_modal_connections -ports unused3_i -input_data_destination_nodes * -enable_dft_signal  edt_mode
+add_dft_modal_connections -ports unused4_o -output_data_source_nodes     * -enable_dft_signal edt_mode
+
+add_dft_modal_connections -ports unused4_i -input_data_destination_nodes * -enable_dft_signal  controller_chain_mode
+add_dft_modal_connections -ports unused5_o -output_data_source_nodes     * -enable_dft_signal controller_chain_mode
+
+
+add_dft_control_points [get_auxiliary_pins unused5_i -enable -direction input] -dft_signal_source_name ltest_en
+add_dft_control_points [get_auxiliary_pins unused6_o -enable -direction output] -dft_signal_source_name ltest_en
+
+# For croc_soc - use retargeting_mode1
+add_dft_modal_connections -ports unused4_i -input_data_destination_nodes i_croc_soc/croc_soc_GpioCount32_gate2_controller_c1_edt_channels_in[0] -enable_dft_signal  retargeting1_mode
+add_dft_modal_connections -ports unused5_o -output_data_source_nodes i_croc_soc/croc_soc_GpioCount32_gate2_controller_c1_edt_channels_out[0] -enable_dft_signal  retargeting1_mode -pipeline_stages 1
+
+report_dft_modal_connections
+
+# Specify pre-DFT DRC rules
+set_dft_specification_requirements -logic_test on
+#add_clocks clk_i -period 10ns
+add_clocks 0 jtag_tck_i -period 10ns
+
+check_design_rules
+report_dft_control_points
+
+# Create and report a DFT Specification
+set spec [create_dft_specification -sri_sib_list {occ edt} ]
+report_config_data $spec
+read_config_data -in $spec -from_string {
+  OCC {
+    ijtag_host_interface : Sib(occ);
+  }
+}
+# Below is a generic way to populate the OCC. The clock list is design-specific and needs to be updated for the design
+# The scan_enable and shift_capture_clock signals are automatically connected to OCC instances
+# Modify the below list for your specific design requirements
+set id_clk_list [list \
+     clk_i clk_i \
+     jtag_tck_i jtag_tck_i \
+]
+foreach {id clk} $id_clk_list {
+  set occ [add_config_element OCC/Controller($id) -in $spec]
+  set_config_value clock_intercept_node -in $occ $clk
+}
+report_config_data $spec
+
+# The edt_clock and edt_update signals are automatically connected to EDT instances
+# The EDT controller is built with Bypass
+# Modify the below specification for your specific design requirements
+# The propery connect_bscan_segments_to_lsb_chains defaults to auto and connects the divided boundary scan segments from the previous pass to EDT
+read_config_data -in $spec -from_string {
+   EDT {
+     ijtag_host_interface : Sib(edt);
+       Controller (c1) {
+        longest_chain_range : 60, 100;
+        scan_chain_count : 20;
+        input_channel_count : 1;
+        output_channel_count : 1;
+        Connections +{
+         EdtChannelsIn(1) {
+         }
+         EdtChannelsOut(1) {
+         }
+        }
+    }
+  }
+}
+
+set_config_value port_pin_name \
+-in $spec/EDT/Controller(c1)/Connections/EdtChannelsIn(1) [get_single_name [get_auxiliary_pins unused5_i -direction input]]
+set_config_value port_pin_name \
+-in $spec/EDT/Controller(c1)/Connections/EdtChannelsOut(1) [get_single_name [get_auxiliary_pins unused6_o -direction output] ]
+report_config_data $spec
+
+set_config_value $spec/use_rtl_synchronizer_cell On
+
+# Generate and insert the hardware
+process_dft_specification
+
+# Extract IJAG network and create ICL file for the design
+extract_icl
+
+# Synthesize the hardware created in this pass using DC-Shell
+run_synthesis
+
+# Generate patterns to verify the inserted DFT logic
+set_defaults_value /PatternsSpecification/SignoffOptions/simulate_instruments_in_lower_physical_instances on
+create_patterns_specification
+process_pattern_specification
+
+# Point to the libraries and run the simulation
+set_simulation_library_sources -v ${PDK_ROOT}/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v -v ${PDK_ROOT}/ihp-sg13g2/libs.ref/sg13g2_io/verilog/sg13g2_io.v -v ${PDK_ROOT}/ihp-sg13g2/libs.ref/sg13g2_sram/verilog/*.v 
+
+run_testbench_simulations -simulation_macro_definitions {MGC_DISABLE_CLOCK_MONITOR FUNCTIONAL}
+check_testbench_simulations -report_status
+
+# If simulation fails, use this command to see which pattern failed
+#check_testbench_simulations
+
+exit
+
+

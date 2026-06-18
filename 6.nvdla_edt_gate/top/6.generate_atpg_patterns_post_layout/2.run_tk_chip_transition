@@ -1,0 +1,82 @@
+#! /bin/sh -f
+#\
+mkdir -p logfiles
+#\
+mkdir -p patterns
+#\
+exec tessent -shell -log logfiles/$0.log -replace -dofile "$0"
+
+set PDK_ROOT ../../../tech
+
+set_context pattern -scan
+
+# Point to the TSDB directory
+set_tsdb_output_directory ../tsdb_outdir
+
+# Open all the TSDB of the child cores
+open_tsdb ../../croc_soc/tsdb_outdir
+
+# Read the tessent cell library
+read_cell_library ${PDK_ROOT}/tessent/ihp-sg13g2_stdcell.tcelllib
+read_cell_library ${PDK_ROOT}/tessent/ihp-sg13g2_io.tcelllib
+
+# Read the verilog
+set_design_sources -format verilog -v ${PDK_ROOT}/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/*.v -v ${PDK_ROOT}/ihp-sg13g2/libs.ref/sg13g2_io/verilog/*.v 
+read_verilog ${PDK_ROOT}/ihp-sg13g2/libs.ref/sg13g2_sram/verilog/RM_IHPSG13_1P_256x64_c2_bm_bist.v -interface_only -exclude_from_file_dictionary
+
+read_design croc_chip_top -design_id post_layout -verbose
+read_design croc_soc_GpioCount32 -design_id post_layout -view graybox -verbose
+
+set_current_design croc_chip_top
+
+set_current_mode edt_top_transition
+
+# Use the -design_id and -mode from pre-layout to read in the TCD of that mode
+add_core_instance -current_design -design_id gate3 -mode edt_top_transition
+
+report_static_dft_signal_settings
+
+# Set the following DFT Signal values to use the boundary scan chain to apply/capture values that would normally use the I/O pads
+#set_static_dft_signal_values int_ltest_en 1
+#set_static_dft_signal_values output_pad_disable 1
+
+# Set the following DFT Signal value to apply the shift_capture_clock to the Scan Tested network during capture phase of ATPG
+set_static_dft_signal_values tck_occ_en 1
+report_static_dft_signal_settings
+
+# Need to specify this on post_layout but not in pre-layout.
+add_input_constraints -hold
+set_output_mask on
+
+set_system_mode analysis
+report_clocks
+
+report_core_instance
+
+set_fault_type transition
+set_external_capture_options -pll_cycles 2 [lindex [get_timeplate_list] 0]
+report_statistics -detail
+# Add more processors to run ATPG
+add_processors localhost:4
+
+# Generate Patterns
+create_patterns
+report_statistics -detail
+
+# Store TCD, flat_model, fault list and patDB format files in the TSDB directory
+write_tsdb_data -replace
+
+# Write Verilog patterns for simulation
+write_patterns patterns/croc_chip_top_edt_transition_parallel.v -verilog -parallel -replace -scan -parameter_list {SIM_KEEP_PATH 1}
+set_pattern_filtering -sample_per_type 2
+write_patterns patterns/croc_chip_top_edt_transition_serial.v -verilog -serial -replace -parameter_list {SIM_KEEP_PATH 1}
+
+write_patterns patterns/croc_chip_top_edt_transition.stil -stil -replace
+
+# Total coverage for transition patterns at the chip-level including the cores
+read_faults -module croc_soc_GpioCount32 -design_id post_layout -fault_type transition -mode edt_int_TDF -merge -graybox
+
+report_statistics -detail
+
+exit
+
