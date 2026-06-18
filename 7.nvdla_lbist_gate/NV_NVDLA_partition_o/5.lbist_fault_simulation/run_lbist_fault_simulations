@@ -1,0 +1,69 @@
+#! /bin/sh -f
+#\
+mkdir -p logfiles
+#\
+mkdir -p patterns
+#\
+exec tessent -shell -log logfiles/$0.log -replace -dofile "$0"
+
+
+set PDK_ROOT ../../../tech
+
+// ### FAULT SIMULATION TO CREATE THE PATTERN DATABASE
+
+set_context patterns -scan -design_id gate3
+set_tsdb_output_directory ../tsdb_outdir
+open_tsdb ../tsdb_outdir
+
+read_cell_library ${PDK_ROOT}/tessent/ihp-sg13g2_stdcell.tcelllib
+read_cell_library ${PDK_ROOT}/tessent/ihp-sg13g2_io.tcelllib
+
+#read_cell_library ${PDK_ROOT}/tessent/memories/RM_IHPSG13_1P_256x64_c2_bm_bist.atpglib
+
+
+read_design NV_NVDLA_partition_o  -design_id gate3
+
+
+set_current_design NV_NVDLA_partition_o
+
+report_black_boxes -undefined
+add_black_boxes -modules {\
+                        RAMDP_256X4_GL_M2_E2 \
+                        RAMDP_256X8_GL_M2_E2 \
+                        RAMPDP_128X18_GL_M2_D2 \
+                        RAMDP_8X66_GL_M1_E2 \
+                        RAMDP_80X9_GL_M2_E2 \
+                        RAMPDP_80X17_GL_M2_D2 \
+                        RAMDP_60X22_GL_M1_E2 \
+                        }
+
+# Specify the current mode using a different name than what was used during scan insertion with add_scan_mode command
+set_current_mode lbist_sa -type internal
+
+import_scan_mode int_mode
+#set_static_dft_signal_value force_testmode_i_zero 0
+
+
+#must add core instance for lbist fault simulation 
+add_core_instances -module *tessent_lbist
+report_core_descriptions
+
+# specify the capture procedure name and the count percentage to repeat the NCP once every 256 patterns
+set_lbist_controller_options -capture_procedures {ALL 80 single_pulse 10 double_pulse 10 }
+
+set_system_mode analysis
+set_split_capture_cycle on
+
+#add_faults and simulate patterns
+add_faults -all
+set_random_pattern 8192
+simulate_patterns -source bist -store_patterns all
+write_faults fault_list -replace
+
+write_patterns patterns/NV_NVDLA_partition_o_lbist_parallel.v -verilog -parallel -replace -parameter_list {SIM_KEEP_PATH 1}
+write_tsdb -replace
+report_lbist_configuration -hardware_default_compatibility
+report_statistics -detailed_analysis
+
+
+exit

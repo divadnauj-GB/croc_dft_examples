@@ -1,0 +1,55 @@
+#\! /bin/sh -f
+#\
+mkdir -p logfiles
+#\
+mkdir -p patterns
+#\
+exec tessent -shell -log logfiles/$0.log -replace -dofile "$0"
+
+set PDK_ROOT ../../../tech
+
+# Specify the same design ID that is used during scan insertion
+set_context patterns -scan -design_id gate3
+
+# Specify where the tsdb_outdir is to be located, default is at the current working directory
+set_tsdb_output_directory ../tsdb_outdir
+
+# Read Tessent Library
+read_cell_library ${PDK_ROOT}/tessent/ihp-sg13g2_stdcell.tcelllib
+read_cell_library ${PDK_ROOT}/tessent/ihp-sg13g2_io.tcelllib
+
+#read_cell_library ${PDK_ROOT}/tessent/memories/RM_IHPSG13_1P_256x64_c2_bm_bist.atpglib
+
+# Read the scan inserted design
+read_design NV_NVDLA_partition_p  -design_id gate3 -verbose
+set_current_design NV_NVDLA_partition_p
+
+report_black_boxes -undefined
+add_black_boxes -modules {\
+                        RAMDP_16X14_GL_M1_E2 \
+                        RAMDP_16X16_GL_M1_E2 \
+                        RAMDP_16X66_GL_M1_E2 \
+                        RAMDP_8X66_GL_M1_E2 \
+                        }
+
+report_dft_signals
+
+# DRC check the scan chains in each mode and create graybox for external mode
+foreach_in_collection mode_wrapper [get_config_elements Core(NV_NVDLA_partition_p)/Scan/Mode -part tcd -silent] {
+  set mode_name [get_config_value $mode_wrapper -id <0>]
+  set mode_type [get_config_value type -in $mode_wrapper]
+  import_scan_mode $mode_name
+  check_design_rules
+  if {$mode_type eq "external"} {
+    report_scan_cells
+    analyze_graybox
+    write_design -tsdb -graybox -verbose
+    write_core_description ./NV_NVDLA_partition_p_gray_box.tcd -replace
+  }
+  set_system_mode setup
+
+}
+
+exit
+
+

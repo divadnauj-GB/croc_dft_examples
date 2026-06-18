@@ -33,6 +33,7 @@ report_dft_signals
 import_scan_mode int_mode -fast_capture_mode on
 
 set_system_mode analysis
+set_split_capture_cycle on
 report_clocks
 report_pin_const
 set_timing_exceptions_handling -error_allowed on

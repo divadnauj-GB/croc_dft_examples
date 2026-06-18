@@ -41,6 +41,7 @@ set_system_mode analysis
 read_faults -fault_type stuck -mode edt_int_stuck -merge 
 read_faults -fault_type stuck -mode ext_multi_stuck -merge 
 read_faults -fault_type stuck -mode lbist_sa -merge 
+delete_faults -class AU.BB 
 report_statistics -detailed
 
 
@@ -48,6 +49,8 @@ set_fault_type transition
 
 read_faults -fault_type transition -mode ext_multi_transition -merge 
 read_faults -fault_type transition -mode edt_int_transition -merge 
+read_faults -fault_type transition -mode lbist_tran -merge 
+delete_faults -class AU.BB 
 report_statistics -detailed
 
 exit

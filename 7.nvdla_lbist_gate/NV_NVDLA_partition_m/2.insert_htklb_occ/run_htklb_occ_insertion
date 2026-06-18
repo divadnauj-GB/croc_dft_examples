@@ -172,6 +172,7 @@ read_config_data -in $spec -from_string {
 process_dft_specification
 ## The icl for the entire design gets created
 extract_icl 
+set_run_synthesis_options dc_shell -post_compilation_commands {"redirect -append Synth.report {report_qor -significant_digits 4}"}
 run_synthesis
 # write script for design compilation
 write_design_import_script  for_dc_synthesis.tcl -replace

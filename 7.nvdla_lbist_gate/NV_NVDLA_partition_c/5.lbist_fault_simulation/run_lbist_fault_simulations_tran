@@ -1,0 +1,68 @@
+#! /bin/sh -f
+#\
+mkdir -p logfiles
+#\
+mkdir -p patterns
+#\
+exec tessent -shell -log logfiles/$0.log -replace -dofile "$0"
+
+
+set PDK_ROOT ../../../tech
+
+// ### FAULT SIMULATION TO CREATE THE PATTERN DATABASE
+
+set_context patterns -scan -design_id gate3
+set_tsdb_output_directory ../tsdb_outdir
+open_tsdb ../tsdb_outdir
+
+read_cell_library ${PDK_ROOT}/tessent/ihp-sg13g2_stdcell.tcelllib
+read_cell_library ${PDK_ROOT}/tessent/ihp-sg13g2_io.tcelllib
+
+#read_cell_library ${PDK_ROOT}/tessent/memories/RM_IHPSG13_1P_256x64_c2_bm_bist.atpglib
+
+
+read_design NV_NVDLA_partition_c  -design_id gate3
+
+
+set_current_design NV_NVDLA_partition_c
+
+report_black_boxes -undefined
+add_black_boxes -modules {\
+                        RAMPDP_256X64_GL_M2_D2 \
+                        RAMDP_16X64_GL_M1_E2 \
+                        RAMDP_8X66_GL_M1_E2 \
+                        RAMDP_128X6_GL_M2_E2 \
+                        RAMDP_128X11_GL_M2_E2 \
+                        } 
+
+# Specify the current mode using a different name than what was used during scan insertion with add_scan_mode command
+set_current_mode lbist_tran -type internal
+
+import_scan_mode int_mode -fast_capture_mode on
+#set_static_dft_signal_value force_testmode_i_zero 0
+
+
+#must add core instance for lbist fault simulation 
+add_core_instances -module *tessent_lbist
+report_core_descriptions
+
+# specify the capture procedure name and the count percentage to repeat the NCP once every 256 patterns
+set_lbist_controller_options -capture_procedures {ALL 0 single_pulse 0 double_pulse 80 triple_pulse 20}
+set_system_mode analysis
+set_split_capture_cycle on
+
+report_core_instance_parameters
+set_fault_type transition
+
+#add_faults and simulate patterns
+add_faults -all
+set_random_pattern 8192
+simulate_patterns -source bist -store_patterns all
+
+write_patterns patterns/NV_NVDLA_partition_c_lbist_parallel.v -verilog -parallel -replace -parameter_list {SIM_KEEP_PATH 1}
+write_tsdb -replace
+report_lbist_configuration -hardware_default_compatibility
+report_statistics -detailed_analysis
+
+
+exit

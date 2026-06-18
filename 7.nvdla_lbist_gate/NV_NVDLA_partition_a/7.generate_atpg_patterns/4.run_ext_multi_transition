@@ -37,6 +37,8 @@ import_scan_mode ext_mode
 report_core_instances
 add_black_box -auto
 set_system_mode analysis
+set_split_capture_cycle on
+
 report_clocks
 
 # Set fault type to generate transition patterns

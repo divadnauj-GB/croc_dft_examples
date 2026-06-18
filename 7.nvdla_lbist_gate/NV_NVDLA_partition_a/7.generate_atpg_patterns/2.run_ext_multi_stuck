@@ -41,6 +41,8 @@ report_core_instances
 
 add_black_box -auto
 set_system_mode analysis
+set_split_capture_cycle on
+
 report_clocks
 
 add_processors localhost:4

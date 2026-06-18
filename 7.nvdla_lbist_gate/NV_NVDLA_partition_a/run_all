@@ -25,6 +25,7 @@ rm -rf logfiles/*
 rm -rf patterns/*
 rm -rf work
 ./run_lbist_fault_simulations
+./run_lbist_fault_simulations_tran
 
 cd ../6.lbist_patterns_generation
 rm -rf logfiles/*

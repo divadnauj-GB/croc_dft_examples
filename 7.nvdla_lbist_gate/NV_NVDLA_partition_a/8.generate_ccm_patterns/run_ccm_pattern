@@ -37,6 +37,8 @@ set_current_mode ccm_atpg
 
 
 set_system_mode analysis
+set_split_capture_cycle on
+
 
 add_faults [get_instance {*tessent_lbist_inst *tessent*single* *edt_lbist*}]
 

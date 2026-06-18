@@ -31,5 +31,8 @@ run_clk_domains
 nv_small
 
 //xbound_*
+xbound_list
+xbound_list_with_ignored_x_source
+faults_bypass_on
 
-
+Makefile

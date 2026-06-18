@@ -47,6 +47,8 @@ report_core_descriptions
 set_lbist_controller_options -capture_procedures {ALL 80 single_pulse 10 double_pulse 10 }
 
 set_system_mode analysis
+set_split_capture_cycle on
+report_core_instance_parameters
 
 #add_faults and simulate patterns
 add_faults -all

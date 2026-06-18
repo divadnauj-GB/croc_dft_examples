@@ -44,6 +44,7 @@ report_static_dft_signal_settings
 report_clocks
 
 set_system_mode analysis 
+set_split_capture_cycle on
 
 #specify pattern spec settings
 set patt_spec [ create_patterns_specification  ]
@@ -61,8 +62,8 @@ read_config_data -replace -in $patt_spec -from_string {
   }
   Patterns(LogicBist_NV_NVDLA_partition_m) {
     ClockPeriods {
-      nvdla_core_clk :500.00ns;
-      test_clock: 500.00ns;
+      nvdla_core_clk :10.00ns;
+      test_clock: 40.00ns;
     }
    SimulationOptions {
         logic_bist_debug : bist_registers_and_clock_verify;

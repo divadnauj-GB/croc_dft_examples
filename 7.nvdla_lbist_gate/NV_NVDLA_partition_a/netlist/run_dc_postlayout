@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#!/bin/bash
+export PDK_ROOT_SYN="$(realpath "../../../tech/synopsys")"; echo $PDK_ROOT_SYN
+if [ ! -f ${PDK_ROOT_SYN}/ihp-sg13g2_stdcell.db ]; then
+   echo "//"
+   echo "//  Note: The ../library/standard_cells/synopsys/adk.db file does not exist. Running Library Compiler to create it"
+   echo "//"
+   lc_shell <<!
+   read_lib ${PDK_ROOT_SYN}/../ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_typ_1p20V_25C.lib
+   write_lib sg13g2_stdcell_typ_1p20V_25C -format db -output ${PDK_ROOT_SYN}/ihp-sg13g2_stdcell.db
+   read_lib ${PDK_ROOT_SYN}/../ihp-sg13g2/libs.ref/sg13g2_io/lib/sg13g2_io_typ_1p2V_3p3V_25C.lib
+   write_lib sg13g2_io_typ_1p2V_3p3V_25C -format db -output ${PDK_ROOT_SYN}/ihp-sg13g2_io.db
+   read_lib ${PDK_ROOT_SYN}/../ihp-sg13g2/libs.ref/sg13g2_sram/lib/RM_IHPSG13_1P_256x64_c2_bm_bist_typ_1p20V_25C.lib
+   write_lib RM_IHPSG13_1P_256x64_c2_bm_bist_typ_1p20V_25C -format db -output ${PDK_ROOT_SYN}/RM_IHPSG13_1P_256x64_c2_bm_bist.db
+   exit
+!
+fi
+
+mkdir -p logfiles
+#\
+dc_shell -f to_dc_for_flattening.tcl |tee logfiles/run_dc_postlayout.log

@@ -85,6 +85,7 @@ process_dft_specification
 ## The icl for the entire design gets created
 extract_icl
 
+set_run_synthesis_options dc_shell -post_compilation_commands {"redirect -append Synth.report {report_qor -significant_digits 4}"}
 run_synthesis
 ## Generate testbenches  
 create_pattern_specification
